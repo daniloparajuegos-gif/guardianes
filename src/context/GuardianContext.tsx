@@ -2,6 +2,12 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { StudentProfile, StudentAnswer, StudentEvidence, StudentPassportEntry } from '../types';
 import { MISSIONS_DATA } from '../data/pedagogicalData';
 import { audioService } from '../services/audioService';
+import { 
+  subscribeToProfiles, 
+  saveProfileToCloud, 
+  deleteProfileFromCloud, 
+  seedInitialProfilesIfEmpty 
+} from '../services/firebase';
 
 export type AppView = 'login' | 'welcome' | 'map' | 'mission' | 'passport' | 'teacher';
 
@@ -14,6 +20,7 @@ interface GuardianContextType {
   useDemoTeacherData: boolean;
   isLoggedIn: boolean;
   isTeacherAuthenticated: boolean;
+  cloudConnected: boolean;
   setCurrentView: (view: AppView) => void;
   setActiveMissionId: (id: number) => void;
   loginWithCredentials: (identifier: string, enteredPin?: string) => { success: boolean; message?: string };
@@ -212,13 +219,36 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [activeMissionId, setActiveMissionId] = useState<number>(1);
   const [soundEnabled, setSoundEnabled] = useState<boolean>(!audioService.getIsMuted());
   const [useDemoTeacherData, setUseDemoTeacherData] = useState<boolean>(true);
+  const [cloudConnected, setCloudConnected] = useState<boolean>(false);
 
   // Perfil activo actual (aislado individualmente, con fallback seguro)
   const activeProfile = (isLoggedIn && activeProfileId
     ? profiles.find(p => p.id === activeProfileId)
     : null) || profiles[0] || GUEST_PROFILE;
 
-  // Sincronizar perfiles con LocalStorage
+  // Sincronización en tiempo real con Google Firestore (nube compartida entre dispositivos)
+  useEffect(() => {
+    // Si la base de datos está vacía, sembramos los perfiles de ejemplo iniciales
+    seedInitialProfilesIfEmpty(INITIAL_PROFILES);
+
+    // Escuchador en tiempo real de Firestore
+    const unsubscribe = subscribeToProfiles(
+      (cloudProfiles) => {
+        if (cloudProfiles && cloudProfiles.length > 0) {
+          setProfiles(cloudProfiles);
+          setCloudConnected(true);
+        }
+      },
+      (err) => {
+        console.warn('Operando en modo local (sin nube):', err);
+        setCloudConnected(false);
+      }
+    );
+
+    return () => unsubscribe();
+  }, []);
+
+  // Sincronizar perfiles con LocalStorage como respaldo offline
   useEffect(() => {
     localStorage.setItem('guardianes_profiles', JSON.stringify(profiles));
   }, [profiles]);
@@ -379,6 +409,9 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setIsLoggedIn(true);
     setCurrentView('welcome');
 
+    // Sincronizar en la nube inmediatamente
+    saveProfileToCloud(newProfile);
+
     return { success: true, profile: newProfile };
   };
 
@@ -389,15 +422,20 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       setIsLoggedIn(false);
     }
     setProfiles(prev => prev.filter(p => p.id !== profileId));
+    // Eliminar de la nube inmediatamente
+    deleteProfileFromCloud(profileId);
     return { success: true };
   };
 
   // Restablecer perfiles a los 5 estudiantes originales de grado 7°
-  const resetAllProfilesToDefault = () => {
+  const resetAllProfilesToDefault = async () => {
     setProfiles(INITIAL_PROFILES);
     setActiveProfileId(null);
     setIsLoggedIn(false);
     localStorage.setItem('guardianes_profiles', JSON.stringify(INITIAL_PROFILES));
+    for (const p of INITIAL_PROFILES) {
+      await saveProfileToCloud(p);
+    }
   };
 
   const createProfile = (name: string, grade: string, avatar: string, pin?: string) => {
@@ -408,11 +446,13 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (!activeProfileId) return;
     setProfiles(prev => prev.map(p => {
       if (p.id !== activeProfileId) return p;
-      return {
+      const updated = {
         ...p,
         avatar,
         pin: pin !== undefined ? pin.trim() : p.pin
       };
+      saveProfileToCloud(updated);
+      return updated;
     }));
   };
 
@@ -437,13 +477,15 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     setProfiles(prev => prev.map(p => {
       if (p.id !== activeProfile.id) return p;
-      return {
+      const updated = {
         ...p,
         answers: {
           ...p.answers,
           [questionId]: newAnswer
         }
       };
+      saveProfileToCloud(updated);
+      return updated;
     }));
   };
 
@@ -459,13 +501,15 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     setProfiles(prev => prev.map(p => {
       if (p.id !== activeProfile.id) return p;
-      return {
+      const updated = {
         ...p,
         evidences: {
           ...p.evidences,
           [missionId]: evidence
         }
       };
+      saveProfileToCloud(updated);
+      return updated;
     }));
   };
 
@@ -505,13 +549,15 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
       const nextMissionId = Math.min(15, missionId + 1);
 
-      return {
+      const updated = {
         ...p,
         completedMissionIds: newCompleted,
         earnedBadges: newBadges,
         passportEntries: newPassportEntries,
         currentMissionId: Math.max(p.currentMissionId, nextMissionId)
       };
+      saveProfileToCloud(updated);
+      return updated;
     }));
 
     audioService.playBadgeUnlocked();
@@ -557,6 +603,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         useDemoTeacherData,
         isLoggedIn,
         isTeacherAuthenticated,
+        cloudConnected,
         setCurrentView,
         setActiveMissionId,
         loginWithCredentials,

@@ -33,6 +33,7 @@ export const TeacherDashboard: React.FC = () => {
     teacherLogout,
     deleteStudentProfile,
     resetAllProfilesToDefault,
+    cloudConnected,
     setCurrentView
   } = useGuardian();
 
@@ -207,11 +208,22 @@ export const TeacherDashboard: React.FC = () => {
               <GraduationCap className="w-8 h-8" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="px-3 py-0.5 rounded-full bg-amber-400 text-forest-950 text-xs font-bold font-mono shadow-xs">
                   OBSERVATORIO DOCENTE EXCLUSIVO
                 </span>
                 <span className="text-xs text-emerald-100 font-medium">Grado 7° • Magangué y La Mojana</span>
+                {cloudConnected ? (
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-400/25 text-emerald-100 border border-emerald-300/40">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Sincronizado en Nube (Firebase)
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-400/25 text-amber-200 border border-amber-300/40">
+                    <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+                    Modo Local
+                  </span>
+                )}
               </div>
               <h1 className="font-display font-black text-2xl sm:text-3xl mt-1 text-white">
                 Panel del Docente e Investigador Pedagógico

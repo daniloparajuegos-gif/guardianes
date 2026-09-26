@@ -21,6 +21,7 @@ export const Navbar: React.FC = () => {
     soundEnabled, 
     toggleSound,
     isLoggedIn,
+    cloudConnected,
     logout
   } = useGuardian();
 
@@ -50,6 +51,12 @@ export const Navbar: React.FC = () => {
                 <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 rounded-full">
                   7° GRADO
                 </span>
+                {cloudConnected && (
+                  <span className="hidden md:inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full" title="Conectado a la base de datos en la nube (Google Firebase)">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Nube Activa
+                  </span>
+                )}
               </div>
               <p className="text-[11px] text-forest-600 font-sans tracking-tight hidden md:block">
                 Estrategia Gamificada de Comprensión Lectora • Magangué y La Mojana
