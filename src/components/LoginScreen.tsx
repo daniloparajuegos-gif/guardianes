@@ -42,7 +42,7 @@ export const LoginScreen: React.FC = () => {
 
   // Estado para Registro de Nuevo Estudiante
   const [newName, setNewName] = useState<string>('');
-  const [newGrade, setNewGrade] = useState<string>('7°A');
+  const [newGrade, setNewGrade] = useState<string>('7°1');
   const [selectedAvatar, setSelectedAvatar] = useState<string>('fauna');
   const [newPin, setNewPin] = useState<string>('');
   const [registerError, setRegisterError] = useState<string>('');
@@ -298,10 +298,10 @@ export const LoginScreen: React.FC = () => {
                       onChange={(e) => setNewGrade(e.target.value)}
                       className="w-full px-3.5 py-2.5 bg-slate-50 border-2 border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-emerald-500 font-bold"
                     >
-                      <option value="7°A">7°A</option>
-                      <option value="7°B">7°B</option>
-                      <option value="7°C">7°C</option>
-                      <option value="7°D">7°D</option>
+                      <option value="7°1">7°1</option>
+                      <option value="7°2">7°2</option>
+                      <option value="7°3">7°3</option>
+                      <option value="7°4">7°4</option>
                       <option value="7° Grado">7° General</option>
                     </select>
                   </div>

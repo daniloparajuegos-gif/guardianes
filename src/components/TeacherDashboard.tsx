@@ -234,32 +234,8 @@ export const TeacherDashboard: React.FC = () => {
             </div>
           </div>
 
-          {/* Selector de Modo y Acciones del Docente */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <div className="bg-white/15 backdrop-blur-md border border-white/25 rounded-2xl p-1.5 flex items-center gap-1 text-xs">
-              <button
-                onClick={() => setUseDemoTeacherData(false)}
-                className={`px-3.5 py-1.5 rounded-xl font-bold transition-all ${
-                  !useDemoTeacherData 
-                    ? 'bg-white text-forest-900 shadow-md' 
-                    : 'text-white hover:bg-white/15'
-                }`}
-              >
-                Datos Reales de Sala ({profiles.length})
-              </button>
-              <button
-                onClick={() => setUseDemoTeacherData(true)}
-                className={`px-3.5 py-1.5 rounded-xl font-bold transition-all ${
-                  useDemoTeacherData 
-                    ? 'bg-amber-400 text-forest-950 shadow-md' 
-                    : 'text-white hover:bg-white/15'
-                }`}
-              >
-                Datos de Demostración (5)
-              </button>
-            </div>
 
-            <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
               <button
                 onClick={handleExportData}
                 className="px-3 py-2 bg-white hover:bg-emerald-50 text-forest-900 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
@@ -286,19 +262,8 @@ export const TeacherDashboard: React.FC = () => {
                 <LogOut className="w-3.5 h-3.5" />
                 <span>Bloquear</span>
               </button>
-            </div>
           </div>
         </div>
-
-        {/* Banner de Aviso de Datos de Demostración */}
-        {useDemoTeacherData && (
-          <div className="mt-5 px-4 py-2.5 rounded-2xl bg-amber-400/20 border border-amber-300/40 flex items-center gap-2.5 text-xs text-amber-100">
-            <AlertTriangle className="w-4 h-4 shrink-0 text-amber-300" />
-            <span>
-              <strong>MODO DEMOSTRACIÓN ACTIVO:</strong> Estás observando perfiles simulados de ejemplo pedagógico. Cambia a "Datos Reales de Sala" para visualizar y gestionar a los estudiantes registrados en este computador.
-            </span>
-          </div>
-        )}
       </div>
 
       {/* Notificación de Acción (Eliminación / Restablecimiento) */}

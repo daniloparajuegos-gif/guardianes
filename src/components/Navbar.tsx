@@ -33,34 +33,36 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-emerald-200/90 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-16 py-2 flex items-center justify-between gap-3">
           
           {/* Logo y título */}
           <div 
             onClick={() => setCurrentView(isLoggedIn ? 'welcome' : 'login')}
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex items-center gap-3 cursor-pointer group shrink-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-forest-600 border border-emerald-400/40 flex items-center justify-center shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-forest-600 border border-emerald-400/40 flex items-center justify-center shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform shrink-0">
               <Compass className="w-6 h-6 text-amber-200 animate-pulse" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-display font-bold text-lg sm:text-xl text-forest-900 tracking-wider">
+            <div className="min-w-0">
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="font-display font-bold text-base sm:text-xl text-forest-900 tracking-wider whitespace-nowrap">
                   GUARDIANES <span className="text-emerald-700 font-serif">DEL BOSQUE</span>
                 </span>
-                <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 rounded-full">
+                <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 rounded-full shrink-0">
                   7° GRADO
                 </span>
+              </div>
+              <div className="flex items-center gap-2 mt-0.5">
+                <p className="text-[11px] text-forest-600 font-sans tracking-tight hidden md:block">
+                  Estrategia Gamificada • Magangué y La Mojana
+                </p>
                 {cloudConnected && (
-                  <span className="hidden md:inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full" title="Conectado a la base de datos en la nube (Google Firebase)">
+                  <span className="hidden md:inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full shrink-0" title="Conectado a la base de datos en la nube (Google Firebase)">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     Nube Activa
                   </span>
                 )}
               </div>
-              <p className="text-[11px] text-forest-600 font-sans tracking-tight hidden md:block">
-                Estrategia Gamificada de Comprensión Lectora • Magangué y La Mojana
-              </p>
             </div>
           </div>
 

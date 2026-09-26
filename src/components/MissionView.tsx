@@ -67,6 +67,14 @@ export const MissionView: React.FC = () => {
   // Estado de reflexión para el pasaporte
   const [passportReflection, setPassportReflection] = useState<string>('');
 
+  // Pistas: solo se revelan si el estudiante hace clic en "Pedir Pista" después de haber respondido
+  const [revealedHints, setRevealedHints] = useState<Set<string>>(new Set());
+
+  const handleRevealHint = (questionId: string) => {
+    setRevealedHints(prev => new Set([...prev, questionId]));
+  };
+
+
   const STAGE_NAMES = [
     { title: 'Llegada', icon: Compass, label: '01. Llegada' },
     { title: 'Observa', icon: Eye, label: '02. Observa' },
@@ -208,14 +216,24 @@ export const MissionView: React.FC = () => {
                   })}
                 </div>
 
-                {/* Retroalimentación pedagógica */}
+                {/* Pista: solo aparece si el estudiante seleccionó una opción Y luego pide la pista explícitamente */}
                 {selectedOpt && selectedOpt.feedback && (
-                  <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-xs sm:text-sm text-emerald-950 flex items-start gap-3 animate-fadeIn">
-                    <Info className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-bold text-emerald-800">Pista Pedagógica: </span>
-                      <span className="text-emerald-900 font-medium">{selectedOpt.feedback}</span>
-                    </div>
+                  <div className="mt-2">
+                    {revealedHints.has(q.id) ? (
+                      <div className="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-2.5 animate-fadeIn">
+                        <Info className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                        <span className="font-medium leading-relaxed">{selectedOpt.feedback}</span>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => handleRevealHint(q.id)}
+                        className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-amber-50 text-slate-500 hover:text-amber-700 border border-slate-200 hover:border-amber-300 text-xs font-semibold transition-all"
+                      >
+                        <Info className="w-3.5 h-3.5" />
+                        Ver orientación sobre esta pregunta
+                      </button>
+                    )}
                   </div>
                 )}
 
