@@ -128,14 +128,8 @@ export const TeacherDashboard: React.FC = () => {
     );
   }
 
-  // Determinar los estudiantes a mostrar (Demostración vs Reales)
-  const studentList = useDemoTeacherData
-    ? DEMO_TEACHER_STUDENTS.map(s => ({
-        ...s,
-        username: s.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '.'),
-        pin: '1234'
-      }))
-    : profiles.map(p => {
+  // Siempre mostramos los datos reales de Firebase (modo demo eliminado)
+  const studentList = profiles.map(p => {
         const completedCount = p.completedMissionIds.length;
         const answersList = Object.values(p.answers);
         
