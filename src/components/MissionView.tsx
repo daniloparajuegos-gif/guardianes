@@ -67,10 +67,21 @@ export const MissionView: React.FC = () => {
   // Estado de reflexión para el pasaporte
   const [passportReflection, setPassportReflection] = useState<string>('');
 
-  // Pistas: solo se revelan si el estudiante hace clic en "Pedir Pista" después de haber respondido
+  // Sistema de Puntos de Pista: 2 puntos por nivel (Literal, Inferencial, Crítico)
+  // Los puntos se reinician al cambiar de etapa/nivel
+  const [hintPoints, setHintPoints] = useState<Record<number, number>>({
+    3: 2, // 2 pistas para la etapa Literal (stage 3)
+    4: 2, // 2 pistas para la etapa Inferencial (stage 4)
+    5: 2, // 2 pistas para la etapa Crítica (stage 5)
+  });
   const [revealedHints, setRevealedHints] = useState<Set<string>>(new Set());
 
-  const handleRevealHint = (questionId: string) => {
+  const handleRevealHint = (questionId: string, currentStage: number) => {
+    // Solo gastar un punto si quedan disponibles y la pista no fue ya revelada
+    if (revealedHints.has(questionId)) return;
+    const available = hintPoints[currentStage] ?? 0;
+    if (available <= 0) return;
+    setHintPoints(prev => ({ ...prev, [currentStage]: prev[currentStage] - 1 }));
     setRevealedHints(prev => new Set([...prev, questionId]));
   };
 
@@ -134,9 +145,10 @@ export const MissionView: React.FC = () => {
   };
 
   // Renderizador de bloque de preguntas
-  const renderQuestionBlock = (questions: Question[], levelTitle: string, levelBadge: string, levelIcon: React.ReactNode) => {
+  const renderQuestionBlock = (questions: Question[], levelTitle: string, levelBadge: string, levelIcon: React.ReactNode, stageIndex: number) => {
     const answeredCount = questions.filter(q => selectedAnswers[q.id]).length;
     const allAnswered = answeredCount === questions.length;
+    const availableHints = hintPoints[stageIndex] ?? 0;
 
     return (
       <div className="space-y-6">
@@ -155,8 +167,30 @@ export const MissionView: React.FC = () => {
             </div>
           </div>
 
-          <div className="text-xs font-bold text-emerald-900 bg-emerald-100 px-4 py-2 rounded-xl border border-emerald-300">
-            Respondidas: <span className="text-emerald-700">{answeredCount}</span> de {questions.length}
+          <div className="flex items-center gap-2">
+            {/* Contador de pistas disponibles */}
+            <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border ${
+              availableHints > 0
+                ? 'bg-amber-50 border-amber-300 text-amber-800'
+                : 'bg-slate-100 border-slate-200 text-slate-400'
+            }`}>
+              <Info className="w-3.5 h-3.5" />
+              <span>
+                {availableHints > 0
+                  ? `${availableHints} pista${availableHints !== 1 ? 's' : ''} disponible${availableHints !== 1 ? 's' : ''}`
+                  : 'Sin pistas disponibles'}
+              </span>
+              {/* Indicadores visuales */}
+              <div className="flex gap-0.5 ml-1">
+                {[0, 1].map(i => (
+                  <span key={i} className={`w-2 h-2 rounded-full ${i < availableHints ? 'bg-amber-400' : 'bg-slate-300'}`} />
+                ))}
+              </div>
+            </div>
+
+            <div className="text-xs font-bold text-emerald-900 bg-emerald-100 px-4 py-2 rounded-xl border border-emerald-300">
+              Respondidas: <span className="text-emerald-700">{answeredCount}</span> de {questions.length}
+            </div>
           </div>
         </div>
 
@@ -216,7 +250,7 @@ export const MissionView: React.FC = () => {
                   })}
                 </div>
 
-                {/* Pista: solo aparece si el estudiante seleccionó una opción Y luego pide la pista explícitamente */}
+                {/* Pista: se revela solo al gastar un punto de pista */}
                 {selectedOpt && selectedOpt.feedback && (
                   <div className="mt-2">
                     {revealedHints.has(q.id) ? (
@@ -224,15 +258,23 @@ export const MissionView: React.FC = () => {
                         <Info className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
                         <span className="font-medium leading-relaxed">{selectedOpt.feedback}</span>
                       </div>
-                    ) : (
+                    ) : availableHints > 0 ? (
                       <button
                         type="button"
-                        onClick={() => handleRevealHint(q.id)}
-                        className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-amber-50 text-slate-500 hover:text-amber-700 border border-slate-200 hover:border-amber-300 text-xs font-semibold transition-all"
+                        onClick={() => handleRevealHint(q.id, stageIndex)}
+                        className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 hover:border-amber-400 text-xs font-semibold transition-all"
                       >
                         <Info className="w-3.5 h-3.5" />
-                        Ver orientación sobre esta pregunta
+                        Usar una pista
+                        <span className="ml-1 px-1.5 py-0.5 rounded-md bg-amber-200 text-amber-900 text-[10px] font-bold">
+                          {availableHints} restante{availableHints !== 1 ? 's' : ''}
+                        </span>
                       </button>
+                    ) : (
+                      <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-400 text-xs font-semibold">
+                        <Info className="w-3.5 h-3.5" />
+                        Sin pistas disponibles en este nivel
+                      </div>
                     )}
                   </div>
                 )}
@@ -642,7 +684,8 @@ export const MissionView: React.FC = () => {
         mission.literalQuestions,
         'Rastreo de pistas — Nivel 1',
         'Guardián Observador',
-        <Eye className="w-6 h-6 text-emerald-700" />
+        <Eye className="w-6 h-6 text-emerald-700" />,
+        3
       )}
 
       {/* ========================================================
@@ -652,7 +695,8 @@ export const MissionView: React.FC = () => {
         mission.inferentialQuestions,
         'Investigación — Nivel 2',
         'Guardián Rastreador',
-        <Search className="w-6 h-6 text-sky-700" />
+        <Search className="w-6 h-6 text-sky-700" />,
+        4
       )}
 
       {/* ========================================================
@@ -662,8 +706,10 @@ export const MissionView: React.FC = () => {
         mission.criticalQuestions,
         'Decisión del Guardián — Nivel 3',
         'Guardián del Equilibrio',
-        <Scale className="w-6 h-6 text-amber-700" />
+        <Scale className="w-6 h-6 text-amber-700" />,
+        5
       )}
+
 
       {/* ========================================================
           ETAPA 6: DESAFÍO AMBIENTAL DE APLICACIÓN Y REFLEXIÓN
