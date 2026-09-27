@@ -68,8 +68,15 @@ export const MissionView: React.FC = () => {
   const [passportReflection, setPassportReflection] = useState<string>('');
 
   // Sistema de Puntos de Pista: 3 pistas compartidas para toda la misión
+  // Se reinician a 3 cada vez que se avanza a una nueva misión
   const [hintPoints, setHintPoints] = useState<number>(3);
   const [revealedHints, setRevealedHints] = useState<Set<string>>(new Set());
+
+  // Resetear pistas al cambiar de misión
+  React.useEffect(() => {
+    setHintPoints(3);
+    setRevealedHints(new Set());
+  }, [mission.id]);
 
   const handleRevealHint = (questionId: string) => {
     if (revealedHints.has(questionId)) return;
