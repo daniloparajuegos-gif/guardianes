@@ -590,6 +590,68 @@ export const TeacherDashboard: React.FC = () => {
 
       </div>
 
+      {/* Ficha Técnica y Créditos Académicos de la Investigación */}
+      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-base">
+              🎓
+            </div>
+            <div>
+              <h3 className="font-display font-black text-base text-slate-800">
+                Ficha Técnica y Créditos de Investigación
+              </h3>
+              <p className="text-xs text-slate-500">
+                Proyecto de Grado • Maestría en Educación
+              </p>
+            </div>
+          </div>
+          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 self-start sm:self-auto">
+            Magangué y La Mojana, Colombia
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-600">
+          <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200/80 space-y-1.5">
+            <div className="flex items-center justify-between">
+              <p className="font-bold text-emerald-950 text-sm">
+                Danilo Enrique Insuasty Delgado
+              </p>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-200/70 text-emerald-900">
+                Autor
+              </span>
+            </div>
+            <p className="text-emerald-700 font-semibold text-xs">
+              Diseño y Desarrollo de la Plataforma Web
+            </p>
+            <p className="text-slate-600 text-[11px] leading-relaxed pt-1">
+              Desarrollo de la aplicación interactiva, arquitectura de software, experiencia de usuario y sistema de gamificación de Guardianes del Bosque.
+            </p>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/80 space-y-1.5">
+            <div className="flex items-center justify-between">
+              <p className="font-bold text-amber-950 text-sm">
+                María Fernanda Gutiérrez Chica
+              </p>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-200/70 text-amber-900">
+                Autora
+              </span>
+            </div>
+            <p className="text-amber-800 font-semibold text-xs">
+              Diseño Pedagógico, Material y Temáticas Ambientales
+            </p>
+            <p className="text-slate-600 text-[11px] leading-relaxed pt-1">
+              Estructura didáctica, redacción de lecturas contextualizadas, formulación de preguntas por niveles de lectura y diseño de los desafíos ambientales.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-[11px] text-slate-400 text-center pt-1 border-t border-slate-100">
+          Estrategia pedagógica gamificada para el fortalecimiento de la comprensión lectora en educación ambiental con estudiantes de Grado 7°.
+        </p>
+      </div>
+
       {/* Modal de Confirmación para Eliminar Estudiante */}
       {studentToDelete && (
         <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn">

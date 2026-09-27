@@ -479,6 +479,22 @@ export const LoginScreen: React.FC = () => {
 
         </div>
 
+        {/* Pie de página institucional y autoría de investigación */}
+        <div className="mt-8 text-center text-xs text-slate-500 space-y-1">
+          <p className="font-semibold text-slate-600">
+            Guardianes del Bosque • Estrategia Pedagógica Gamificada
+          </p>
+          <p className="text-[11px] text-slate-500">
+            Investigación para la Maestría en Educación
+          </p>
+          <p className="text-[11px] text-slate-600">
+            Autores: <span className="font-medium text-slate-700">Danilo Enrique Insuasty Delgado</span> • <span className="font-medium text-slate-700">María Fernanda Gutiérrez Chica</span>
+          </p>
+          <p className="text-[10px] text-slate-400">
+            Magangué y La Mojana, Colombia
+          </p>
+        </div>
+
       </div>
     </div>
   );
