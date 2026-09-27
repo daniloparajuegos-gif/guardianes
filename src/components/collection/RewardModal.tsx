@@ -17,12 +17,34 @@ export const RewardModal: React.FC<RewardModalProps> = ({ reward, onContinue, on
     setTimeout(() => setShow(true), 100);
   }, []);
 
-  const rarityGlow = {
-    common: '0 0 20px rgba(181, 178, 168, 0.5)',
-    rare: '0 0 30px rgba(99, 138, 107, 0.6)',
-    epic: '0 0 40px rgba(85, 125, 165, 0.7)',
-    legendary: '0 0 50px rgba(201, 162, 77, 0.8)'
+  const rarityAura = {
+    common: {
+      filter: 'drop-shadow(0 0 12px rgba(181, 178, 168, 0.5))',
+      background: 'radial-gradient(circle, rgba(181, 178, 168, 0.2) 0%, rgba(15, 23, 18, 0) 70%)',
+      glow: '0 0 25px rgba(181, 178, 168, 0.35)',
+      border: '1px solid rgba(181, 178, 168, 0.4)'
+    },
+    rare: {
+      filter: 'drop-shadow(0 0 18px rgba(99, 138, 107, 0.85)) drop-shadow(0 0 6px rgba(150, 205, 160, 0.5))',
+      background: 'radial-gradient(circle, rgba(99, 138, 107, 0.35) 0%, rgba(15, 23, 18, 0) 70%)',
+      glow: '0 0 35px rgba(99, 138, 107, 0.55)',
+      border: '1px solid rgba(99, 138, 107, 0.6)'
+    },
+    epic: {
+      filter: 'drop-shadow(0 0 22px rgba(85, 125, 165, 0.95)) drop-shadow(0 0 8px rgba(140, 190, 240, 0.6))',
+      background: 'radial-gradient(circle, rgba(85, 125, 165, 0.4) 0%, rgba(15, 23, 18, 0) 72%)',
+      glow: '0 0 45px rgba(85, 125, 165, 0.65)',
+      border: '1px solid rgba(85, 125, 165, 0.7)'
+    },
+    legendary: {
+      filter: 'drop-shadow(0 0 28px rgba(201, 162, 77, 1)) drop-shadow(0 0 12px rgba(255, 225, 130, 0.8))',
+      background: 'radial-gradient(circle, rgba(201, 162, 77, 0.5) 0%, rgba(15, 23, 18, 0) 75%)',
+      glow: '0 0 60px rgba(201, 162, 77, 0.85), 0 0 20px rgba(255, 225, 130, 0.5)',
+      border: '2px solid rgba(201, 162, 77, 0.8)'
+    }
   };
+
+  const aura = rarityAura[reward.rarity];
 
   return (
     <div style={{
@@ -34,14 +56,16 @@ export const RewardModal: React.FC<RewardModalProps> = ({ reward, onContinue, on
       alignItems: 'center',
       zIndex: 2000,
       opacity: show ? 1 : 0,
-      transition: 'opacity 0.5s ease-in-out'
+      transition: 'opacity 0.5s ease-in-out',
+      backdropFilter: 'blur(6px)'
     }}>
       <div style={{
         backgroundColor: '#1a2920',
         borderRadius: '16px',
         maxWidth: '450px',
         width: '100%',
-        border: '1px solid #2c3e30',
+        border: `1px solid ${aura.border.split(' ')[2]}`,
+        boxShadow: `0 15px 40px -10px ${aura.border.split(' ')[2]}44`,
         padding: '32px',
         textAlign: 'center',
         transform: show ? 'scale(1)' : 'scale(0.8)',
@@ -52,21 +76,28 @@ export const RewardModal: React.FC<RewardModalProps> = ({ reward, onContinue, on
         </h2>
 
         <div style={{
-          width: '160px',
-          height: '160px',
+          width: '170px',
+          height: '170px',
           margin: '0 auto 24px',
           backgroundColor: '#0f1712',
+          backgroundImage: aura.background,
           borderRadius: '50%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          boxShadow: rarityGlow[reward.rarity],
+          boxShadow: aura.glow,
+          border: aura.border,
           position: 'relative'
         }}>
           <img 
             src={reward.image} 
             alt={reward.name} 
-            style={{ width: '70%', height: '70%', objectFit: 'contain' }}
+            style={{ 
+              width: '78%', 
+              height: '78%', 
+              objectFit: 'contain',
+              filter: aura.filter
+            }}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               if (target.src.endsWith('.webp')) {

@@ -11,23 +11,50 @@ interface CollectionDetailModalProps {
 export const CollectionDetailModal: React.FC<CollectionDetailModalProps> = ({ item, entry, onClose }) => {
   const isDiscovered = !!entry;
 
+  const rarityAura = {
+    common: {
+      filter: 'drop-shadow(0 0 10px rgba(181, 178, 168, 0.4))',
+      background: 'radial-gradient(circle, rgba(181, 178, 168, 0.15) 0%, rgba(15, 23, 18, 0) 70%)',
+      borderColor: '#B5B2A8'
+    },
+    rare: {
+      filter: 'drop-shadow(0 0 16px rgba(99, 138, 107, 0.75)) drop-shadow(0 0 6px rgba(150, 205, 160, 0.4))',
+      background: 'radial-gradient(circle, rgba(99, 138, 107, 0.3) 0%, rgba(15, 23, 18, 0) 70%)',
+      borderColor: '#638A6B'
+    },
+    epic: {
+      filter: 'drop-shadow(0 0 20px rgba(85, 125, 165, 0.9)) drop-shadow(0 0 8px rgba(140, 190, 240, 0.5))',
+      background: 'radial-gradient(circle, rgba(85, 125, 165, 0.35) 0%, rgba(15, 23, 18, 0) 72%)',
+      borderColor: '#557DA5'
+    },
+    legendary: {
+      filter: 'drop-shadow(0 0 24px rgba(201, 162, 77, 1)) drop-shadow(0 0 10px rgba(255, 225, 130, 0.7))',
+      background: 'radial-gradient(circle, rgba(201, 162, 77, 0.42) 0%, rgba(15, 23, 18, 0) 75%)',
+      borderColor: '#C9A24D'
+    }
+  };
+
+  const aura = rarityAura[item.rarity];
+
   return (
     <div style={{
       position: 'fixed',
       top: 0, left: 0, right: 0, bottom: 0,
-      backgroundColor: 'rgba(0,0,0,0.8)',
+      backgroundColor: 'rgba(0,0,0,0.85)',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       zIndex: 1000,
-      padding: '16px'
+      padding: '16px',
+      backdropFilter: 'blur(4px)'
     }}>
       <div style={{
         backgroundColor: '#1a2920',
         borderRadius: '16px',
         maxWidth: '400px',
         width: '100%',
-        border: '1px solid #2c3e30',
+        border: `1px solid ${isDiscovered ? aura.borderColor : '#2c3e30'}`,
+        boxShadow: isDiscovered ? `0 10px 30px -10px ${aura.borderColor}66` : 'none',
         overflow: 'hidden',
         position: 'relative'
       }}>
@@ -47,6 +74,7 @@ export const CollectionDetailModal: React.FC<CollectionDetailModalProps> = ({ it
         <div style={{
           width: '100%', aspectRatio: '1.5',
           backgroundColor: '#0f1712',
+          backgroundImage: isDiscovered ? aura.background : 'none',
           display: 'flex', justifyContent: 'center', alignItems: 'center',
           padding: '24px'
         }}>
@@ -54,7 +82,12 @@ export const CollectionDetailModal: React.FC<CollectionDetailModalProps> = ({ it
             <img 
               src={item.image} 
               alt={item.name} 
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'contain',
+                filter: aura.filter
+              }}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 if (target.src.endsWith('.webp')) {

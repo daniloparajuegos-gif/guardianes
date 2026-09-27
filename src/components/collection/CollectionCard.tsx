@@ -18,6 +18,30 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({ item, entry, onC
     legendary: '#C9A24D'
   };
 
+  const rarityAura = {
+    common: {
+      filter: 'drop-shadow(0 0 8px rgba(181, 178, 168, 0.35))',
+      background: 'radial-gradient(circle, rgba(181, 178, 168, 0.12) 0%, rgba(15, 23, 18, 0) 70%)',
+      cardGlow: 'none'
+    },
+    rare: {
+      filter: 'drop-shadow(0 0 12px rgba(99, 138, 107, 0.65)) drop-shadow(0 0 4px rgba(150, 205, 160, 0.35))',
+      background: 'radial-gradient(circle, rgba(99, 138, 107, 0.25) 0%, rgba(15, 23, 18, 0) 70%)',
+      cardGlow: '0 4px 18px rgba(99, 138, 107, 0.18)'
+    },
+    epic: {
+      filter: 'drop-shadow(0 0 16px rgba(85, 125, 165, 0.8)) drop-shadow(0 0 6px rgba(140, 190, 240, 0.45))',
+      background: 'radial-gradient(circle, rgba(85, 125, 165, 0.32) 0%, rgba(15, 23, 18, 0) 72%)',
+      cardGlow: '0 4px 22px rgba(85, 125, 165, 0.28)'
+    },
+    legendary: {
+      filter: 'drop-shadow(0 0 20px rgba(201, 162, 77, 0.95)) drop-shadow(0 0 8px rgba(255, 225, 130, 0.65))',
+      background: 'radial-gradient(circle, rgba(201, 162, 77, 0.38) 0%, rgba(15, 23, 18, 0) 75%)',
+      cardGlow: '0 4px 26px rgba(201, 162, 77, 0.38)'
+    }
+  };
+
+  const aura = rarityAura[item.rarity];
   const borderColor = isDiscovered ? rarityColors[item.rarity] : '#2c3e30';
 
   return (
@@ -28,13 +52,14 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({ item, entry, onC
         backgroundColor: '#1a2920',
         borderRadius: '12px',
         border: `1px solid ${borderColor}`,
+        boxShadow: isDiscovered ? aura.cardGlow : 'none',
         padding: '16px',
         cursor: 'pointer',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         position: 'relative',
-        transition: 'transform 0.2s',
+        transition: 'transform 0.2s, box-shadow 0.2s',
         opacity: isDiscovered ? 1 : 0.7
       }}
     >
@@ -42,6 +67,7 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({ item, entry, onC
         width: '100%',
         aspectRatio: '1',
         backgroundColor: '#0f1712',
+        backgroundImage: isDiscovered ? aura.background : 'none',
         borderRadius: '8px',
         marginBottom: '12px',
         display: 'flex',
@@ -54,7 +80,13 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({ item, entry, onC
           <img 
             src={item.image} 
             alt={item.name} 
-            style={{ width: '80%', height: '80%', objectFit: 'contain' }} 
+            style={{ 
+              width: '82%', 
+              height: '82%', 
+              objectFit: 'contain',
+              filter: aura.filter,
+              transition: 'filter 0.3s ease, transform 0.3s ease'
+            }} 
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               if (target.src.endsWith('.webp')) {
