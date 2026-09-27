@@ -56,7 +56,12 @@ export const CollectionDetailModal: React.FC<CollectionDetailModalProps> = ({ it
               alt={item.name} 
               style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               onError={(e) => {
-                (e.target as HTMLImageElement).src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="gray"><rect width="200" height="200" fill="%232c3e30"/><text x="100" y="100" fill="white" font-size="16" text-anchor="middle" alignment-baseline="middle">Imagen no disp.</text></svg>';
+                const target = e.target as HTMLImageElement;
+                if (target.src.endsWith('.webp')) {
+                  target.src = target.src.replace(/\.webp$/, '.png');
+                } else {
+                  target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="gray"><rect width="200" height="200" fill="%232c3e30"/><text x="100" y="100" fill="white" font-size="16" text-anchor="middle" alignment-baseline="middle">Imagen no disp.</text></svg>';
+                }
               }}
             />
           ) : (

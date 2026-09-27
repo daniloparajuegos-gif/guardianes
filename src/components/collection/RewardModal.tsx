@@ -68,7 +68,12 @@ export const RewardModal: React.FC<RewardModalProps> = ({ reward, onContinue, on
             alt={reward.name} 
             style={{ width: '70%', height: '70%', objectFit: 'contain' }}
             onError={(e) => {
-              (e.target as HTMLImageElement).src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="gray"><rect width="100" height="100" fill="%232c3e30"/><text x="50" y="50" fill="white" font-size="12" text-anchor="middle" alignment-baseline="middle">Objeto</text></svg>';
+              const target = e.target as HTMLImageElement;
+              if (target.src.endsWith('.webp')) {
+                target.src = target.src.replace(/\.webp$/, '.png');
+              } else {
+                target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="gray"><rect width="100" height="100" fill="%232c3e30"/><text x="50" y="50" fill="white" font-size="12" text-anchor="middle" alignment-baseline="middle">Objeto</text></svg>';
+              }
             }}
           />
         </div>
