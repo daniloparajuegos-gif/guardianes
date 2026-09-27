@@ -6,7 +6,7 @@ import { CollectionCard } from './collection/CollectionCard';
 import { CollectionFilters, FilterState } from './collection/CollectionFilters';
 import { CollectionProgress } from './collection/CollectionProgress';
 import { CollectionDetailModal } from './collection/CollectionDetailModal';
-import { Navbar } from './Navbar';
+
 
 export const CollectionPage: React.FC = () => {
   const { activeProfile } = useGuardian();
@@ -37,7 +37,6 @@ export const CollectionPage: React.FC = () => {
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0f1712', display: 'flex', flexDirection: 'column' }}>
-      <Navbar />
       
       <div style={{ flex: 1, padding: '24px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
         <h1 style={{ color: '#fff', margin: '0 0 24px 0', fontSize: '2rem' }}>Colección del Territorio</h1>
