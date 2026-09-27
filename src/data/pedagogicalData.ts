@@ -76,10 +76,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Para qué se extraen los huevos de las iguanas según el texto?',
         options: [
-          { id: 'a', text: 'Para fines de investigación biológica y cría en cautiverio.', feedback: '🔎 Revisa el texto: el texto especifica que no se trata de estudios científicos.' },
-          { id: 'b', text: 'Para consumo y comercialización.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto señala textualmente que se destinan al consumo y venta cocidos o preparados.' },
-          { id: 'c', text: 'Para protegerlos de los depredadores naturales de la zona.', feedback: '🔎 Observa de nuevo el primer y segundo párrafo.' },
-          { id: 'd', text: 'Para decorar artesanías locales y festivales.', feedback: '🔎 Vuelve al texto: se menciona claramente la alimentación y los ingresos.' }
+          { id: 'a', text: 'Para llevarlos a centros de investigación científica.', feedback: '🔎 El texto señala un uso cotidiano y comercial.' },
+          { id: 'b', text: 'Para protegerlos del ataque de otros animales del bosque.', feedback: '🔎 Vuelve al texto: se menciona claramente la alimentación y los ingresos.' },
+          { id: 'c', text: 'Para el consumo de las familias y la venta en el mercado.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto señala que se destinan a la comida y el comercio.' },
+          { id: 'd', text: 'Para usarlos de adorno en las fiestas y ferias del pueblo.', feedback: '🔎 Revisa el primer y segundo párrafo del relato.' }
         ],
         pedagogicalTip: 'La respuesta aparece de forma explícita en el primer y segundo párrafo.'
       },
@@ -90,10 +90,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué lesiones o consecuencias puede sufrir una iguana cuando es sometida a esta práctica?',
         options: [
-          { id: 'a', text: 'Únicamente cansancio temporal y pérdida de apetito durante unas horas.', feedback: '🔎 Observa la gravedad descrita en el primer párrafo.' },
-          { id: 'b', text: 'Pérdida de la cola que luego se regenera de forma natural.', feedback: '🔎 El texto habla de la apertura del abdomen y de sus consecuencias internas.' },
-          { id: 'c', text: 'Hemorragias, infecciones, daños internos, lesiones en el aparato reproductor y la muerte.', isCorrect: true, feedback: '🌿 ¡Exacto! Esas son las lesiones y consecuencias clínicas directas que describe el texto.' },
-          { id: 'd', text: 'Ceguera temporal y deshidratación leve.', feedback: '🔎 Vuelve a revisar las manipulaciones abdominales descritas en el texto.' }
+          { id: 'a', text: 'Heridas graves, infecciones internas y la muerte del animal.', isCorrect: true, feedback: '🌿 ¡Exacto! Esas son las lesiones directas que describe el texto.' },
+          { id: 'b', text: 'Cansancio temporal y pérdida de apetito por unas horas.', feedback: '🔎 Observa la gravedad descrita en el primer párrafo.' },
+          { id: 'c', text: 'Pérdida de la cola que luego vuelve a crecer sola.', feedback: '🔎 El texto habla de la apertura del abdomen y de sus consecuencias internas.' },
+          { id: 'd', text: 'Fiebre leve y debilidad por haber estado bajo el sol.', feedback: '🔎 Vuelve a revisar las graves manipulaciones que sufren las iguanas.' }
         ],
         pedagogicalTip: 'Localiza la lista de efectos fisiológicos directos en el primer párrafo.'
       },
@@ -104,10 +104,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué puede ocurrir con la capacidad reproductiva de una hembra que sobrevive a una intervención de este tipo?',
         options: [
-          { id: 'a', text: 'Aumenta su fecundidad duplicando el número de huevos en el año siguiente.', feedback: '🔎 El texto no menciona mejoras biológicas sino perjuicios graves.' },
-          { id: 'b', text: 'Su capacidad de reproducirse puede verse afectada o quedar totalmente incapacitada.', isCorrect: true, feedback: '🌿 ¡Muy bien! El texto resalta que las sobrevivientes sufren secuelas en su aparato reproductor.' },
-          { id: 'c', text: 'Permanece intacta ya que las heridas cicatrizan de inmediato sin daño interno.', feedback: '🔎 El texto aclara que sufren daños graves en su aparato reproductor.' },
-          { id: 'd', text: 'Cambia de hábitat pero continúa poniendo huevos normalmente.', feedback: '🔎 Revisa el final del primer párrafo sobre la reproducción.' }
+          { id: 'a', text: 'Mejora su fertilidad y pone el doble de huevos al año siguiente.', feedback: '🔎 El texto no menciona mejoras biológicas sino perjuicios graves.' },
+          { id: 'b', text: 'Sana rápidamente sin sufrir ningún daño en sus órganos internos.', feedback: '🔎 El texto aclara que sufren daños graves en su aparato reproductor.' },
+          { id: 'c', text: 'Cambia de lugar en el bosque pero sigue poniendo huevos con normalidad.', feedback: '🔎 Revisa el final del primer párrafo sobre la reproducción.' },
+          { id: 'd', text: 'Su capacidad de reproducirse puede verse afectada o anularse.', isCorrect: true, feedback: '🌿 ¡Muy bien! El texto resalta que sufren secuelas en su aparato reproductor.' }
         ],
         pedagogicalTip: 'Enfócate en la frase final del párrafo 1 y el inicio del párrafo 2.'
       }
@@ -120,10 +120,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué la extracción de huevos de muchas hembras puede afectar a toda la población de iguanas?',
         options: [
-          { id: 'a', text: 'Porque al eliminar o inutilizar a las reproductoras, disminuye drásticamente el relevo generacional de crías.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Si no nacen nuevas generaciones, la población envejecerá y colapsará numéricamente.' },
-          { id: 'b', text: 'Porque las demás iguanas macho deciden migrar hacia otros departamentos del país.', feedback: '🔎 Relaciona el concepto biológico de hembra reproductora con el tamaño poblacional futuro.' },
-          { id: 'c', text: 'Porque las iguanas cambian su dieta vegetal a una dieta carnívora por estrés.', feedback: '🔎 Revisa la conexión causal que propone el texto entre individuos fértiles y tamaño poblacional.' },
-          { id: 'd', text: 'Porque los depredadores dejan de cazar en esa zona específica.', feedback: '🔎 Busca la relación entre la reproducción y el mantenimiento de la especie a lo largo del tiempo.' }
+          { id: 'a', text: 'Porque los machos abandonan la zona en busca de otros bosques lejanos.', feedback: '🔎 Relaciona el papel de las hembras con el número de crías futuras.' },
+          { id: 'b', text: 'Porque al perder a las hembras, nacen muchas menos crías en el futuro.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Si no nacen crías, la población entera decae.' },
+          { id: 'c', text: 'Porque las iguanas cambian su comida de hojas por insectos dañinos.', feedback: '🔎 Revisa la conexión entre hembras reproductoras y tamaño poblacional.' },
+          { id: 'd', text: 'Porque los depredadores dejan de visitar el monte al no hallar iguanas.', feedback: '🔎 Piensa en qué pasa si no nacen crías.' }
         ],
         pedagogicalTip: 'Conecta la muerte de hembras fértiles con el número de crías futuras.'
       },
@@ -134,10 +134,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: 'Si una hembra sobrevive pero queda con daños reproductivos, ¿por qué su supervivencia no significa necesariamente que la población se haya recuperado?',
         options: [
-          { id: 'a', text: 'Porque una iguana que no puede reproducirse ya no aporta nuevos individuos a las futuras generaciones.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Para que la población se mantenga activa se requiere la capacidad biológica de generar crías.' },
-          { id: 'b', text: 'Porque las iguanas heridas atraen plagas al bosque que destruyen los árboles.', feedback: '🔎 Piensa en la diferencia entre la vida de un individuo y el futuro de la especie.' },
-          { id: 'c', text: 'Porque las hembras sin huevos consumen el doble de hojas secas del ecosistema.', feedback: '🔎 Analiza el rol ecológico reproductivo que explica el autor.' },
-          { id: 'd', text: 'Porque la ley no reconoce a animales heridos dentro de los censos silvestres.', feedback: '🔎 Reflexiona sobre la capacidad biológica de la especie para sostenerse en el tiempo.' }
+          { id: 'a', text: 'Porque una iguana que no puede reproducirse ya no aporta nuevas crías.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Para que la población viva se necesitan crías.' },
+          { id: 'b', text: 'Porque las iguanas enfermas transmiten bacterias a los árboles vecinos.', feedback: '🔎 Piensa en la diferencia entre una sola iguana y la especie entera.' },
+          { id: 'c', text: 'Porque las hembras lastimadas comen el doble de hojas y agotan el pasto.', feedback: '🔎 Analiza la función de la reproducción para mantener la especie.' },
+          { id: 'd', text: 'Porque las demás iguanas del grupo rechazan a las hembras heridas.', feedback: '🔎 Reflexiona sobre la capacidad biológica de tener descendencia.' }
         ],
         pedagogicalTip: 'Distingue entre la supervivencia individual y la función reproductora poblacional.'
       },
@@ -148,10 +148,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre la extracción de huevos, la muerte o infertilidad de las hembras y el número de iguanas de las siguientes generaciones?',
         options: [
-          { id: 'a', text: 'Es una relación directa de causa y efecto: a mayor extracción e infertilidad, menor será el número de crías en el futuro.', isCorrect: true, feedback: '🌿 ¡Exacto! Se trata de una espiral descendente en la capacidad de renovación de la especie.' },
-          { id: 'b', text: 'No existe relación, ya que las iguanas ponen huevos espontáneamente en cualquier época sin apareamiento.', feedback: '🔎 Revisa cómo la pérdida de hembras impacta la natalidad.' },
-          { id: 'c', text: 'Aumenta el número de crías porque las pocas iguanas sobrevivientes ponen nidadas gigantes.', feedback: '🔎 El texto advierte sobre la reducción de individuos que aportan crías.' },
-          { id: 'd', text: 'La relación es aleatoria y depende únicamente de la temporada de lluvias.', feedback: '🔎 Conecta las pistas que da el autor en el párrafo 2.' }
+          { id: 'a', text: 'No existe relación, porque las iguanas nacen solas sin necesidad de huevos.', feedback: '🔎 Revisa cómo la pérdida de hembras impacta la natalidad.' },
+          { id: 'b', text: 'Aumenta el número de crías porque las sobrevivientes ponen nidos gigantes.', feedback: '🔎 El texto advierte sobre la reducción de crías.' },
+          { id: 'c', text: 'A mayor extracción y daño a las hembras, menor será el número de crías.', isCorrect: true, feedback: '🌿 ¡Exacto! Se trata de una relación directa de causa y efecto.' },
+          { id: 'd', text: 'La cantidad de crías solo depende de si llueve mucho o poco en el año.', feedback: '🔎 Conecta las pistas que da el autor en el párrafo 2.' }
         ],
         pedagogicalTip: 'Establece la cadena de causalidad entre extracción, daño reproductor y declive demográfico.'
       }
@@ -164,10 +164,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: 'Si encuentras personas comercializando huevos obtenidos mediante esta práctica, ¿qué debería hacer un Guardián y por qué?',
         options: [
-          { id: 'a', text: 'Comprar todos los huevos disponibles para salvar a las iguanas que quedan.', feedback: '🔎 Pensamiento crítico: comprar fomenta el comercio y la demanda de nuevas capturas.' },
-          { id: 'b', text: 'No comprar, dialogar pedagógicamente sobre el daño a la especie e informar a las autoridades ambientales protectoras.', isCorrect: true, feedback: '🌿 ¡Decisión sabia y coherente! Detiene la demanda económica y activa la protección institucional.' },
-          { id: 'c', text: 'Ignorar la situación porque es una costumbre de la zona que no se puede cambiar.', feedback: '🔎 El Guardián asume un rol activo de cuidado del territorio sustentado en la evidencia.' },
-          { id: 'd', text: 'Enfrentar físicamente a las personas en el mercado sin dialogar.', feedback: '🔎 La intervención del Guardián debe ser pedagógica, responsable y a través de los canales adecuados.' }
+          { id: 'a', text: 'Comprar todos los huevos del puesto para que nadie más se los coma.', feedback: '🔎 Pensamiento crítico: comprar fomenta el comercio y nuevas capturas.' },
+          { id: 'b', text: 'Ignorar la venta porque es una costumbre antigua que no se puede cambiar.', feedback: '🔎 El Guardián asume un rol activo de cuidado del territorio.' },
+          { id: 'c', text: 'Pelear con los vendedores en el mercado para quitarles los canastos.', feedback: '🔎 La intervención del Guardián debe ser pacífica y pedagógica.' },
+          { id: 'd', text: 'No comprar, explicar con respeto el daño ambiental y avisar a las autoridades.', isCorrect: true, feedback: '🌿 ¡Decisión sabia y coherente! Detiene la compra y busca protección.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Justifica tu decisión analizando cómo cortar la demanda sin generar conflictos violentos.'
@@ -179,10 +179,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué alternativas podrían promoverse para disminuir la necesidad de obtener ingresos mediante la extracción y comercialización de huevos?',
         options: [
-          { id: 'a', text: 'Promover proyectos comunitarios de avicultura sostenible, huertas ecológicas, turismo de naturaleza y alternativas productivas locales.', isCorrect: true, feedback: '🌿 ¡Brillante! Resuelve la necesidad económica de las familias sin vulnerar la fauna silvestre.' },
-          { id: 'b', text: 'Prohibir la venta de cualquier alimento en el municipio sin ofrecer soluciones económicas.', feedback: '🔎 Las medidas sostenibles deben considerar el bienestar de las familias campesinas.' },
-          { id: 'c', text: 'Extraer huevos de otras especies silvestres en lugar de iguanas.', feedback: '🔎 Eso solo trasladaría el daño a otro componente de la fauna.' },
-          { id: 'd', text: 'Subsidiar la compra de piedras e hilo para hacer heridas más limpias a las iguanas.', feedback: '🔎 El objetivo es detener la crueldad y el daño biológico, no perpetuarlo.' }
+          { id: 'a', text: 'Prohibir la venta de todo tipo de comida en el pueblo sin dar otra opción.', feedback: '🔎 Las soluciones deben apoyar la economía de las familias campesinas.' },
+          { id: 'b', text: 'Promover la cría de gallinas, huertas caseras y pequeños negocios locales.', isCorrect: true, feedback: '🌿 ¡Brillante! Da ingresos a las familias sin maltratar la fauna.' },
+          { id: 'c', text: 'Buscar huevos de otras aves silvestres para venderlos en vez de iguanas.', feedback: '🔎 Eso solo trasladaría el daño a otro animal silvestre.' },
+          { id: 'd', text: 'Comprar hilos finos para que los cazadores cosan mejor a las iguanas.', feedback: '🔎 El objetivo es frenar el daño, no continuar con la práctica.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Plantea alternativas económicas que armonicen los medios de vida humanos con la conservación.'
@@ -194,10 +194,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué proteger a las hembras reproductoras es importante para las futuras generaciones y para el equilibrio del ecosistema?',
         options: [
-          { id: 'a', text: 'Porque las hembras reproductoras garantizan la continuidad de la especie, dispersión de semillas y el equilibrio de la red trófica.', isCorrect: true, feedback: '🌿 ¡Excelente valoración crítica! Entiendes la función ecológica integral del reptil en el ecosistema.' },
-          { id: 'b', text: 'Únicamente porque tienen colores más vistosos para las fotografías de los visitantes.', feedback: '🔎 Valora el papel ecológico y la supervivencia biológica.' },
-          { id: 'c', text: 'Porque impiden que llueva en exceso durante los meses de verano.', feedback: '🔎 Recuerda el rol real biológico de las iguanas en la vegetación y la cadena trófica.' },
-          { id: 'd', text: 'No tiene importancia ecológica real, solo tiene valor turístico.', feedback: '🔎 Reflexiona sobre la interdependencia entre especies y el bosque.' }
+          { id: 'a', text: 'Porque garantizan nuevas generaciones y ayudan a regar semillas en el monte.', isCorrect: true, feedback: '🌿 ¡Excelente valoración crítica! Entiendes su función en el bosque.' },
+          { id: 'b', text: 'Solo son valiosas porque tienen colores bonitos para tomarles fotos.', feedback: '🔎 Valora el papel ecológico y la supervivencia biológica.' },
+          { id: 'c', text: 'Porque su presencia evita que caigan tormentas fuertes sobre los pueblos.', feedback: '🔎 Recuerda el rol real biológico de las iguanas en la vegetación.' },
+          { id: 'd', text: 'No tienen importancia para la naturaleza, solo sirven de alimento humano.', feedback: '🔎 Reflexiona sobre el valor de cada especie en el ecosistema.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Argumenta relacionando la función ecológica de la iguana con el equilibrio de todo el hábitat.'
@@ -249,10 +249,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué animales encontraron?',
         options: [
-          { id: 'a', text: 'Peces bocachicos y bagres del río Magdalena.', feedback: '🔎 Vuelve al texto: se mencionan reptiles específicos de agua dulce.' },
-          { id: 'b', text: 'Icoteas o galápagos.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto nombra de manera explícita icoteas o galápagos.' },
-          { id: 'c', text: 'Chigüiros y nutrias de río.', feedback: '🔎 Lee con atención la primera oración del caso.' },
-          { id: 'd', text: 'Aves migratorias de la ciénaga.', feedback: '🔎 El texto habla de galápagos o icoteas.' }
+          { id: 'a', text: 'Tortugas icoteas en la ciénaga.', isCorrect: true, feedback: '🌿 ¡Correcto! Las icoteas o galápagos eran los animales capturados.' },
+          { id: 'b', text: 'Peces bocachicos y bagres del río.', feedback: '🔎 Revisa qué animal acuático con caparazón se menciona.' },
+          { id: 'c', text: 'Chigüiros descansando en la orilla.', feedback: '🔎 El texto habla de animales que nadan y desovan.' },
+          { id: 'd', text: 'Patos pisingos y garzas blancas.', feedback: '🔎 Observa el animal central de la misión.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera línea de la lectura.'
       },
@@ -263,10 +263,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Dónde estaban siendo capturados?',
         options: [
-          { id: 'a', text: 'En una ciénaga.', isCorrect: true, feedback: '🌿 ¡Exacto! Los hechos ocurren en un ecosistema cenagoso.' },
-          { id: 'b', text: 'En la plaza central de mercado.', feedback: '🔎 ¿En qué lugar natural los hallaron los Guardianes?' },
-          { id: 'c', text: 'En un zoocriadero certificado por el gobierno.', feedback: '🔎 Revisa el texto: estaban capturándolos libremente en la naturaleza.' },
-          { id: 'd', text: 'En un laboratorio de biología marina.', feedback: '🔎 El texto sitúa el caso en una ciénaga.' }
+          { id: 'a', text: 'En la plaza principal de mercado del pueblo.', feedback: '🔎 Busca el lugar natural donde ocurrió el hallazgo.' },
+          { id: 'b', text: 'En una piscina de cría artificial legal.', feedback: '🔎 El texto describe una captura en ambiente natural.' },
+          { id: 'c', text: 'En un canal de riego dentro de un cultivo.', feedback: '🔎 La lectura sitúa la acción en la ciénaga.' },
+          { id: 'd', text: 'En una ciénaga del territorio.', isCorrect: true, feedback: '🌿 ¡Exacto! Los animales eran extraídos directamente del humedal.' }
         ],
         pedagogicalTip: 'Identifica el escenario geográfico en el primer enunciado.'
       },
@@ -277,10 +277,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué tipo de individuos preocupó especialmente a los Guardianes?',
         options: [
-          { id: 'a', text: 'Los machos más pequeños recién nacidos.', feedback: '🔎 Observa la segunda oración: ¿a quiénes se destaca?' },
-          { id: 'b', text: 'Las hembras adultas.', isCorrect: true, feedback: '🌿 ¡Muy bien! El texto resalta que había hembras adultas reproductoras.' },
-          { id: 'c', text: 'Las aves rapaces que sobrevolaban la ciénaga.', feedback: '🔎 Concéntrate en los individuos capturados.' },
-          { id: 'd', text: 'Los animales enfermos o con caparazón roto.', feedback: '🔎 El texto especifica: "Entre los animales había hembras adultas".' }
+          { id: 'a', text: 'Los machos jóvenes que apenas aprenden a nadar.', feedback: '🔎 El texto hace énfasis especial en las reproductoras.' },
+          { id: 'b', text: 'Las tortugas hembras en edad de reproducirse.', isCorrect: true, feedback: '🌿 ¡Muy bien! Capturar hembras adultas pone en riesgo a la especie.' },
+          { id: 'c', text: 'Las aves que intentaban comerse a las tortugas.', feedback: '🔎 La preocupación se centró en las icoteas hembras.' },
+          { id: 'd', text: 'Los peces que quedaban atrapados en las redes.', feedback: '🔎 Revisa qué tipo de individuos alarmó a los Guardianes.' }
         ],
         pedagogicalTip: 'Localiza la mención del tipo biológico de individuo en el segundo enunciado.'
       }
@@ -293,10 +293,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué capturar hembras reproductoras puede tener efectos sobre las generaciones futuras?',
         options: [
-          { id: 'a', text: 'Porque las hembras son las encargadas de desovar y garantizar el nacimiento de las nuevas crías en el humedal.', isCorrect: true, feedback: '🌿 ¡Deducción impecable! Cada hembra extraída interrumpe cientos de posibles nacimientos futuros.' },
-          { id: 'b', text: 'Porque las hembras adultas son las únicas que saben nadar contra la corriente.', feedback: '🔎 Enfócate en el significado de "reproducción" y "nuevas generaciones".' },
-          { id: 'c', text: 'Porque sin hembras los huevos se pudren en los árboles.', feedback: '🔎 Recuerda que las icoteas anidan en la tierra o arena de las riberas.' },
-          { id: 'd', text: 'Porque el caparazón de la hembra atrae la lluvia a la ciénaga.', feedback: '🔎 Conecta el concepto biológico con la estabilidad poblacional.' }
+          { id: 'a', text: 'Porque las hembras adultas son las únicas que saben buscar comida en el fondo.', feedback: '🔎 Relaciona el rol de la hembra con el nacimiento de nuevas crías.' },
+          { id: 'b', text: 'Porque los machos dejan de comer y mueren de pena al quedar solos en el agua.', feedback: '🔎 Piensa en la consecuencia biológica sobre la población.' },
+          { id: 'c', text: 'Porque al quitar las hembras, no habrá quién ponga huevos ni nazcan crías.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Sin hembras que pongan huevos se acaba la especie.' },
+          { id: 'd', text: 'Porque las tortugas hembras son las que avisan cuándo sube el nivel del agua.', feedback: '🔎 El problema clave está en la pérdida de huevos y crías.' }
         ],
         pedagogicalTip: 'Infiere cómo la falta de nacimientos merma la población con el paso del tiempo.'
       },
@@ -307,10 +307,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué puede ocurrir si la cantidad de animales capturados supera la capacidad de reproducción de la población?',
         options: [
-          { id: 'a', text: 'La población sufrirá un declive progresivo hasta el colapso o extinción local.', isCorrect: true, feedback: '🌿 ¡Excelente análisis! Cuando la tasa de extracción supera a la tasa de natalidad, la población decae.' },
-          { id: 'b', text: 'La ciénaga se congelará por falta de calor biológico.', feedback: '🔎 Analiza el balance entre tasa de pérdida y tasa de reemplazo poblacional.' },
-          { id: 'c', text: 'Las icoteas aprenderán a poner huevos bajo el agua para esconderse.', feedback: '🔎 Piensa en las consecuencias biológicas reales sobre el número de individuos.' },
-          { id: 'd', text: 'Los peces reemplazarán genéticamente a los galápagos.', feedback: '🔎 Evalúa qué sucede numéricamente con una especie sometida a sobreexplotación.' }
+          { id: 'a', text: 'El agua de la ciénaga se volverá salada por la falta de movimiento.', feedback: '🔎 Piensa en el número de animales, no en la química del agua.' },
+          { id: 'b', text: 'Las tortugas sobrevivientes pondrán huevos de noche para no ser vistas.', feedback: '🔎 La capacidad de reproducirse tiene límites naturales.' },
+          { id: 'c', text: 'Los peces del caño empezarán a tener caparazón para protegerse.', feedback: '🔎 Enfócate en el tamaño de la población de icoteas.' },
+          { id: 'd', text: 'La cantidad de tortugas disminuirá hasta que desaparezcan de ese lugar.', isCorrect: true, feedback: '🌿 ¡Exacto! Si se saca más de lo que nace, la población se agota.' }
         ],
         pedagogicalTip: 'Aplica el balance matemático natural: extracción mayor a natalidad = reducción.'
       },
@@ -321,10 +321,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre cacería y recuperación poblacional?',
         options: [
-          { id: 'a', text: 'Una cacería excesiva y desregulada dificulta o anula la capacidad natural de la especie para recuperarse.', isCorrect: true, feedback: '🌿 ¡Pista descifrada! La capacidad biológica de regeneración tiene límites que la cacería continua desborda.' },
-          { id: 'b', text: 'La cacería acelera la recuperación porque nacen el triple de tortugas inmediatamente.', feedback: '🔎 El texto aclara que la recuperación puede hacerse "más difícil".' },
-          { id: 'c', text: 'No existe relación ya que la naturaleza es infinita e inmune al ser humano.', feedback: '🔎 Revisa la última frase del texto sobre los límites de recuperación.' },
-          { id: 'd', text: 'La recuperación de una población solo depende de los pescadores del río.', feedback: '🔎 Relaciona el ritmo de captura humana con los ciclos biológicos de maduración.' }
+          { id: 'a', text: 'La cacería ayuda a que nazcan muchas más tortugas cada semana.', feedback: '🔎 Cazar en exceso reduce la población, no la aumenta.' },
+          { id: 'b', text: 'Si la cacería es excesiva, la especie no alcanza a recuperarse a tiempo.', isCorrect: true, feedback: '🌿 ¡Muy bien! La tasa de captura supera el ritmo de reproducción.' },
+          { id: 'c', text: 'No existe relación, porque los animales del agua nunca se acaban.', feedback: '🔎 Toda especie tiene un límite si se le extrae sin control.' },
+          { id: 'd', text: 'La recuperación de las tortugas depende únicamente del clima del verano.', feedback: '🔎 La actividad humana influye directamente en su supervivencia.' }
         ],
         pedagogicalTip: 'Relaciona la velocidad de extracción humana con la lentitud de los ciclos de reproducción natural.'
       }
@@ -337,10 +337,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué decisión debería tomar un Guardián ante esta situación?',
         options: [
-          { id: 'a', text: 'Promover acuerdos comunitarios de veda, proteger las áreas de desove y sensibilizar sobre la liberación de hembras fértiles.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! Construye gobernanza comunitaria y protege el ciclo vital.' },
-          { id: 'b', text: 'Apropiarse de los animales para venderlos a un precio más alto en la ciudad.', feedback: '🔎 Un Guardián del Bosque vela por la integridad del ecosistema, no por el lucro.' },
-          { id: 'c', text: 'Destruir todas las canoas del humedal durante la noche sin hablar con nadie.', feedback: '🔎 El diálogo y los acuerdos comunitarios son la base de la conservación duradera.' },
-          { id: 'd', text: 'No intervenir porque el bienestar de los animales acuáticos no afecta el territorio.', feedback: '🔎 Todo en la ciénaga está conectado; el Guardián tiene una misión de custodia.' }
+          { id: 'a', text: 'Hacer acuerdos de veda con la comunidad y cuidar los sitios de desove.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! Los acuerdos comunitarios protegen la especie.' },
+          { id: 'b', text: 'Vender las tortugas a turistas para recaudar fondos para la escuela.', feedback: '🔎 Un Guardián no promueve el comercio de fauna silvestre.' },
+          { id: 'c', text: 'Romper las herramientas de los pescadores a escondidas en la noche.', feedback: '🔎 El diálogo y los acuerdos son el camino del Guardián.' },
+          { id: 'd', text: 'No hacer nada porque los animales del agua no tienen importancia.', feedback: '🔎 El Guardián protege el equilibrio de los humedales.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Valora medidas de concertación comunitaria como vedas y protección de nidadas.'
@@ -352,10 +352,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué alternativas podrían disminuir la presión de caza sobre las icoteas?',
         options: [
-          { id: 'a', text: 'Diversificar las fuentes de proteína comunitaria con piscicultura sostenible, zoocría legal regulada y agricultura familiar.', isCorrect: true, feedback: '🌿 ¡Excelente propuesta! Da alternativas reales de seguridad alimentaria a la comunidad.' },
-          { id: 'b', text: 'Obligar a la comunidad a consumir únicamente productos procesados traídos del exterior.', feedback: '🔎 Las alternativas deben ser accesibles, locales y sostenibles.' },
-          { id: 'c', text: 'Drenar la ciénaga para que las tortugas se vayan a otro departamento.', feedback: '🔎 Destruir el humedal causaría un desastre ecológico total.' },
-          { id: 'd', text: 'Aumentar la captura a toda hora para acabarlas antes de que termine el mes.', feedback: '🔎 Eso provocaría la extinción inmediata de la especie en el humedal.' }
+          { id: 'a', text: 'Obligar a todos los habitantes a comprar carne enlatada muy costosa.', feedback: '🔎 Las alternativas deben ser viables para las familias locales.' },
+          { id: 'b', text: 'Secar la ciénaga con motobombas para que las tortugas se marchen.', feedback: '🔎 Eso destruiría por completo el ecosistema del humedal.' },
+          { id: 'c', text: 'Apoyar la cría de peces en estanques y la siembra de alimentos familiares.', isCorrect: true, feedback: '🌿 ¡Brillante! Ofrece comida sana sin agotar la ciénaga.' },
+          { id: 'd', text: 'Cazar todas las icoteas de una vez para salir rápido de ellas.', feedback: '🔎 El objetivo es conservar la fauna, no acabarla.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Propón alternativas realistas de soberanía alimentaria comunitaria.'
@@ -367,10 +367,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué es necesario pensar en las futuras generaciones al tomar decisiones ambientales?',
         options: [
-          { id: 'a', text: 'Porque el bienestar de los hijos y nietos de la región dependerá de que los ecosistemas sigan vivos y prestando servicios.', isCorrect: true, feedback: '🌿 ¡Postura ética profunda! La sostenibilidad significa no agotar hoy lo que otros necesitarán mañana.' },
-          { id: 'b', text: 'Porque está de moda hablar del futuro en los discursos políticos.', feedback: '🔎 El sentido pedagógico radica en la responsabilidad intergeneracional real.' },
-          { id: 'c', text: 'Para que los jóvenes del futuro no tengan que estudiar ciencias naturales.', feedback: '🔎 Reflexiona sobre la justicia ambiental y el acceso a recursos naturales sanos.' },
-          { id: 'd', text: 'No es necesario pensar en el futuro, solo importa el beneficio económico de hoy.', feedback: '🔎 Ese pensamiento cortoplacista es el que genera los desastres ecológicos actuales.' }
+          { id: 'a', text: 'Solo para cumplir con una tarea obligatoria de ciencias naturales.', feedback: '🔎 Piensa en el bienestar a largo plazo de la comunidad.' },
+          { id: 'b', text: 'Porque las leyes exigen hablar del futuro en los periódicos locales.', feedback: '🔎 El cuidado ambiental nace del compromiso con la vida.' },
+          { id: 'c', text: 'No es necesario pensar en el futuro si hoy tenemos bastante alimento.', feedback: '🔎 Agotar hoy los recursos deja sin sustento al mañana.' },
+          { id: 'd', text: 'Porque los recursos naturales deben alcanzar para los hijos y nietos.', isCorrect: true, feedback: '🌿 ¡Excelente reflexión! La sostenibilidad asegura el futuro.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Fundamenta el concepto de justicia intergeneracional y sostenibilidad ecológica.'
@@ -422,10 +422,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué animales aparecen en el texto?',
         options: [
-          { id: 'a', text: 'Chigüiros, pisingos y pequeños mamíferos.', isCorrect: true, feedback: '🌿 ¡Correcto! Esas son exactamente las especies mencionadas en la primera oración.' },
-          { id: 'b', text: 'Jaguares, serpientes y osos perezosos.', feedback: '🔎 Revisa el inicio del texto: ¿de qué animales hallaron huellas?' },
-          { id: 'c', text: 'Perros y gatos callejeros.', feedback: '🔎 Fíjate en los animales silvestres mencionados en el recorrido.' },
-          { id: 'd', text: 'Bocachicos y mojarras de agua dulce.', feedback: '🔎 Revisa la primera frase del texto.' }
+          { id: 'a', text: 'Jaguares, serpientes y osos perezosos.', feedback: '🔎 Revisa qué animales acuáticos y de orilla se describen.' },
+          { id: 'b', text: 'Perros y gatos callejeros del pueblo.', feedback: '🔎 El texto habla de fauna silvestre de la sabana y el agua.' },
+          { id: 'c', text: 'Tiburones y delfines de agua salada.', feedback: '🔎 El contexto es de agua dulce y orillas ribereñas.' },
+          { id: 'd', text: 'Chigüiros, patos pisingos y pequeños mamíferos.', isCorrect: true, feedback: '🌿 ¡Correcto! Esos son los animales que aparecen en el texto.' }
         ],
         pedagogicalTip: 'La lista de fauna aparece al inicio del texto.'
       },
@@ -436,10 +436,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué actividad encontraron los Guardianes?',
         options: [
-          { id: 'a', text: 'Evidencias de cacería.', isCorrect: true, feedback: '🌿 ¡Exacto! El texto afirma literalmente: "También encontraron evidencias de cacería".' },
-          { id: 'b', text: 'Excavación de pozos petroleros.', feedback: '🔎 Localiza la actividad humana específica descrita en el segundo enunciado.' },
-          { id: 'c', text: 'Turismo ecológico fotográfico guiado.', feedback: '🔎 Vuelve al texto: se encontraron rastros de extracción de fauna.' },
-          { id: 'd', text: 'Construcción de una autopista pavimentada.', feedback: '🔎 Lee la segunda frase del caso.' }
+          { id: 'a', text: 'Trabajos para perforar pozos de petróleo.', feedback: '🔎 Revisa la actividad descrita en los primeros párrafos.' },
+          { id: 'b', text: 'Huellas y trampas que mostraban cacería.', isCorrect: true, feedback: '🌿 ¡Exacto! Los Guardianes encontraron rastros de cacería repetida.' },
+          { id: 'c', text: 'Excursiones escolares con cámaras de fotos.', feedback: '🔎 Los rastros eran de personas atrapando animales.' },
+          { id: 'd', text: 'Construcción de una carretera pavimentada.', feedback: '🔎 El problema encontrado fue la extracción de fauna.' }
         ],
         pedagogicalTip: 'Observa la segunda oración de la lectura.'
       },
@@ -450,10 +450,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué representa cada animal cazado para la población?',
         options: [
-          { id: 'a', text: 'Representa un individuo menos, con un efecto mayor cuando la extracción ocurre repetidamente.', isCorrect: true, feedback: '🌿 ¡Muy bien! Has identificado la cita textual exacta del texto.' },
-          { id: 'b', text: 'Representa más espacio y alimento abundante para los demás.', feedback: '🔎 El autor recalca que disminuye el número necesario para los ciclos de vida.' },
-          { id: 'c', text: 'Representa una mejora en la genética de la manada.', feedback: '🔎 Revisa la tercera oración del texto.' },
-          { id: 'd', text: 'No representa ningún cambio cuantificable.', feedback: '🔎 El texto destaca que cada individuo cuenta dentro del grupo.' }
+          { id: 'a', text: 'Más espacio libre y alimento para los animales que quedan.', feedback: '🔎 Perder animales daña la población, no la ayuda.' },
+          { id: 'b', text: 'Una mejora en la fuerza y rapidez de las crías sobrevivientes.', feedback: '🔎 La cacería continua no mejora la especie, la reduce.' },
+          { id: 'c', text: 'Un animal menos, lo cual debilita al grupo si ocurre seguido.', isCorrect: true, feedback: '🌿 ¡Muy bien! Cada individuo cuenta para mantener a la manada.' },
+          { id: 'd', text: 'Ningún cambio importante en la vida natural del territorio.', feedback: '🔎 El texto señala que las extracciones repetidas dejan huella.' }
         ],
         pedagogicalTip: 'Identifica la explicación en la tercera frase del texto.'
       }
@@ -466,10 +466,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué la cacería repetida puede reducir una población?',
         options: [
-          { id: 'a', text: 'Porque la tasa de mortalidad constante supera el tiempo natural necesario para que nazcan y crezcan nuevos ejemplares.', isCorrect: true, feedback: '🌿 ¡Exacto! La extracción continua desangra la estructura demográfica de la población.' },
-          { id: 'b', text: 'Porque los animales deciden no alimentarse por tristeza.', feedback: '🔎 Piensa en la relación matemática entre nacimientos y muertes continuas.' },
-          { id: 'c', text: 'Porque los cazadores se quedan a vivir en las cuevas de los animales.', feedback: '🔎 Infiere a partir del impacto acumulativo de la extracción repetida.' },
-          { id: 'd', text: 'Porque el olor a pólvora cambia el clima de la región Caribe.', feedback: '🔎 Evalúa el impacto biológico sobre el tamaño numérico de la población.' }
+          { id: 'a', text: 'Porque se cazan más animales de los que alcanzan a nacer y crecer.', isCorrect: true, feedback: '🌿 ¡Gran deducción! La velocidad de caza supera a la de reproducción.' },
+          { id: 'b', text: 'Porque los animales se asustan tanto que dejan de alimentarse.', feedback: '🔎 La razón principal es matemática: mueren más de los que nacen.' },
+          { id: 'c', text: 'Porque los cazadores se quedan a vivir en las madrigueras vacías.', feedback: '🔎 Piensa en el ciclo biológico de nacimiento y reemplazo.' },
+          { id: 'd', text: 'Porque el ruido de los disparos cambia el clima de la región.', feedback: '🔎 Conecta la pérdida constante de individuos con la población.' }
         ],
         pedagogicalTip: 'Analiza el efecto acumulativo: una extracción repetida no da tregua al ciclo biológico.'
       },
@@ -480,10 +480,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué puede ocurrir si se cazan muchos individuos reproductores?',
         options: [
-          { id: 'a', text: 'Se rompe el ciclo de reemplazo generacional y la población colapsa por falta de crías.', isCorrect: true, feedback: '🌿 ¡Gran análisis! Los reproductores son el motor del futuro biológico de cualquier especie.' },
-          { id: 'b', text: 'Los animales juveniles aprenden a poner huevos sin necesidad de adultos.', feedback: '🔎 Recuerda que los mamíferos necesitan adultos maduros para concebir y cuidar a las crías.' },
-          { id: 'c', text: 'Aumenta el número de árboles maderables en la ribera.', feedback: '🔎 Concéntrate en el destino de la especie afectada.' },
-          { id: 'd', text: 'Los cazadores son premiados automáticamente por el municipio.', feedback: '🔎 Revisa las consecuencias biológicas deducidas del texto.' }
+          { id: 'a', text: 'Los animales jóvenes aprenden a tener crías antes de tiempo.', feedback: '🔎 Cada animal necesita llegar a su edad madura para reproducirse.' },
+          { id: 'b', text: 'Crecen más árboles maderables en las orillas de los caños.', feedback: '🔎 La pregunta se refiere a lo que ocurre con los animales.' },
+          { id: 'c', text: 'Se corta el nacimiento de crías y la población puede acabarse.', isCorrect: true, feedback: '🌿 ¡Exacto! Sin adultos que tengan crías, la población desaparece.' },
+          { id: 'd', text: 'Los cazadores reciben un premio por limpiar el monte de fauna.', feedback: '🔎 Cazar reproductores causa un daño grave a la naturaleza.' }
         ],
         pedagogicalTip: 'Vincula la pérdida de machos y hembras maduros con la natalidad.'
       },
@@ -494,10 +494,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué la capacidad de recuperación no es ilimitada?',
         options: [
-          { id: 'a', text: 'Porque cada especie tiene tiempos biológicos fijos de gestación, crecimiento y límites de recursos en su hábitat.', isCorrect: true, feedback: '🌿 ¡Exacto! La biología no es instantánea; tiene ritmos y límites que la presión humana puede agotar.' },
-          { id: 'b', text: 'Porque la luna llena solo ocurre una vez cada dos años.', feedback: '🔎 Piensa en los factores biológicos que limitan la velocidad con que una especie tiene crías.' },
-          { id: 'c', text: 'Porque los animales prefieren descansar en vez de reproducirse.', feedback: '🔎 Considera los ciclos naturales de gestación y maduración.' },
-          { id: 'd', text: 'Porque los científicos controlan el número exacto desde computadores.', feedback: '🔎 Reflexiona sobre los límites naturales de los ecosistemas vivos.' }
+          { id: 'a', text: 'Porque la luna llena solo sale durante algunos meses del año.', feedback: '🔎 La capacidad de recuperación depende de factores biológicos.' },
+          { id: 'b', text: 'Porque los animales prefieren dormir en lugar de tener crías.', feedback: '🔎 Las especies tienen tiempos de gestación y cría que no se aceleran.' },
+          { id: 'c', text: 'Porque los científicos controlan cuántos animales nacen en la selva.', feedback: '🔎 La naturaleza tiene ritmos propios que el humano debe respetar.' },
+          { id: 'd', text: 'Porque cada especie necesita tiempo para nacer, crecer y reproducirse.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El tiempo de gestación y cría tiene límites.' }
         ],
         pedagogicalTip: 'Reflexiona: los seres vivos tardan meses en gestar y crecer; no se multiplican por arte de magia.'
       }
@@ -510,10 +510,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué medidas propondrías?',
         options: [
-          { id: 'a', text: 'Establecer calendarios de no cacería (vedas), monitoreo comunitario de huellas y protección estricta de hembras con crías.', isCorrect: true, feedback: '🌿 ¡Propuesta excelente! Combina ciencia ciudadana, acuerdos locales y respeto ecológico.' },
-          { id: 'b', text: 'Repartir más armas y trampas automáticas para agilizar la cacería.', feedback: '🔎 Esa medida agravaría el conflicto y extinguiría a la fauna.' },
-          { id: 'c', text: 'Cercar todo el territorio con rejas eléctricas de alto voltaje.', feedback: '🔎 Las rejas fragmentan el hábitat y lesionan a todas las especies silvestres.' },
-          { id: 'd', text: 'No hacer nada porque los animales no sienten dolor ni tienen importancia.', feedback: '🔎 Toda especie cumple un rol esencial en el equilibrio del territorio.' }
+          { id: 'a', text: 'Repartir más escopetas para que la gente cace en menos tiempo.', feedback: '🔎 Las medidas del Guardián buscan proteger, no facilitar la caza.' },
+          { id: 'b', text: 'Fijar épocas de veda, vigilar las huellas y proteger a las hembras.', isCorrect: true, feedback: '🌿 ¡Brillante! La veda y la vigilancia dan respiro a la fauna.' },
+          { id: 'c', text: 'Poner rejas con corriente eléctrica alrededor de todo el monte.', feedback: '🔎 Las rejas eléctricas dañan a la fauna y dividen el territorio.' },
+          { id: 'd', text: 'Dejar que cacen todo lo que quieran para que la carne no se pierda.', feedback: '🔎 La cacería sin control lleva a la desaparición de especies.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Plantea medidas consensuadas de manejo de fauna silvestre y vigilancia comunitaria.'
@@ -525,10 +525,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Cómo podría participar la comunidad?',
         options: [
-          { id: 'a', text: 'Formando comités de Guardianes Comunitarios, vigilando sus sabanas e intercambiando experiencias de conservación y ecoturismo.', isCorrect: true, feedback: '🌿 ¡Muy bien! La comunidad es el verdadero custodio permanente del territorio.' },
-          { id: 'b', text: 'Vendiendo la carne de monte ilegalmente en mercados clandestinos.', feedback: '🔎 La participación comunitaria debe orientarse a la protección y la sostenibilidad.' },
-          { id: 'c', text: 'Abandonando sus casas para que el bosque crezca solo.', feedback: '🔎 Las personas y la naturaleza pueden coexistir en equilibrio mediante prácticas conscientes.' },
-          { id: 'd', text: 'Denunciando únicamente a los niños de la escuela.', feedback: '🔎 La responsabilidad comunitaria compromete a adultos, familias e instituciones.' }
+          { id: 'a', text: 'Crear comités comunitarios para cuidar el monte y vigilar la fauna.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! La unión de la comunidad cuida el territorio.' },
+          { id: 'b', text: 'Vender carne de monte en secreto para ganar dinero extra en casa.', feedback: '🔎 El comercio ilegal daña al bosque y vulnera la ley.' },
+          { id: 'c', text: 'Abandonar las fincas y los pueblos para que la selva crezca sola.', feedback: '🔎 La comunidad puede convivir en armonía sin tener que irse.' },
+          { id: 'd', text: 'Echarle la culpa a los niños de la escuela de lo que pasa en el monte.', feedback: '🔎 Todos los vecinos deben colaborar con responsabilidad.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Enfoca la participación en la apropiación social, el conocimiento local y la vigilancia compartida.'
@@ -540,10 +540,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué proteger una población requiere pensar más allá de un solo individuo?',
         options: [
-          { id: 'a', text: 'Porque la supervivencia de la especie depende del tamaño grupal, la diversidad genética y las relaciones del conjunto.', isCorrect: true, feedback: '🌿 ¡Pensamiento ecológico superior! Un animal aislado no hace futuro; se necesita una población sana.' },
-          { id: 'b', text: 'Porque un solo animal no alcanza para alimentar a un pueblo entero.', feedback: '🔎 Piensa desde la ecología de poblaciones y la conservación biológica.' },
-          { id: 'c', text: 'Porque los animales siempre viajan en fila india para no perderse.', feedback: '🔎 Valora la estructura genética y demográfica que sustenta a la especie.' },
-          { id: 'd', text: 'No se necesita pensar en el grupo, cada individuo vive totalmente separado de los demás.', feedback: '🔎 Recuerda el concepto de manada, ciclos reproductivos y dinámica poblacional.' }
+          { id: 'a', text: 'Porque un solo animal no alcanza para cocinar un sancocho grande.', feedback: '🔎 La pregunta apunta al equilibrio del ecosistema, no a la cocina.' },
+          { id: 'b', text: 'Porque los animales siempre caminan pegados para no perderse.', feedback: '🔎 Piensa en la diversidad genética y la vida en comunidad.' },
+          { id: 'c', text: 'Porque una especie sobrevive gracias al grupo y a su variedad genética.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Una población fuerte necesita muchos miembros.' },
+          { id: 'd', text: 'Porque a los animales les da miedo vivir sin verse las caras a diario.', feedback: '🔎 La salud de la especie depende del tamaño y vigor del grupo.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta la diferencia entre la mirada individualista y la mirada ecológica y sistémica.'
@@ -595,10 +595,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué animal llegó a la finca?',
         options: [
-          { id: 'a', text: 'Un jaguar.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto menciona explícitamente al jaguar.' },
-          { id: 'b', text: 'Un puma de montaña.', feedback: '🔎 Revisa la primera palabra del texto.' },
-          { id: 'c', text: 'Un caimán aguja.', feedback: '🔎 Vuelve al texto: se trata del gran felino americano.' },
-          { id: 'd', text: 'Un zorro cangrejero.', feedback: '🔎 El texto habla de un jaguar que se acercó a la finca.' }
+          { id: 'a', text: 'Una manada de lobos salvajes del norte.', feedback: '🔎 En el Caribe colombiano habitan jaguares y pumas.' },
+          { id: 'b', text: 'Un jaguar rondando cerca de los potreros.', isCorrect: true, feedback: '🌿 ¡Correcto! El jaguar fue el felino identificado en la zona.' },
+          { id: 'c', text: 'Un grupo de osos de anteojos en la llanura.', feedback: '🔎 El animal que generó alerta en la finca fue un felino.' },
+          { id: 'd', text: 'Un cocodrilo gigante dentro de la casa.', feedback: '🔎 Revisa el animal silvestre que protagoniza la misión.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera oración del caso.'
       },
@@ -609,10 +609,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué actividad humana estaba siendo afectada?',
         options: [
-          { id: 'a', text: 'La ganadería (finca donde había ganado).', isCorrect: true, feedback: '🌿 ¡Exacto! El ganado de la finca era el elemento vulnerable.' },
-          { id: 'b', text: 'La pesca artesanal en el muelle.', feedback: '🔎 ¿Qué actividad se menciona que había en la finca?' },
-          { id: 'c', text: 'La minería de oro y aluvión.', feedback: '🔎 Lee la primera oración: habla de una finca con ganado.' },
-          { id: 'd', text: 'La recolección de café en la cordillera.', feedback: '🔎 Concéntrate en la actividad productiva mencionada en el texto.' }
+          { id: 'a', text: 'La pesca de bagre en el muelle del puerto.', feedback: '🔎 La finca afectada tenía animales de pastoreo.' },
+          { id: 'b', text: 'La extracción de oro en las orillas del río.', feedback: '🔎 Revisa la actividad económica que se describe.' },
+          { id: 'c', text: 'La ganadería por la pérdida de algunos terneros.', isCorrect: true, feedback: '🌿 ¡Exacto! Los ataques afectaban a los terneros de la finca.' },
+          { id: 'd', text: 'El cultivo de café en las laderas de la montaña.', feedback: '🔎 En la zona de sabana se cría ganado vacuno.' }
         ],
         pedagogicalTip: 'Identifica la actividad productiva en la finca.'
       },
@@ -623,10 +623,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué cambios encontraron los Guardianes en el territorio?',
         options: [
-          { id: 'a', text: 'Desaparición de zonas de vegetación, hábitat fragmentado y menos presas naturales.', isCorrect: true, feedback: '🌿 ¡Muy bien! Esos tres cambios explícitos fueron detectados en el territorio.' },
-          { id: 'b', text: 'Llegada de carreteras pavimentadas con peajes modernos.', feedback: '🔎 Revisa la tercera y cuarta oración sobre los cambios ambientales.' },
-          { id: 'c', text: 'Inundaciones provocadas por un huracán marino.', feedback: '🔎 El texto destaca la pérdida de vegetación y fragmentación.' },
-          { id: 'd', text: 'Aparición espontánea de nuevas selvas vírgenes.', feedback: '🔎 Vuelve a leer qué pasó con la vegetación alrededor.' }
+          { id: 'a', text: 'Bosques talados, potreros abiertos y pocas presas naturales.', isCorrect: true, feedback: '🌿 ¡Muy bien! La pérdida de bosque dejó al jaguar sin alimento.' },
+          { id: 'b', text: 'Carreteras nuevas y edificios de apartamentos modernos.', feedback: '🔎 El paisaje descrito es rural, con monte talado para pastos.' },
+          { id: 'c', text: 'Inundaciones por lluvias que trajeron peces a la finca.', feedback: '🔎 La causa del conflicto fue la reducción de la selva.' },
+          { id: 'd', text: 'Nuevos árboles frutales sembrados por los ganaderos.', feedback: '🔎 Al talar el bosque se perdieron los refugios de las presas.' }
         ],
         pedagogicalTip: 'Localiza los tres factores ambientales alterados en la tercera y cuarta línea.'
       }
@@ -639,10 +639,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué la transformación del hábitat puede favorecer encuentros entre jaguares y ganado?',
         options: [
-          { id: 'a', text: 'Porque al talar el bosque y cercar potreros, las rutas de los jaguares coinciden forzosamente con las zonas donde pasta el ganado.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El ser humano redujo el espacio natural del felino superponiendo sus límites.' },
-          { id: 'b', text: 'Porque los jaguares prefieren la carne con sal que comen las vacas.', feedback: '🔎 Analiza la pérdida de espacio boscoso y la cercanía obligada.' },
-          { id: 'c', text: 'Porque el ganado llama a los jaguares con mugidos nocturnos.', feedback: '🔎 Reflexiona sobre la reducción del hábitat y la fragmentación territorial.' },
-          { id: 'd', text: 'Porque los árboles caídos hacen que el jaguar no pueda caminar en el bosque.', feedback: '🔎 Conecta la transformación del paisaje con la superposición de territorios.' }
+          { id: 'a', text: 'Porque los jaguares prefieren la comida salada que comen las vacas.', feedback: '🔎 Los felinos no buscan sal, buscan presas para sobrevivir.' },
+          { id: 'b', text: 'Porque las vacas llaman al jaguar con mugidos durante la noche.', feedback: '🔎 La razón es espacial: el ganado ocupa el antiguo territorio del felino.' },
+          { id: 'c', text: 'Porque los árboles caídos no dejan caminar al jaguar en el monte.', feedback: '🔎 El jaguar pierde su hábitat y encuentra terneros desprotegidos.' },
+          { id: 'd', text: 'Al tumbar el bosque, el territorio del jaguar se cruza con los potreros.', isCorrect: true, feedback: '🌿 ¡Gran deducción! La tala obliga al felino a caminar por donde pasta el ganado.' }
         ],
         pedagogicalTip: 'Relaciona la pérdida de selva con la coincidencia espacial involuntaria entre felino y ganado.'
       },
@@ -653,10 +653,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre la disminución de presas y el comportamiento del depredador?',
         options: [
-          { id: 'a', text: 'Al escasear sus presas naturales en el bosque, el depredador busca fuentes alternativas de alimento como los animales domésticos.', isCorrect: true, feedback: '🌿 ¡Pista inferencial clave! El hambre y la falta de presas silvestres lo empujan a cazar ganado.' },
-          { id: 'b', text: 'El jaguar se vuelve vegetariano y busca pasto en los potreros.', feedback: '🔎 Recuerda que el jaguar es un carnívoro estricto.' },
-          { id: 'c', text: 'El jaguar duerme más tiempo para no gastar energía.', feedback: '🔎 Piensa en la necesidad biológica de alimentarse para sobrevivir.' },
-          { id: 'd', text: 'El jaguar busca compañía humana para no sentirse solo.', feedback: '🔎 Evalúa el comportamiento trófico forzado por la falta de alimento salvaje.' }
+          { id: 'a', text: 'El jaguar se vuelve vegetariano y come pasto de los potreros.', feedback: '🔎 El jaguar es un carnívoro estricto.' },
+          { id: 'b', text: 'Al no hallar chigüiros o venados, el felino busca terneros para comer.', isCorrect: true, feedback: '🌿 ¡Exacto! Ante el hambre por falta de presas, ataca animales domésticos.' },
+          { id: 'c', text: 'El felino duerme muchas más horas para no gastar su energía.', feedback: '🔎 El hambre impulsa al depredador a buscar comida en las fincas.' },
+          { id: 'd', text: 'El jaguar se acerca a las casas para buscar cariño de la gente.', feedback: '🔎 Es una necesidad biológica de alimentación lo que lo mueve.' }
         ],
         pedagogicalTip: 'Piensa en la pirámide trófica: sin saínos ni venados, el felino busca lo disponible para no morir de inanición.'
       },
@@ -667,10 +667,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué eliminar un jaguar no necesariamente resuelve las causas del conflicto?',
         options: [
-          { id: 'a', text: 'Porque las causas estructurales (bosque talado, hábitat fragmentado y falta de presas) continúan y otro jaguar ocupará el territorio.', isCorrect: true, feedback: '🌿 ¡Brillante deducción ecológica! Matar al individuo no arregla el territorio desequilibrado.' },
-          { id: 'b', text: 'Porque la piel del jaguar no se puede vender legalmente.', feedback: '🔎 Analiza las causas profundas del conflicto señaladas en el texto.' },
-          { id: 'c', text: 'Porque los jaguares reviven mágicamente después de tres semanas.', feedback: '🔎 Reflexiona sobre el territorio y la ecología del paisaje.' },
-          { id: 'd', text: 'Porque el ganado aprende a cazar en ausencia del felino.', feedback: '🔎 Considera si eliminar un animal repara el bosque talado.' }
+          { id: 'a', text: 'Porque el bosque sigue talado y otro jaguar vendrá a ocupar el lugar.', isCorrect: true, feedback: '🌿 ¡Muy bien! Matar un jaguar no devuelve el bosque ni las presas.' },
+          { id: 'b', text: 'Porque la piel del jaguar no tiene valor en el mercado del pueblo.', feedback: '🔎 La razón ecológica va más allá del valor comercial.' },
+          { id: 'c', text: 'Porque el ganado aprende a cazar solo cuando no hay felinos cerca.', feedback: '🔎 Piensa en qué pasa con el hábitat que sigue sin comida natural.' },
+          { id: 'd', text: 'Porque los jaguares regresan a la vida después de unas semanas.', feedback: '🔎 El problema de fondo es la pérdida del hábitat natural.' }
         ],
         pedagogicalTip: 'Distingue entre eliminar un síntoma (un animal) y solucionar la causa raíz (la fragmentación del hábitat).'
       }
@@ -683,10 +683,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué acciones podrían disminuir el conflicto?',
         options: [
-          { id: 'a', text: 'Implementar cercas vivas y eléctricas disuasorias, resguardar terneros en corrales nocturnos y restaurar corredores biológicos.', isCorrect: true, feedback: '🌿 ¡Solución integral y sostenible! Protege la inversión del ganadero y la vida del felino.' },
-          { id: 'b', text: 'Envenenar las fuentes de agua donde bebe la fauna silvestre.', feedback: '🔎 Envenenar el agua destruiría todo el ecosistema y enfermaría a la comunidad.' },
-          { id: 'c', text: 'Talar todo el bosque restante para que no quede ningún animal.', feedback: '🔎 La deforestación total agrava la desertificación y las sequías.' },
-          { id: 'd', text: 'Prohibir a los ganaderos salir de sus casas.', feedback: '🔎 Las soluciones deben ser justas y viables para la convivencia humana y animal.' }
+          { id: 'a', text: 'Poner veneno en los arroyos donde toma agua la fauna silvestre.', feedback: '🔎 Envenenar el agua destruye a todos los seres vivos del lugar.' },
+          { id: 'b', text: 'Talar todo el monte para que no quede ningún animal escondido.', feedback: '🔎 Destruir el bosque empeora la sequía y la falta de agua.' },
+          { id: 'c', text: 'Encerrar terneros de noche, usar cercas vivas y cuidar el bosque.', isCorrect: true, feedback: '🌿 ¡Brillante! Los corrales nocturnos y cercas vivas previenen ataques.' },
+          { id: 'd', text: 'Encadenar a los terneros lejos de la casa para que sirvan de carnada.', feedback: '🔎 El objetivo es proteger la producción sin matar al felino.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Propón medidas técnicas no letales: corrales antidepredatorios, luces y corredores boscosos.'
@@ -698,10 +698,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Cómo equilibrar la protección de la fauna y las necesidades de los productores?',
         options: [
-          { id: 'a', text: 'Mediante sistemas silvopastoriles, acuerdos de coexistencia pacífica, apoyo técnico ganadero y compensaciones por conservación.', isCorrect: true, feedback: '🌿 ¡Excelente equilibrio! Integra la productividad rural con la salud del ecosistema.' },
-          { id: 'b', text: 'Priorizando únicamente las ganancias inmediatas del ganadero sin importar la extinción.', feedback: '🔎 La extinción de depredadores tope desequilibra el ecosistema y genera plagas.' },
-          { id: 'c', text: 'Obligando a los ganaderos a regalar todo su ganado a la selva.', feedback: '🔎 El bienestar de las familias rurales también forma parte del territorio sostenible.' },
-          { id: 'd', text: 'Ignorando a ambas partes hasta que una de las dos desaparezca.', feedback: '🔎 El Guardián media para construir acuerdos basados en la evidencia.' }
+          { id: 'a', text: 'Obligar a los campesinos a regalar todas sus vacas al municipio.', feedback: '🔎 Las familias campesinas necesitan sus animales para vivir.' },
+          { id: 'b', text: 'Dejar que el ganado muera sin hacer nada hasta que no quede nada.', feedback: '🔎 Se deben buscar alternativas productivas y seguras.' },
+          { id: 'c', text: 'Exigir que se cacen todos los felinos del departamento de una vez.', feedback: '🔎 La erradicación de depredadores rompe el equilibrio del bosque.' },
+          { id: 'd', text: 'Combinar árboles con pasto y llegar a acuerdos que apoyen al ganadero.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! La convivencia protege al ganado y al jaguar.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Busca el punto de encuentro entre la dignidad económica humana y la ética ecológica.'
@@ -713,10 +713,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué es importante analizar las causas antes de actuar?',
         options: [
-          { id: 'a', text: 'Porque actuar impulsivamente o con violencia puede empeorar el problema ecológico y social sin resolver la verdadera raíz.', isCorrect: true, feedback: '🌿 ¡Principio fundamental del Guardián! Primero comprender las dinámicas para intervenir con acierto.' },
-          { id: 'b', text: 'Para tener tiempo de cobrar honorarios por más reuniones.', feedback: '🔎 Reflexiona sobre el rigor investigativo y la prudencia ambiental.' },
-          { id: 'c', text: 'Porque la ley prohíbe pensar mientras se trabaja en el campo.', feedback: '🔎 Comprender las causas evita acciones destructivas e inútiles.' },
-          { id: 'd', text: 'No es importante analizar causas, lo que importa es disparar primero.', feedback: '🔎 Esa es justamente la actitud destructiva que el documento cuestiona.' }
+          { id: 'a', text: 'Para cobrar más dinero por hacer reuniones largas con los vecinos.', feedback: '🔎 La razón es resolver el problema de raíz, no cobrar honorarios.' },
+          { id: 'b', text: 'Porque actuar con violencia no quita el hambre del felino ni devuelve el monte.', isCorrect: true, feedback: '🌿 ¡Excelente pensamiento crítico! Conocer la causa permite dar soluciones reales.' },
+          { id: 'c', text: 'Porque la ley exige escribir cartas antes de espantar a un animal.', feedback: '🔎 Analizar causas ayuda a convivir con la naturaleza.' },
+          { id: 'd', text: 'No hace falta pensar, lo primero siempre debe ser disparar al animal.', feedback: '🔎 La violencia ciega empeora los conflictos ambientales.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Refuerza la premisa del Guardián: "Comprender antes de intervenir".'
@@ -768,10 +768,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué animales encontraron?',
         options: [
-          { id: 'a', text: 'Varias aves silvestres en una vivienda.', isCorrect: true, feedback: '🌿 ¡Correcto! La primera frase lo dice con total claridad.' },
-          { id: 'b', text: 'Perros y gatos de raza.', feedback: '🔎 Vuelve al texto: se trata de animales silvestres emplumados.' },
-          { id: 'c', text: 'Peces ornamentales de acuario marino.', feedback: '🔎 Lee la primera oración de la lectura.' },
-          { id: 'd', text: 'Iguanas verdes en jaulas de alambre.', feedback: '🔎 El texto habla de aves silvestres.' }
+          { id: 'a', text: 'Perros y gatos de raza fina.', feedback: '🔎 Revisa qué animales con plumas estaban enjaulados.' },
+          { id: 'b', text: 'Peces de colores en una pecera grande.', feedback: '🔎 El texto habla de aves atrapadas de su hábitat.' },
+          { id: 'c', text: 'Aves silvestres enjauladas en una casa.', isCorrect: true, feedback: '🌿 ¡Correcto! Había loros y pericos retenidos en una vivienda.' },
+          { id: 'd', text: 'Monos aulladores atados a un árbol.', feedback: '🔎 Los animales encontrados en esta misión tenían plumas.' }
         ],
         pedagogicalTip: 'La respuesta está al inicio del texto.'
       },
@@ -782,10 +782,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué afirmaba la familia?',
         options: [
-          { id: 'a', text: 'Que querían y cuidaban a las aves.', isCorrect: true, feedback: '🌿 ¡Exacto! "Decían quererlas y cuidarlas", indica el texto.' },
-          { id: 'b', text: 'Que las tenían listas para vender en el mercado público.', feedback: '🔎 Observa la segunda oración: ¿cuál era la postura de la familia?' },
-          { id: 'c', text: 'Que querían liberarlas al día siguiente en el parque natural.', feedback: '🔎 Vuelve a revisar lo que expresaba la familia.' },
-          { id: 'd', text: 'Que las aves eran peligrosas y agresivas.', feedback: '🔎 El texto destaca el afecto expresado por la familia.' }
+          { id: 'a', text: 'Que las querían mucho y las cuidaban como familia.', isCorrect: true, feedback: '🌿 ¡Exacto! La familia aseguraba que las trataba con cariño.' },
+          { id: 'b', text: 'Que las tenían listas para vender en el mercado.', feedback: '🔎 La familia creía que estaba haciendo algo bueno.' },
+          { id: 'c', text: 'Que las iban a soltar al día siguiente en la selva.', feedback: '🔎 La familia deseaba conservarlas en sus jaulas.' },
+          { id: 'd', text: 'Que las aves eran agresivas y dañaban los muebles.', feedback: '🔎 Decían tenerles mucho afecto y darles alimento.' }
         ],
         pedagogicalTip: 'Revisa la segunda frase de la lectura.'
       },
@@ -796,10 +796,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué información buscaron los Guardianes?',
         options: [
-          { id: 'a', text: 'De dónde habían llegado las aves (su procedencia).', isCorrect: true, feedback: '🌿 ¡Muy bien! Los Guardianes indagaron sobre el origen y procedencia de los animales.' },
-          { id: 'b', text: 'El costo económico exacto del alpiste en el supermercado.', feedback: '🔎 Fíjate en la pregunta que formularon los Guardianes a la familia.' },
-          { id: 'c', text: 'Cuántos huevos ponían a la semana para su consumo.', feedback: '🔎 Los Guardianes quisieron saber de dónde habían llegado.' },
-          { id: 'd', text: 'El nombre científico en latín de las plumas caídas.', feedback: '🔎 El texto menciona: "preguntaron de dónde habían llegado".' }
+          { id: 'a', text: 'El precio del alpiste y del maíz en las tiendas.', feedback: '🔎 Los Guardianes investigaban el origen silvestre de las aves.' },
+          { id: 'b', text: 'Cuántas veces al día cantaban las aves en la sala.', feedback: '🔎 La clave era rastrear cómo llegaron a esa casa.' },
+          { id: 'c', text: 'Si las plumas caídas servían para tejer sombreros.', feedback: '🔎 Su objetivo era conocer la procedencia legal y ambiental.' },
+          { id: 'd', text: 'El lugar de donde venían las aves (su procedencia).', isCorrect: true, feedback: '🌿 ¡Muy bien! Saber de dónde venían permite entender el tráfico.' }
         ],
         pedagogicalTip: 'Localiza la pregunta de los Guardianes en la tercera línea.'
       }
@@ -812,10 +812,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede la demanda de mascotas silvestres incentivar nuevas capturas?',
         options: [
-          { id: 'a', text: 'Porque mientras haya personas dispuestas a comprar animales silvestres, habrá traficantes motivados a sacarlos de la selva para obtener dinero.', isCorrect: true, feedback: '🌿 ¡Deducción económica y ecológica certera! Sin demanda no existiría el negocio del tráfico de fauna.' },
-          { id: 'b', text: 'Porque las aves enjauladas cantan pidiendo que traigan a sus hermanos.', feedback: '🔎 Piensa en la relación entre comprador, dinero y cazador furtivo.' },
-          { id: 'c', text: 'Porque el gobierno premia a quienes compran loros en la carretera.', feedback: '🔎 Analiza el concepto de "demanda que incentiva nuevas capturas".' },
-          { id: 'd', text: 'No tiene influencia; los cazadores atrapan aves sin importar si alguien las compra.', feedback: '🔎 Reflexiona sobre el estímulo económico que genera el comercio de mascotas.' }
+          { id: 'a', text: 'Porque las aves cantan para llamar a sus hermanos del bosque.', feedback: '🔎 La relación es económica: la compra motiva la captura.' },
+          { id: 'b', text: 'Porque si hay gente que compra, habrá cazadores que sigan atrapando.', isCorrect: true, feedback: '🌿 ¡Gran deducción! La demanda de mascotas alimenta el tráfico ilegal.' },
+          { id: 'c', text: 'Porque el municipio premia a quienes tienen loros en los patios.', feedback: '🔎 La ley prohíbe la tenencia de fauna silvestre.' },
+          { id: 'd', text: 'Porque a los cazadores no les importa si nadie compra los animales.', feedback: '🔎 Sin compradores, el negocio de atrapar aves deja de ser rentable.' }
         ],
         pedagogicalTip: 'Aplica el principio de oferta y demanda al tráfico ilegal de fauna.'
       },
@@ -826,10 +826,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué cuidar individualmente a un animal no elimina necesariamente el impacto de su extracción?',
         options: [
-          { id: 'a', text: 'Porque ese individuo fue arrancado de su población natural, impidiéndole reproducirse y cumplir su rol ecológico en el bosque.', isCorrect: true, feedback: '🌿 ¡Profundo y exacto! Aunque esté bien alimentado en una jaula, la especie y el bosque perdieron un integrante vital.' },
-          { id: 'b', text: 'Porque los animales cuidados en casa crecen el doble y no caben en la sala.', feedback: '🔎 Distingue entre el bienestar del individuo y el impacto sobre la especie y el hábitat.' },
-          { id: 'c', text: 'Porque las aves bien cuidadas contagian de tristeza a las plantas del jardín.', feedback: '🔎 Evalúa la función de dispersión y reproducción que el ave ya no puede realizar en la selva.' },
-          { id: 'd', text: 'Porque el cariño humano es dañino biológicamente para las plumas.', feedback: '🔎 Analiza la frase final: el bienestar individual vs la conservación de la especie.' }
+          { id: 'a', text: 'Porque al sacarlo del bosque, ese animal ya no dispersa semillas ni se reproduce.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Cada loro cumple una función vital en el monte.' },
+          { id: 'b', text: 'Porque los animales en casa crecen tanto que no caben en los cuartos.', feedback: '🔎 El daño ocurre en la naturaleza de donde fue sacado el animal.' },
+          { id: 'c', text: 'Porque las aves tristes marchitan las plantas del jardín de la casa.', feedback: '🔎 Piensa en el rol del ave en su hábitat original.' },
+          { id: 'd', text: 'Porque el cariño de las personas debilita las alas de los animales.', feedback: '🔎 El problema es que se le quitó a la naturaleza un individuo fértil.' }
         ],
         pedagogicalTip: 'Distingue entre el afecto a un animal cautivo y el daño ecológico sufrido por el ecosistema de donde fue arrancado.'
       },
@@ -840,10 +840,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre la captura de individuos y las poblaciones naturales?',
         options: [
-          { id: 'a', text: 'La captura sostenida disminuye la densidad poblacional silvestre y puede llevar a la extinción local de las especies.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Cada animal retirado debilita la viabilidad de la población natural.' },
-          { id: 'b', text: 'La captura permite que el bosque esté más limpio y ordenado.', feedback: '🔎 Revisa cómo la sustracción de ejemplares altera los ecosistemas.' },
-          { id: 'c', text: 'Las poblaciones naturales crecen más rápido cuando se capturan sus miembros.', feedback: '🔎 Todo lo contrario: la extracción diezma el número de reproductores.' },
-          { id: 'd', text: 'No existe relación, la selva no se entera de lo que ocurre en las casas.', feedback: '🔎 Todos los animales de compañía silvestre provinieron de algún hábitat natural intervenido.' }
+          { id: 'a', text: 'Atrapar aves ayuda a que los árboles del monte crezcan más limpios.', feedback: '🔎 Las aves ayudan a sembrar árboles, no a ensuciarlos.' },
+          { id: 'b', text: 'Las aves silvestres se reproducen mejor cuando viven en jaulas.', feedback: '🔎 El encierro frena la reproducción natural de las especies.' },
+          { id: 'c', text: 'Sacar aves del bosque debilita a la población y puede hacerla desaparecer.', isCorrect: true, feedback: '🌿 ¡Exacto! La captura constante vacía los bosques de aves.' },
+          { id: 'd', text: 'No existe relación, la selva no siente la falta de diez o veinte loros.', feedback: '🔎 Cada ave extraída resta oportunidades de supervivencia a la bandada.' }
         ],
         pedagogicalTip: 'Vincula la sustracción continua de aves con el despoblamiento de los bosques.'
       }
@@ -856,10 +856,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué debería hacer una persona que posee fauna silvestre?',
         options: [
-          { id: 'a', text: 'Asesorarse con la autoridad ambiental (como la corporación autónoma regional) para evaluar su rehabilitación o manejo ético sin liberarla bruscamente.', isCorrect: true, feedback: '🌿 ¡Conducta responsable! No liberarla sin protocolo veterinario para no condenarla a morir, buscando ayuda especializada.' },
-          { id: 'b', text: 'Soltarla inmediatamente en cualquier calle de la ciudad sin saber si puede volar o comer sola.', feedback: '🔎 Un animal criado en cautiverio puede morir rápidamente si se libera sin un proceso técnico de rehabilitación.' },
-          { id: 'c', text: 'Esconderla en un sótano para que nadie se dé cuenta y comprar otra ave.', feedback: '🔎 El objetivo es corregir el problema y no seguir estimulando el tráfico.' },
-          { id: 'd', text: 'Venderla al vecino más cercano para ganar dinero.', feedback: '🔎 Venderla perpetúa el delito y el maltrato hacia la fauna.' }
+          { id: 'a', text: 'Soltarla en cualquier calle sin saber si sabe volar o buscar comida.', feedback: '🔎 Liberar un animal domesticado sin ayuda puede causarle la muerte.' },
+          { id: 'b', text: 'Esconder la jaula en un rincón oscuro para que nadie la descubra.', feedback: '🔎 Ocultar el problema no ayuda al animal ni al bosque.' },
+          { id: 'c', text: 'Venderla rápido a un vecino antes de que lleguen los Guardianes.', feedback: '🔎 Venderla continúa el ciclo del comercio ilegal de fauna.' },
+          { id: 'd', text: 'Pedir ayuda a la autoridad ambiental para revisar si puede ser rehabilitada.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! Los expertos evalúan si el animal puede volver a la selva.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Enfatiza la entrega voluntaria a autoridades ambientales y los procesos científicos de rehabilitación.'
@@ -871,10 +871,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Cómo podría promoverse la tenencia responsable sin incentivar la captura?',
         options: [
-          { id: 'a', text: 'Educando sobre animales propiamente domésticos (perros y gatos que requieren hogar) y dejando claro que los animales silvestres pertenecen a la libertad.', isCorrect: true, feedback: '🌿 ¡Claridad pedagógica ejemplar! Separar claramente lo doméstico de lo silvestre protege a ambas partes.' },
-          { id: 'b', text: 'Permitiendo que cada niño capture un loro al año de premio escolar.', feedback: '🔎 Eso fomentaría la destrucción directa de los nidos de fauna nativa.' },
-          { id: 'c', text: 'Prohibiendo tener cualquier clase de mascota, incluso perros abandonados.', feedback: '🔎 Los animales de compañía rescatados sí pueden ser cuidados responsablemente en el hogar.' },
-          { id: 'd', text: 'Haciendo concursos de jaulas decoradas en las plazas públicas.', feedback: '🔎 La jaula no debe normalizarse como hogar de un animal silvestre.' }
+          { id: 'a', text: 'Hacer concursos para premiar la jaula más bonita del barrio.', feedback: '🔎 Enjaular fauna silvestre no debe celebrarse ni premiarse.' },
+          { id: 'b', text: 'Enseñar a adoptar perros o gatos y dejar a los animales del monte libres.', isCorrect: true, feedback: '🌿 ¡Brillante! Las mascotas domésticas sí conviven bien con las familias.' },
+          { id: 'c', text: 'Prohibir que los niños tengan cualquier mascota, incluso un perro.', feedback: '🔎 Los animales domésticos como perros y gatos sí pueden ser cuidados.' },
+          { id: 'd', text: 'Regalar un loro silvestre a los estudiantes con mejores calificaciones.', feedback: '🔎 La fauna silvestre debe permanecer libre en su hábitat.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Distingue con claridad entre fauna doméstica (compañía) y fauna silvestre (conservación en libertad).'
@@ -886,10 +886,10 @@ Los Guardianes observan que una práctica que puede parecer una forma de obtener
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué la procedencia del animal es importante?',
         options: [
-          { id: 'a', text: 'Porque conocer la procedencia permite identificar redes ilegales de tráfico, proteger los ecosistemas de origen y actuar con legalidad ética.', isCorrect: true, feedback: '🌿 ¡Criterio ético intachable! Saber el origen evidencia si se apoyó un delito o un daño ecológico.' },
-          { id: 'b', text: 'Solo para saber si el animal habla español o inglés.', feedback: '🔎 Reflexiona sobre la trazabilidad y la legalidad ambiental.' },
-          { id: 'c', text: 'Para ponerle un pasaporte internacional de viaje.', feedback: '🔎 La procedencia revela si hubo extracción ilegal de hábitats vulnerables.' },
-          { id: 'd', text: 'No tiene ninguna importancia mientras el animal coma galletas.', feedback: '🔎 La procedencia es la clave para entender el circuito del tráfico ilegal de especies.' }
+          { id: 'a', text: 'Porque ayuda a descubrir rutas ilegales y cuidar los bosques de origen.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Identificar el origen protege los hábitats saqueados.' },
+          { id: 'b', text: 'Solo sirve para saber si el animal aprende a repetir palabras.', feedback: '🔎 Conocer el origen ayuda a frenar las rutas de tráfico ilegal.' },
+          { id: 'c', text: 'Para ponerle una placa con el nombre de la ciudad donde nació.', feedback: '🔎 El origen permite saber de qué ecosistema fue extraído.' },
+          { id: 'd', text: 'No tiene importancia de dónde vino mientras tenga semillas en su plato.', feedback: '🔎 Saber la procedencia es clave para frenar el saqueo de fauna.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta la importancia de la trazabilidad para frenar el comercio ilícito de especies.'
@@ -945,10 +945,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Cómo permanecía el mono en la vivienda?',
         options: [
-          { id: 'a', text: 'Sujeto mediante una cadena y pasando gran parte del día en un espacio reducido.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe textualmente la sujeción con cadena y el espacio restringido.' },
-          { id: 'b', text: 'Libre saltando entre los árboles frutales del vecindario.', feedback: '🔎 Revisa el segundo párrafo: ¿cómo estaba asegurado el animal?' },
-          { id: 'c', text: 'En una clínica veterinaria con aire acondicionado.', feedback: '🔎 Lee la segunda oración del primer párrafo.' },
-          { id: 'd', text: 'En un parque zoológico municipal con cuidadores.', feedback: '🔎 El texto habla de una vivienda familiar donde estaba encadenado.' }
+          { id: 'a', text: 'Un mono aullador atado con una cadena a un árbol.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe al mono en cautiverio.' },
+          { id: 'b', text: 'Un grupo de ardillas comiendo frutas en el suelo.', feedback: '🔎 El animal retenido era un primate de la región.' },
+          { id: 'c', text: 'Un oso perezoso durmiendo en las ramas altas.', feedback: '🔎 Revisa qué animal estaba amarrado en el patio.' },
+          { id: 'd', text: 'Dos iguanas hembras descansando sobre una cerca.', feedback: '🔎 La misión trata sobre el cautiverio de monos.' }
         ],
         pedagogicalTip: 'Localiza la descripción en la segunda frase del primer párrafo.'
       },
@@ -959,10 +959,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué otros animales permanecían encerrados?',
         options: [
-          { id: 'a', text: 'Aves mantenidas durante años en jaulas.', isCorrect: true, feedback: '🌿 ¡Exacto! En la otra vivienda hallaron aves enjauladas durante años.' },
-          { id: 'b', text: 'Caballos y vacas de carga.', feedback: '🔎 Observa la primera línea del segundo párrafo.' },
-          { id: 'c', text: 'Caimanes en piletas de cemento.', feedback: '🔎 El texto menciona específicamente aves en jaulas.' },
-          { id: 'd', text: 'Conejos y cuyos de laboratorio.', feedback: '🔎 Vuelve a revisar el inicio del párrafo 2.' }
+          { id: 'a', text: 'Perros y gatos domésticos viviendo en la casa.', feedback: '🔎 El texto habla de animales silvestres en cautiverio.' },
+          { id: 'b', text: 'Gallinas y pavos criados para el consumo familiar.', feedback: '🔎 Los animales observados pertenecían al bosque natural.' },
+          { id: 'c', text: 'Conejos de granja alimentados con pasto verde.', feedback: '🔎 Se trataba de fauna silvestre atrapada en el bosque.' },
+          { id: 'd', text: 'Loros y pericos en jaulas de alambre en el patio.', isCorrect: true, feedback: '🌿 ¡Exacto! Había aves y monos retenidos como mascotas.' }
         ],
         pedagogicalTip: 'Observa la primera línea del segundo párrafo.'
       },
@@ -973,10 +973,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué necesidades de los animales menciona el texto?',
         options: [
-          { id: 'a', text: 'Movimiento, alimentación, refugio, interacción y reproducción (desplazamiento y vuelo).', isCorrect: true, feedback: '🌿 ¡Muy bien! Has extraído las 5 necesidades vitales citadas textualmente.' },
-          { id: 'b', text: 'Jugar videojuegos y dormir en camas con colchón.', feedback: '🔎 Revisa la lista de comportamientos naturales en el segundo párrafo.' },
-          { id: 'c', text: 'Aprender palabras humanas y vestirse con ropa.', feedback: '🔎 Fíjate en las necesidades biológicas reales mencionadas por el autor.' },
-          { id: 'd', text: 'Únicamente recibir agua y granos una vez al día.', feedback: '🔎 El texto señala expresamente que comida y agua no bastan.' }
+          { id: 'a', text: 'Dormir en camas con cobijas y jugar con juguetes.', feedback: '🔎 Los animales silvestres tienen necesidades biológicas de su especie.' },
+          { id: 'b', text: 'Moverse libres, buscar comida silvestre y convivir con su grupo.', isCorrect: true, feedback: '🌿 ¡Muy bien! El bienestar exige libertad y vida con sus semejantes.' },
+          { id: 'c', text: 'Aprender trucos humanos y acostumbrarse a usar ropa.', feedback: '🔎 Humanizar a un animal silvestre perjudica su salud natural.' },
+          { id: 'd', text: 'Recibir granos de maíz y agua en una taza plástica.', feedback: '🔎 Su bienestar va mucho más allá de recibir alimento en un plato.' }
         ],
         pedagogicalTip: 'Extrae la enumeración de comportamientos del segundo párrafo.'
       }
@@ -989,10 +989,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué dar comida y agua no garantiza el bienestar de un animal silvestre?',
         options: [
-          { id: 'a', text: 'Porque el bienestar incluye salud física, mental y emocional: la libertad de volar, trepar, interactuar con su especie y expresar instintos naturales.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Alimentar el cuerpo no compensa el encarcelamiento ni la privación de la vida silvestre.' },
-          { id: 'b', text: 'Porque la comida de casa siempre está envenenada.', feedback: '🔎 Piensa en las necesidades etológicas y de comportamiento que una jaula anula.' },
-          { id: 'c', text: 'Porque los animales solo beben agua de lluvia recogida en hojas.', feedback: '🔎 Analiza el concepto de bienestar integral frente a la simple supervivencia física.' },
-          { id: 'd', text: 'Porque a los animales no les gusta que los humanos los miren mientras comen.', feedback: '🔎 Conecta las necesidades citadas (vuelo, movimiento, interacción con su grupo) con la salud del animal.' }
+          { id: 'a', text: 'Porque la comida casera siempre contiene bacterias dañinas.', feedback: '🔎 La comida puede ser limpia, pero el encierro daña su conducta natural.' },
+          { id: 'b', text: 'Porque los animales del bosque solo toman agua de las hojas altas.', feedback: '🔎 El encierro y la soledad son los que generan estrés y sufrimiento.' },
+          { id: 'c', text: 'Porque un animal silvestre necesita trepar, volar y estar con su manada.', isCorrect: true, feedback: '🌿 ¡Gran deducción! El bienestar incluye salud mental, ejercicio y libertad.' },
+          { id: 'd', text: 'Porque a las fieras les molesta que las personas las miren comer.', feedback: '🔎 Piensa en la necesidad de expresar conductas propias de su especie.' }
         ],
         pedagogicalTip: 'Comprende que el bienestar biológico va más allá de no morir de hambre: exige libertad de conducta.'
       },
@@ -1003,10 +1003,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué un mono criado por una familia puede seguir teniendo necesidades propias de su especie?',
         options: [
-          { id: 'a', text: 'Porque sus instintos, anatomía y psicología evolucionaron durante millones de años en la selva y no se borran por criarlo en una casa.', isCorrect: true, feedback: '🌿 ¡Brillante deducción biológica! La evolución de una especie silvestre no cambia por crianza doméstica en una sola generación.' },
-          { id: 'b', text: 'Porque el mono sueña con vengarse de la familia.', feedback: '🔎 Enfócate en la naturaleza biológica e instintiva inmutable de las especies silvestres.' },
-          { id: 'c', text: 'Porque los monos leen enciclopedias sobre su especie en secreto.', feedback: '🔎 Distingue entre domesticación histórica milenaria e instinto silvestre individual.' },
-          { id: 'd', text: 'Porque el clima de Magangué le recuerda a África.', feedback: '🔎 Reflexiona sobre la frase: "el cariño de una persona no convierte a un animal silvestre en doméstico".' }
+          { id: 'a', text: 'Porque el mono guarda rencor contra las personas que lo cuidan.', feedback: '🔎 No se trata de rencor, sino de instintos biológicos naturales.' },
+          { id: 'b', text: 'Porque los monos aprenden a extrañar los árboles mirando fotografías.', feedback: '🔎 Sus necesidades de trepar y comunicarse son genéticas e innatas.' },
+          { id: 'c', text: 'Porque el aire caliente del pueblo le produce mareos y debilidad.', feedback: '🔎 Su comportamiento responde a necesidades biológicas de primate.' },
+          { id: 'd', text: 'Porque sus instintos y su cuerpo están adaptados a la vida en la selva.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Millones de años de evolución no se borran en una casa.' }
         ],
         pedagogicalTip: 'Relaciona la evolución genética de millones de años con la imposibilidad de "domesticar" en una sola vida individual.'
       },
@@ -1017,10 +1017,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre la demanda de animales silvestres como mascotas y la captura de individuos?',
         options: [
-          { id: 'a', text: 'Cada persona que compra o acepta tener un animal silvestre genera un mercado rentable que promueve que otros cazadores vayan a la selva a atrapar más crías.', isCorrect: true, feedback: '🌿 ¡Pista descifrada con rigor! La demanda urbana es el combustible que alimenta la captura en el monte.' },
-          { id: 'b', text: 'No existe relación, porque los cazadores solo capturan animales para divertirse solos.', feedback: '🔎 Revisa la última frase del texto sobre cómo la demanda incentiva nuevas capturas.' },
-          { id: 'c', text: 'La demanda hace que los animales silvestres se acerquen voluntariamente a las tiendas.', feedback: '🔎 Analiza la relación de causa y efecto económica entre demanda y extracción.' },
-          { id: 'd', text: 'Al aumentar la demanda, los animales de la selva se vuelven más inteligentes para escapar.', feedback: '🔎 Vincula el incentivo económico con la persistencia del tráfico.' }
+          { id: 'a', text: 'No existe relación, porque los cazadores solo atrapan animales por gusto.', feedback: '🔎 Sin compradores, el comercio ilegal deja de ser un negocio.' },
+          { id: 'b', text: 'La compra de mascotas motiva a los cazadores a atrapar más crías.', isCorrect: true, feedback: '🌿 ¡Exacto! Cada comprador mantiene activo el negocio del tráfico.' },
+          { id: 'c', text: 'Tener mascotas hace que los animales del bosque salgan a las carreteras.', feedback: '🔎 La demanda económica es el motor que impulsa las capturas.' },
+          { id: 'd', text: 'Al aumentar las compras, los animales aprenden a esconderse mejor.', feedback: '🔎 La presión de captura reduce las poblaciones en la naturaleza.' }
         ],
         pedagogicalTip: 'Sigue el rastro económico: el cliente que compra una cría financia la expedición del próximo traficante.'
       }
@@ -1033,10 +1033,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué argumentos presentaría un Guardián a la familia?',
         options: [
-          { id: 'a', text: 'Explicar con respeto que el verdadero amor hacia un animal silvestre implica desear su libertad, y que mantenerlo atado le genera frustración y privación biológica.', isCorrect: true, feedback: '🌿 ¡Argumentación empática y contundente! Transforma el falso cariño posesivo en respeto por la dignidad del ser vivo.' },
-          { id: 'b', text: 'Insultar a la familia y romper la cadena con piedras sin dialogar.', feedback: '🔎 El Guardián utiliza la pedagogía y la ley para crear conciencia duradera, no agresiones.' },
-          { id: 'c', text: 'Decirles que compren otro mono para que no esté solo con la cadena.', feedback: '🔎 Eso duplicaría el sufrimiento y estimularía el tráfico ilegal.' },
-          { id: 'd', text: 'Felicitar a la familia por tener una cadena tan brillante.', feedback: '🔎 El objetivo del Guardián es liberar a la fauna de la opresión del cautiverio.' }
+          { id: 'a', text: 'Explicarles que amar al mono es querer que viva libre en su hábitat.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! El verdadero afecto respeta la naturaleza del animal.' },
+          { id: 'b', text: 'Gritarles y romper la cadena a la fuerza sin dar explicaciones.', feedback: '🔎 El Guardián actúa con diálogo respetuoso y educación ambiental.' },
+          { id: 'c', text: 'Aconsejarles comprar otro mono para que no se sienta solo en la casa.', feedback: '🔎 Comprar más animales empeora el problema del tráfico de fauna.' },
+          { id: 'd', text: 'Decirles que cambien la cadena por una cuerda de tela más suave.', feedback: '🔎 La meta es devolverlo a la naturaleza mediante rehabilitación.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Construye un argumento que apele al verdadero respeto y a las necesidades reales del animal.'
@@ -1048,10 +1048,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué debería hacer una persona que encuentra fauna silvestre mantenida como mascota?',
         options: [
-          { id: 'a', text: 'Notificar de manera pacífica a la entidad ambiental territorial (como la Corporación Autónoma Regional) para su rescate y proceso de rehabilitación.', isCorrect: true, feedback: '🌿 ¡Procedimiento correcto! Garantiza una custodia técnica por médicos veterinarios y biólogos.' },
-          { id: 'b', text: 'Comprar el animal para tenerlo ahora en su propia casa.', feedback: '🔎 Comprar el animal perpetúa el ciclo de venta.' },
-          { id: 'c', text: 'Ignorar el hecho porque cada quien hace lo que quiere en su propiedad.', feedback: '🔎 La fauna silvestre es patrimonio común y no propiedad privada consumible.' },
-          { id: 'd', text: 'Llevarse el animal a la fuerza y dejarlo en un parque del centro de la ciudad.', feedback: '🔎 La liberación sin rehabilitación veterinaria condena al animal a la muerte.' }
+          { id: 'a', text: 'Comprar el animal para cuidarlo en su propia casa sin decirle a nadie.', feedback: '🔎 Comprarlo premia al vendedor y continúa el ciclo de cautiverio.' },
+          { id: 'b', text: 'Ignorar el caso porque cada familia decide qué hacer en su propiedad.', feedback: '🔎 La fauna silvestre es un bien común protegido por la ley.' },
+          { id: 'c', text: 'Avisar a la entidad ambiental para que lo rescate y lo rehabilite.', isCorrect: true, feedback: '🌿 ¡Brillante! Las autoridades ambientales cuentan con expertos para su recuperación.' },
+          { id: 'd', text: 'Soltar al mono en el parque del pueblo para que busque comida solo.', feedback: '🔎 Un animal domesticado puede morir si se le abandona sin rehabilitación.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Establece la ruta institucional de entrega y rehabilitación con expertos.'
@@ -1063,10 +1063,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué una jaula no puede considerarse equivalente a un hábitat natural?',
         options: [
-          { id: 'a', text: 'Porque una jaula es un espacio carcelario inerte que suprime el vuelo, la búsqueda de alimento, el clima natural y la relación con la comunidad de su especie.', isCorrect: true, feedback: '🌿 ¡Juicio crítico irrebatible! Un hábitat es un sistema dinámico vivo, no cuatro barrotes de metal.' },
-          { id: 'b', text: 'Porque las jaulas no tienen cortinas ni televisor.', feedback: '🔎 Argumenta desde las características de un ecosistema frente a la reclusión física.' },
-          { id: 'c', text: 'Únicamente porque el metal se calienta con el sol de Magangué.', feedback: '🔎 Analiza la riqueza sensorial, social y ecológica del bosque frente a la jaula.' },
-          { id: 'd', text: 'Sí son equivalentes si se le pone un espejo y agua limpia todos los días.', feedback: '🔎 Ningún objeto inerte reemplaza la inmensidad del bosque nativo.' }
+          { id: 'a', text: 'Solo porque las rejas de metal se calientan mucho al mediodía.', feedback: '🔎 El problema de fondo es la pérdida de libertad y de estímulos naturales.' },
+          { id: 'b', text: 'Porque una jaula no tiene muebles cómodos como los de una vivienda.', feedback: '🔎 La fauna no necesita comodidades humanas, necesita su ecosistema.' },
+          { id: 'c', text: 'Son iguales si se limpia el piso y se le da agua fresca todos los días.', feedback: '🔎 El espacio reducido y el aislamiento causan estrés crónico al animal.' },
+          { id: 'd', text: 'Porque en la jaula no puede trepar, buscar frutos ni vivir con su grupo.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! El hábitat ofrece espacio, clima y relaciones sociales.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Contrasta la complejidad de relaciones ecológicas del bosque con la esterilidad de una jaula.'
@@ -1120,10 +1120,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué animales encontraron?',
         options: [
-          { id: 'a', text: 'Perros y gatos que vivían en las calles de un barrio de Magangué.', isCorrect: true, feedback: '🌿 ¡Correcto! La primera oración lo menciona textualmente.' },
-          { id: 'b', text: 'Monos aulladores y ardillas de cola roja.', feedback: '🔎 Vuelve a leer la primera línea del texto.' },
-          { id: 'c', text: 'Cabras y ovejas de pastoreo libre.', feedback: '🔎 El texto habla de perros y gatos callejeros.' },
-          { id: 'd', text: 'Palomas mensajeras en las plazas públicas.', feedback: '🔎 Revisa el inicio de la lectura.' }
+          { id: 'a', text: 'Monos aulladores buscando semillas en los árboles.', feedback: '🔎 El caso trata sobre animales domésticos abandonados en la calle.' },
+          { id: 'b', text: 'Chigüiros nadando en las orillas del río Magdalena.', feedback: '🔎 Revisa los animales de compañía que protagonizan la historia.' },
+          { id: 'c', text: 'Cabras y cerdos pastando libremente en las aceras.', feedback: '🔎 La problemática se enfoca en perros y gatos sin hogar.' },
+          { id: 'd', text: 'Perros y gatos callejeros en un barrio del municipio.', isCorrect: true, feedback: '🌿 ¡Correcto! La misión inicia con mascotas abandonadas en el barrio.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera línea.'
       },
@@ -1134,10 +1134,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué problemas presentaban algunos?',
         options: [
-          { id: 'a', text: 'Buscaban alimento entre residuos y otros presentaban heridas o enfermedades.', isCorrect: true, feedback: '🌿 ¡Exacto! Esos eran los síntomas físicos evidentes registrados en el texto.' },
-          { id: 'b', text: 'Sobrepeso por comer demasiado concentrado importado.', feedback: '🔎 Lee la segunda oración del texto.' },
-          { id: 'c', text: 'Estaban perfectamente adiestrados para competencias deportivas.', feedback: '🔎 El texto destaca el hambre, heridas y enfermedades.' },
-          { id: 'd', text: 'Tenían collares de lujo con placas de oro.', feedback: '🔎 Vuelve a leer las condiciones de abandono descritas en el párrafo 1.' }
+          { id: 'a', text: 'Estaban bien alimentados con concentrado de primera calidad.', feedback: '🔎 Los animales callejeros pasaban hambre y comían desperdicios.' },
+          { id: 'b', text: 'Buscaban comida entre la basura y tenían heridas o sarna.', isCorrect: true, feedback: '🌿 ¡Exacto! Sufrían desnutrición, enfermedades y lesiones.' },
+          { id: 'c', text: 'Llevaban collares nuevos con placas de identificación claras.', feedback: '🔎 Carecían de dueño y de atención veterinaria básica.' },
+          { id: 'd', text: 'Estaban entrenados para cuidar los parques del municipio.', feedback: '🔎 El texto describe una situación de abandono y sufrimiento.' }
         ],
         pedagogicalTip: 'Observa la segunda oración del primer párrafo.'
       },
@@ -1148,10 +1148,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué situaciones podían llevar a un animal a terminar en la calle?',
         options: [
-          { id: 'a', text: 'Haber sido abandonados después de haber sido animales de compañía.', isCorrect: true, feedback: '🌿 ¡Muy bien! El texto resalta que fueron dejados a su suerte por sus antiguos dueños.' },
-          { id: 'b', text: 'Decidir voluntariamente independizarse de las casas.', feedback: '🔎 Los animales domésticos no deciden quedar en la indigencia.' },
-          { id: 'c', text: 'Viajar en autobús desde otras ciudades para conocer el río.', feedback: '🔎 Revisa la tercera oración del párrafo 1 sobre el abandono humano.' },
-          { id: 'd', text: 'Escapar para fundar una nueva ciudad en la selva.', feedback: '🔎 El texto señala: "habían sido abandonados después de haber sido animales de compañía".' }
+          { id: 'a', text: 'Decidir irse de la casa para vivir aventuras por el pueblo.', feedback: '🔎 Los animales domésticos dependen del cuidado de las personas.' },
+          { id: 'b', text: 'Haber viajado solos desde otras ciudades en busca del río.', feedback: '🔎 No viajan por su cuenta; las familias los dejaron en la calle.' },
+          { id: 'c', text: 'Haber sido abandonados por sus dueños al no poder cuidarlos.', isCorrect: true, feedback: '🌿 ¡Muy bien! El abandono de mascotas es la causa principal del problema.' },
+          { id: 'd', text: 'Escapar para formar manadas salvajes en medio de la selva.', feedback: '🔎 El origen del problema está en la falta de tenencia responsable.' }
         ],
         pedagogicalTip: 'Localiza la causa directa en la tercera frase del párrafo 1.'
       }
@@ -1164,10 +1164,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué el abandono puede aumentar el número de animales sin hogar?',
         options: [
-          { id: 'a', text: 'Porque los animales no esterilizados abandonados en la calle se reproducen sin control, multiplicando exponencialmente las camadas sin hogar.', isCorrect: true, feedback: '🌿 ¡Deducción biológica exacta! Cada perro o gato abandonado fértil genera decenas de crías en las calles.' },
-          { id: 'b', text: 'Porque las calles de Magangué se hacen más grandes cada año.', feedback: '🔎 Conecta el abandono con la capacidad reproductiva sin control.' },
-          { id: 'c', text: 'Porque los animales abandonados compran casas desocupadas.', feedback: '🔎 Piensa en la multiplicación de crías nacidas en el desamparo.' },
-          { id: 'd', text: 'No aumenta el número, los animales de la calle nunca tienen crías.', feedback: '🔎 Reflexiona sobre la falta de esterilización en animales callejeros.' }
+          { id: 'a', text: 'Porque los animales sin esterilizar tienen crías que nacen sin hogar.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Una pareja sin esterilizar multiplica las camadas en la calle.' },
+          { id: 'b', text: 'Porque las calles del pueblo se hacen más anchas cada año.', feedback: '🔎 El aumento de animales se debe a nacimientos sin control.' },
+          { id: 'c', text: 'Porque los perros abandonados construyen refugios en lotes vacíos.', feedback: '🔎 La causa biológica del aumento es la reproducción descontrolada.' },
+          { id: 'd', text: 'No aumenta el número, porque los perros callejeros no tienen crías.', feedback: '🔎 Al no estar esterilizados, se reproducen continuamente.' }
         ],
         pedagogicalTip: 'Relaciona la fecundidad canina/felina con la ausencia de esterilización en las calles.'
       },
@@ -1178,10 +1178,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué alimentar ocasionalmente a un animal no necesariamente soluciona el problema?',
         options: [
-          { id: 'a', text: 'Porque calma el hambre inmediata pero no atiende la causa raíz: la falta de hogar, vacunas, esterilización y tenencia responsable.', isCorrect: true, feedback: '🌿 ¡Pista clave revelada! La compasión del plato de comida no frena la sobrepoblación ni el maltrato.' },
-          { id: 'b', text: 'Porque a los perros no les gusta la comida de las personas.', feedback: '🔎 Distingue entre aliviar un síntoma momentáneo y solucionar el problema estructural.' },
-          { id: 'c', text: 'Porque los animales se acostumbran a pedir propina en dinero.', feedback: '🔎 Analiza el inicio del segundo párrafo: ¿por qué no resuelve las causas?' },
-          { id: 'd', text: 'Porque el agua limpia enferma a los animales callejeros.', feedback: '🔎 Evalúa qué se requiere para una solución integral de fondo.' }
+          { id: 'a', text: 'Porque a los perros de la calle les hace daño la comida casera.', feedback: '🔎 Alimentarlos ayuda en el momento, pero no soluciona el abandono.' },
+          { id: 'b', text: 'Porque darles comida hace que se vuelvan agresivos con los vecinos.', feedback: '🔎 El problema de fondo es la salud pública y la falta de dueño.' },
+          { id: 'c', text: 'Porque calma el hambre del día pero no resuelve la falta de un hogar.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Se necesita esterilización, vacunas y adopción responsable.' },
+          { id: 'd', text: 'Porque la comida se pudre rápido por el calor de la tarde.', feedback: '🔎 La solución requiere esterilización masiva y adopción.' }
         ],
         pedagogicalTip: 'Distingue entre ayuda paliativa (dar sobras un día) y solución integral (salud, esterilización, adopción).'
       },
@@ -1192,10 +1192,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre reproducción sin control, abandono y aumento de animales en las calles?',
         options: [
-          { id: 'a', text: 'Es un círculo vicioso: a mayor abandono y menor esterilización, mayor proliferación de camadas callejeras que sufrirán abandono.', isCorrect: true, feedback: '🌿 ¡Excelente análisis sistémico! Ambos factores se retroalimentan provocando una crisis de bienestar y salud pública.' },
-          { id: 'b', text: 'No existe relación, son eventos que ocurren en meses distintos por casualidad.', feedback: '🔎 Conecta la reproducción sin esterilizar con la cantidad de animales sin dueño.' },
-          { id: 'c', text: 'La reproducción sin control reduce el número de perros porque no hay espacio.', feedback: '🔎 Todo lo contrario: satura las calles de animales desprotegidos.' },
-          { id: 'd', text: 'El abandono hace que las perras dejen de tener cachorros.', feedback: '🔎 Revisa la cadena de eventos analizada por los Guardianes en el párrafo 2.' }
+          { id: 'a', text: 'No existe relación, la cantidad de animales en la calle no cambia.', feedback: '🔎 La falta de control reproductivo eleva el número de animales callejeros.' },
+          { id: 'b', text: 'Tener más crías hace que los perros encuentren dueños más fácil.', feedback: '🔎 Al contrario: hay demasiados cachorros y muy pocas familias que adopten.' },
+          { id: 'c', text: 'El abandono hace que las hembras dejen de tener cachorros en la calle.', feedback: '🔎 Sin esterilización, las hembras siguen teniendo camadas en desamparo.' },
+          { id: 'd', text: 'A mayor abandono y sin esterilización, nacen más camadas sin hogar.', isCorrect: true, feedback: '🌿 ¡Exacto! Es un ciclo que multiplica el sufrimiento y la sobrepoblación.' }
         ],
         pedagogicalTip: 'Establece la dinámica de retroalimentación: abandono + natalidad desmedida = sobrepoblación.'
       }
@@ -1208,10 +1208,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué acciones responsables podría realizar un Guardián ante un animal herido?',
         options: [
-          { id: 'a', text: 'Brindarle auxilio inicial seguro, buscar atención veterinaria o refugio temporal y gestionar su esterilización y adopción.', isCorrect: true, feedback: '🌿 ¡Acción noble y responsable! Rescata la vida con criterio de bienestar y proyección futura.' },
-          { id: 'b', text: 'Arrojarlo al río para que no sufra más.', feedback: '🔎 Esa es una conducta cruel contraria a la ética del Guardián.' },
-          { id: 'c', text: 'Tomarle una foto para burlarse en redes sociales y marcharse.', feedback: '🔎 El Guardián asume una postura de empatía activa y solución real.' },
-          { id: 'd', text: 'Encadenarlo en la calle para que cuide las basuras del barrio.', feedback: '🔎 El encadenamiento perpetúa el maltrato animal.' }
+          { id: 'a', text: 'Arrojarlo al caño para que la corriente se lo lleve lejos del barrio.', feedback: '🔎 Un Guardián respeta la vida y busca auxilio médico para el animal.' },
+          { id: 'b', text: 'Darle agua limpia, buscar ayuda veterinaria y promover su adopción.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! El auxilio y la adopción salvan vidas.' },
+          { id: 'c', text: 'Tomarle una fotografía para mostrarla a los amigos y seguir de largo.', feedback: '🔎 El Guardián asume una actitud solidaria y responsable.' },
+          { id: 'd', text: 'Amarrarlo a un poste para que cuide las bolsas de basura de la cuadra.', feedback: '🔎 Dejarlo atado a la intemperie empeora su dolor y sus heridas.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Construye una ruta de auxilio médico veterinario, recuperación y adopción ética.'
@@ -1223,10 +1223,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué debería hacer una comunidad para disminuir el abandono?',
         options: [
-          { id: 'a', text: 'Implementar campañas educativas de tenencia responsable, esterilización masiva comunitaria, censos de mascotas y sanciones al abandono.', isCorrect: true, feedback: '🌿 ¡Medidas de política comunitaria ejemplares! Atacan la raíz del problema con educación y corresponsabilidad.' },
-          { id: 'b', text: 'Prohibir a las familias encariñarse con los animales de compañía.', feedback: '🔎 El afecto es valioso; lo que se requiere es responsabilidad y compromiso para toda la vida.' },
-          { id: 'c', text: 'Trasladar a los perros en camionetas de noche hacia otros municipios vecinos.', feedback: '🔎 Eso no resuelve el problema, solo traslada el sufrimiento a otra comunidad.' },
-          { id: 'd', text: 'Esperar que llueva fuerte para que el agua se lleve a los animales.', feedback: '🔎 La indolencia agrava las crisis humanitarias y de salud en el territorio.' }
+          { id: 'a', text: 'Hacer jornadas de esterilización, educar a las familias y sancionar el abandono.', isCorrect: true, feedback: '🌿 ¡Brillante! La esterilización masiva y la educación previenen el problema.' },
+          { id: 'b', text: 'Prohibir que los niños y familias sientan cariño por sus mascotas.', feedback: '🔎 El cariño responsable es la base del buen trato a los animales.' },
+          { id: 'c', text: 'Llevar a los perros de noche y dejarlos tirados en otro municipio vecino.', feedback: '🔎 Eso solo traslada el problema y es un acto de crueldad penado por ley.' },
+          { id: 'd', text: 'Esperar a que una creciente del río limpie las calles de animales.', feedback: '🔎 La comunidad debe actuar con programas preventivos organizados.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Propón soluciones participativas: jornadas de esterilización, adopción responsable y acuerdos vecinales.'
@@ -1238,10 +1238,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué esterilización, adopción y tenencia responsable pueden formar parte de una estrategia de protección animal?',
         options: [
-          { id: 'a', text: 'Porque cortan la sobrepoblación de raíz, dan segundas oportunidades a animales rescatados y garantizan cuidados éticos y de salud.', isCorrect: true, feedback: '🌿 ¡Visión integral y madura! Son los tres pilares universales del bienestar animal y la salud pública.' },
-          { id: 'b', text: 'Porque son las únicas palabras que empiezan por las primeras letras del alfabeto.', feedback: '🔎 Valora el impacto combinado de estas tres herramientas preventivas.' },
-          { id: 'c', text: 'Para que los veterinarios vendan más champú de perros.', feedback: '🔎 Reflexiona sobre la dignidad de los animales de compañía en la sociedad.' },
-          { id: 'd', text: 'No forman parte de ninguna estrategia, son trámites burocráticos inútiles.', feedback: '🔎 Estas acciones evitan el sufrimiento de miles de seres sintientes.' }
+          { id: 'a', text: 'Solo para que las clínicas veterinarias tengan más clientes en el pueblo.', feedback: '🔎 El objetivo es la salud comunitaria y el bienestar de los animales.' },
+          { id: 'b', text: 'Porque son reglas que inventaron para llenar formularios en la alcaldía.', feedback: '🔎 Son acciones comprobadas que frenan la sobrepoblación en las ciudades.' },
+          { id: 'c', text: 'Porque evitan camadas no deseadas y aseguran que cada mascota tenga un hogar.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Atacan las causas de fondo del abandono.' },
+          { id: 'd', text: 'No sirven de nada, los animales de la calle viven mejor sin cuidados.', feedback: '🔎 En la calle sufren hambre, frío, atropellamientos y enfermedades graves.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta la tríada preventiva: esterilizar (prevenir), adoptar (reparar) y cuidar responsablemente (sostener).'
@@ -1292,10 +1292,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué encontraron al comparar las imágenes?',
         options: [
-          { id: 'a', text: 'Donde antes había árboles y vegetación, ahora aparecían potreros, caminos y zonas intervenidas.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto lo enuncia textualmente en la segunda oración.' },
-          { id: 'b', text: 'Que el bosque había crecido y cubierto todo el municipio.', feedback: '🔎 Vuelve a revisar la transformación del paisaje observada por los Guardianes.' },
-          { id: 'c', text: 'Que se habían construido rascacielos y aeropuertos gigantes.', feedback: '🔎 El texto habla de potreros, caminos y zonas intervenidas.' },
-          { id: 'd', text: 'Que las imágenes eran idénticas y no había cambiado nada.', feedback: '🔎 El texto destaca el contraste entre el pasado boscoso y el presente intervenido.' }
+          { id: 'a', text: 'Una siembra ordenada de frutales nativos en hileras rectas.', feedback: '🔎 Lo encontrado fue tala destructiva y pérdida de vegetación.' },
+          { id: 'b', text: 'Árboles talados, troncos caídos y parches de tierra descapotada.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe la deforestación y el suelo expuesto.' },
+          { id: 'c', text: 'Un jardín botánico con senderos de piedra para turistas.', feedback: '🔎 Los Guardianes hallaron zonas deforestadas sin sombra ni hojas.' },
+          { id: 'd', text: 'Nuevas lagunas artificiales para almacenar agua de lluvia.', feedback: '🔎 El impacto observado era la pérdida de árboles en el bosque seco.' }
         ],
         pedagogicalTip: 'La respuesta está en la segunda oración de la lectura.'
       },
@@ -1306,10 +1306,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué elementos forman parte del bosque según el texto?',
         options: [
-          { id: 'a', text: 'Animales, plantas, microorganismos, suelo, agua y relaciones ecológicas.', isCorrect: true, feedback: '🌿 ¡Exacto! Una visión holística y científica del ecosistema boscoso.' },
-          { id: 'b', text: 'Únicamente troncos de madera listos para aserradero.', feedback: '🔎 Revisa la tercera oración: el bosque no es solo un conjunto de árboles.' },
-          { id: 'c', text: 'Tractores, cercas de púas y bombas de gasolina.', feedback: '🔎 Concéntrate en los componentes naturales enumerados en el texto.' },
-          { id: 'd', text: 'Plásticos, cemento y cables de electricidad.', feedback: '🔎 El texto enumera los componentes vivos y no vivos del ecosistema.' }
+          { id: 'a', text: 'Un páramo frío de alta montaña con frailejones.', feedback: '🔎 El contexto geográfico de Magangué es bosque seco y sabana tropical.' },
+          { id: 'b', text: 'Un bosque nublado de cordillera con orquídeas.', feedback: '🔎 Revisa el ecosistema caluroso y estacional que se describe.' },
+          { id: 'c', text: 'El bosque seco tropical de la región caribeña.', isCorrect: true, feedback: '🌿 ¡Exacto! Es uno de los ecosistemas más amenazados del país.' },
+          { id: 'd', text: 'Una plantación de pinos sembrada para hacer papel.', feedback: '🔎 Se trata del bosque seco natural que pierde su cobertura.' }
         ],
         pedagogicalTip: 'Extrae la lista de componentes de la tercera frase.'
       },
@@ -1320,10 +1320,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué puede perderse cuando desaparece la vegetación?',
         options: [
-          { id: 'a', text: 'Refugios, alimento, sombra y protección del suelo.', isCorrect: true, feedback: '🌿 ¡Muy bien! Son exactamente los cuatro beneficios ecológicos citados al final.' },
-          { id: 'b', text: 'El ruido de las motocicletas en la carretera.', feedback: '🔎 Observa la última línea del texto sobre las pérdidas ambientales.' },
-          { id: 'c', text: 'La cantidad de piedras en el fondo de los ríos.', feedback: '🔎 Vuelve a leer la última frase de la lectura.' },
-          { id: 'd', text: 'La señal de telefonía celular de la región.', feedback: '🔎 Concéntrate en las funciones vitales que brinda la vegetación.' }
+          { id: 'a', text: 'Sombra fresca, humedad en el suelo y semillas que alimentan fauna.', isCorrect: true, feedback: '🌿 ¡Muy bien! Los árboles protegen la humedad y nutren la fauna.' },
+          { id: 'b', text: 'Metales preciosos y piedras de colores brillantes.', feedback: '🔎 Las funciones descritas son ecológicas: sombra, suelo y refugio.' },
+          { id: 'c', text: 'Calor sofocante y polvo seco que vuela por el aire.', feedback: '🔎 El calor y el polvo aparecen cuando se talan los árboles.' },
+          { id: 'd', text: 'Inundaciones constantes durante todo el verano.', feedback: '🔎 El bosque regula el agua y amortigua los vientos fuertes.' }
         ],
         pedagogicalTip: 'Localiza la última oración del caso.'
       }
@@ -1336,10 +1336,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede la pérdida de árboles afectar a animales?',
         options: [
-          { id: 'a', text: 'Los deja sin refugio contra depredadores y clima, y destruye sus fuentes de frutos, hojas, nidos y presas.', isCorrect: true, feedback: '🌿 ¡Deducción ecológica precisa! Sin árboles no hay hábitat ni sustento trófico para la fauna.' },
-          { id: 'b', text: 'Hace que los animales aprendan a volar aunque no tengan alas.', feedback: '🔎 Piensa en la dependencia directa de la fauna respecto a la vegetación.' },
-          { id: 'c', text: 'Los obliga a comer arena del suelo para no tener hambre.', feedback: '🔎 Evalúa cómo la destrucción del hogar vegetal fuerza a la fauna a huir o morir.' },
-          { id: 'd', text: 'No les afecta porque los animales prefieren vivir en potreros limpios.', feedback: '🔎 Recuerda que la fauna silvestre depende de la complejidad de la selva nativa.' }
+          { id: 'a', text: 'Porque las motosierras calientan el suelo con su motor de gasolina.', feedback: '🔎 La causa es la pérdida de la cubierta vegetal y de la sombra.' },
+          { id: 'b', text: 'Porque los animales del bosque se llevan la humedad en sus patas.', feedback: '🔎 Al quitar los árboles, el suelo queda desprotegido frente al sol y la lluvia.' },
+          { id: 'c', text: 'El suelo no cambia, sigue teniendo la misma fertilidad con o sin monte.', feedback: '🔎 La tierra descubierta se erosiona y pierde sus nutrientes con rapidez.' },
+          { id: 'd', text: 'Porque las raíces sostenían la tierra y las hojas guardaban la humedad.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Sin árboles, el sol reseca la tierra y el viento se lleva el suelo fértil.' }
         ],
         pedagogicalTip: 'Conecta la tala de árboles con la destrucción del hogar y la despensa de las especies.'
       },
@@ -1350,10 +1350,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre vegetación y protección del suelo?',
         options: [
-          { id: 'a', text: 'Las raíces amarran la tierra y el follaje amortigua la lluvia; sin vegetación, el agua y el viento lavan los nutrientes causando erosión.', isCorrect: true, feedback: '🌿 ¡Pista maestra descubierta! La cubierta vegetal es el escudo y la armadura viva del suelo fértil.' },
-          { id: 'b', text: 'La vegetación debilita el suelo porque las raíces lo perforan como agujas.', feedback: '🔎 Todo lo contrario: las raíces funcionan como una malla que evita derrumbes.' },
-          { id: 'c', text: 'El suelo crece más rápido cuando no tiene ninguna planta encima.', feedback: '🔎 Sin plantas, el sol calcinante y las lluvias torrenciales desertifican el suelo.' },
-          { id: 'd', text: 'No existe relación, la tierra no necesita plantas para mantenerse firme.', feedback: '🔎 Revisa el papel protector de la cobertura vegetal frente a la erosión.' }
+          { id: 'a', text: 'Los animales aprenden a fabricar sombrillas con ramas secas.', feedback: '🔎 La fauna huye o muere al destruirse su hábitat natural.' },
+          { id: 'b', text: 'Los pájaros y mamíferos se quedan sin nidos, comida ni sombra para vivir.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El bosque es la casa y el sustento de la fauna silvestre.' },
+          { id: 'c', text: 'Las aves prefieren vivir en el suelo para caminar más cómodas.', feedback: '🔎 Muchas aves necesitan copas altas para anidar y alimentarse.' },
+          { id: 'd', text: 'Los animales se alegran porque ahora entra más luz solar al suelo.', feedback: '🔎 La pérdida de árboles destruye las fuentes de frutos y semillas.' }
         ],
         pedagogicalTip: 'Piensa en las raíces como una red que sostiene el suelo frente a la fuerza del agua y el viento.'
       },
@@ -1364,10 +1364,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué la pérdida de una parte del ecosistema puede producir otros cambios?',
         options: [
-          { id: 'a', text: 'Porque todos los elementos están interconectados; la alteración de uno desencadena efectos en cadena en el agua, el suelo y la vida.', isCorrect: true, feedback: '🌿 ¡Comprensión de sistemas ecológicos de alto nivel! En la naturaleza nada funciona aislado.' },
-          { id: 'b', text: 'Porque las plantas enojadas le avisan a las nubes para que no llueva.', feedback: '🔎 Piensa en la red de interacciones bióticas y abióticas.' },
-          { id: 'c', text: 'Porque los ecosistemas son piezas de plástico que se rompen al tacto.', feedback: '🔎 Analiza el concepto de "relaciones ecológicas" que destaca el autor.' },
-          { id: 'd', text: 'No produce cambios, los ecosistemas se reparan solos en dos minutos.', feedback: '🔎 Los desequilibrios en un componente repercuten en todo el territorio.' }
+          { id: 'a', text: 'Al tumbar árboles se calienta el suelo y se evapora el agua de los pozos.', isCorrect: true, feedback: '🌿 ¡Muy bien! La masa vegetal regula el microclima y conserva el agua.' },
+          { id: 'b', text: 'La tala frena el viento y hace que llueva más seguido en las fincas.', feedback: '🔎 Al contrario: talar reseca el ambiente y reduce la nubosidad local.' },
+          { id: 'c', text: 'No existe relación, los árboles no tienen que ver con el agua ni el calor.', feedback: '🔎 La vegetación transpira vapor y protege los nacimientos de agua.' },
+          { id: 'd', text: 'El clima solo cambia si la gente enciende fogatas en los potreros.', feedback: '🔎 La deforestación masiva altera la temperatura de toda la comarca.' }
         ],
         pedagogicalTip: 'Aplica el principio ecológico fundamental: en un ecosistema todo está conectado.'
       }
@@ -1380,10 +1380,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué acciones de reforestación y conservación propondrías?',
         options: [
-          { id: 'a', text: 'Sembrar especies nativas de la región, proteger nacimientos de agua, crear cercas vivas y dejar áreas en regeneración natural asistida.', isCorrect: true, feedback: '🌿 ¡Plan de restauración impecable! Priorizar especies autóctonas revive las verdaderas relaciones ecológicas.' },
-          { id: 'b', text: 'Sembrar árboles plásticos que no requieran agua ni cuidado.', feedback: '🔎 Los árboles plásticos no proporcionan alimento, sombra ni absorción de carbono.' },
-          { id: 'c', text: 'Talar más árboles para que haya espacio donde sembrar pasto africano.', feedback: '🔎 Eso aumentaría la deforestación y la pérdida de biodiversidad.' },
-          { id: 'd', text: 'Comprar madera importada para decorar las colinas erosionadas.', feedback: '🔎 Se requiere restaurar el ecosistema vivo, no colocar madera muerta.' }
+          { id: 'a', text: 'Regar cemento sobre la tierra para evitar que vuelva a crecer monte.', feedback: '🔎 El cemento destruye la fertilidad y no permite sembrar alimentos.' },
+          { id: 'b', text: 'Quemar los rastrojos secos para que el suelo quede limpio y parejo.', feedback: '🔎 Las quemas matan los microorganismos del suelo y provocan incendios.' },
+          { id: 'c', text: 'Sembrar árboles nativos como ceiba e iguá y frenar la tala indiscriminada.', isCorrect: true, feedback: '🌿 ¡Brillante! La reforestación con especies propias recupera el bosque.' },
+          { id: 'd', text: 'Traer árboles plásticos de adorno para que el paisaje se vea verde.', feedback: '🔎 Los árboles plásticos no dan oxígeno, ni frutos, ni agua.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Promueve la siembra de árboles nativos y la restauración ecológica participativa.'
@@ -1395,10 +1395,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Cómo equilibrar necesidades humanas y conservación?',
         options: [
-          { id: 'a', text: 'Adoptando modelos agroforestales y silvopastoriles que permitan producir alimentos y madera sin destruir los bosques ni erosionar los suelos.', isCorrect: true, feedback: '🌿 ¡Solución de sostenibilidad genuina! Integra producción económica con custodia de la naturaleza.' },
-          { id: 'b', text: 'Destruyendo todos los pueblos para que no haya seres humanos en el territorio.', feedback: '🔎 La meta es la convivencia armónica y el desarrollo sostenible de las comunidades.' },
-          { id: 'c', text: 'Consumiendo todos los recursos naturales de una vez antes de que se acaben.', feedback: '🔎 Esa es la fórmula del colapso ecológico y social.' },
-          { id: 'd', text: 'Ignorando la conservación porque la economía es lo único que importa.', feedback: '🔎 Sin ecosistemas sanos, la economía y la agricultura también colapsan.' }
+          { id: 'a', text: 'Talar cada año más monte para no tener que abonar la tierra vieja.', feedback: '🔎 Acabar con el bosque deja a la comunidad sin agua y con suelos pobres.' },
+          { id: 'b', text: 'Prohibir que los campesinos tomen una sola fruta de los árboles.', feedback: '🔎 Las familias pueden cosechar frutos si cuidan las plantas madre.' },
+          { id: 'c', text: 'Comprar carbón mineral importado y botar la madera de las fincas.', feedback: '🔎 La solución es aprender a podar y reforestar en las propias parcelas.' },
+          { id: 'd', text: 'Combinar árboles con cultivos y usar leña solo de ramas caídas y secas.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! El uso sostenible permite obtener leña sin arrasar el monte.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Enfoca la respuesta en la agroecología, la forestería comunitaria y la coexistencia.'
@@ -1410,10 +1410,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué recuperar un bosque implica más que sembrar árboles?',
         options: [
-          { id: 'a', text: 'Porque reconstruir un bosque exige restaurar la fertilidad del suelo, el ciclo del agua, la presencia de hongos, polinizadores y fauna nativa.', isCorrect: true, feedback: '🌿 ¡Profundidad crítica extraordinaria! Un monocultivo de árboles no es un bosque; el bosque es una comunidad viva.' },
-          { id: 'b', text: 'Porque los árboles necesitan que les pongan nombres humanos a cada rama.', feedback: '🔎 Reflexiona sobre la complejidad de un bosque nativo frente a una plantación de madera.' },
-          { id: 'c', text: 'Porque se necesita pintar los troncos de verde para que se vean bonitos.', feedback: '🔎 Evalúa las relaciones ecológicas descritas en el caso.' },
-          { id: 'd', text: 'Sembrar árboles es lo único que se necesita, nada más tiene importancia.', feedback: '🔎 El texto enseña que el bosque es suelo, agua, microorganismos y relaciones.' }
+          { id: 'a', text: 'Porque un bosque seco no sirve para nada y solo produce ramas con espinas.', feedback: '🔎 El bosque seco protege acuíferos y alberga especies únicas del Caribe.' },
+          { id: 'b', text: 'Porque retiene agua en sequías, frena huracanes y da hogar a fauna única.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Este bosque es un escudo natural contra el cambio climático.' },
+          { id: 'c', text: 'Solo para que los poetas escriban canciones sobre árboles antiguos.', feedback: '🔎 Presta servicios ambientales indispensables para la vida campesina.' },
+          { id: 'd', text: 'Porque la madera fina se vende muy cara a compradores extranjeros.', feedback: '🔎 El valor real del bosque está en mantener vivo y fértil el territorio.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Distingue entre plantar árboles en hilera y restaurar un ecosistema forestal complejo y biodiverso.'
@@ -1465,10 +1465,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué actividades aparecen en el paisaje?',
         options: [
-          { id: 'a', text: 'Cultivos, potreros (ganadería), viviendas y caminos.', isCorrect: true, feedback: '🌿 ¡Correcto! Esas son las actividades y elementos que dividen el territorio en la lectura.' },
-          { id: 'b', text: 'Parques de diversiones y pistas de esquí en nieve.', feedback: '🔎 Vuelve a revisar la primera oración del texto.' },
-          { id: 'c', text: 'Únicamente fábricas de automóviles.', feedback: '🔎 El texto describe cultivos, potreros, viviendas y caminos.' },
-          { id: 'd', text: 'Puertos marítimos transatlánticos.', feedback: '🔎 Lee con atención las actividades agropecuarias mencionadas.' }
+          { id: 'a', text: 'Una selva continua e impenetrable que cubre cientos de kilómetros.', feedback: '🔎 El paisaje estaba dividido por caminos, cercas y fincas.' },
+          { id: 'b', text: 'Una gran ciudad llena de edificios altos y avenidas con semáforos.', feedback: '🔎 Se trata de una zona rural con mezcla de agricultura y parches verdes.' },
+          { id: 'c', text: 'Un paisaje con parches de bosque aislados entre potreros y cultivos.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe la fragmentación del territorio.' },
+          { id: 'd', text: 'Una playa desértica de arena blanca junto a un puerto marítimo.', feedback: '🔎 El entorno es la sabana y humedales de la región ribereña.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera oración.'
       },
@@ -1479,10 +1479,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué elementos dividieron las zonas de vegetación?',
         options: [
-          { id: 'a', text: 'Cultivos, potreros, viviendas y caminos.', isCorrect: true, feedback: '🌿 ¡Exacto! Esos elementos humanos fragmentaron la vegetación que antes estaba conectada.' },
-          { id: 'b', text: 'Una muralla de piedra construida en la época colonial.', feedback: '🔎 Revisa la primera frase: ¿qué dividió las zonas conectadas?' },
-          { id: 'c', text: 'Montañas volcánicas recién surgidas.', feedback: '🔎 Concéntrate en la división del paisaje por el uso del suelo.' },
-          { id: 'd', text: 'Cables submarinos de telecomunicaciones.', feedback: '🔎 El texto habla de cultivos, potreros, viviendas y caminos.' }
+          { id: 'a', text: 'Cercas de alambre, carreteras destapadas, potreros y cultivos limpios.', isCorrect: true, feedback: '🌿 ¡Exacto! Esas obras humanas partieron la continuidad del bosque.' },
+          { id: 'b', text: 'Una muralla de piedra antigua construida en tiempos coloniales.', feedback: '🔎 Los límites actuales son producto del uso agrícola y ganadero.' },
+          { id: 'c', text: 'Montañas rocosas muy empinadas que separan los valles.', feedback: '🔎 La división fue causada por actividades humanas recientes.' },
+          { id: 'd', text: 'Ríos subterráneos que abrieron grietas hondas en el suelo.', feedback: '🔎 El monte quedó dividido en islas por la acción campesina y ganadera.' }
         ],
         pedagogicalTip: 'Localiza qué causó la separación del dosel vegetal continuo.'
       },
@@ -1493,10 +1493,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué actividades humanas proporcionan recursos a las comunidades?',
         options: [
-          { id: 'a', text: 'La agricultura y la ganadería.', isCorrect: true, feedback: '🌿 ¡Muy bien! El texto reconoce expresamente su valor alimentario y económico.' },
-          { id: 'b', text: 'El comercio de tecnología espacial.', feedback: '🔎 Lee la segunda oración: ¿qué actividades proporcionan recursos?' },
-          { id: 'c', text: 'La venta de piedras talladas en la plaza.', feedback: '🔎 El texto menciona textualmente agricultura y ganadería.' },
-          { id: 'd', text: 'La pesca en aguas internacionales lejanas.', feedback: '🔎 Identifica las dos actividades productivas rurales del texto.' }
+          { id: 'a', text: 'La fabricación de computadores y teléfonos celulares modernos.', feedback: '🔎 Las actividades descritas son del sector agropecuario rural.' },
+          { id: 'b', text: 'La venta de piedras talladas en ferias internacionales de lujo.', feedback: '🔎 El sustento proviene de la siembra de cultivos y la cría de animales.' },
+          { id: 'c', text: 'La pesca en barcos gigantescos en aguas del océano Pacífico.', feedback: '🔎 La economía local gira en torno a la tierra, el río y los animales.' },
+          { id: 'd', text: 'La agricultura campesina y la ganadería tradicional de la sabana.', isCorrect: true, feedback: '🌿 ¡Muy bien! Son las actividades que dan sustento a las familias.' }
         ],
         pedagogicalTip: 'Observa el inicio de la segunda oración.'
       }
@@ -1509,10 +1509,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede la fragmentación afectar a las especies?',
         options: [
-          { id: 'a', text: 'Aísla a las poblaciones en parches pequeños, reduce el alimento y la reproducción cruzada y aumenta el riesgo de atropellamiento o caza.', isCorrect: true, feedback: '🌿 ¡Excelente deducción biológica! Los parches aislados actúan como jaulas sin rejas para las especies silvestres.' },
-          { id: 'b', text: 'Hace que los animales aprendan a utilizar el transporte público.', feedback: '🔎 Piensa en las barreras físicas que impiden a los animales cruzar de un bosque a otro.' },
-          { id: 'c', text: 'Favorece que los animales se hagan amigos de los tractores.', feedback: '🔎 Evalúa el aislamiento demográfico y la falta de espacio vital.' },
-          { id: 'd', text: 'No les afecta porque los animales pueden teletransportarse.', feedback: '🔎 Reflexiona sobre el concepto ecológico de conectividad del paisaje.' }
+          { id: 'a', text: 'Los animales aprenden a tomar transporte público para visitar a sus familias.', feedback: '🔎 El aislamiento dificulta conseguir alimento y encontrar pareja para reproducirse.' },
+          { id: 'b', text: 'Las especies quedan encerradas en islas verdes y corren riesgo al cruzar caminos.', isCorrect: true, feedback: '🌿 ¡Gran deducción! La fragmentación aísla manadas y las expone a atropellos o caza.' },
+          { id: 'c', text: 'Los monos y venados se hacen amigos de los tractores y viajan en ellos.', feedback: '🔎 Al cruzar potreros abiertos sufren ataques de perros o de cazadores.' },
+          { id: 'd', text: 'No les afecta, porque cualquier animal puede saltar cercas sin cansarse.', feedback: '🔎 Muchas especies pequeñas no se atreven a cruzar potreros sin árboles.' }
         ],
         pedagogicalTip: 'Infiere las consecuencias de quedar atrapado en parches boscosos desconectados.'
       },
@@ -1523,10 +1523,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué el uso del territorio puede modificar agua y suelo?',
         options: [
-          { id: 'a', text: 'Porque el arado intensivo compacta la tierra, la deforestación altera las lluvias y el desvío de cauces reseca humedales y satura otros.', isCorrect: true, feedback: '🌿 ¡Pista inferencial descubierta! Las actividades agropecuarias mal planificadas alteran la hidrología y la textura del suelo.' },
-          { id: 'b', text: 'Porque el suelo se vuelve de color azul cuando se siembra yuca.', feedback: '🔎 Piensa en cómo el pisoteo del ganado y el riego excesivo transforman la tierra.' },
-          { id: 'c', text: 'Porque el agua desaparece mágicamente cuando ve personas cerca.', feedback: '🔎 Analiza el impacto de drenajes, canales y remoción de vegetación.' },
-          { id: 'd', text: 'El uso del territorio nunca modifica el agua ni el suelo.', feedback: '🔎 Recuerda que el suelo y el agua responden a las prácticas de manejo.' }
+          { id: 'a', text: 'Porque talar y abrir zanjas reseca las ciénagas y aprieta la tierra fértil.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El arado y el desvío de caños alteran el ciclo del agua.' },
+          { id: 'b', text: 'Porque el suelo se vuelve azul brillante cada vez que se siembra yuca.', feedback: '🔎 Los cambios son de compactación, pérdida de humedad y nutrientes.' },
+          { id: 'c', text: 'Porque el agua desaparece sola cuando siente que hay personas cerca.', feedback: '🔎 La evaporación y la falta de árboles disminuyen el agua en los pozos.' },
+          { id: 'd', text: 'El trabajo en el campo nunca cambia el suelo ni el cauce de las aguas.', feedback: '🔎 La actividad humana transforma directamente el suelo y los arroyos.' }
         ],
         pedagogicalTip: 'Conecta la maquinaria, el pisoteo del ganado y el drenaje con la hidrología y la erosión.'
       },
@@ -1537,10 +1537,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué conservación y producción deben analizarse conjuntamente?',
         options: [
-          { id: 'a', text: 'Porque una producción que destruye la naturaleza se queda sin agua ni fertilidad futura, y una conservación que ignora a la gente no es sostenible.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento integrador! Producción y conservación son dos caras de la misma moneda para la vida humana.' },
-          { id: 'b', text: 'Para que los libros de geografía tengan el doble de páginas.', feedback: '🔎 Reflexiona sobre la interdependencia entre economía campesina y salud ambiental.' },
-          { id: 'c', text: 'Porque a los animales les gusta trabajar en las cosechas de maíz.', feedback: '🔎 Evalúa la necesidad de producir alimentos sin liquidar el capital natural.' },
-          { id: 'd', text: 'No deben analizarse juntas, son enemigas eternas que nunca pueden convivir.', feedback: '🔎 El desafío del Guardián es precisamente buscar el equilibrio armónico entre ambas.' }
+          { id: 'a', text: 'Para que los libros de ciencias de la escuela sean más pesados y largos.', feedback: '🔎 Ambas necesidades deben equilibrarse para que haya futuro.' },
+          { id: 'b', text: 'Porque a los animales silvestres les gusta ayudar a arar la tierra.', feedback: '🔎 La meta es producir alimentos sin destruir los recursos naturales.' },
+          { id: 'c', text: 'Porque el campesino necesita comer hoy y cuidar la tierra para cosechar mañana.', isCorrect: true, feedback: '🌿 ¡Muy bien! Sin naturaleza no hay cosechas, y sin comida la gente no vive.' },
+          { id: 'd', text: 'No deben unirse nunca, porque proteger la tierra prohíbe sembrar comida.', feedback: '🔎 Es posible sembrar de manera ecológica cuidando el suelo y el agua.' }
         ],
         pedagogicalTip: 'Comprende que la agricultura depende de los servicios ecológicos (agua, suelo fértil, polinizadores) del bosque.'
       }
@@ -1553,10 +1553,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué medidas propondrías para ordenar este territorio?',
         options: [
-          { id: 'a', text: 'Diseñar corredores biológicos entre parches de bosque, respetar rondas de ríos y ciénagas y delimitar zonas productivas sostenibles.', isCorrect: true, feedback: '🌿 ¡Propuesta de ordenamiento territorial de nivel experto! Reconecta la naturaleza sin expulsar la agricultura.' },
-          { id: 'b', text: 'Asfaltar todo el territorio para que ningún animal tenga que pisar barro.', feedback: '🔎 Eso aumentaría la temperatura y destruiría por completo la vocación fértil del suelo.' },
-          { id: 'c', text: 'Eliminar todos los cultivos para que no haya comida en la región.', feedback: '🔎 Las comunidades necesitan soberanía alimentaria mediante prácticas ecológicas.' },
-          { id: 'd', text: 'Dejar que cada persona tale y desvíe caños como prefiera sin ninguna norma.', feedback: '🔎 El desorden territorial es el causante directo de inundaciones y sequías extremas.' }
+          { id: 'a', text: 'Echar cemento en toda la sabana para que los animales no se unten de lodo.', feedback: '🔎 Pavimentar el campo destruiría la agricultura y secaría los humedales.' },
+          { id: 'b', text: 'Prohibir que la gente siembre alimentos para que solo crezca monte bravo.', feedback: '🔎 Las comunidades necesitan cultivar alimentos con buenas prácticas ecológicas.' },
+          { id: 'c', text: 'Dejar que cada quien tumbe y tape arroyos según su propia conveniencia.', feedback: '🔎 El desorden territorial provoca inundaciones graves y escasez de agua.' },
+          { id: 'd', text: 'Poner corredores de árboles que unan los parches y cuidar orillas de caños.', isCorrect: true, feedback: '🌿 ¡Brillante! Los corredores verdes permiten que los animales caminen seguros.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Propón herramientas de ordenamiento ambiental: rondas de protección, corredores verdes y zonificación.'
@@ -1568,10 +1568,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Cómo podría planificarse mejor el territorio?',
         options: [
-          { id: 'a', text: 'Con la participación activa de campesinos, pescadores, autoridades ambientales e indígenas, basándose en la geografía y ciclos del agua.', isCorrect: true, feedback: '🌿 ¡Planificación participativa ejemplar! Quienes habitan el territorio y conocen sus crecientes deben co-diseñar el plan.' },
-          { id: 'b', text: 'Decidiendo todo desde una oficina cerrada en la capital sin visitar Magangué.', feedback: '🔎 Los planes de escritorio lejanos desconocen la realidad viva de las comunidades y humedales.' },
-          { id: 'c', text: 'Lanzando monedas al aire para decidir dónde poner cada carretera.', feedback: '🔎 La planificación territorial exige ciencia ecológica, cartografía social y diálogo comunitario.' },
-          { id: 'd', text: 'Esperando a que ocurra una tragedia invernal para improvisar soluciones temporales.', feedback: '🔎 La prevención y la planificación anticipada evitan pérdidas de vidas y recursos.' }
+          { id: 'a', text: 'Tomando decisiones desde oficinas lejanas sin conocer el río Magdalena.', feedback: '🔎 Las soluciones deben construirse con la gente que vive en el territorio.' },
+          { id: 'b', text: 'Reuniendo a campesinos, pescadores y sabedores para acordar el uso del suelo.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! La planificación participativa respeta los ciclos del agua.' },
+          { id: 'c', text: 'Lanzando monedas al aire para elegir dónde poner las cercas de alambre.', feedback: '🔎 Se necesita ciencia, diálogo comunitario y conocimiento tradicional.' },
+          { id: 'd', text: 'Esperando a que llegue el invierno para improvisar muros de costales rotos.', feedback: '🔎 Planear con anticipación evita desastres y protege los hogares ribereños.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta la planificación participativa basada en la cuenca hidrográfica y el saber local.'
@@ -1583,10 +1583,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué una decisión sobre el suelo puede afectar a otros componentes del ecosistema?',
         options: [
-          { id: 'a', text: 'Porque cambiar el uso del suelo altera la recarga de agua, la temperatura local, la supervivencia de la fauna y la seguridad de las familias.', isCorrect: true, feedback: '🌿 ¡Criterio ecológico impecable! El suelo es la base sobre la que se sostienen el agua, la atmósfera y la biodiversidad.' },
-          { id: 'b', text: 'Porque el suelo se queja mediante temblores cada vez que se siembra arroz.', feedback: '🔎 Piensa en las consecuencias físicas y biológicas de la alteración del suelo.' },
-          { id: 'c', text: 'Solo afecta a las lombrices de tierra, nada más en el planeta.', feedback: '🔎 Valora la conexión entre el suelo y los ciclos hídricos y climáticos globales.' },
-          { id: 'd', text: 'Las decisiones sobre el suelo no tienen ningún efecto fuera de la cerca de la finca.', feedback: '🔎 Los impactos ambientales no respetan cercas ni linderos de propiedad privada.' }
+          { id: 'a', text: 'Porque lo que se hace en la tierra afecta los caños, los peces y las familias.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! En el territorio todos los elementos están conectados.' },
+          { id: 'b', text: 'Solo afecta a las lombrices de tierra que viven debajo de las raíces.', feedback: '🔎 Los pesticidas y la erosión bajan a los ríos y dañan la pesca.' },
+          { id: 'c', text: 'Porque la tierra tiembla cada vez que se arranca una mata de maíz.', feedback: '🔎 La conexión ecológica hace que un daño en el suelo altere el agua y la fauna.' },
+          { id: 'd', text: 'Las decisiones de una finca no tienen ninguna consecuencia en los vecinos.', feedback: '🔎 El agua corre y el viento viaja, llevando impactos de un predio a otro.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Explica cómo el suelo regula el ciclo del agua, la vegetación y el clima regional.'
@@ -1638,10 +1638,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué contaminante estudiaron?',
         options: [
-          { id: 'a', text: 'El mercurio.', isCorrect: true, feedback: '🌿 ¡Correcto! El mercurio es el contaminante metálico citado textualmente.' },
-          { id: 'b', text: 'El plástico triturado.', feedback: '🔎 Revisa la primera frase del texto.' },
-          { id: 'c', text: 'Detergentes con cloro.', feedback: '🔎 Vuelve al texto: se trata del metal usado en minería.' },
-          { id: 'd', text: 'Cenizas de carbón vegetal.', feedback: '🔎 El caso estudia específicamente el mercurio.' }
+          { id: 'a', text: 'El mercurio usado para separar oro.', isCorrect: true, feedback: '🌿 ¡Correcto! El mercurio es el metal contaminante de la misión.' },
+          { id: 'b', text: 'Bolsas plásticas flotando en el agua.', feedback: '🔎 Revisa qué metal pesado tóxico se menciona en la lectura.' },
+          { id: 'c', text: 'Detergentes y espumas de jabón sucio.', feedback: '🔎 El elemento estudiado es un metal líquido usado en minería.' },
+          { id: 'd', text: 'Cenizas de leña quemada en las orillas.', feedback: '🔎 Se trata de un metal pesado muy peligroso para la salud.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera línea del texto.'
       },
@@ -1652,10 +1652,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Con qué actividad se relacionó el caso?',
         options: [
-          { id: 'a', text: 'Con actividades mineras.', isCorrect: true, feedback: '🌿 ¡Exacto! Se originó en zonas vinculadas a la minería.' },
-          { id: 'b', text: 'Con la siembra de plátano en fincas.', feedback: '🔎 Lee la primera línea: ¿en qué zona se estudió el caso?' },
-          { id: 'c', text: 'Con la elaboración artesanal de queso.', feedback: '🔎 El texto relaciona el mercurio con la actividad minera.' },
-          { id: 'd', text: 'Con el turismo de playa en la costa.', feedback: '🔎 Identifica la actividad productiva causante en el texto.' }
+          { id: 'a', text: 'Con la siembra de plátano en las parcelas.', feedback: '🔎 La fuente de contaminación descrita son las dragas y bateas mineras.' },
+          { id: 'b', text: 'Con la fabricación de quesos y suero costeño.', feedback: '🔎 El metal proviene de la extracción minera en cuencas altas.' },
+          { id: 'c', text: 'Con paseos turísticos en lanchas de motor.', feedback: '🔎 Se relaciona con el vertimiento minero en ríos como el Cauca y Nechí.' },
+          { id: 'd', text: 'Con la minería de oro en ríos y caños.', isCorrect: true, feedback: '🌿 ¡Exacto! El mercurio se utiliza para amalgamar el oro en la minería.' }
         ],
         pedagogicalTip: 'Localiza la actividad en la primera oración.'
       },
@@ -1666,10 +1666,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Por qué organismos diferentes pueden entrar en contacto con el contaminante?',
         options: [
-          { id: 'a', text: 'Porque el contaminante entra al ambiente, se acumula en los tejidos y viaja a través de las relaciones alimentarias.', isCorrect: true, feedback: '🌿 ¡Muy bien! Has identificado el mecanismo de propagación biológica del texto.' },
-          { id: 'b', text: 'Porque todos los animales se reúnen a nadar juntos a la misma hora.', feedback: '🔎 Revisa cómo se transmite el contaminante según el segundo y tercer enunciado.' },
-          { id: 'c', text: 'Porque el mercurio vuela por el aire como si fuera un insecto.', feedback: '🔎 El texto explica el paso del agua a los tejidos y a la cadena trófica.' },
-          { id: 'd', text: 'Porque los pescadores pintan a los peces con pintura brillante.', feedback: '🔎 Observa la explicación científica de la acumulación en tejidos.' }
+          { id: 'a', text: 'Porque todos los peces se juntan a jugar en los charcos con mercurio.', feedback: '🔎 El contaminante se absorbe por las branquias y la comida.' },
+          { id: 'b', text: 'Porque el veneno entra al agua, pasa a los peces y viaja por la cadena alimentaria.', isCorrect: true, feedback: '🌿 ¡Muy bien! El tóxico se acumula en los tejidos y pasa de presa a depredador.' },
+          { id: 'c', text: 'Porque el mercurio vuela con alas de insecto y pica a los animales.', feedback: '🔎 El metal viaja invisible disuelto en el agua y pegado al lodo.' },
+          { id: 'd', text: 'Porque los pescadores pintan a los peces para que brillen en la noche.', feedback: '🔎 La contaminación ingresa al cuerpo mediante el alimento contaminado.' }
         ],
         pedagogicalTip: 'Extrae la explicación del segundo y tercer enunciado.'
       }
@@ -1682,10 +1682,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede un contaminante del agua llegar a una cadena alimentaria?',
         options: [
-          { id: 'a', text: 'Es absorbido por microorganismos y algas, que son comidos por peces pequeños, estos por peces mayores y finalmente por depredadores.', isCorrect: true, feedback: '🌿 ¡Deducción de biomagnificación impecable! El contaminante sube peldaño a peldaño en la red trófica.' },
-          { id: 'b', text: 'Los peces compran el contaminante en el mercado del río.', feedback: '🔎 Sigue la ruta ecológica de la alimentación entre eslabones acuáticos.' },
-          { id: 'c', text: 'El agua se transforma en comida instantánea para las aves.', feedback: '🔎 Piensa en la ingesta biológica de fitoplancton a carnívoros.' },
-          { id: 'd', text: 'Solo llega si los peces lo beben directamente en vasos de vidrio.', feedback: '🔎 Analiza la absorción tisular descrita en el texto.' }
+          { id: 'a', text: 'Los peces compran el mercurio en el fondo del río para tener más fuerza.', feedback: '🔎 Los organismos ingieren el metal sin darse cuenta al alimentarse.' },
+          { id: 'b', text: 'El agua del río se convierte en alimento concentrado para las aves rapaces.', feedback: '🔎 El metal pasa de nivel en nivel trófico por la ingestión de presas.' },
+          { id: 'c', text: 'Las plantas y microbios lo absorben, peces chicos los comen y peces grandes los tragan.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Así viaja el mercurio desde el plancton hasta los peces grandes.' },
+          { id: 'd', text: 'Solo entra al cuerpo si los peces toman agua en recipientes de vidrio.', feedback: '🔎 El mercurio entra por la respiración acuática y la digestión.' }
         ],
         pedagogicalTip: 'Sigue el paso del mercurio: agua → microalgas → pez forrajero → gran depredador.'
       },
@@ -1696,10 +1696,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué los organismos de niveles tróficos superiores pueden estar expuestos a concentraciones mayores?',
         options: [
-          { id: 'a', text: 'Por biomagnificación: un gran pez carnívoro ingiere cientos de presas contaminadas a lo largo de su vida acumulando todo su veneno.', isCorrect: true, feedback: '🌿 ¡Pista clave descifrada! Los depredadores tope concentran el mercurio de miles de organismos inferiores.' },
-          { id: 'b', text: 'Porque nadan más cerca de la superficie donde hace más sol.', feedback: '🔎 Piensa en la acumulación metabólica en grasas y tejidos musculares a lo largo del tiempo.' },
-          { id: 'c', text: 'Porque los animales grandes son más débiles genéticamente.', feedback: '🔎 El fenómeno se debe a la suma sucesiva de dosis contenidas en cada presa consumida.' },
-          { id: 'd', text: 'Porque los ríos profundos tienen más sal mineral.', feedback: '🔎 Recuerda el concepto de acumulación progresiva en tejidos a través de la dieta.' }
+          { id: 'a', text: 'Porque nadan más cerca del sol y el calor multiplica el veneno en su lomo.', feedback: '🔎 No depende del sol, sino de la cantidad de comida contaminada que comen.' },
+          { id: 'b', text: 'Porque los animales grandes nacen con defensas más débiles que los pequeños.', feedback: '🔎 Al vivir más años y comer muchas presas, acumulan dosis mayores del metal.' },
+          { id: 'c', text: 'Porque en los pozos hondos del río hay más sal que en los caños playos.', feedback: '🔎 El contaminante se fija en los músculos y órganos sin descomponerse.' },
+          { id: 'd', text: 'Porque un pez grande come miles de peces chicos y junta todo el veneno de ellos.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Eso se llama biomagnificación biológica.' }
         ],
         pedagogicalTip: 'Aplica el principio de biomagnificación: el depredador grande come miles de presas y acumula el veneno de todas.'
       },
@@ -1710,10 +1710,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué los seres humanos también forman parte del problema?',
         options: [
-          { id: 'a', text: 'Porque son quienes introducen el mercurio en la minería y a la vez son consumidores en la cima de la cadena al comer pescado contaminado.', isCorrect: true, feedback: '🌿 ¡Análisis integral perfecto! El ser humano es a la vez causa de la contaminación y víctima biológica de su propio impacto.' },
-          { id: 'b', text: 'Porque a los humanos les gusta bañarse con agua de color plateado.', feedback: '🔎 Reflexiona sobre el papel del ser humano como agente extractivo y comensal del río.' },
-          { id: 'c', text: 'Porque los humanos respiran bajo el agua en las ciénagas.', feedback: '🔎 Conecta las actividades mineras humanas con el consumo posterior de recursos pesqueros.' },
-          { id: 'd', text: 'Los humanos no forman parte del problema, la naturaleza genera mercurio sola.', feedback: '🔎 El texto señala explícitamente: "incluidos los seres humanos que consumen determinados recursos".' }
+          { id: 'a', text: 'Porque a las personas les gusta nadar en aguas con brillo plateado de noche.', feedback: '🔎 El riesgo está en consumir peces contaminados como bagres y blanquillos.' },
+          { id: 'b', text: 'Porque los humanos introducen el mercurio y luego comen pescado con veneno.', isCorrect: true, feedback: '🌿 ¡Exacto! Quien contamina el río termina consumiendo el tóxico en su mesa.' },
+          { id: 'c', text: 'Porque los seres humanos pueden respirar bajo el agua en las ciénagas.', feedback: '🔎 El ser humano está en la cima de la cadena alimentaria del río.' },
+          { id: 'd', text: 'Los humanos no tienen nada que ver, el mercurio nace de las piedras del río.', feedback: '🔎 El vertimiento es causado por la actividad minera irresponsable.' }
         ],
         pedagogicalTip: 'Comprende el doble rol humano: generador de la sustancia química y consumidor final del pescado de la cuenca.'
       }
@@ -1726,10 +1726,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué medidas de prevención propondrías frente a este problema?',
         options: [
-          { id: 'a', text: 'Erradicar el uso de mercurio en la minería mediante tecnologías limpias gravimétricas, monitorear ríos y apoyar a mineros en reconversión.', isCorrect: true, feedback: '🌿 ¡Medidas de política y tecnología ambiental acertadas! Elimina el tóxico en la fuente sin dejar sin sustento a las familias.' },
-          { id: 'b', text: 'Prohibir a las personas del Caribe comer pescado para siempre sin ofrecer otra comida.', feedback: '🔎 El pescado es la base de la seguridad alimentaria caribeña; la solución es limpiar el río y erradicar el mercurio.' },
-          { id: 'c', text: 'Echar cloro y perfume al río Magdalena para tapar el sabor del metal.', feedback: '🔎 Eso aumentaría la toxicidad química del agua.' },
-          { id: 'd', text: 'Verter más mercurio para que los peces se acostumbren a él.', feedback: '🔎 El mercurio es un veneno no biodegradable que daña el sistema nervioso.' }
+          { id: 'a', text: 'Cambiar el mercurio por tecnologías limpias de lavado y apoyar a los mineros.', isCorrect: true, feedback: '🌿 ¡Brillante! Las mesas gravimétricas permiten sacar oro sin usar veneno.' },
+          { id: 'b', text: 'Prohibir a la gente comer pescado para siempre sin ofrecer otra comida.', feedback: '🔎 Las familias ribereñas dependen del pescado para su nutrición diaria.' },
+          { id: 'c', text: 'Echar cloro y aromatizantes al río para taparle el sabor al agua turbia.', feedback: '🔎 El cloro no elimina los metales pesados y envenena a los peces.' },
+          { id: 'd', text: 'Echar más mercurio al agua para que los animales se acostumbren a él.', feedback: '🔎 El mercurio es un veneno irreversible que daña el cerebro humano.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Plantea alternativas de beneficio de oro libres de mercurio (mesas gravimétricas, centrifugación) y monitoreo.'
@@ -1741,10 +1741,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué es importante vigilar el agua y los organismos continuamente?',
         options: [
-          { id: 'a', text: 'Porque el mercurio es invisible e inodoro a simple vista; solo el análisis científico continuo detecta riesgos antes de daños graves en la salud.', isCorrect: true, feedback: '🌿 ¡Criterio preventivo esencial! Las amenazas invisibles requieren vigilancia científica de laboratorio.' },
-          { id: 'b', text: 'Para que los científicos tengan trabajo y puedan salir en televisión.', feedback: '🔎 Valora la alerta temprana en salud pública y bioseguridad alimentaria.' },
-          { id: 'c', text: 'Porque el agua cambia de color según el día de la semana.', feedback: '🔎 La toxicología ambiental permite proteger a comunidades vulnerables antes de intoxicaciones masivas.' },
-          { id: 'd', text: 'No es importante vigilar, lo que no se ve no hace ningún daño.', feedback: '🔎 Ese descuido histórico es el causante de graves enfermedades neurológicas en la región.' }
+          { id: 'a', text: 'Solo para que los biólogos salgan en la televisión y ganen premios.', feedback: '🔎 Monitorear el agua protege la vida y la salud de miles de habitantes.' },
+          { id: 'b', text: 'Porque el río cambia de color según el día de la semana que toque.', feedback: '🔎 Un agua transparente puede estar llena de partículas tóxicas invisibles.' },
+          { id: 'c', text: 'Porque el mercurio no huele ni se ve, y solo exámenes de laboratorio avisan el peligro.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! Sin análisis científicos continuos no se detecta la intoxicación.' },
+          { id: 'd', text: 'No hace falta vigilar nada, lo que no se ve a simple vista no hace daño.', feedback: '🔎 El mercurio acumulado causa enfermedades neurológicas muy graves.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta la importancia de la bio-vigilancia y el principio de precaución en salud pública.'
@@ -1756,10 +1756,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué responsabilidades deberían asumir quienes generan contaminación?',
         options: [
-          { id: 'a', text: 'Reparar el daño ambiental, suspender de inmediato el vertimiento de sustancias tóxicas y asumir los costos médicos y de remediación ecológica.', isCorrect: true, feedback: '🌿 ¡Principio ético y jurídico fundamental: "Quien contamina, responde y repara"! Justica ambiental pura.' },
-          { id: 'b', text: 'Cambiar de nombre a su empresa y trasladarse a otro río para seguir contaminando.', feedback: '🔎 La evasión de responsabilidades vulnera los derechos fundamentales de las comunidades.' },
-          { id: 'c', text: 'Ninguna responsabilidad, porque el oro es más importante que la salud humana.', feedback: '🔎 La vida, la salud y la integridad de los ecosistemas están por encima de cualquier ganancia.' },
-          { id: 'd', text: 'Pagar una moneda a cada habitante para que no hablen del tema.', feedback: '🔎 La remediación exige restauración ecológica real y cese de prácticas lesivas.' }
+          { id: 'a', text: 'Cambiarse de nombre y mudarse a otro río para seguir trabajando igual.', feedback: '🔎 La responsabilidad ambiental exige detener el daño y sanear el sitio.' },
+          { id: 'b', text: 'Ninguna responsabilidad, porque el oro vale más que la salud de los pueblos.', feedback: '🔎 La vida humana y la salud del ecosistema están por encima del dinero.' },
+          { id: 'c', text: 'Regalar una bolsa de dulces a los vecinos para que no pongan quejas.', feedback: '🔎 El daño por metales pesados requiere atención médica y remediación del río.' },
+          { id: 'd', text: 'Dejar de verter tóxicos, limpiar los caños y pagar los gastos de salud de la gente.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Quien contamina debe reparar el daño causado.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Aplica el principio de responsabilidad ambiental y justicia restaurativa.'
@@ -1811,10 +1811,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué actividad transformó el territorio?',
         options: [
-          { id: 'a', text: 'Actividades mineras (extracción de recursos).', isCorrect: true, feedback: '🌿 ¡Correcto! La minería es la causa explícita señalada en la primera línea.' },
-          { id: 'b', text: 'La siembra de flores ornamentales.', feedback: '🔎 Revisa la primera frase del texto.' },
-          { id: 'c', text: 'La instalación de un parque de molinos de viento.', feedback: '🔎 El texto habla de actividades mineras y extracción de recursos.' },
-          { id: 'd', text: 'Un campeonato de fútbol intercolegial.', feedback: '🔎 Identifica la actividad en la primera línea.' }
+          { id: 'a', text: 'Suelos negros muy húmedos cubiertos de flores de colores.', feedback: '🔎 El problema encontrado era el desgaste y resequedad de la tierra.' },
+          { id: 'b', text: 'Rocas de granito pulido traídas por un glaciar de hielo.', feedback: '🔎 En la sabana caribeña el impacto es la degradación del suelo fértil.' },
+          { id: 'c', text: 'Grandes lagos de aguas cristalinas rodeados de palmeras.', feedback: '🔎 La misión aborda el daño al suelo por malas prácticas agrícolas.' },
+          { id: 'd', text: 'Tierra dura, grietas en el suelo y poca capa vegetal fértil.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe la pérdida de suelo y la erosión.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera oración del caso.'
       },
@@ -1825,10 +1825,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué componentes fueron afectados?',
         options: [
-          { id: 'a', text: 'La vegetación (removida), el suelo y el agua.', isCorrect: true, feedback: '🌿 ¡Exacto! Los tres componentes físicos y biológicos citados en el texto.' },
-          { id: 'b', text: 'Únicamente los cables de internet del municipio.', feedback: '🔎 Lee la segunda frase: ¿qué componentes sufrieron alteraciones?' },
-          { id: 'c', text: 'Los aviones que vuelan por la estratósfera.', feedback: '🔎 El texto menciona vegetación removida, alteraciones del suelo y del agua.' },
-          { id: 'd', text: 'Las estrellas del cielo nocturno.', feedback: '🔎 Identifica los tres elementos ambientales en el texto.' }
+          { id: 'a', text: 'El paso constante de bicicletas de carreras los fines de semana.', feedback: '🔎 Las causas reales son ganadería excesiva y quemas agrícolas.' },
+          { id: 'b', text: 'El sobrepastoreo de ganado y las quemas repetidas de rastrojo.', isCorrect: true, feedback: '🌿 ¡Exacto! Pisotear sin descanso y quemar desgasta la tierra.' },
+          { id: 'c', text: 'El aterrizaje de avionetas comerciales en los potreros.', feedback: '🔎 Revisa las prácticas agropecuarias que dañan la tierra en el texto.' },
+          { id: 'd', text: 'La recolección de mangos maduros durante la época de cosecha.', feedback: '🔎 El pisoteo del ganado aprieta la tierra y no deja entrar aire ni agua.' }
         ],
         pedagogicalTip: 'Observa la segunda oración de la lectura.'
       },
@@ -1839,10 +1839,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Por qué los efectos pueden desplazarse según el texto?',
         options: [
-          { id: 'a', text: 'Porque pueden desplazarse mediante el agua, el viento y los organismos.', isCorrect: true, feedback: '🌿 ¡Muy bien! Son los tres vectores naturales de transporte citados en la lectura.' },
-          { id: 'b', text: 'Porque viajan en camiones de carga con tiquete pagado.', feedback: '🔎 Revisa la tercera oración: ¿a través de qué medios viajan los efectos?' },
-          { id: 'c', text: 'Porque la tierra gira muy rápido alrededor del sol.', feedback: '🔎 El texto señala: "mediante el agua, el viento y los organismos".' },
-          { id: 'd', text: 'Porque las leyes ambientales los obligan a mudarse.', feedback: '🔎 Localiza los tres factores en la tercera frase.' }
+          { id: 'a', text: 'Monedas antiguas de oro y vasijas de plata brillante.', feedback: '🔎 Lo que pierde el suelo son sus propiedades biológicas y nutrientes.' },
+          { id: 'b', text: 'Capas de hielo congelado que guardan el frío de la noche.', feedback: '🔎 La pérdida es de fertilidad, agua y microorganismos del suelo.' },
+          { id: 'c', text: 'Nutrientes, gusanos benéficos, humedad y vida microscópica.', isCorrect: true, feedback: '🌿 ¡Muy bien! Un suelo sano está lleno de vida y materia orgánica.' },
+          { id: 'd', text: 'Gases tóxicos que quemaban las raíces de las plantas.', feedback: '🔎 El suelo vivo tiene materia orgánica que alimenta los cultivos.' }
         ],
         pedagogicalTip: 'Extrae los tres vectores de propagación en la tercera frase.'
       }
@@ -1855,10 +1855,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede la pérdida de vegetación relacionarse con cambios del suelo?',
         options: [
-          { id: 'a', text: 'Al quitar las plantas, el suelo queda sin raíces que lo sostengan y sin materia orgánica, volviéndose estéril, duro y fácil de lavar por la lluvia.', isCorrect: true, feedback: '🌿 ¡Gran deducción edafológica! La vegetación es la madre protectora y nutricia del suelo fértil.' },
-          { id: 'b', text: 'El suelo se transforma en oro puro al quitar las raíces.', feedback: '🔎 Piensa en la pérdida de cohesión, retención de humedad y fertilidad.' },
-          { id: 'c', text: 'Las plantas enfrían el suelo y sin ellas el suelo se evapora en el aire.', feedback: '🔎 Conecta la remoción de capa vegetal con la desestructuración del suelo.' },
-          { id: 'd', text: 'No se relaciona, el suelo es piedra inerte que no cambia jamás.', feedback: '🔎 Evalúa cómo la maquinaria y la falta de plantas arruinan la fertilidad.' }
+          { id: 'a', text: 'Sin raíces que amarren la tierra, la lluvia arrastra el suelo al caño.', isCorrect: true, feedback: '🌿 ¡Gran deducción! La vegetación sujeta el suelo y evita que se lave con el agua.' },
+          { id: 'b', text: 'El suelo se convierte en oro puro al quitar las raíces de las matas.', feedback: '🔎 La pérdida de plantas empobrece la tierra, no crea metales.' },
+          { id: 'c', text: 'Las plantas enfrían tanto la tierra que sin ellas el suelo se evapora.', feedback: '🔎 La erosión hídrica y eólica lava la capa fértil cuando no hay raíces.' },
+          { id: 'd', text: 'La tierra nunca cambia, sigue igual de firme con o sin vegetación.', feedback: '🔎 Un suelo pelado se compacta, se agrieta y se vuelve estéril.' }
         ],
         pedagogicalTip: 'Analiza cómo la pérdida de raíces desata erosión y pérdida total de fertilidad biológica.'
       },
@@ -1869,10 +1869,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede el agua transportar contaminantes o sedimentos?',
         options: [
-          { id: 'a', text: 'La corriente arrastra lodos finos y químicos disueltos río abajo, depositándolos en ciénagas, playones y campos de cultivo lejanos.', isCorrect: true, feedback: '🌿 ¡Pista inferencial clara! El río actúa como una gran banda transportadora de sedimentos y sustancias.' },
-          { id: 'b', text: 'El agua congela los contaminantes y los empuja como bloques de hielo.', feedback: '🔎 Recuerda la fuerza del flujo continuo de los ríos de la cuenca del Caribe.' },
-          { id: 'c', text: 'Los sedimentos caminan solos por la orilla del río durante la noche.', feedback: '🔎 Infiere a partir de la dinámica hidrológica del arrastre por corriente.' },
-          { id: 'd', text: 'El agua solo puede llevar cosas que floten como madera seca.', feedback: '🔎 Las partículas en suspensión y sustancias disueltas viajan miles de kilómetros.' }
+          { id: 'a', text: 'El maíz y la yuca crecen el triple de rápido en suelos erosionados.', feedback: '🔎 Sin abono natural ni agua retenida, las plantas no crecen bien.' },
+          { id: 'b', text: 'Las vacas prefieren comer piedras en lugar de pasto verde y fresco.', feedback: '🔎 El ganado se desnutre al acabarse el pasto de buena calidad.' },
+          { id: 'c', text: 'El suelo pierde fertilidad, no retiene humedad y rinde menos comida.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! La tierra cansada da cosechas más pobres a las familias.' },
+          { id: 'd', text: 'El suelo se vuelve tan suave que las personas se hunden hasta la rodilla.', feedback: '🔎 El pisoteo aprieta la tierra volviéndola dura como ladrillo.' }
         ],
         pedagogicalTip: 'Imagina el río como una cinta transportadora: lo que se echa en la cabecera llega a las ciénagas bajas.'
       },
@@ -1883,10 +1883,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué los efectos ambientales pueden extenderse más allá del sitio de extracción?',
         options: [
-          { id: 'a', text: 'Porque las cuencas y el viento no tienen fronteras; los ríos llevan los lodos y los animales que bebieron agua viajan a otros bosques.', isCorrect: true, feedback: '🌿 ¡Deducción de ecología del paisaje excelente! Un impacto local se vuelve regional por la movilidad del agua, aire y fauna.' },
-          { id: 'b', text: 'Porque los mineros gritan tan fuerte que se escucha en todo el país.', feedback: '🔎 Analiza la conectividad física de los elementos naturales en una cuenca.' },
-          { id: 'c', text: 'Porque la tierra se encoge cuando se extraen minerales pesados.', feedback: '🔎 Piensa en cómo el agua y el viento comunican lugares muy distantes.' },
-          { id: 'd', text: 'Los efectos nunca se extienden, se quedan exactamente en el hoyo de la mina.', feedback: '🔎 El texto aclara expresamente que los efectos se desplazan mediante agua, viento y organismos.' }
+          { id: 'a', text: 'No existe relación, la comida que comemos viene de fábricas lejanas.', feedback: '🔎 Casi todos los alimentos nacen del suelo fértil cultivado por campesinos.' },
+          { id: 'b', text: 'Cuidar el suelo solo sirve para que los caminos se vean más bonitos.', feedback: '🔎 La seguridad alimentaria depende directamente de la salud de la tierra.' },
+          { id: 'c', text: 'El suelo erosionado produce alimentos con más vitaminas y minerales.', feedback: '🔎 La tierra desgastada produce alimentos de menor calidad y cantidad.' },
+          { id: 'd', text: 'Un suelo sano produce alimentos nutritivos y asegura la comida del pueblo.', isCorrect: true, feedback: '🌿 ¡Muy bien! Cuidar la tierra es cuidar el plato de comida de las familias.' }
         ],
         pedagogicalTip: 'Sintetiza: el agua fluye, el viento sopla y la fauna migra; el daño no se queda quieto.'
       }
@@ -1899,10 +1899,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué medidas de prevención y restauración propondrías?',
         options: [
-          { id: 'a', text: 'Exigir planes de cierre con restitución de suelos, reforestación inmediata con especies pioneras nativas y prohibición de minería en rondas hídricas.', isCorrect: true, feedback: '🌿 ¡Propuesta técnica integral! Frena la destrucción en áreas críticas y obliga a cicatrizar las heridas del territorio.' },
-          { id: 'b', text: 'Tapar los cráteres con basura plástica traída de las ciudades.', feedback: '🔎 Eso crearía una contaminación química aún más tóxica y peligrosa.' },
-          { id: 'c', text: 'Prohibir a los campesinos hablar sobre la minería en las escuelas.', feedback: '🔎 La educación y la denuncia informada son herramientas vitales de conservación.' },
-          { id: 'd', text: 'Dejar que las lluvias inunden los tajos para que se conviertan en piscinas públicas.', feedback: '🔎 Esas aguas contienen metales pesados y sedimentos peligrosos para la salud.' }
+          { id: 'a', text: 'Poner más vacas en el mismo lote para que aprieten más la tierra.', feedback: '🔎 Aumentar el ganado en un lote agotado acelera la desertificación.' },
+          { id: 'b', text: 'Rotar potreros para descanso, sembrar árboles forrajeros y no quemar.', isCorrect: true, feedback: '🌿 ¡Brillante! La rotación y los árboles nutren el suelo y dan sombra al ganado.' },
+          { id: 'c', text: 'Quemar con fuego toda la finca antes de que empiece a llover.', feedback: '🔎 Las quemas matan la vida del suelo y aumentan la erosión.' },
+          { id: 'd', text: 'Bañar los potreros con venenos químicos para que no nazcan hierbas.', feedback: '🔎 Los venenos destruyen los insectos y microorganismos benéficos.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Formula medidas de restauración ecológica de suelos y protección estricta de ecosistemas frágiles.'
@@ -1914,10 +1914,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué debería revisarse antes y durante una actividad extractiva?',
         options: [
-          { id: 'a', text: 'Estudios de impacto ambiental serios, el cauce del agua subterránea y superficial, la presencia de comunidades y el plan de recuperación.', isCorrect: true, feedback: '🌿 ¡Rigurosidad y vigilancia preventiva! La evaluación previa previene desastres irreversibles.' },
-          { id: 'b', text: 'Únicamente el precio del oro en la bolsa de valores internacional.', feedback: '🔎 La rentabilidad económica no puede primar sobre la supervivencia ecológica del territorio.' },
-          { id: 'c', text: 'El color de los uniformes que usarán los operadores de las máquinas.', feedback: '🔎 Lo crucial son los componentes ecológicos: agua, suelo, biodiversidad y salud comunitaria.' },
-          { id: 'd', text: 'No se debe revisar nada, es mejor actuar primero y preocuparse después.', feedback: '🔎 Ese descuido es la causa de los desastres ambientales documentados en el caso.' }
+          { id: 'a', text: 'Enseñar técnicas de abono orgánico y dar apoyo para sembrar cercas vivas.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! La capacitación y el apoyo práctico mejoran la producción.' },
+          { id: 'b', text: 'Quitarle la finca a los campesinos que tengan un pedazo de tierra seca.', feedback: '🔎 Se debe apoyar a las familias con educación y herramientas, no con castigos.' },
+          { id: 'c', text: 'Decirles que abandonen el campo y se muden a buscar empleo a la capital.', feedback: '🔎 El campo es el corazón de la alimentación y de la cultura ribereña.' },
+          { id: 'd', text: 'Prohibir que la gente tenga animales domésticos o críe terneros.', feedback: '🔎 La ganadería bien manejada puede convivir en armonía con los árboles.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta la necesidad de estudios de impacto ambiental participativos y monitoreo en tiempo real.'
@@ -1929,10 +1929,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué la restauración ambiental es importante?',
         options: [
-          { id: 'a', text: 'Porque devuelve la capacidad a la tierra de generar vida, retener agua, brindar seguridad a las comunidades y evitar desiertos estériles.', isCorrect: true, feedback: '🌿 ¡Criterio ecológico restaurativo maduro! Sanar el territorio es garantizar la vida de las próximas generaciones.' },
-          { id: 'b', text: 'Para que las fotos satelitales se vean bonitas en internet.', feedback: '🔎 Piensa en la restauración de los servicios ecosistémicos indispensables para la vida humana y silvestre.' },
-          { id: 'c', text: 'Porque la ley exige sembrar cinco flores para archivar un papel.', feedback: '🔎 La restauración es un compromiso biológico y ético con la salud de la cuenca.' },
-          { id: 'd', text: 'No es importante, la tierra destruida no le hace falta a nadie.', feedback: '🔎 Una tierra degradada genera pobreza, hambrunas y éxodos campesinos.' }
+          { id: 'a', text: 'Solo para que las lombrices de tierra tengan un lugar donde dormir.', feedback: '🔎 El suelo es la base de la alimentación, los bosques y el agua dulce.' },
+          { id: 'b', text: 'Porque la tierra limpia hace que los zapatos se ensucien menos al caminar.', feedback: '🔎 Proteger el suelo garantiza la vida y la comida de las futuras generaciones.' },
+          { id: 'c', text: 'Porque el suelo tarda siglos en formarse y si se pierde, no hay cosechas.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Pocos centímetros de tierra fértil sostienen toda la vida.' },
+          { id: 'd', text: 'No tiene importancia protegerlo, porque la tierra se puede comprar en bolsas.', feedback: '🔎 No es posible reemplazar millones de hectáreas de suelo fértil con tierra comprada.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Defiende la restauración como un acto de reparación ecológica y justicia con el territorio.'
@@ -1988,10 +1988,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué tipos de residuos encontraron?',
         options: [
-          { id: 'a', text: 'Bolsas, envases, restos de alimentos, llantas y otros residuos abandonados.', isCorrect: true, feedback: '🌿 ¡Correcto! La lista textual exacta aparece en la segunda frase del primer párrafo.' },
-          { id: 'b', text: 'Monedas de oro y diamantes preciosos.', feedback: '🔎 Revisa el segundo enunciado del primer párrafo.' },
-          { id: 'c', text: 'Únicamente hojas secas que cayeron de los árboles.', feedback: '🔎 El texto detalla bolsas, envases, alimentos, llantas y desechos.' },
-          { id: 'd', text: 'Instrumentos musicales rotos en una fiesta.', feedback: '🔎 Localiza la lista de basuras descrita por los Guardianes.' }
+          { id: 'a', text: 'Monedas de colección y joyas perdidas por los pescadores.', feedback: '🔎 El problema encontrado era acumulación de basuras y desechos.' },
+          { id: 'b', text: 'Bolsas plásticas, botellas, llantas viejas y restos de comida.', isCorrect: true, feedback: '🌿 ¡Correcto! Esos fueron los residuos acumulados en el caño.' },
+          { id: 'c', text: 'Flores aromáticas recién cortadas de los jardines del barrio.', feedback: '🔎 Se trataba de plásticos y desperdicios que tapaban el agua.' },
+          { id: 'd', text: 'Troncos tallados con figuras indígenas antiguas de adorno.', feedback: '🔎 Los residuos eran basura doméstica arrojada al cauce.' }
         ],
         pedagogicalTip: 'La respuesta está en la segunda oración del texto.'
       },
@@ -2002,10 +2002,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué podía ocurrir con algunos residuos cuando llovía?',
         options: [
-          { id: 'a', text: 'Podían ser arrastrados hacia canales y cuerpos de agua.', isCorrect: true, feedback: '🌿 ¡Exacto! El agua pluvial arrastraba los desechos hacia los caños.' },
-          { id: 'b', text: 'Se convertían automáticamente en abono orgánico perfumado.', feedback: '🔎 Lee la tercera frase del primer párrafo.' },
-          { id: 'c', text: 'Volaban hacia el cielo y desaparecían en las nubes.', feedback: '🔎 El texto indica que eran arrastrados hacia canales y agua.' },
-          { id: 'd', text: 'Se derretían sin dejar ningún rastro químico.', feedback: '🔎 Revisa el efecto de las lluvias sobre los residuos en las calles.' }
+          { id: 'a', text: 'En la cima de un cerro de piedra muy alejado del pueblo.', feedback: '🔎 El vertimiento ocurría en el caño que pasa junto a las casas.' },
+          { id: 'b', text: 'En un relleno sanitario moderno con sellado especial.', feedback: '🔎 Era un botadero a cielo abierto dentro del cuerpo de agua.' },
+          { id: 'c', text: 'En un caño cercano a las viviendas del barrio.', isCorrect: true, feedback: '🌿 ¡Exacto! Los desechos estaban dentro del cauce del agua.' },
+          { id: 'd', text: 'En la sala de espera de la estación de policía local.', feedback: '🔎 La basura tapaba el caño y amenazaba con inundaciones.' }
         ],
         pedagogicalTip: 'Observa la última frase del primer párrafo.'
       },
@@ -2016,10 +2016,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué componentes del ambiente podían verse afectados?',
         options: [
-          { id: 'a', text: 'Calles, suelos, caños, ciénagas, aire, vegetación, animales y personas.', isCorrect: true, feedback: '🌿 ¡Muy bien! Todos los componentes interconectados del sistema socioambiental.' },
-          { id: 'b', text: 'Solo los contenedores de basura de la alcaldía.', feedback: '🔎 Revisa los párrafos 2 y 3: ¿qué elementos sufren el impacto?' },
-          { id: 'c', text: 'Únicamente las plantas de plástico de las casas.', feedback: '🔎 El texto habla de suelo, agua, aire, organismos y personas.' },
-          { id: 'd', text: 'Ningún componente, porque el plástico es biodegradable en un minuto.', feedback: '🔎 Concéntrate en la frase final: "forman un sistema conectado".' }
+          { id: 'a', text: 'Mal olor, mosquitos, agua tapada y peligro de inundación.', isCorrect: true, feedback: '🌿 ¡Muy bien! La basura estancada causa enfermedades y desbordamientos.' },
+          { id: 'b', text: 'El agua se volvió dulce y cristalina como agua de manantial.', feedback: '🔎 La descomposición de basura contamina el agua y atrae plagas.' },
+          { id: 'c', text: 'Llegaron muchos turistas extranjeros a tomar fotos del lugar.', feedback: '🔎 El sitio olía mal y representaba un peligro de salud pública.' },
+          { id: 'd', text: 'Aparecieron peces de colores nadando felices entre el lodo.', feedback: '🔎 Los peces mueren por falta de oxígeno cuando el agua se pudre.' }
         ],
         pedagogicalTip: 'Extrae la red de componentes descrita en el segundo y tercer párrafo.'
       }
@@ -2032,10 +2032,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede un residuo de una calle terminar afectando un cuerpo de agua?',
         options: [
-          { id: 'a', text: 'La lluvia lo lava de la calle al desagüe, de allí al caño urbano y del caño desemboca en la ciénaga o el río.', isCorrect: true, feedback: '🌿 ¡Deducción de drenaje hídrico perfecta! El flujo superficial conecta el asfalto con el ecosistema acuático.' },
-          { id: 'b', text: 'El residuo camina con patas hacia el río para nadar.', feedback: '🔎 Piensa en la fuerza mecánica de la corriente de las lluvias torrenciales.' },
-          { id: 'c', text: 'Los vecinos llevan la basura de la calle en canoa al centro de la ciénaga a propósito.', feedback: '🔎 Infiere a partir del arrastre natural de las aguas pluviales en calles inclinadas.' },
-          { id: 'd', text: 'Los peces del río salen a la calle a recoger la basura.', feedback: '🔎 Conecta el ciclo del agua con el transporte de contaminantes sólidos.' }
+          { id: 'a', text: 'Porque los ríos tienen filtros mágicos que deshacen llantas al instante.', feedback: '🔎 Los plásticos duran cientos de años y viajan hasta el mar.' },
+          { id: 'b', text: 'Porque la basura arrojada en un lote se transforma sola en abono dulce.', feedback: '🔎 Las bolsas y tarros son arrastrados por las lluvias hacia los caños.' },
+          { id: 'c', text: 'Tirar basura en un lote nunca afecta al río ni a los vecinos del barrio.', feedback: '🔎 Los lixiviados y el viento llevan la contaminación a las fuentes de agua.' },
+          { id: 'd', text: 'Porque el agua corre hacia los ríos grandes y el viento mueve los plásticos.', isCorrect: true, feedback: '🌿 ¡Gran deducción! La basura no se queda quieta: baja por los caños al Magdalena.' }
         ],
         pedagogicalTip: 'Sigue la pendiente del agua: calle inclinada → cuneta → caño → ciénaga.'
       },
@@ -2046,10 +2046,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué contaminar un cuerpo de agua puede afectar a organismos que no viven permanentemente allí?',
         options: [
-          { id: 'a', text: 'Porque aves migratorias, ganado y seres humanos beben de esa agua, consumen sus peces y entran en contacto con sus orillas.', isCorrect: true, feedback: '🌿 ¡Pista clave revelada! Un humedal abastece a infinidad de especies terrestres y aéreas que dependen de él.' },
-          { id: 'b', text: 'Porque los animales del desierto viajan en avión a visitar la ciénaga.', feedback: '🔎 Recuerda que animales terrestres y aves acuden al agua para alimentarse e hidratarse.' },
-          { id: 'c', text: 'Porque el agua envenenada emite ondas de radio que persiguen a los animales.', feedback: '🔎 Analiza las cadenas tróficas y el uso compartido del agua dulce.' },
-          { id: 'd', text: 'No les afecta en absoluto si no viven dentro del agua todo el tiempo.', feedback: '🔎 Todos los organismos del territorio dependen del agua para calmar la sed y comer.' }
+          { id: 'a', text: 'Para que la alcaldía no tenga que hacer ningún trabajo en todo el año.', feedback: '🔎 La comunidad y el municipio deben trabajar juntos con responsabilidad.' },
+          { id: 'b', text: 'Porque todos botamos basura a diario y si el caño se tapa, nos inundamos todos.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El caño es compartido y su cuidado exige el esfuerzo de todos.' },
+          { id: 'c', text: 'Porque es un castigo obligatorio que impone la escuela en vacaciones.', feedback: '🔎 Cuidar el agua limpia es una necesidad vital para la salud del barrio.' },
+          { id: 'd', text: 'Con que limpie una sola persona alcanza para desocupar todo el caño.', feedback: '🔎 Si muchos siguen botando basura, el esfuerzo de uno solo no será suficiente.' }
         ],
         pedagogicalTip: 'Piensa en las especies que van al agua solo a beber o alimentarse: ganado, aves, seres humanos.'
       },
@@ -2060,10 +2060,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre quema de residuos y contaminación del aire?',
         options: [
-          { id: 'a', text: 'Al quemar plásticos y llantas, el fuego no destruye los químicos sino que los convierte en gases tóxicos y humo que todos respiramos.', isCorrect: true, feedback: '🌿 ¡Comprensión química del residuo impecable! La materia no desaparece: el residuo sólido se vuelve gas venenoso.' },
-          { id: 'b', text: 'La quema limpia el aire y produce perfume de rosas en el barrio.', feedback: '🔎 El humo libera toxinas peligrosas y material particulado a los pulmones.' },
-          { id: 'c', text: 'El fuego hace que la basura se vuelva invisible y deje de existir para siempre.', feedback: '🔎 Recuerda el principio: "la contaminación no desaparece porque dejemos de verla".' },
-          { id: 'd', text: 'No existe relación, el humo de la basura sube a la luna directamente.', feedback: '🔎 El humo permanece en el aire que respiran los niños y ancianos del municipio.' }
+          { id: 'a', text: 'Los plásticos se rompen en partes diminutas que los peces tragan al comer.', isCorrect: true, feedback: '🌿 ¡Muy bien! Los microplásticos entran a la cadena alimentaria de los peces.' },
+          { id: 'b', text: 'Las botellas plásticas sirven de casita abrigada para los alevinos del río.', feedback: '🔎 La basura asfixia los fondos y envenena a la fauna acuática.' },
+          { id: 'c', text: 'El plástico se deshace en dos días y alimenta a las plantas de la orilla.', feedback: '🔎 El plástico no es biodegradable y contamina por siglos los humedales.' },
+          { id: 'd', text: 'Los peces del caño aprenden a fabricar herramientas con tapas de gaseosa.', feedback: '🔎 Muchos peces mueren atorados con plásticos en sus estómagos.' }
         ],
         pedagogicalTip: 'Recuerda: la materia no se destruye; quemar plástico traslada el veneno del suelo a los pulmones.'
       }
@@ -2076,10 +2076,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué acciones propondrías para disminuir la contaminación?',
         options: [
-          { id: 'a', text: 'Separación en la fuente, rutas eficientes de recolección municipal, prohibición y sanción de quema y jornadas de limpieza comunitaria de caños.', isCorrect: true, feedback: '🌿 ¡Plan integral de gestión de residuos! Combina educación ciudadana, servicio público eficiente y orden.' },
-          { id: 'b', text: 'Arrojar toda la basura al río Cauca para que se la lleve más rápido.', feedback: '🔎 Eso contaminaría a las comunidades vecinas aguas abajo.' },
-          { id: 'c', text: 'Enterrar las llantas y plásticos debajo de las camas de las casas.', feedback: '🔎 Esas sustancias tóxicas dañan la salud en espacios cerrados.' },
-          { id: 'd', text: 'Prohibir a las personas comprar comida o agua.', feedback: '🔎 La clave es el consumo responsable, la reducción de plásticos y el reciclaje.' }
+          { id: 'a', text: 'Echar toda la basura al río Cauca para que la corriente se la lleve rápido.', feedback: '🔎 Botar la basura al río solo traslada el daño a los pueblos de abajo.' },
+          { id: 'b', text: 'Enterrar las llantas y plásticos debajo de las camas de las habitaciones.', feedback: '🔎 Enterrar plásticos en casa genera focos de humedad y enfermedades.' },
+          { id: 'c', text: 'Separar reciclaje en casa, rutas fijas de recolección y limpiar el caño juntos.', isCorrect: true, feedback: '🌿 ¡Brillante! La separación en la fuente y la limpieza comunitaria salvan el caño.' },
+          { id: 'd', text: 'Prohibir que los habitantes del pueblo compren comida empacada en la tienda.', feedback: '🔎 Se deben gestionar los residuos correctamente, no prohibir los alimentos.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Plantea la estrategia de las 3R (Reducir, Reutilizar, Reciclar) y la recolección municipal regular.'
@@ -2091,10 +2091,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Cómo responderías a quien dice que la basura de un lote no afecta al río?',
         options: [
-          { id: 'a', text: 'Mostrándole que la lluvia y el viento no respetan linderos; los lixiviados van al acuífero y el agua arrastra los plásticos directo al caño y al río.', isCorrect: true, feedback: '🌿 ¡Argumentación pedagógica irrebatible! Desmonta el mito de la basura "aislada" con el ciclo del agua.' },
-          { id: 'b', text: 'Diciéndole que tiene razón y que arroje más basura al lote.', feedback: '🔎 El Guardián enseña la conexión ecológica del territorio con fundamentos.' },
-          { id: 'c', text: 'Peleando a gritos en la calle sin explicar razones.', feedback: '🔎 La pedagogía ambiental convence con evidencia científica y sentido común.' },
-          { id: 'd', text: 'Diciéndole que el río tiene filtros mágicos que desintegran las llantas.', feedback: '🔎 Las llantas y plásticos duran cientos de años contaminando los cuerpos de agua.' }
+          { id: 'a', text: 'Diciéndole que tiene toda la razón y botando más bolsas en su solar.', feedback: '🔎 El Guardián enseña con pedagogía y argumentos ambientales claros.' },
+          { id: 'b', text: 'Peleando a gritos en la calle sin explicarle las razones del daño ecológico.', feedback: '🔎 El conflicto violento no resuelve los problemas comunitarios.' },
+          { id: 'c', text: 'Diciéndole que los caños se limpian solos cuando sale el sol de verano.', feedback: '🔎 La basura acumulada en lotes abiertos contamina el suelo y las aguas vecinas.' },
+          { id: 'd', text: 'Explicándole que la lluvia lava los basureros y lleva los plásticos al río.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! El agua y el viento no respetan linderos ni cercas de alambre.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Usa la evidencia del arrastre pluvial para demostrar que el lote y el río están conectados.'
@@ -2106,10 +2106,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué solucionar la contaminación requiere acciones de toda la comunidad?',
         options: [
-          { id: 'a', text: 'Porque todos generamos residuos diariamente y si una sola persona o barrio arroja basura, el sistema conectado de caños y aire afectará a todos por igual.', isCorrect: true, feedback: '🌿 ¡Principio de corresponsabilidad territorial! El cuidado del entorno común exige el compromiso de cada vecino e institución.' },
-          { id: 'b', text: 'Para que la alcaldía no tenga que hacer nada en todo el año.', feedback: '🔎 La alcaldía tiene deberes legales, pero requiere el comportamiento cívico de la ciudadanía.' },
-          { id: 'c', text: 'Porque es una regla impuesta para cansar a los estudiantes en vacaciones.', feedback: '🔎 La limpieza del municipio salva vidas de enfermedades como dengue y cólera.' },
-          { id: 'd', text: 'No se requiere de toda la comunidad, con que limpie una sola persona alcanza.', feedback: '🔎 Una persona no puede limpiar los residuos de miles de habitantes si estos continúan arrojándolos.' }
+          { id: 'a', text: 'Solo para que las calles del barrio se vean limpias cuando pasen carros.', feedback: '🔎 La razón principal es la salud pública, la vida de los peces y evitar inundaciones.' },
+          { id: 'b', text: 'Porque un caño tapado enferma a los niños y causa pérdidas a toda la comunidad.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! La basura estancada es un foco grave de epidemias e inundación.' },
+          { id: 'c', text: 'Porque a los mosquitos les molesta que haya agua corriendo por las cunetas.', feedback: '🔎 El agua estancada por basuras es donde nacen mosquitos transmisores del dengue.' },
+          { id: 'd', text: 'No tiene importancia mantenerlo limpio, el agua sucia es normal en el pueblo.', feedback: '🔎 Vivir en un ambiente limpio y con caños sanos es un derecho de todos.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta el principio de bien común y corresponsabilidad ciudadana e institucional.'
@@ -2165,10 +2165,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué cambios del tiempo mencionan las personas?',
         options: [
-          { id: 'a', text: 'Períodos de calor, lluvias fuertes, sequías y cambios repentinos del tiempo.', isCorrect: true, feedback: '🌿 ¡Correcto! Esos cuatro fenómenos aparecen textualmente en la primera línea.' },
-          { id: 'b', text: 'Nevadas constantes y formación de glaciares en el río.', feedback: '🔎 Lee la primera oración del caso.' },
-          { id: 'c', text: 'Lluvia de ranas y granizo de diamantes.', feedback: '🔎 El texto habla de calor, lluvias fuertes, sequías y cambios repentinos.' },
-          { id: 'd', text: 'Que el tiempo no había cambiado en absoluto.', feedback: '🔎 Vuelve a leer lo que comentaban los pobladores del territorio.' }
+          { id: 'a', text: 'Nevadas suaves que cubrieron de blanco los techos de las casas.', feedback: '🔎 En el clima tropical caribeño no nieva; el impacto es de calor y sequía.' },
+          { id: 'b', text: 'Días frescos y nublados sin viento durante todo el año escolar.', feedback: '🔎 La sabana experimenta temperaturas más extremas y sequías severas.' },
+          { id: 'c', text: 'Veranos más calientes y largos, y lluvias fuertes e impredecibles.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe cambios en el régimen de lluvias y calor.' },
+          { id: 'd', text: 'El agua del río Magdalena se congeló por completo en enero.', feedback: '🔎 Los campesinos notan que el calendario tradicional de lluvias cambió.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera línea.'
       },
@@ -2179,10 +2179,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué actividades humanas contribuyen al calentamiento global según el texto?',
         options: [
-          { id: 'a', text: 'La emisión de gases de efecto invernadero por combustibles fósiles y la deforestación.', isCorrect: true, feedback: '🌿 ¡Exacto! Ambas actividades humanas se destacan en la segunda oración.' },
-          { id: 'b', text: 'El uso de bicicletas y la siembra de huertas caseras.', feedback: '🔎 Lee la segunda oración: ¿qué actividades humanas emiten gases?' },
-          { id: 'c', text: 'La lectura de libros infantiles en las bibliotecas.', feedback: '🔎 El texto menciona combustibles fósiles y deforestación.' },
-          { id: 'd', text: 'Dormir temprano por las noches de calor.', feedback: '🔎 Identifica las dos actividades extractivas señaladas en el texto.' }
+          { id: 'a', text: 'La tala masiva de bosques y la quema de rastrojos en la región.', isCorrect: true, feedback: '🌿 ¡Exacto! Talar y quemar libera carbono y elimina la sombra natural.' },
+          { id: 'b', text: 'El uso de abanicos eléctricos en las casas durante la noche.', feedback: '🔎 La causa de fondo es la pérdida de bosques y la emisión de gases globales.' },
+          { id: 'c', text: 'La pesca de bagre con anzuelo en las horas de la madrugada.', feedback: '🔎 Revisa las actividades humanas que calientan el aire y secan la tierra.' },
+          { id: 'd', text: 'La siembra de maíz y yuca en las pequeñas huertas caseras.', feedback: '🔎 La deforestación a gran escala y las quemas alteran el microclima.' }
         ],
         pedagogicalTip: 'Observa la segunda oración del primer párrafo.'
       },
@@ -2193,10 +2193,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué diferencia establece el texto entre el clima y eventos particulares?',
         options: [
-          { id: 'a', text: 'El clima tiene variaciones naturales y no todo evento meteorológico tiene una única causa humana, pero el calentamiento global modifica el sistema general.', isCorrect: true, feedback: '🌿 ¡Muy bien! Has comprendido la distinción científica entre evento puntual y sistema climático.' },
-          { id: 'b', text: 'Que el clima es una invención de la televisión y los eventos son reales.', feedback: '🔎 Revisa el segundo párrafo sobre eventos meteorológicos vs sistema climático.' },
-          { id: 'c', text: 'Que el clima solo dura diez minutos y los eventos duran cien años.', feedback: '🔎 El texto aclara que hay variaciones naturales pero el sistema global se modifica.' },
-          { id: 'd', text: 'No establece ninguna diferencia, son exactamente la misma palabra.', feedback: '🔎 Fíjate en la distinción entre un evento meteorológico y el sistema climático general.' }
+          { id: 'a', text: 'Abundancia de pasto verde y ríos llenos de peces todo el tiempo.', feedback: '🔎 La sequía extrema seca los pozos y marchita los cultivos del campo.' },
+          { id: 'b', text: 'Baja en el precio de todos los alimentos en las tiendas del barrio.', feedback: '🔎 Al perderse cosechas, la comida escasea y sube de precio.' },
+          { id: 'c', text: 'Aparición de nuevos manantiales de agua dulce en los patios.', feedback: '🔎 Los campesinos sufren por la falta de agua para sus animales.' },
+          { id: 'd', text: 'Pozos secos, pérdida de cosechas y muerte de ganado por sed.', isCorrect: true, feedback: '🌿 ¡Muy bien! Esos son los efectos directos que golpean a las familias campesinas.' }
         ],
         pedagogicalTip: 'Localiza la diferenciación en el segundo párrafo.'
       }
@@ -2209,10 +2209,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué no todo evento meteorológico tiene una única causa humana?',
         options: [
-          { id: 'a', text: 'Porque la Tierra tiene ciclos naturales (como El Niño y La Niña), pero las emisiones humanas alteran su intensidad y frecuencia.', isCorrect: true, feedback: '🌿 ¡Deducción científica impecable! La variabilidad natural interactúa con la presión del calentamiento global antropogénico.' },
-          { id: 'b', text: 'Porque los eventos meteorológicos son enviados por meteoritos del espacio.', feedback: '🔎 Piensa en la combinación entre ciclos planetarios naturales y alteración humana.' },
-          { id: 'c', text: 'Porque los seres humanos no tienen ningún poder sobre la atmósfera.', feedback: '🔎 El texto aclara que el calentamiento modifica el sistema aumentando riesgos.' },
-          { id: 'd', text: 'Porque el tiempo atmosférico se inventó hace dos días.', feedback: '🔎 Recuerda que el clima ha variado de forma natural a lo largo de las eras geológicas.' }
+          { id: 'a', text: 'Los árboles caídos atraen rayos y centellas que encienden el suelo.', feedback: '🔎 La tala libera gases de efecto invernadero y destruye el ciclo de humedad.' },
+          { id: 'b', text: 'Los árboles guardan carbono; al quemarlos, el calor se queda en el aire.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Los árboles absorben carbono y refrescan el ambiente con vapor de agua.' },
+          { id: 'c', text: 'Las hojas verdes reflejan la luz de la luna hacia el espacio exterior.', feedback: '🔎 La vegetación funciona como un regulador natural de la temperatura.' },
+          { id: 'd', text: 'No tiene relación, el aire caliente viene únicamente del fondo del mar.', feedback: '🔎 La deforestación en tierra firme calienta directamente el clima local.' }
         ],
         pedagogicalTip: 'Distingue entre la variabilidad natural del planeta y el calentamiento acelerado por actividades humanas.'
       },
@@ -2223,10 +2223,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo pueden las emisiones humanas contribuir al calentamiento global?',
         options: [
-          { id: 'a', text: 'Los gases de combustibles fósiles atrapan el calor del sol en la atmósfera como un invernadero impidiendo que escape al espacio.', isCorrect: true, feedback: '🌿 ¡Pista maestra descifrada! El exceso de gases termoactivos eleva la temperatura media planetaria.' },
-          { id: 'b', text: 'Las emisiones son fuego directo que enciende fósforos en el cielo.', feedback: '🔎 Comprende el mecanismo de retención de radiación infrarroja de los gases de efecto invernadero.' },
-          { id: 'c', text: 'Las emisiones empujan a la Tierra más cerca del sol en su órbita.', feedback: '🔎 Analiza el concepto de "efecto invernadero" citado en el texto.' },
-          { id: 'd', text: 'Las emisiones humanas enfrían el planeta congelando los trópicos.', feedback: '🔎 El texto habla de calentamiento global y aumento de temperaturas.' }
+          { id: 'a', text: 'Los campesinos no saben cuándo sembrar porque las lluvias no llegan a tiempo.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El desorden climático hace fracasar las siembras tradicionales.' },
+          { id: 'b', text: 'Las plantas de yuca deciden caminar hacia zonas con más sombra y agua.', feedback: '🔎 La siembra depende de las lluvias regulares para que las semillas broten.' },
+          { id: 'c', text: 'Los agricultores prefieren esperar a que el maíz caiga del cielo solo.', feedback: '🔎 Las temporadas secas prolongadas secan las plántulas recién nacidas.' },
+          { id: 'd', text: 'El cambio de clima hace que las matas de plátano den cosechas de manzana.', feedback: '🔎 Las semillas se pierden si no llueve en las semanas previstas.' }
         ],
         pedagogicalTip: 'Explica el mecanismo del efecto invernadero: retención del calor por acumulación de gases.'
       },
@@ -2237,10 +2237,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué la deforestación puede relacionarse con el cambio climático?',
         options: [
-          { id: 'a', text: 'Porque los árboles absorben y almacenan dióxido de carbono; al talarlos y quemarlos, ese carbono se libera a la atmósfera calentando el aire.', isCorrect: true, feedback: '🌿 ¡Excelente conexión biológica! Los bosques son el gran pulmón y sumidero de carbono del planeta.' },
-          { id: 'b', text: 'Porque los árboles talados atraen a los truenos y relámpagos.', feedback: '🔎 Conecta el papel de los árboles como almacenes de carbono con el calentamiento global.' },
-          { id: 'c', text: 'Porque las hojas verdes reflejan la luz de la luna.', feedback: '🔎 Evalúa cómo la pérdida del dosel vegetal incrementa el CO2 en el aire.' },
-          { id: 'd', text: 'No tiene relación, los árboles no tienen nada que ver con el aire.', feedback: '🔎 Recuerda que la fotosíntesis captura carbono y regula la humedad atmosférica.' }
+          { id: 'a', text: 'Poner aires acondicionados en los potreros para enfriar a las vacas.', feedback: '🔎 Las soluciones reales son la restauración ecológica y el cuidado del agua.' },
+          { id: 'b', text: 'Construir techos de zinc gigantes sobre todo el monte del municipio.', feedback: '🔎 El zinc concentra más calor; la sombra natural de los árboles es la que refresca.' },
+          { id: 'c', text: 'Sembrar árboles y cuidar humedales ayuda a refrescar el aire y retener agua.', isCorrect: true, feedback: '🌿 ¡Muy bien! La vegetación y el agua amortiguan el impacto de las altas temperaturas.' },
+          { id: 'd', text: 'Dejar de tomar agua para acostumbrarse a vivir con la sequía permanente.', feedback: '🔎 La adaptación comunitaria protege los pozos, reservorios y bosques nativos.' }
         ],
         pedagogicalTip: 'Recuerda: el árbol vivo guarda carbono; el árbol talado o quemado lo devuelve como gas invernadero.'
       }
@@ -2253,10 +2253,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué acciones de adaptación y mitigación propondrías?',
         options: [
-          { id: 'a', text: 'Mitigación: frenar la deforestación y usar energías limpias; Adaptación: proteger ciénagas amortiguadoras de crecientes y diversificar cultivos.', isCorrect: true, feedback: '🌿 ¡Estrategia climática completa y rigurosa! Ataca las causas (mitigación) y protege a la comunidad de los impactos (adaptación).' },
-          { id: 'b', text: 'Mitigación: comprar más ventiladores; Adaptación: quejarse del sol en la calle.', feedback: '🔎 Las respuestas deben ser estructurales y ecológicas para el territorio de La Mojana.' },
-          { id: 'c', text: 'Talar todos los árboles para que no se caigan con las tormentas.', feedback: '🔎 Talar aumentaría las emisiones y empeoraría las inundaciones.' },
-          { id: 'd', text: 'Esperar a que el clima se arregle solo sin cambiar ninguna práctica humana.', feedback: '🔎 La inacción climática condena a las comunidades ribereñas a desastres continuos.' }
+          { id: 'a', text: 'Talar los árboles viejos para que no estorben cuando sople viento fuerte.', feedback: '🔎 Los árboles viejos son los que frenan los vendavales y dan más sombra.' },
+          { id: 'b', text: 'Quemar los pastos secos para que no haya peligro de que se incendien solos.', feedback: '🔎 Quemar pastos reseca la tierra y desata incendios forestales incontrolables.' },
+          { id: 'c', text: 'Esperar que los países ricos vengan a regar agua con avionetas en la sabana.', feedback: '🔎 Las comunidades locales pueden organizarse y proteger sus fuentes hídricas.' },
+          { id: 'd', text: 'Cosechar agua de lluvia, reforestar rondas de arroyos y no hacer quemas.', isCorrect: true, feedback: '🌿 ¡Brillante! Esas acciones preparan a la comunidad ante sequías e inundaciones.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Distingue claramente: Mitigar = reducir causas (emisiones/tala); Adaptar = prepararse para los efectos (inundaciones/sequías).'
@@ -2268,10 +2268,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué es importante distinguir entre tiempo atmosférico y clima?',
         options: [
-          { id: 'a', text: 'Porque el tiempo es el estado de hoy (si llovió o hizo sol), mientras que el clima es el patrón de décadas; confundirlos impide planificar a largo plazo.', isCorrect: true, feedback: '🌿 ¡Distinción epistemológica fundamental! Un día frío no niega el calentamiento global, como una golondrina no hace verano.' },
-          { id: 'b', text: 'Para pasar los exámenes de geografía con buena calificación.', feedback: '🔎 Comprende la diferencia temporal: el tiempo cambia a diario; el clima define el régimen a largo plazo.' },
-          { id: 'c', text: 'Porque el tiempo atmosférico lo inventó la radio y el clima los libros.', feedback: '🔎 Reflexiona sobre cómo esta confusión lleva a la gente a negar la crisis climática.' },
-          { id: 'd', text: 'No es importante, cualquier persona puede llamarlos como quiera.', feedback: '🔎 La precisión conceptual permite tomar decisiones agrícolas y de prevención de desastres acertadas.' }
+          { id: 'a', text: 'Gastando toda el agua del pozo rápido antes de que se la tome el vecino.', feedback: '🔎 El egoísmo deja a todo el pueblo sin agua en época de sequía.' },
+          { id: 'b', text: 'Organizando comités de agua, sembrando árboles nativos y cuidando aljibes.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! La unión campesina asegura el agua en veranos difíciles.' },
+          { id: 'c', text: 'Mudándose todos los meses a un barrio diferente para no sentir el calor.', feedback: '🔎 Se deben mejorar las condiciones del propio territorio con sombra y cuidado.' },
+          { id: 'd', text: 'Prohibiendo que los niños tomen agua durante las clases de la escuela.', feedback: '🔎 La gestión comunitaria busca cuidar y repartir el agua con equidad.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Enfatiza la escala temporal: tiempo = hoy (horas/días); clima = tendencia histórica (décadas/siglos).'
@@ -2283,10 +2283,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué responsabilidades pueden asumir comunidad, instituciones y personas?',
         options: [
-          { id: 'a', text: 'Personas: no quemar basuras ni talar; Instituciones: invertir en alertas tempranas y protección de cuencas; Comunidad: organizar comités de resiliencia.', isCorrect: true, feedback: '🌿 ¡Distribución ética de roles perfecta! La acción climática requiere la articulación de todos los niveles sociales.' },
-          { id: 'b', text: 'Solo el presidente de la república debe preocuparse por el clima.', feedback: '🔎 La responsabilidad climática involucra desde el hogar local hasta los tratados internacionales.' },
-          { id: 'c', text: 'Ninguna responsabilidad, el ser humano no puede hacer nada frente a la naturaleza.', feedback: '🔎 Nuestras decisiones de consumo, siembra y energía tienen un impacto directo en el clima.' },
-          { id: 'd', text: 'La única responsabilidad es cerrar las ventanas cuando llueva.', feedback: '🔎 La resiliencia territorial exige obras de protección, educación y adaptación productiva.' }
+          { id: 'a', text: 'Porque el agua dulce y la sombra vegetal son el sustento de la vida diaria.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Adaptarse al clima protege la salud, los cultivos y el futuro.' },
+          { id: 'b', text: 'Solo para que los abuelos no se quejen de que hace calor al mediodía.', feedback: '🔎 La supervivencia de las fincas y de la gente depende de cómo cuidemos los recursos.' },
+          { id: 'c', text: 'Porque a los animales silvestres les molesta que las nubes tapen el sol.', feedback: '🔎 Los humedales sanos actúan como esponjas frente a crecientes y sequías.' },
+          { id: 'd', text: 'No hace falta adaptarse, el clima siempre vuelve a ser el mismo de antes.', feedback: '🔎 El calentamiento global exige cambios urgentes en la forma de cuidar el bosque.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Distribuye responsabilidades según escala: individual (hábitos), comunitaria (resiliencia local) e institucional (políticas públicas).'
@@ -2338,10 +2338,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué planta observaron?',
         options: [
-          { id: 'a', text: 'Tarulla.', isCorrect: true, feedback: '🌿 ¡Correcto! La tarulla (jacinto acuático) es la planta nombrada textualmente.' },
-          { id: 'b', text: 'Eucalipto gigante.', feedback: '🔎 Lee la primera frase de la lectura.' },
-          { id: 'c', text: 'Palma de cera del Quindío.', feedback: '🔎 Vuelve al texto: se trata de la planta flotante del agua.' },
-          { id: 'd', text: 'Cactus espinoso de desierto.', feedback: '🔎 El texto habla de la tarulla sobre la superficie del agua.' }
+          { id: 'a', text: 'Un manto verde y denso de plantas flotantes cubriendo toda la ciénaga.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe la alfombra espesa de tarulla o jacinto.' },
+          { id: 'b', text: 'Un bosque de pinos gigantes que creció en medio del agua salada.', feedback: '🔎 La especie observada era una planta acuática flotante en agua dulce.' },
+          { id: 'c', text: 'Una manada de hipopótamos africanos caminando por la plaza central.', feedback: '🔎 El caso trata sobre la proliferación de vegetación sobre el agua.' },
+          { id: 'd', text: 'Una mancha de petróleo negro cubriendo las orillas del puerto.', feedback: '🔎 Se trataba de una planta flotante que no dejaba pasar las canoas.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera línea.'
       },
@@ -2352,10 +2352,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Dónde se encontraba la planta?',
         options: [
-          { id: 'a', text: 'En una ciénaga (cubriendo la superficie del agua).', isCorrect: true, feedback: '🌿 ¡Exacto! Se encontraba tapizando el agua de una ciénaga.' },
-          { id: 'b', text: 'En la cumbre de un nevado de la cordillera.', feedback: '🔎 Revisa el primer enunciado: ¿en qué ecosistema estaba?' },
-          { id: 'c', text: 'En macetas de plástico dentro de una escuela.', feedback: '🔎 El texto ubica el caso en una ciénaga sobre la superficie del agua.' },
-          { id: 'd', text: 'En el desierto de La Guajira.', feedback: '🔎 Concéntrate en el escenario natural acuático.' }
+          { id: 'a', text: 'Un alga marina venenosa traída en las hélices de un submarino.', feedback: '🔎 En las ciénagas caribeñas prolifera la tarulla en aguas con aguas servidas.' },
+          { id: 'b', text: 'Matorrales de espinos secos que flotaban como balsas de madera.', feedback: '🔎 La planta acuática con flores lilas es conocida como tarulla o buchón.' },
+          { id: 'c', text: 'Hojas secas de eucalipto caídas desde las copas de los árboles.', feedback: '🔎 Se trata de una especie acuática de rápida multiplicación en humedales.' },
+          { id: 'd', text: 'La tarulla o jacinto de agua que tapaba por completo el espejo de agua.', isCorrect: true, feedback: '🌿 ¡Exacto! La tarulla se multiplicó en exceso por los nutrientes del agua.' }
         ],
         pedagogicalTip: 'Localiza el escenario en la primera oración.'
       },
@@ -2366,10 +2366,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué decidieron investigar antes de intervenir?',
         options: [
-          { id: 'a', text: 'Qué especie era, por qué había aumentado y qué efectos estaba produciendo.', isCorrect: true, feedback: '🌿 ¡Muy bien! Las tres preguntas científicas previas asumidas por los Guardianes.' },
-          { id: 'b', text: 'El precio de venenos químicos para matar toda la vegetación.', feedback: '🔎 Lee la segunda oración del texto con atención.' },
-          { id: 'c', text: 'Cuántos likes ganaría un video de la planta en redes sociales.', feedback: '🔎 Fíjate en el método investigativo descrito en el segundo enunciado.' },
-          { id: 'd', text: 'Si la planta podía hablar con los peces de la ciénaga.', feedback: '🔎 Los Guardianes investigaron especie, causas del aumento y efectos producidos.' }
+          { id: 'a', text: 'Los peces aprendieron a caminar sobre las hojas verdes de la planta.', feedback: '🔎 La sombra total en el fondo impide que nazcan algas y falte el aire a los peces.' },
+          { id: 'b', text: 'No podían navegar en canoa y los peces empezaron a asfixiarse abajo.', isCorrect: true, feedback: '🌿 ¡Muy bien! El manto tapa la luz, agota el oxígeno y tranca el paso de canoas.' },
+          { id: 'c', text: 'Las canoas flotaban más rápido y navegaban con mayor facilidad.', feedback: '🔎 La masa vegetal enreda los canaletes y motores impidiendo la pesca.' },
+          { id: 'd', text: 'El agua se volvió de sabor dulce como jugo de frutas maduras.', feedback: '🔎 Al morir la planta, se pudre en el fondo y genera mal olor y asfixia acuática.' }
         ],
         pedagogicalTip: 'Extrae las tres preguntas de investigación en la segunda oración.'
       }
@@ -2382,10 +2382,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué una cobertura excesiva de plantas puede modificar condiciones del agua?',
         options: [
-          { id: 'a', text: 'Impide el paso de la luz solar para la fotosíntesis de algas sumergidas y al morir consume el oxígeno disuelto, asfixiando peces.', isCorrect: true, feedback: '🌿 ¡Deducción biológica y limnológica perfecta! El taponamiento altera el ciclo de luz y oxígeno del agua.' },
-          { id: 'b', text: 'Hace que el agua se vuelva de color fucsia fosforescente.', feedback: '🔎 Piensa en la falta de luz bajo el agua y el consumo de oxígeno durante la descomposición.' },
-          { id: 'c', text: 'Convierte el agua dulce en agua salada del océano.', feedback: '🔎 Evalúa qué ocurre con las algas del fondo cuando no les llega sol.' },
-          { id: 'd', text: 'No modifica nada, el agua sigue exactamente igual con o sin plantas encima.', feedback: '🔎 Recuerda que la luz y el oxígeno son vitales para la vida acuática.' }
+          { id: 'a', text: 'Hace que el agua de la ciénaga se vuelva de color rosado fosforescente.', feedback: '🔎 El impacto biológico es la pérdida de oxígeno disuelto en el agua.' },
+          { id: 'b', text: 'Convierte el agua dulce de la ciénaga en agua con hielo del polo norte.', feedback: '🔎 La descomposición de hojas consume el oxígeno que necesitan los bocachicos.' },
+          { id: 'c', text: 'Tapa la luz del sol para las algas del fondo y agota el oxígeno del agua.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Sin luz no hay fotosíntesis bajo el agua y los peces mueren.' },
+          { id: 'd', text: 'No cambia nada, el agua sigue teniendo el mismo aire con o sin plantas.', feedback: '🔎 El manto espeso de hojas aísla el agua del contacto con el aire y la luz solar.' }
         ],
         pedagogicalTip: 'Infiere cómo el manto opaco bloquea la luz solar y cómo la materia orgánica muerta agota el oxígeno del agua.'
       },
@@ -2396,10 +2396,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué no se debe llamar invasora a una especie solamente porque sea abundante?',
         options: [
-          { id: 'a', text: 'Porque una especie nativa puede proliferar por desequilibrios (como exceso de nutrientes en el agua) sin haber sido introducida de otro país.', isCorrect: true, feedback: '🌿 ¡Pista conceptual de gran precisión! Abundancia no equivale a invasión exótica; puede ser respuesta a contaminación orgánica.' },
-          { id: 'b', text: 'Porque las plantas se ofenden si se les llama con nombres feos.', feedback: '🔎 Revisa la definición del texto: especie introducida que causa impactos ecológicos adversos.' },
-          { id: 'c', text: 'Porque todas las plantas del mundo son invasoras por naturaleza.', feedback: '🔎 Distingue entre especie nativa que responde a un síntoma y especie exótica invasora.' },
-          { id: 'd', text: 'Porque en la naturaleza no existen las especies invasoras.', feedback: '🔎 Analiza la frase final: "primero hay que comprender el contexto".' }
+          { id: 'a', text: 'Porque las plantas se ponen tristes si les dicen palabras desagradables.', feedback: '🔎 Invasora significa introducida de fuera que daña a las especies locales.' },
+          { id: 'b', text: 'Porque todas las plantas de la tierra son invasoras por nacimiento.', feedback: '🔎 Cada especie tiene su lugar de origen y funciones en su ecosistema nativo.' },
+          { id: 'c', text: 'Porque en la naturaleza no existe ninguna especie que cause problemas.', feedback: '🔎 Un desequilibrio humano puede hacer que una planta nativa prolifere en exceso.' },
+          { id: 'd', text: 'Porque una especie nativa puede crecer mucho si hay aguas sucias con abono.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El exceso de aguas negras abona la planta sin ser de otro país.' }
         ],
         pedagogicalTip: 'Distingue entre especie introducida invasora y especie nativa que prolifera como síntoma de aguas eutrofizadas.'
       },
@@ -2410,10 +2410,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre una especie introducida y los cambios en un ecosistema?',
         options: [
-          { id: 'a', text: 'Al no tener depredadores o controladores naturales en el nuevo hábitat, puede multiplicarse desplazando a las especies locales y alterando el equilibrio.', isCorrect: true, feedback: '🌿 ¡Gran deducción ecológica! La ausencia de controles biológicos locales permite la invasión desmedida.' },
-          { id: 'b', text: 'Las especies introducidas siempre construyen casitas de madera para los peces.', feedback: '🔎 Recuerda cómo las especies foráneas compiten por luz, espacio y nutrientes con las nativas.' },
-          { id: 'c', text: 'Una especie introducida nunca sobrevive más de dos horas en el trópico.', feedback: '🔎 Muchas especies introducidas se adaptan y colonizan agresivamente hábitats vulnerables.' },
-          { id: 'd', text: 'No existe relación, todas las especies del planeta se comportan idéntico.', feedback: '🔎 Reflexiona sobre el impacto ecológico de alterar comunidades biológicas preexistentes.' }
+          { id: 'a', text: 'Las especies de afuera siempre construyen casitas de paja para los peces.', feedback: '🔎 Al no tener control biológico en el nuevo hábitat, se desborda su población.' },
+          { id: 'b', text: 'Al no tener depredadores que la coman, se riega y quita espacio a las nativas.', isCorrect: true, feedback: '🌿 ¡Muy bien! Sin control natural, la especie foránea invade y desplaza a las locales.' },
+          { id: 'c', text: 'Una planta traída de otro país nunca sobrevive más de una sola tarde.', feedback: '🔎 Muchas especies introducidas prosperan con fuerza y acaban con las locales.' },
+          { id: 'd', text: 'Todas las plantas del planeta comen y crecen exactamente a la misma velocidad.', feedback: '🔎 Algunas especies invasoras crecen más rápido que la vegetación del lugar.' }
         ],
         pedagogicalTip: 'Conecta la falta de competidores y depredadores locales con la ventaja desmedida de una especie foránea.'
       }
@@ -2426,10 +2426,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué información debería recopilarse antes de retirar la planta?',
         options: [
-          { id: 'a', text: 'Identificar si es nativa o introducida, medir el nivel de contaminación del agua que la alimenta y evaluar el impacto del retiro en la fauna.', isCorrect: true, feedback: '🌿 ¡Protocolo de evaluación científica irreprochable! Si la tarulla absorbe contaminantes, retirarla toda de golpe sin tratar el agua causaría otro problema.' },
-          { id: 'b', text: 'Saber el precio de las atarrayas en la tienda del centro.', feedback: '🔎 Enfócate en los parámetros limnológicos, biológicos y ecológicos del humedal.' },
-          { id: 'c', text: 'Preguntar si a los peces les gusta el color verde de las hojas.', feedback: '🔎 Revisa los factores ecológicos clave antes de intervenir en el cuerpo de agua.' },
-          { id: 'd', text: 'No se debe recopilar nada, hay que echar veneno a ciegas de inmediato.', feedback: '🔎 Aplicar agroquímicos en un humedal envenenaría el agua potable y los peces.' }
+          { id: 'a', text: 'Saber si es nativa o de afuera, de dónde vienen las aguas sucias y el daño a la fauna.', isCorrect: true, feedback: '🌿 ¡Brillante! Comprender la causa evita cometer errores costosos en el humedal.' },
+          { id: 'b', text: 'Saber el precio de las atarrayas en la tienda principal del centro del pueblo.', feedback: '🔎 Se necesita información ecológica sobre el origen de la planta y los vertimientos.' },
+          { id: 'c', text: 'Preguntar si a los bagres les gusta el perfume de las flores lilas del agua.', feedback: '🔎 Se debe investigar qué aguas residuales están fertilizando la ciénaga.' },
+          { id: 'd', text: 'Echar galones de veneno a ciegas sin mirar qué otros animales viven allí.', feedback: '🔎 El veneno químico contamina el agua potable y mata a los peces nativos.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Plantea un diagnóstico: origen taxonómico, análisis de nutrientes (nitrógeno/fósforo) y método de manejo.'
@@ -2441,10 +2441,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué riesgos tendría intervenir sin comprender el problema?',
         options: [
-          { id: 'a', text: 'Podríamos usar químicos que envenenen el agua, eliminar una planta que purificaba lixiviados o gastar recursos sin frenar el verdadero vertimiento.', isCorrect: true, feedback: '🌿 ¡Advertencia crítica fundamental! La cura apresurada e ignorante puede ser peor que la enfermedad.' },
-          { id: 'b', text: 'Que la planta se enoje y persiga a los campesinos por el camino.', feedback: '🔎 Piensa en los desequilibrios químicos y biológicos provocados por intervenciones torpes.' },
-          { id: 'c', text: 'Que el agua de la ciénaga se vuelva gas gaseosa.', feedback: '🔎 Considera el riesgo de colapsar la cadena trófica por aplicar métodos inadecuados.' },
-          { id: 'd', text: 'No hay ningún riesgo, en el medio ambiente cualquier acción a ciegas siempre sale bien.', feedback: '🔎 Intervenir sin diagnosticar ha destruido humedales enteros a lo largo de la historia.' }
+          { id: 'a', text: 'Que las plantas flotantes se paren y salgan a correr detrás de la gente.', feedback: '🔎 El riesgo es envenenar el agua o gastar dinero sin curar la causa real.' },
+          { id: 'b', text: 'Que el agua de la ciénaga se transforme en gaseosa dulce de botella.', feedback: '🔎 Una mala intervención ambiental suele empeorar la crisis ecológica del agua.' },
+          { id: 'c', text: 'Podríamos echar químicos que maten peces o quitar la planta sin frenar el desagüe.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! Si no se corta el agua sucia, la planta volverá a crecer en días.' },
+          { id: 'd', text: 'No hay peligro, cualquier cosa que se haga a la carrera siempre sale bien.', feedback: '🔎 Actuar sin entender el ecosistema causa daños irreparables a la pesca.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta cómo una intervención a ciegas (ej. herbicidas) agrava la catástrofe ecológica.'
@@ -2456,10 +2456,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué el principio del Guardián debe ser comprender antes de intervenir?',
         options: [
-          { id: 'a', text: 'Porque la naturaleza es un sistema complejo de relaciones; solo cuando entendemos sus causas podemos aplicar soluciones sabias y duraderas.', isCorrect: true, feedback: '🌿 ¡Máxima pedagógica y ética del Guardián del Bosque! La ciencia y el respeto guían la acción transformadora.' },
-          { id: 'b', text: 'Para tener una excusa y no trabajar nunca.', feedback: '🔎 La comprensión activa es el pilar de la conservación efectiva y responsable.' },
-          { id: 'c', text: 'Porque la ley penaliza a quien aprenda sobre la naturaleza.', feedback: '🔎 Comprender antes de actuar previene daños irreparables en el territorio.' },
-          { id: 'd', text: 'No debe ser ese principio, lo que importa es actuar rápido sin pensar.', feedback: '🔎 Actuar sin pensar es lo que ha provocado las 14 crisis ambientales estudiadas.' }
+          { id: 'a', text: 'Para tener una disculpa y quedarse sentado sin hacer nada por la ciénaga.', feedback: '🔎 Estudiar el problema permite planear acciones comunitarias efectivas.' },
+          { id: 'b', text: 'Porque las leyes del pueblo multan a quienes lean libros de biología marina.', feedback: '🔎 La ciencia y el saber popular juntos dan las mejores soluciones ambientales.' },
+          { id: 'c', text: 'Ese principio es falso, lo único que sirve es usar máquinas pesadas sin pensar.', feedback: '🔎 La fuerza bruta sin conocimiento daña los fondos y las orillas del humedal.' },
+          { id: 'd', text: 'Porque la naturaleza es una red conectada y solo entendiendo la causa se cura el mal.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! El verdadero Guardián diagnostica antes de intervenir.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sella el lema del programa: Leer • Comprender • Reflexionar • Actuar.'
@@ -2515,10 +2515,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué problemas recuerdan los Guardianes?',
         options: [
-          { id: 'a', text: 'Iguanas e icoteas sin reproductoras, cacería, jaguar sin hábitat, mascotas silvestres, animales enjaulados, perros abandonados, tala, minería, mercurio, basuras, clima y tarulla.', isCorrect: true, feedback: '🌿 ¡Memoria territorial impecable! Has sintetizado la lista de los 14 problemas que integran el territorio.' },
-          { id: 'b', text: 'Únicamente el precio del pescado en el mercado de la ciudad.', feedback: '🔎 Revisa el primer párrafo: ¿cuáles son todos los casos reunidos?' },
-          { id: 'c', text: 'Que se habían quedado sin batería en sus linternas.', feedback: '🔎 El texto recapitula todas las misiones de la expedición.' },
-          { id: 'd', text: 'Problemas de tráfico de aviones y trenes de alta velocidad.', feedback: '🔎 Concéntrate en la recapitulación ambiental del párrafo 1.' }
+          { id: 'a', text: 'Únicamente el precio del pescado fresco en la plaza de mercado del pueblo.', feedback: '🔎 La misión recoge los 14 desafíos ambientales aprendidos en el viaje.' },
+          { id: 'b', text: 'Que se les habían descargado las baterías de las linternas en el monte.', feedback: '🔎 Los Guardianes recuerdan los impactos sobre la fauna, el agua y los bosques.' },
+          { id: 'c', text: 'El atraso en los horarios de salida de los buses hacia otras ciudades.', feedback: '🔎 La misión integra los saberes de conservación de todo el recorrido escolar.' },
+          { id: 'd', text: 'Daños a iguanas, icoteas, jaguares, aves, ríos, suelos, basuras y clima.', isCorrect: true, feedback: '🌿 ¡Correcto! La misión final resume todas las problemáticas del territorio.' }
         ],
         pedagogicalTip: 'La lista completa de problemáticas recorridas está en el primer párrafo.'
       },
@@ -2529,10 +2529,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué situaciones de maltrato o presión sobre los animales aparecen?',
         options: [
-          { id: 'a', text: 'Extracción de huevos abriendo el vientre, cacería repetida, monos encadenados, aves en jaulas y perros/gatos abandonados.', isCorrect: true, feedback: '🌿 ¡Exacto! Esas son las situaciones explícitas de maltrato y presión recordadas en el texto.' },
-          { id: 'b', text: 'Que los animales debían asistir a la escuela en uniforme.', feedback: '🔎 Vuelve a leer el primer párrafo e identifica los casos de maltrato animal.' },
-          { id: 'c', text: 'Que los peces no tenían chalecos salvavidas.', feedback: '🔎 Fíjate en los monos encadenados, aves enjauladas y fauna cazada.' },
-          { id: 'd', text: 'Ninguna situación de maltrato, todos los animales vivían en paz.', feedback: '🔎 El texto evidencia las presiones humanas sobre la fauna.' }
+          { id: 'a', text: 'Animales que tenían que ponerse zapatos para caminar por el pueblo.', feedback: '🔎 Las situaciones reales fueron crueldad, cautiverio y pérdida de hábitat.' },
+          { id: 'b', text: 'Huevos extraídos con heridas, cacería, monos atados, loros en jaulas y abandono.', isCorrect: true, feedback: '🌿 ¡Exacto! Esas fueron las presiones y maltratos a la fauna identificados.' },
+          { id: 'c', text: 'Peces del río Magdalena que no sabían nadar sin flotadores plásticos.', feedback: '🔎 El texto recapitula el maltrato animal y el tráfico de especies silvestres.' },
+          { id: 'd', text: 'Ninguna situación de maltrato, todos los animales vivían en paz y libertad.', feedback: '🔎 Se evidenciaron problemas graves que requieren el compromiso del Guardián.' }
         ],
         pedagogicalTip: 'Localiza los ejemplos de afectación animal en el primer párrafo.'
       },
@@ -2543,10 +2543,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué componentes del territorio aparecen relacionados según el texto?',
         options: [
-          { id: 'a', text: 'Hábitat, especies, poblaciones, agua, cadenas alimentarias, suelo, vegetación, ecosistemas, comunidades y decisiones humanas.', isCorrect: true, feedback: '🌿 ¡Muy bien! Has identificado la totalidad de los componentes del sistema socioecológico.' },
-          { id: 'b', text: 'Únicamente los postes de luz y las antenas de televisión.', feedback: '🔎 Observa el segundo párrafo: ¿qué elementos forman la red de relaciones?' },
-          { id: 'c', text: 'Solo los billetes de dinero y las monedas de metal.', feedback: '🔎 El texto habla de suelo, agua, vegetación, especies y comunidades.' },
-          { id: 'd', text: 'Las estrellas lejanas del espacio exterior.', feedback: '🔎 Revisa la conexión territorial en el segundo párrafo.' }
+          { id: 'a', text: 'Únicamente los cables de energía eléctrica y las antenas de teléfonos.', feedback: '🔎 La visión integral abarca ecosistemas, comunidades y recursos naturales.' },
+          { id: 'b', text: 'Solo las monedas de plata y los billetes que se gastan en las fiestas.', feedback: '🔎 El territorio es una red viva de agua, selva, animales y habitantes.' },
+          { id: 'c', text: 'Agua, suelo, bosques, fauna, cadenas de alimento, pueblos y decisiones humanas.', isCorrect: true, feedback: '🌿 ¡Muy bien! Todos los componentes naturales y sociales están entrelazados.' },
+          { id: 'd', text: 'Las estrellas lejanas del cielo que no tocan la tierra de la sabana.', feedback: '🔎 Se trata de las relaciones directas entre los seres vivos y su entorno ribereño.' }
         ],
         pedagogicalTip: 'Extrae la red de componentes descrita en el segundo párrafo.'
       }
@@ -2559,10 +2559,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede una decisión humana producir efectos en varios componentes del ecosistema?',
         options: [
-          { id: 'a', text: 'Porque al alterar un elemento (ej. talar un bosque para minería), se modifica el suelo, se contamina el agua, se desplaza a la fauna y se afecta la salud humana en cadena.', isCorrect: true, feedback: '🌿 ¡Gran análisis sistémico! Toda acción humana tiene ondas de impacto concéntricas en la red de la vida.' },
-          { id: 'b', text: 'Porque los ecosistemas se comunican por mensajes de texto.', feedback: '🔎 Piensa en el efecto dominó que desata cualquier intervención desmedida.' },
-          { id: 'c', text: 'Las decisiones humanas nunca afectan a más de un componente a la vez.', feedback: '🔎 El texto recalca que las decisiones afectan a suelo, agua, vegetación y comunidades a la vez.' },
-          { id: 'd', text: 'Porque los animales imitan todo lo que deciden las personas.', feedback: '🔎 Conecta las pistas del párrafo 2 sobre la interdependencia.' }
+          { id: 'a', text: 'Porque talar un monte daña el suelo, ensucia el caño y enferma a la gente vecina.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Una sola acción destructiva desata una cadena de impactos en el ecosistema.' },
+          { id: 'b', text: 'Porque las ciénagas y los árboles se mandan mensajes por teléfono celular.', feedback: '🔎 La conexión es física, química y biológica a través de los ciclos naturales.' },
+          { id: 'c', text: 'Las acciones de las personas nunca tocan más de una sola cosa a la vez.', feedback: '🔎 Cualquier cambio en el agua o el bosque repercute en la salud y la economía.' },
+          { id: 'd', text: 'Porque los animales imitan todo lo que hacen los campesinos en sus fincas.', feedback: '🔎 La alteración de un componente desequilibra a toda la red ecológica regional.' }
         ],
         pedagogicalTip: 'Aplica la metáfora del dominó: empujar una ficha humana derriba fichas en el suelo, agua y fauna.'
       },
@@ -2573,10 +2573,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué un problema ambiental puede extenderse más allá del lugar donde comenzó?',
         options: [
-          { id: 'a', text: 'Porque el agua fluye, el aire circula, los animales migran y las cadenas tróficas y comerciales interconectan las regiones.', isCorrect: true, feedback: '🌿 ¡Deducción geográfica y biológica magistral! Los ecosistemas son sistemas abiertos en constante movimiento.' },
-          { id: 'b', text: 'Porque los problemas ambientales viajan en bicicleta por la carretera.', feedback: '🔎 Reflexiona sobre los vectores naturales de transporte hidrológico y biológico.' },
-          { id: 'c', text: 'Porque la Tierra gira tan rápido que desparrama las cosas.', feedback: '🔎 Analiza cómo los ríos y los vientos extienden los impactos.' },
-          { id: 'd', text: 'Los problemas ambientales nunca se extienden, siempre se quedan quietos.', feedback: '🔎 El texto enseña que el mercurio, la basura y el clima traspasan cualquier frontera.' }
+          { id: 'a', text: 'Porque la basura y el veneno viajan en bicicleta por la orilla del camino.', feedback: '🔎 La corriente de los ríos transporta sedimentos y tóxicos cuenca abajo.' },
+          { id: 'b', text: 'Porque la tierra gira con tanta fuerza que riega los charcos de agua sucia.', feedback: '🔎 Los ecosistemas están interconectados por cuencas hídricas compartidas.' },
+          { id: 'c', text: 'Porque el agua viaja, el viento sopla y los animales caminan entre regiones.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El río y la atmósfera conectan los problemas entre municipios.' },
+          { id: 'd', text: 'Los problemas ambientales nunca viajan, siempre se quedan en la misma casa.', feedback: '🔎 Lo que se arroja en la cabecera del río afecta a los pescadores de la desembocadura.' }
         ],
         pedagogicalTip: 'Recuerda que los ríos no conocen linderos: lo que pasa en la montaña baja a la ciénaga y al mar.'
       },
@@ -2587,10 +2587,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué demuestra la relación entre población, hábitat y contaminación?',
         options: [
-          { id: 'a', text: 'Demuestra que la salud de las poblaciones biológicas depende de un hábitat sin fragmentar y limpio; si el hábitat se contamina, la población colapsa.', isCorrect: true, feedback: '🌿 ¡Comprensión de la tríada ecológica suprema! Hábitat sano = población viva = territorio en equilibrio.' },
-          { id: 'b', text: 'Demuestra que los animales prefieren vivir en lugares con basura.', feedback: '🔎 Conecta los tres conceptos: si el hogar se deteriora, sus habitantes enferman.' },
-          { id: 'c', text: 'Demuestra que la contaminación crea nuevas especies más fuertes.', feedback: '🔎 Todo lo contrario: la contaminación y la fragmentación diezman a las especies nativas.' },
-          { id: 'd', text: 'Demuestra que no existe ninguna relación entre el hábitat y sus habitantes.', feedback: '🔎 Revisa la síntesis del segundo párrafo sobre el equilibrio integral.' }
+          { id: 'a', text: 'Que a los peces y aves les gusta nadar en lugares con bastante basura plástica.', feedback: '🔎 La contaminación del hábitat colapsa la salud y la reproducción de la fauna.' },
+          { id: 'b', text: 'Que echar veneno a los ríos ayuda a que nazcan especies más resistentes.', feedback: '🔎 Los contaminantes debilitan y extinguen a las poblaciones naturales.' },
+          { id: 'c', text: 'Demuestra que los animales del monte no necesitan comida ni agua para vivir.', feedback: '🔎 Cada especie depende directamente de la pureza y equilibrio de su hábitat.' },
+          { id: 'd', text: 'Que los animales solo viven bien si el bosque está sano y las aguas están limpias.', isCorrect: true, feedback: '🌿 ¡Muy bien! Sin hábitat limpio y conectado, las especies desaparecen con rapidez.' }
         ],
         pedagogicalTip: 'Sintetiza la relación: un hábitat degradado destruye a la población que lo habita.'
       }
@@ -2603,10 +2603,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué acciones debería priorizar una comunidad para proteger su territorio? Fundamenta con información de las misiones.',
         options: [
-          { id: 'a', text: 'Proteger rondas de ríos y ciénagas, frenar la deforestación y el mercurio, erradicar el tráfico de fauna y gestionar sus residuos comunitariamente.', isCorrect: true, feedback: '🌿 ¡Plan territorial maestro de un Gran Guardián! Has articulado las soluciones fundamentales de todo el recorrido.' },
-          { id: 'b', text: 'Dedicar todo el presupuesto a fiestas patronales y olvidar los bosques.', feedback: '🔎 La supervivencia y el bienestar dependen de los servicios ecosistémicos del territorio.' },
-          { id: 'c', text: 'Esperar a que organizaciones extranjeras vengan a barrer las calles.', feedback: '🔎 La comunidad local es la verdadera protagonista del cuidado de su hogar.' },
-          { id: 'd', text: 'Vender todos los animales y talar todos los árboles para tener dinero rápido.', feedback: '🔎 Esa es la fórmula del colapso ecológico y la miseria futura.' }
+          { id: 'a', text: 'Gastar toda la plata del pueblo en verbenas y olvidar las fuentes de agua.', feedback: '🔎 La inversión comunitaria debe proteger la vida y los recursos naturales vitales.' },
+          { id: 'b', text: 'Cuidar rondas de caños, frenar la tala y el mercurio, y manejar bien las basuras.', isCorrect: true, feedback: '🌿 ¡Brillante! Esas prioridades integran la salud del agua, los bosques y la gente.' },
+          { id: 'c', text: 'Esperar sentados a que vengan personas de otros países a barrer las calles.', feedback: '🔎 El cuidado del territorio nace del compromiso y orgullo de sus propios habitantes.' },
+          { id: 'd', text: 'Tumbar todo el monte y vender los animales para tener plata de inmediato.', feedback: '🔎 Destruir la naturaleza por dinero rápido condena a las familias a la pobreza futura.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Integra al menos 3 aprendizajes de las misiones anteriores en una propuesta integral para Magangué y La Mojana.'
@@ -2618,10 +2618,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Cómo podría participar la comunidad en la solución de los problemas identificados?',
         options: [
-          { id: 'a', text: 'Creando comités ciudadanos de monitoreo, adoptando prácticas agrícolas limpias, no comprando fauna y participando en las decisiones del municipio.', isCorrect: true, feedback: '🌿 ¡Poder ciudadano y gobernanza ambiental viva! La conservación florece cuando la comunidad se apropia de su destino.' },
-          { id: 'b', text: 'Comprando más jaulas y cadenas para los animales del bosque.', feedback: '🔎 La participación debe orientarse a la liberación, no a la opresión de la fauna.' },
-          { id: 'c', text: 'Arrojando los residuos en el caño más hondo durante la noche.', feedback: '🔎 La limpieza comunitaria requiere civismo y separación en la fuente.' },
-          { id: 'd', text: 'Ignorando lo que aprendieron en la escuela para no complicarse la vida.', feedback: '🔎 El conocimiento adquirido en Guardianes del Bosque es para transformar la realidad.' }
+          { id: 'a', text: 'Creando comités para vigilar el agua, sembrando limpio y no comprando fauna.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! La participación activa y las buenas prácticas salvan el territorio.' },
+          { id: 'b', text: 'Comprando más jaulas y cadenas para amarrar a los animales de la selva.', feedback: '🔎 El Guardián promueve la libertad de la fauna y el respeto a sus derechos.' },
+          { id: 'c', text: 'Botando los desperdicios en el caño más hondo en medio de la oscuridad.', feedback: '🔎 Ocultar basuras contamina el agua que beben los animales y las familias aguas abajo.' },
+          { id: 'd', text: 'Olvidando todo lo aprendido en la escuela para no tener que preocuparse.', feedback: '🔎 El conocimiento ambiental es una herramienta poderosa para transformar el entorno.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Destaca la participación comunitaria organizada: escuelas, juntas comunales, pescadores y familias.'
@@ -2633,10 +2633,10 @@ Los Guardianes descubrieron que proteger la naturaleza no significa salvar una e
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué significa para ti ser un Guardián del Bosque después de completar las misiones?',
         options: [
-          { id: 'a', text: 'Significa aprender a leer el territorio y los textos con mirada crítica, defendiendo la vida, cuidando las relaciones ecológicas y actuando con responsabilidad.', isCorrect: true, feedback: '🌿 ¡GRAN GUARDIÁN CONSAGRADO! Has interiorizado el propósito más elevado de esta estrategia de aprendizaje.' },
-          { id: 'b', text: 'Significa únicamente tener una insignia virtual en una pantalla de computador.', feedback: '🔎 Ser Guardián es un compromiso ético y práctico con la vida y la comunidad real.' },
-          { id: 'c', text: 'Significa que ya no tengo que leer ningún libro en mi vida.', feedback: '🔎 Todo lo contrario: leer bien te permite comprender el mundo y defender tus derechos.' },
-          { id: 'd', text: 'Significa tener permiso para mandar a los demás sin hacer nada.', feedback: '🔎 El Guardián lidera con el ejemplo, la humildad, el diálogo y el cuidado activo.' }
+          { id: 'a', text: 'Tener una medalla dibujada en la pantalla de un computador y nada más.', feedback: '🔎 El título de Guardián es un compromiso real con la defensa de la naturaleza.' },
+          { id: 'b', text: 'Creer que ya no necesito aprender nada más sobre los árboles ni los ríos.', feedback: '🔎 El aprendizaje ambiental continúa todos los días en la casa, el río y la vereda.' },
+          { id: 'c', text: 'Aprender a leer el territorio con ojos críticos para cuidar la vida y el agua.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Ser Guardián es un compromiso de vida con el territorio.' },
+          { id: 'd', text: 'Sentirse con permiso para mandar a los vecinos sin hacer ningún esfuerzo.', feedback: '🔎 El verdadero Guardián enseña con su propio ejemplo y cuidado diario del entorno.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Reflexiona sobre tu transformación personal: leer, comprender, reflexionar y actuar en tu territorio.'
