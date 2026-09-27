@@ -67,21 +67,14 @@ export const MissionView: React.FC = () => {
   // Estado de reflexión para el pasaporte
   const [passportReflection, setPassportReflection] = useState<string>('');
 
-  // Sistema de Puntos de Pista: 2 puntos por nivel (Literal, Inferencial, Crítico)
-  // Los puntos se reinician al cambiar de etapa/nivel
-  const [hintPoints, setHintPoints] = useState<Record<number, number>>({
-    3: 2, // 2 pistas para la etapa Literal (stage 3)
-    4: 2, // 2 pistas para la etapa Inferencial (stage 4)
-    5: 2, // 2 pistas para la etapa Crítica (stage 5)
-  });
+  // Sistema de Puntos de Pista: 3 pistas compartidas para toda la misión
+  const [hintPoints, setHintPoints] = useState<number>(3);
   const [revealedHints, setRevealedHints] = useState<Set<string>>(new Set());
 
-  const handleRevealHint = (questionId: string, currentStage: number) => {
-    // Solo gastar un punto si quedan disponibles y la pista no fue ya revelada
+  const handleRevealHint = (questionId: string) => {
     if (revealedHints.has(questionId)) return;
-    const available = hintPoints[currentStage] ?? 0;
-    if (available <= 0) return;
-    setHintPoints(prev => ({ ...prev, [currentStage]: prev[currentStage] - 1 }));
+    if (hintPoints <= 0) return;
+    setHintPoints(prev => prev - 1);
     setRevealedHints(prev => new Set([...prev, questionId]));
   };
 
@@ -145,10 +138,10 @@ export const MissionView: React.FC = () => {
   };
 
   // Renderizador de bloque de preguntas
-  const renderQuestionBlock = (questions: Question[], levelTitle: string, levelBadge: string, levelIcon: React.ReactNode, stageIndex: number) => {
+  const renderQuestionBlock = (questions: Question[], levelTitle: string, levelBadge: string, levelIcon: React.ReactNode) => {
     const answeredCount = questions.filter(q => selectedAnswers[q.id]).length;
     const allAnswered = answeredCount === questions.length;
-    const availableHints = hintPoints[stageIndex] ?? 0;
+    const availableHints = hintPoints;
 
     return (
       <div className="space-y-6">
@@ -261,7 +254,7 @@ export const MissionView: React.FC = () => {
                     ) : availableHints > 0 ? (
                       <button
                         type="button"
-                        onClick={() => handleRevealHint(q.id, stageIndex)}
+                        onClick={() => handleRevealHint(q.id)}
                         className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 hover:border-amber-400 text-xs font-semibold transition-all"
                       >
                         <Info className="w-3.5 h-3.5" />
@@ -684,8 +677,7 @@ export const MissionView: React.FC = () => {
         mission.literalQuestions,
         'Rastreo de pistas — Nivel 1',
         'Guardián Observador',
-        <Eye className="w-6 h-6 text-emerald-700" />,
-        3
+        <Eye className="w-6 h-6 text-emerald-700" />
       )}
 
       {/* ========================================================
@@ -695,8 +687,7 @@ export const MissionView: React.FC = () => {
         mission.inferentialQuestions,
         'Investigación — Nivel 2',
         'Guardián Rastreador',
-        <Search className="w-6 h-6 text-sky-700" />,
-        4
+        <Search className="w-6 h-6 text-sky-700" />
       )}
 
       {/* ========================================================
@@ -706,8 +697,7 @@ export const MissionView: React.FC = () => {
         mission.criticalQuestions,
         'Decisión del Guardián — Nivel 3',
         'Guardián del Equilibrio',
-        <Scale className="w-6 h-6 text-amber-700" />,
-        5
+        <Scale className="w-6 h-6 text-amber-700" />
       )}
 
 
