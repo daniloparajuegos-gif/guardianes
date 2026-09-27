@@ -540,6 +540,8 @@ export const TeacherDashboard: React.FC = () => {
                 </p>
               </div>
 
+
+
               {/* Insignias Obtenidas por el Estudiante */}
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-700 block">
@@ -556,6 +558,14 @@ export const TeacherDashboard: React.FC = () => {
                     </span>
                   ))}
                 </div>
+              </div>
+
+              {/* Objetos de Colección */}
+              <div className="space-y-2 pt-4 border-t border-slate-200">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-700 block">
+                  Objetos de Colección ({profiles.find(p => p.id === selectedStudent.id)?.collection ? Object.keys(profiles.find(p => p.id === selectedStudent.id)!.collection).length : 0}/30)
+                </span>
+                <p className="text-[10px] text-slate-500 font-medium">Actividad exploratoria no evaluativa del territorio.</p>
               </div>
 
             </div>

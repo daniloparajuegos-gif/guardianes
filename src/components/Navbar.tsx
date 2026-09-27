@@ -102,6 +102,31 @@ export const Navbar: React.FC = () => {
             </button>
 
             <button
+              onClick={() => setCurrentView('collection')}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                currentView === 'collection'
+                  ? 'bg-emerald-600 text-white shadow-sm shadow-emerald-600/30'
+                  : 'text-forest-700 hover:text-emerald-900 hover:bg-emerald-50'
+              }`}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 8v13H3V8"></path>
+                <path d="M1 3h22v5H1z"></path>
+                <path d="M10 12h4"></path>
+              </svg>
+              <span>Colección</span>
+              {activeProfile && activeProfile.collection && Object.keys(activeProfile.collection).length > 0 && (
+                <span className={`px-1.5 rounded-full text-[10px] flex items-center justify-center font-bold ${
+                  currentView === 'collection'
+                    ? 'bg-amber-400 text-forest-950'
+                    : 'bg-amber-100 text-amber-800 border border-amber-300'
+                }`}>
+                  {Object.keys(activeProfile.collection).length}/30
+                </span>
+              )}
+            </button>
+
+            <button
               onClick={() => setCurrentView('teacher')}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                 currentView === 'teacher'

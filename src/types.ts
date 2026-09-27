@@ -95,4 +95,35 @@ export interface StudentProfile {
   evidences: Record<number, StudentEvidence>; // missionId -> StudentEvidence
   passportEntries: StudentPassportEntry[];
   currentMissionId: number;
+  collection: Record<number, CollectionEntry>; // itemId -> CollectionEntry
+  missionRewards: Record<number, MissionReward>; // missionId -> MissionReward
+}
+
+export type ItemRarity = 'common' | 'rare' | 'epic' | 'legendary';
+export type ItemZone = 'Bosque y Sabana' | 'Ciénagas y Caños' | 'Ríos y Minería' | 'Comunidad y Territorio' | 'Territorio Integrado';
+export type ItemFamily = 'Vida vegetal' | 'Fauna' | 'Fauna acuática' | 'Memoria del agua' | 'Vida ribereña' | 'Vida comunitaria' | 'Artesanía' | 'Exploración' | 'Memoria del territorio' | 'Territorio' | 'Artefacto legendario';
+
+export interface CollectibleItem {
+  id: number;
+  name: string;
+  rarity: ItemRarity;
+  zone: ItemZone;
+  family: ItemFamily;
+  description: string;
+  image: string; // path like /assets/items/item-01-semilla-ceiba.webp
+  sourceMissionPool: number[]; // which missions can drop this item
+}
+
+export interface CollectionEntry {
+  itemId: number;
+  quantity: number;
+  discoveredAt: string; // ISO string of first discovery
+  sourceMission: number; // which mission first gave it
+}
+
+export interface MissionReward {
+  missionId: number;
+  rewardItemId: number;
+  rewardRarity: ItemRarity;
+  claimedAt: string;
 }

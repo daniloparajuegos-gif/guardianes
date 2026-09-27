@@ -53,6 +53,9 @@ export const GuardianPassport: React.FC = () => {
               <p className="text-xs sm:text-sm text-emerald-100 font-serif italic mt-0.5">
                 Custodio: <strong className="text-amber-300 font-sans font-bold">{activeProfile.name}</strong> • {activeProfile.grade} • Magangué, La Mojana y Región Caribe
               </p>
+              <p className="text-xs text-amber-200 mt-1 font-bold">
+                🎒 Objetos descubiertos: {activeProfile.collection ? Object.keys(activeProfile.collection).length : 0}/30
+              </p>
             </div>
           </div>
 

@@ -20,6 +20,8 @@ import {
   Send
 } from 'lucide-react';
 
+import { RewardModal } from './collection/RewardModal';
+
 export const MissionView: React.FC = () => {
   const { 
     activeMissionId, 
@@ -28,7 +30,9 @@ export const MissionView: React.FC = () => {
     activeProfile, 
     saveAnswer, 
     saveEvidence, 
-    completeMission 
+    completeMission,
+    pendingReward,
+    claimReward
   } = useGuardian();
 
   const mission = MISSIONS_DATA.find(m => m.id === activeMissionId) || MISSIONS_DATA[0];
@@ -856,6 +860,25 @@ export const MissionView: React.FC = () => {
             </button>
           </div>
         </div>
+      )}
+
+      {pendingReward && (
+        <RewardModal 
+          reward={pendingReward}
+          onContinue={() => {
+            claimReward();
+            if (stage === 7) {
+              const nextId = Math.min(15, mission.id + 1);
+              setActiveMissionId(nextId);
+              setStage(0);
+              setCurrentView('map');
+            }
+          }}
+          onViewCollection={() => {
+            claimReward();
+            setCurrentView('collection');
+          }}
+        />
       )}
 
     </div>

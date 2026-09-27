@@ -7,6 +7,7 @@ import { MissionView } from './components/MissionView';
 import { GuardianPassport } from './components/GuardianPassport';
 import { TeacherDashboard } from './components/TeacherDashboard';
 import { LoginScreen } from './components/LoginScreen';
+import { CollectionPage } from './components/CollectionPage';
 
 const MainContent: React.FC = () => {
   const { currentView, isLoggedIn } = useGuardian();
@@ -15,13 +16,14 @@ const MainContent: React.FC = () => {
   const renderView = () => {
     if (currentView === 'login') return <LoginScreen />;
     if (currentView === 'teacher') return <TeacherDashboard />;
-    if (!isLoggedIn && (currentView === 'mission' || currentView === 'passport')) {
+    if (!isLoggedIn && (currentView === 'mission' || currentView === 'passport' || currentView === 'collection')) {
       return <LoginScreen />;
     }
     if (currentView === 'welcome') return <HeroScreen />;
     if (currentView === 'map') return <AdventureMap />;
     if (currentView === 'mission') return <MissionView />;
     if (currentView === 'passport') return <GuardianPassport />;
+    if (currentView === 'collection') return <CollectionPage />;
     return <HeroScreen />;
   };
 

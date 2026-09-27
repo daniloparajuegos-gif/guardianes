@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { StudentProfile, StudentAnswer, StudentEvidence, StudentPassportEntry } from '../types';
+import { StudentProfile, StudentAnswer, StudentEvidence, StudentPassportEntry, CollectibleItem, MissionReward } from '../types';
 import { MISSIONS_DATA } from '../data/pedagogicalData';
+import { rollReward } from '../data/collectiblesData';
 import { audioService } from '../services/audioService';
 import { 
   subscribeToProfiles, 
@@ -9,7 +10,7 @@ import {
   seedInitialProfilesIfEmpty 
 } from '../services/firebase';
 
-export type AppView = 'login' | 'welcome' | 'map' | 'mission' | 'passport' | 'teacher';
+export type AppView = 'login' | 'welcome' | 'map' | 'mission' | 'passport' | 'teacher' | 'collection';
 
 interface GuardianContextType {
   activeProfile: StudentProfile;
@@ -21,6 +22,8 @@ interface GuardianContextType {
   isLoggedIn: boolean;
   isTeacherAuthenticated: boolean;
   cloudConnected: boolean;
+  pendingReward: CollectibleItem | null;
+  claimReward: () => void;
   setCurrentView: (view: AppView) => void;
   setActiveMissionId: (id: number) => void;
   loginWithCredentials: (identifier: string, enteredPin?: string) => { success: boolean; message?: string };
@@ -81,8 +84,7 @@ const INITIAL_PROFILES: StudentProfile[] = [
         reflection: 'Comprendí que una iguana hembra garantiza el futuro de cientos de crías en el bosque.'
       }
     ],
-    currentMissionId: 3
-  },
+    currentMissionId: 3, collection: {}, missionRewards: {} },
   {
     id: 'student-santiago',
     name: 'Santiago Arrieta Pérez',
@@ -96,8 +98,7 @@ const INITIAL_PROFILES: StudentProfile[] = [
     answers: {},
     evidences: {},
     passportEntries: [],
-    currentMissionId: 2
-  },
+    currentMissionId: 2, collection: {}, missionRewards: {} },
   {
     id: 'student-valentina',
     name: 'Valentina Montes Carpio',
@@ -111,8 +112,7 @@ const INITIAL_PROFILES: StudentProfile[] = [
     answers: {},
     evidences: {},
     passportEntries: [],
-    currentMissionId: 4
-  },
+    currentMissionId: 4, collection: {}, missionRewards: {} },
   {
     id: 'student-carlos',
     name: 'Carlos Mario Támara',
@@ -126,8 +126,7 @@ const INITIAL_PROFILES: StudentProfile[] = [
     answers: {},
     evidences: {},
     passportEntries: [],
-    currentMissionId: 2
-  },
+    currentMissionId: 2, collection: {}, missionRewards: {} },
   {
     id: 'student-lucia',
     name: 'Lucía Fernández Díaz',
@@ -141,8 +140,7 @@ const INITIAL_PROFILES: StudentProfile[] = [
     answers: {},
     evidences: {},
     passportEntries: [],
-    currentMissionId: 3
-  }
+    currentMissionId: 3, collection: {}, missionRewards: {} }
 ];
 
 const GUEST_PROFILE: StudentProfile = {
@@ -157,8 +155,7 @@ const GUEST_PROFILE: StudentProfile = {
   answers: {},
   evidences: {},
   passportEntries: [],
-  currentMissionId: 1
-};
+  currentMissionId: 1, collection: {}, missionRewards: {} };
 
 const TEACHER_MASTER_PIN = 'docente2026';
 
@@ -188,7 +185,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
               answers: p.answers || {},
               evidences: p.evidences || {},
               passportEntries: Array.isArray(p.passportEntries) ? p.passportEntries : [],
-              currentMissionId: p.currentMissionId || 1
+              currentMissionId: p.currentMissionId || 1, collection: p.collection || {}, missionRewards: p.missionRewards || {}
             };
           });
         }
@@ -220,6 +217,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [soundEnabled, setSoundEnabled] = useState<boolean>(!audioService.getIsMuted());
   const [useDemoTeacherData, setUseDemoTeacherData] = useState<boolean>(true);
   const [cloudConnected, setCloudConnected] = useState<boolean>(false);
+  const [pendingReward, setPendingReward] = useState<CollectibleItem | null>(null);
 
   // Perfil activo actual (aislado individualmente, con fallback seguro)
   const activeProfile = (isLoggedIn && activeProfileId
@@ -401,8 +399,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       answers: {},
       evidences: {},
       passportEntries: [],
-      currentMissionId: 1
-    };
+      currentMissionId: 1, collection: {}, missionRewards: {} };
 
     setProfiles(prev => [...prev, newProfile]);
     setActiveProfileId(newProfile.id);
@@ -513,6 +510,10 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }));
   };
 
+  const claimReward = () => {
+    setPendingReward(null);
+  };
+
   const completeMission = (missionId: number, reflectionText: string) => {
     if (!activeProfile) return;
     const mission = MISSIONS_DATA.find(m => m.id === missionId);
@@ -523,6 +524,37 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
       const alreadyCompleted = p.completedMissionIds.includes(missionId);
       const newCompleted = alreadyCompleted ? p.completedMissionIds : [...p.completedMissionIds, missionId];
+      
+      const newCollection = { ...(p.collection || {}) };
+      const newMissionRewards = { ...(p.missionRewards || {}) };
+
+      if (!p.missionRewards?.[missionId]) {
+        const rewardItem = rollReward(missionId);
+        
+        const timestamp = new Date().toISOString();
+        newMissionRewards[missionId] = {
+          missionId,
+          rewardItemId: rewardItem.id,
+          rewardRarity: rewardItem.rarity,
+          claimedAt: timestamp
+        };
+
+        if (newCollection[rewardItem.id]) {
+          newCollection[rewardItem.id] = {
+            ...newCollection[rewardItem.id],
+            quantity: newCollection[rewardItem.id].quantity + 1
+          };
+        } else {
+          newCollection[rewardItem.id] = {
+            itemId: rewardItem.id,
+            quantity: 1,
+            discoveredAt: timestamp,
+            sourceMission: missionId
+          };
+        }
+        
+        setPendingReward(rewardItem);
+      }
       const newBadges = p.earnedBadges.includes(mission.badgeName)
         ? p.earnedBadges
         : [...p.earnedBadges, mission.badgeName];
@@ -554,7 +586,9 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         completedMissionIds: newCompleted,
         earnedBadges: newBadges,
         passportEntries: newPassportEntries,
-        currentMissionId: Math.max(p.currentMissionId, nextMissionId)
+        currentMissionId: Math.max(p.currentMissionId, nextMissionId),
+        collection: newCollection,
+        missionRewards: newMissionRewards
       };
       saveProfileToCloud(updated);
       return updated;
@@ -604,6 +638,8 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         isLoggedIn,
         isTeacherAuthenticated,
         cloudConnected,
+        pendingReward,
+        claimReward,
         setCurrentView,
         setActiveMissionId,
         loginWithCredentials,
@@ -638,3 +674,4 @@ export const useGuardian = () => {
   }
   return context;
 };
+
