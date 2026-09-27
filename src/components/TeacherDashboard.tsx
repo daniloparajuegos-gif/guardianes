@@ -602,7 +602,7 @@ export const TeacherDashboard: React.FC = () => {
                 Ficha Técnica y Créditos de Investigación
               </h3>
               <p className="text-xs text-slate-500">
-                Proyecto de Grado • Maestría en Educación
+                Proyecto de Grado • Maestría en Educación • Corporación Universitaria Iberoamericana
               </p>
             </div>
           </div>

@@ -104,7 +104,7 @@ export const LoginScreen: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 sm:p-6 bg-gradient-to-b from-[#f7fbf7] via-emerald-50/50 to-[#eef7ee]">
+    <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-4 sm:p-6 bg-gradient-to-b from-[#f7fbf7] via-emerald-50/50 to-[#eef7ee]">
       <div className="w-full max-w-4xl bg-white border-2 border-emerald-300 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
         
         {/* Columna Izquierda: Identidad y Seguridad */}
@@ -476,26 +476,26 @@ export const LoginScreen: React.FC = () => {
               </div>
             )}
           </div>
-
-        </div>
-
-        {/* Pie de página institucional y autoría de investigación */}
-        <div className="mt-8 text-center text-xs text-slate-500 space-y-1">
-          <p className="font-semibold text-slate-600">
-            Guardianes del Bosque • Estrategia Pedagógica Gamificada
-          </p>
-          <p className="text-[11px] text-slate-500">
-            Investigación para la Maestría en Educación
-          </p>
-          <p className="text-[11px] text-slate-600">
-            Autores: <span className="font-medium text-slate-700">Danilo Enrique Insuasty Delgado</span> • <span className="font-medium text-slate-700">María Fernanda Gutiérrez Chica</span>
-          </p>
-          <p className="text-[10px] text-slate-400">
-            Magangué y La Mojana, Colombia
-          </p>
         </div>
 
       </div>
+
+      {/* Pie de página institucional y autoría de investigación */}
+      <footer className="mt-8 mb-4 text-center text-xs text-slate-500 space-y-1.5 max-w-2xl px-4">
+        <p className="font-semibold text-slate-700 text-xs sm:text-sm">
+          Guardianes del Bosque • Estrategia Pedagógica Gamificada
+        </p>
+        <p className="text-[11px] sm:text-xs text-slate-600">
+          Investigación para la Maestría en Educación • <span className="font-medium text-slate-700">Corporación Universitaria Iberoamericana</span>
+        </p>
+        <p className="text-[11px] sm:text-xs text-slate-600">
+          Autores: <span className="font-semibold text-slate-800">Danilo Enrique Insuasty Delgado</span> • <span className="font-semibold text-slate-800">María Fernanda Gutiérrez Chica</span>
+        </p>
+        <p className="text-[10px] sm:text-[11px] text-slate-400">
+          Magangué y La Mojana, Colombia
+        </p>
+      </footer>
+
     </div>
   );
 };
