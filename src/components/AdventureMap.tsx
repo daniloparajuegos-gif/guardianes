@@ -81,7 +81,14 @@ export const AdventureMap: React.FC = () => {
     getReadingLevelBadges
   } = useGuardian();
 
-  const [activeTooltipId, setActiveTooltipId] = useState<number | null>(null);
+  const [activeTooltipId, setActiveTooltipId] = useState<number | null>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const m = params.get('mission');
+      if (m) return parseInt(m, 10);
+    }
+    return null;
+  });
   const [viewMode, setViewMode] = useState<'visual_map' | 'cards'>('visual_map');
   const [showPassportCard, setShowPassportCard] = useState<boolean>(true);
   const [isPassportMinimized, setIsPassportMinimized] = useState<boolean>(() => {
@@ -204,10 +211,12 @@ export const AdventureMap: React.FC = () => {
       {viewMode === 'visual_map' && (
         <div className="relative w-full max-w-full rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-amber-950/40 shadow-2xl bg-forest-950 select-none overflow-hidden">
           
-          {/* Scroll horizontal exclusivo para el mapa en pantallas móviles */}
-          <div className="w-full max-w-full overflow-x-auto overflow-y-hidden">
-            {/* Contenedor con relación de aspecto 16:9 y scroll horizontal en móviles */}
-            <div className="relative w-full aspect-[16/9] min-w-[760px] min-h-[440px]">
+          {/* Contenedor del Mapa con Scroll y Ficha Flotante */}
+          <div className="relative w-full">
+            {/* Scroll horizontal exclusivo para el mapa en pantallas móviles */}
+            <div className="w-full max-w-full overflow-x-auto overflow-y-hidden">
+              {/* Contenedor con relación de aspecto 16:9 y scroll horizontal en móviles */}
+              <div className="relative w-full aspect-[16/9] min-w-[760px] min-h-[440px]">
             
             {/* Imagen de fondo a resolución original directa sin pérdida (5.58 MB Master) */}
             <img
@@ -742,6 +751,76 @@ export const AdventureMap: React.FC = () => {
           </div>
         </div>
 
+        {/* Ficha Flotante de Misión en Móvil (Ubicada en la parte inferior del mapa interactivo) */}
+        {activeTooltipId !== null && activeMission && (
+          <div className="sm:hidden absolute bottom-2.5 inset-x-2.5 z-40 bg-black/90 backdrop-blur-md rounded-2xl p-3 border-2 border-emerald-400 shadow-2xl animate-scaleUp text-white">
+            <div className="flex items-start justify-between gap-2 border-b border-white/15 pb-2 mb-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="text-xl shrink-0">{activeMission.icon}</span>
+                <div className="min-w-0">
+                  <span className="text-[10px] font-mono font-bold uppercase text-emerald-400 block leading-tight truncate">
+                    Misión {activeMission.id} • {activeMission.territoryZone}
+                  </span>
+                  <h4 className="font-display font-bold text-xs text-white leading-snug truncate">
+                    {activeMission.title}
+                  </h4>
+                </div>
+              </div>
+              <button 
+                type="button"
+                onClick={() => setActiveTooltipId(null)}
+                className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/10 cursor-pointer shrink-0 transition-colors"
+                title="Cerrar ficha"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 mb-2.5">
+              <div className="w-14 h-12 rounded-lg overflow-hidden shrink-0 border border-emerald-400/60 bg-slate-900 shadow-xs">
+                <img 
+                  src={`/imagenes_misiones/m${activeMission.id}.png`}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.triedAlt) {
+                      target.dataset.triedAlt = 'true';
+                      target.src = `/Imagenes misiones/m${activeMission.id}.png`;
+                    }
+                  }}
+                  alt={activeMission.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[11px] text-emerald-100/90 line-clamp-2 font-reading leading-tight">
+                  {activeMission.conflictSummary}
+                </p>
+                <div className="mt-1 flex items-center gap-1 text-[10px] text-amber-300 font-bold">
+                  <Award className="w-3 h-3 text-amber-400 shrink-0" />
+                  <span className="truncate">{activeMission.badgeName}</span>
+                </div>
+              </div>
+            </div>
+
+            {getMissionStatus(activeMission.id) !== 'locked' ? (
+              <button
+                type="button"
+                onClick={() => handleStartMission(activeMission.id)}
+                className="w-full py-2 bg-gradient-to-r from-emerald-600 to-forest-600 hover:from-emerald-500 hover:to-forest-500 text-white font-bold text-xs rounded-xl shadow-md flex items-center justify-center gap-1.5 cursor-pointer active:scale-98 transition-transform"
+              >
+                <span>{getMissionStatus(activeMission.id) === 'completed' ? 'REPASAR EXPEDICIÓN' : 'COMENZAR MISIÓN'}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            ) : (
+              <div className="py-1.5 px-2 rounded-xl bg-white/10 border border-white/15 text-center text-[10px] text-slate-300 font-medium flex items-center justify-center gap-1.5">
+                <Lock className="w-3 h-3 text-amber-400" />
+                <span>Completa la misión anterior para desbloquear</span>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
         {/* =============================================================
             TABLERO INFERIOR: "NIVELES DE LA AVENTURA" (ESTILO MADERA TALLADA)
             ============================================================= */}
@@ -851,73 +930,8 @@ export const AdventureMap: React.FC = () => {
         </div>
       )}
 
-      {/* Modal / Ficha Inferior para Dispositivos Móviles (Fija en pantalla para que nunca se corte) */}
-      {activeTooltipId !== null && activeMission && (
-        <div className="sm:hidden fixed inset-x-3 bottom-16 z-50 bg-white/98 backdrop-blur-md rounded-3xl p-4 border-2 border-emerald-500 shadow-2xl animate-fadeIn text-slate-900">
-          <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-2 mb-2.5">
-            <div className="flex items-center gap-2">
-              <span className="text-xl">{activeMission.icon}</span>
-              <div>
-                <span className="text-[10px] font-mono font-bold uppercase text-emerald-700 block">
-                  Misión {activeMission.id} • {activeMission.territoryZone}
-                </span>
-                <h4 className="font-display font-bold text-xs text-slate-900 leading-snug">
-                  {activeMission.title}
-                </h4>
-              </div>
-            </div>
-            <button 
-              type="button"
-              onClick={() => setActiveTooltipId(null)}
-              className="text-slate-400 hover:text-slate-700 p-1.5 rounded-xl hover:bg-slate-100 cursor-pointer"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
 
-          <div className="flex gap-3 mb-3">
-            <div className="w-20 h-16 rounded-xl overflow-hidden shrink-0 border border-emerald-300 bg-slate-900">
-              <img 
-                src={`/imagenes_misiones/m${activeMission.id}.png`}
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (!target.dataset.triedAlt) {
-                    target.dataset.triedAlt = 'true';
-                    target.src = `/Imagenes misiones/m${activeMission.id}.png`;
-                  }
-                }}
-                alt={activeMission.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-[11px] text-slate-600 line-clamp-2 font-reading">
-                {activeMission.conflictSummary}
-              </p>
-              <div className="mt-1 flex items-center gap-1 text-[10px] text-emerald-800 font-bold">
-                <Award className="w-3 h-3 text-amber-600 shrink-0" />
-                <span className="truncate">{activeMission.badgeName}</span>
-              </div>
-            </div>
-          </div>
 
-          {getMissionStatus(activeMission.id) !== 'locked' ? (
-            <button
-              type="button"
-              onClick={() => handleStartMission(activeMission.id)}
-              className="w-full py-2.5 bg-gradient-to-r from-emerald-600 to-forest-700 text-white font-bold text-xs rounded-xl shadow-md flex items-center justify-center gap-1.5 cursor-pointer active:scale-98 transition-transform"
-            >
-              <span>{getMissionStatus(activeMission.id) === 'completed' ? 'REPASAR EXPEDICIÓN' : 'COMENZAR MISIÓN'}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          ) : (
-            <div className="p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-center text-[10px] text-slate-500 font-medium flex items-center justify-center gap-1.5">
-              <Lock className="w-3 h-3 text-slate-400" />
-              <span>Completa la misión anterior para desbloquear</span>
-            </div>
-          )}
-        </div>
-      )}
 
       {/* =========================================================================
           VISTA 2: LISTA DE FICHAS DE EXPEDICIÓN (PARA ESTUDIANTES QUE PREFIERAN LISTA)
