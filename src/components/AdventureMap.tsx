@@ -202,10 +202,12 @@ export const AdventureMap: React.FC = () => {
           VISTA 1: MAPA INTERACTIVO ILUSTRADO (CON LA IMAGEN DE FONDO EN ALTA CALIDAD)
           ========================================================================= */}
       {viewMode === 'visual_map' && (
-        <div className="relative w-full max-w-full rounded-2xl sm:rounded-3xl overflow-x-auto overflow-y-hidden border-2 sm:border-4 border-amber-950/40 shadow-2xl bg-forest-950 select-none">
+        <div className="relative w-full max-w-full rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-amber-950/40 shadow-2xl bg-forest-950 select-none overflow-hidden">
           
-          {/* Contenedor con relación de aspecto 16:9 y scroll horizontal en móviles */}
-          <div className="relative w-full aspect-[16/9] min-w-[760px] min-h-[440px]">
+          {/* Scroll horizontal exclusivo para el mapa en pantallas móviles */}
+          <div className="w-full max-w-full overflow-x-auto overflow-y-hidden">
+            {/* Contenedor con relación de aspecto 16:9 y scroll horizontal en móviles */}
+            <div className="relative w-full aspect-[16/9] min-w-[760px] min-h-[440px]">
             
             {/* Imagen de fondo a resolución original directa sin pérdida (5.58 MB Master) */}
             <img
@@ -738,112 +740,113 @@ export const AdventureMap: React.FC = () => {
             })}
 
           </div>
+        </div>
 
-          {/* =============================================================
-              TABLERO INFERIOR: "NIVELES DE LA AVENTURA" (ESTILO MADERA TALLADA)
-              ============================================================= */}
-          <div className="w-full bg-gradient-to-r from-[#2c1a0e] via-[#1f1208] to-[#2c1a0e] border-t-4 border-[#8c5930] p-4 sm:p-5 text-white shadow-2xl relative overflow-hidden">
-            {/* Vetas y textura sutil de madera */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#d4a373_1px,transparent_1px)] [background-size:16px_16px]" />
+        {/* =============================================================
+            TABLERO INFERIOR: "NIVELES DE LA AVENTURA" (ESTILO MADERA TALLADA)
+            ============================================================= */}
+        <div className="w-full bg-gradient-to-r from-[#2c1a0e] via-[#1f1208] to-[#2c1a0e] border-t-2 sm:border-t-4 border-[#8c5930] p-3 sm:p-5 text-white shadow-2xl relative">
+          {/* Vetas y textura sutil de madera */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#d4a373_1px,transparent_1px)] [background-size:16px_16px]" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
-              
-              {/* Los 3 Niveles de Comprensión con Orbes Radiantes */}
-              <div className="space-y-2.5 w-full lg:w-auto">
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-lg bg-amber-500/20 border border-amber-400 flex items-center justify-center text-amber-300 text-xs shadow-xs">
-                    🧭
-                  </div>
-                  <span className="text-[11px] font-display font-black tracking-widest text-amber-300 uppercase">
-                    NIVELES DE LA AVENTURA • PEDAGOGÍA DE COMPRENSIÓN
-                  </span>
+          <div className="relative z-10 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 sm:gap-5 w-full">
+            
+            {/* Los 3 Niveles de Comprensión con Orbes Radiantes */}
+            <div className="space-y-2.5 w-full flex-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-lg bg-amber-500/20 border border-amber-400 flex items-center justify-center text-amber-300 text-xs shadow-xs shrink-0">
+                  🧭
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  
-                  {/* Orbe 1: Comprensión Literal */}
-                  <div className="flex items-center gap-3 p-3 rounded-2xl bg-black/45 border border-emerald-500/40 hover:border-emerald-400 transition-colors shadow-sm">
-                    <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-700 to-emerald-400 border-2 border-emerald-300 flex items-center justify-center text-white shadow-[0_0_15px_rgba(16,185,129,0.5)] shrink-0">
-                      <Eye className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <span className="font-display font-bold text-xs text-emerald-200 block leading-tight">
-                        Nivel 1: Los ojos del Guardián
-                      </span>
-                      <span className="text-[10px] text-emerald-100/70 font-medium">
-                        Comprensión literal de hechos
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Orbe 2: Comprensión Inferencial */}
-                  <div className="flex items-center gap-3 p-3 rounded-2xl bg-black/45 border border-sky-500/40 hover:border-sky-400 transition-colors shadow-sm">
-                    <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-sky-700 to-blue-400 border-2 border-sky-300 flex items-center justify-center text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] shrink-0">
-                      <Search className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <span className="font-display font-bold text-xs text-sky-200 block leading-tight">
-                        Nivel 2: Las pistas ocultas
-                      </span>
-                      <span className="text-[10px] text-sky-100/70 font-medium">
-                        Comprensión inferencial de causas
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Orbe 3: Comprensión Crítica */}
-                  <div className="flex items-center gap-3 p-3 rounded-2xl bg-black/45 border border-amber-500/40 hover:border-amber-400 transition-colors shadow-sm">
-                    <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-600 to-yellow-400 border-2 border-amber-200 flex items-center justify-center text-white shadow-[0_0_15px_rgba(245,158,11,0.5)] shrink-0">
-                      <Scale className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <span className="font-display font-bold text-xs text-amber-200 block leading-tight">
-                        Nivel 3: La decisión del Guardián
-                      </span>
-                      <span className="text-[10px] text-amber-100/70 font-medium">
-                        Comprensión crítica y valoración
-                      </span>
-                    </div>
-                  </div>
-
-                </div>
+                <span className="text-[11px] font-display font-black tracking-widest text-amber-300 uppercase truncate">
+                  NIVELES DE LA AVENTURA • PEDAGOGÍA DE COMPRENSIÓN
+                </span>
               </div>
 
-              {/* Lado Derecho: Nota en Pergamino y Leyenda Oficial */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 self-end lg:self-center">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 w-full">
                 
-                {/* Nota de Pergamino */}
-                <div className="hidden xl:flex items-center gap-2 px-3 py-2 rounded-xl bg-[#f7f2e4] border border-[#d8c7a6] text-[#3b2e21] shadow-sm">
-                  <span className="text-xs">📜</span>
-                  <span className="text-[11px] font-serif italic font-medium">
-                    "Cada misión te acerca a un territorio más vivo"
-                  </span>
+                {/* Orbe 1: Comprensión Literal */}
+                <div className="flex items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-2xl bg-black/45 border border-emerald-500/40 hover:border-emerald-400 transition-colors shadow-sm">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-emerald-700 to-emerald-400 border-2 border-emerald-300 flex items-center justify-center text-white shadow-[0_0_15px_rgba(16,185,129,0.5)] shrink-0">
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="font-display font-bold text-xs text-emerald-200 block leading-tight truncate">
+                      Nivel 1: Los ojos del Guardián
+                    </span>
+                    <span className="text-[10px] text-emerald-100/70 font-medium block">
+                      Comprensión literal de hechos
+                    </span>
+                  </div>
                 </div>
 
-                {/* Leyenda de Estados */}
-                <div className="flex flex-wrap items-center gap-3 bg-black/60 border border-amber-500/30 px-4 py-2.5 rounded-2xl text-[11px]">
-                  <span className="flex items-center gap-1.5 text-emerald-300 font-bold">
-                    <span className="w-3 h-3 rounded-full bg-emerald-400 ring-2 ring-emerald-300 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
-                    Disponible
-                  </span>
-                  <span className="flex items-center gap-1.5 text-slate-400">
-                    <Lock className="w-3.5 h-3.5 text-slate-400" />
-                    Bloqueada
-                  </span>
-                  <span className="flex items-center gap-1.5 text-teal-300 font-bold">
-                    <span className="w-3.5 h-3.5 rounded-full bg-teal-500 flex items-center justify-center text-[10px] text-white font-bold">✓</span>
-                    Completada
-                  </span>
-                  <span className="flex items-center gap-1.5 text-amber-300 font-bold">
-                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                    Misión final
-                  </span>
+                {/* Orbe 2: Comprensión Inferencial */}
+                <div className="flex items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-2xl bg-black/45 border border-sky-500/40 hover:border-sky-400 transition-colors shadow-sm">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-sky-700 to-blue-400 border-2 border-sky-300 flex items-center justify-center text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] shrink-0">
+                    <Search className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="font-display font-bold text-xs text-sky-200 block leading-tight truncate">
+                      Nivel 2: Las pistas ocultas
+                    </span>
+                    <span className="text-[10px] text-sky-100/70 font-medium block">
+                      Comprensión inferencial de causas
+                    </span>
+                  </div>
                 </div>
 
+                {/* Orbe 3: Comprensión Crítica */}
+                <div className="flex items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-2xl bg-black/45 border border-amber-500/40 hover:border-amber-400 transition-colors shadow-sm">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-amber-600 to-yellow-400 border-2 border-amber-200 flex items-center justify-center text-white shadow-[0_0_15px_rgba(245,158,11,0.5)] shrink-0">
+                    <Scale className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="font-display font-bold text-xs text-amber-200 block leading-tight truncate">
+                      Nivel 3: La decisión del Guardián
+                    </span>
+                    <span className="text-[10px] text-amber-100/70 font-medium block">
+                      Comprensión crítica y valoración
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Lado Derecho: Nota en Pergamino y Leyenda Oficial */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 shrink-0 w-full lg:w-auto">
+              
+              {/* Nota de Pergamino */}
+              <div className="hidden xl:flex items-center gap-2 px-3 py-2 rounded-xl bg-[#f7f2e4] border border-[#d8c7a6] text-[#3b2e21] shadow-sm">
+                <span className="text-xs">📜</span>
+                <span className="text-[11px] font-serif italic font-medium">
+                  "Cada misión te acerca a un territorio más vivo"
+                </span>
+              </div>
+
+              {/* Leyenda de Estados */}
+              <div className="flex flex-wrap items-center justify-around sm:justify-start gap-2.5 sm:gap-3 bg-black/60 border border-amber-500/30 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl text-[11px] w-full lg:w-auto">
+                <span className="flex items-center gap-1.5 text-emerald-300 font-bold">
+                  <span className="w-3 h-3 rounded-full bg-emerald-400 ring-2 ring-emerald-300 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                  Disponible
+                </span>
+                <span className="flex items-center gap-1.5 text-slate-400">
+                  <Lock className="w-3.5 h-3.5 text-slate-400" />
+                  Bloqueada
+                </span>
+                <span className="flex items-center gap-1.5 text-teal-300 font-bold">
+                  <span className="w-3.5 h-3.5 rounded-full bg-teal-500 flex items-center justify-center text-[10px] text-white font-bold">✓</span>
+                  Completada
+                </span>
+                <span className="flex items-center gap-1.5 text-amber-300 font-bold">
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  Misión final
+                </span>
               </div>
 
             </div>
+
           </div>
+        </div>
 
         </div>
       )}
