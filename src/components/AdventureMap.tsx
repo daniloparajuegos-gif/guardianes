@@ -579,6 +579,9 @@ export const AdventureMap: React.FC = () => {
               const isLocked = status === 'locked';
               const isFinal = mission.isFinalMission;
               const isSelected = activeTooltipId === node.id;
+              const isUpperHalf = node.y < 52;
+              const isRightSide = node.x > 75;
+              const isLeftSide = node.x < 25;
 
               return (
                 <div
@@ -671,14 +674,18 @@ export const AdventureMap: React.FC = () => {
                       </div>
                     )}
 
-                    {/* Popover / Tooltip interactivo con detalle y botón de entrada (Escritorio) */}
+                    {/* Popover / Tooltip interactivo con detalle y botón de entrada (Escritorio Inteligente) */}
                     {isSelected && (
-                      <div className="hidden sm:block absolute bottom-full mb-3 left-1/2 transform -translate-x-1/2 w-64 sm:w-72 bg-white/95 backdrop-blur-md rounded-2xl p-4 border-2 border-emerald-400 shadow-2xl z-50 text-slate-900 animate-scaleUp">
-                        <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-2 mb-2">
+                      <div className={`hidden sm:block absolute z-50 w-64 sm:w-72 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 border-2 border-emerald-400 shadow-2xl text-slate-900 animate-scaleUp ${
+                        isUpperHalf ? 'top-full mt-2.5' : 'bottom-full mb-2.5'
+                      } ${
+                        isRightSide ? 'right-0' : isLeftSide ? 'left-0' : 'left-1/2 -translate-x-1/2'
+                      }`}>
+                        <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-1.5 mb-2">
                           <div className="flex items-center gap-2">
                             <span className="text-xl">{mission.icon}</span>
                             <div>
-                              <span className="text-[10px] font-mono font-bold uppercase text-emerald-700 block">
+                              <span className="text-[10px] font-mono font-bold uppercase text-emerald-700 block leading-tight">
                                 Misión {mission.id} • {mission.territoryZone}
                               </span>
                               <h4 className="font-display font-bold text-xs sm:text-sm text-slate-900 leading-snug">
@@ -688,14 +695,15 @@ export const AdventureMap: React.FC = () => {
                           </div>
                           <button 
                             onClick={(e) => { e.stopPropagation(); setActiveTooltipId(null); }}
-                            className="text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer"
+                            className="text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer rounded-lg hover:bg-slate-100 transition-colors"
+                            title="Cerrar detalle"
                           >
                             <X className="w-3.5 h-3.5" />
                           </button>
                         </div>
 
                         {/* Imagen de Portada de la Misión en Popover */}
-                        <div className="relative w-full h-24 rounded-xl overflow-hidden mb-2.5 border border-emerald-300 shadow-inner bg-slate-900">
+                        <div className="relative w-full h-20 rounded-xl overflow-hidden mb-2 border border-emerald-300 shadow-inner bg-slate-900">
                           <img 
                             src={`/imagenes_misiones/m${mission.id}.png`}
                             onError={(e) => {
@@ -714,11 +722,11 @@ export const AdventureMap: React.FC = () => {
                           </span>
                         </div>
 
-                        <p className="text-[11px] text-slate-600 line-clamp-2 font-reading mb-3">
+                        <p className="text-[11px] text-slate-600 line-clamp-2 font-reading mb-2 leading-snug">
                           {mission.conflictSummary}
                         </p>
 
-                        <div className="flex items-center justify-between text-[10px] mb-3 bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200">
+                        <div className="flex items-center justify-between text-[10px] mb-2.5 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
                           <span className="text-emerald-900 font-medium">Insignia:</span>
                           <span className="font-bold text-emerald-800 flex items-center gap-1">
                             <Award className="w-3 h-3 text-amber-600" />
@@ -729,13 +737,13 @@ export const AdventureMap: React.FC = () => {
                         {status !== 'locked' ? (
                           <button
                             onClick={() => handleStartMission(mission.id)}
-                            className="w-full py-2.5 bg-gradient-to-r from-emerald-600 to-forest-700 hover:from-emerald-500 hover:to-forest-600 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                            className="w-full py-2 bg-gradient-to-r from-emerald-600 to-forest-700 hover:from-emerald-500 hover:to-forest-600 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
                           >
                             <span>{isCompleted ? 'REPASAR EXPEDICIÓN' : 'COMENZAR MISIÓN'}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         ) : (
-                          <div className="p-2 rounded-xl bg-slate-100 border border-slate-200 text-center text-[10px] text-slate-500 font-medium flex items-center justify-center gap-1.5">
+                          <div className="py-2 px-2.5 rounded-xl bg-slate-100 border border-slate-200 text-center text-[10px] text-slate-500 font-medium flex items-center justify-center gap-1.5">
                             <Lock className="w-3 h-3 text-slate-400" />
                             <span>Completa la misión anterior para desbloquear</span>
                           </div>
