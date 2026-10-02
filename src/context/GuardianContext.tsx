@@ -157,6 +157,19 @@ const GUEST_PROFILE: StudentProfile = {
   passportEntries: [],
   currentMissionId: 1, collection: {}, missionRewards: {} };
 
+export const getStudentCurrentMissionId = (profile?: StudentProfile | null): number => {
+  if (!profile) return 1;
+  if (profile.completedMissionIds && profile.completedMissionIds.length > 0) {
+    for (let i = 1; i <= 15; i++) {
+      if (!profile.completedMissionIds.includes(i)) {
+        return i;
+      }
+    }
+    return 15;
+  }
+  return profile.currentMissionId || 1;
+};
+
 const TEACHER_MASTER_PIN = 'docente2026';
 
 const GuardianContext = createContext<GuardianContextType | undefined>(undefined);
@@ -228,6 +241,17 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const activeProfile = (isLoggedIn && activeProfileId
     ? profiles.find(p => p.id === activeProfileId)
     : null) || profiles[0] || GUEST_PROFILE;
+
+  // Sincronizar automáticamente activeMissionId con la misión en progreso del estudiante activo
+  useEffect(() => {
+    if (activeProfile) {
+      const nextMission = getStudentCurrentMissionId(activeProfile);
+      if ((activeMissionId === 1 && activeProfile.completedMissionIds.includes(1)) || 
+          activeProfile.completedMissionIds.includes(activeMissionId)) {
+        setActiveMissionId(nextMission);
+      }
+    }
+  }, [activeProfile?.id, activeProfile?.completedMissionIds.length]);
 
   // Sincronización en tiempo real con Google Firestore (nube compartida entre dispositivos)
   useEffect(() => {
@@ -333,6 +357,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
 
     setActiveProfileId(target.id);
+    setActiveMissionId(getStudentCurrentMissionId(target));
     setIsLoggedIn(true);
     setCurrentView('welcome');
     return { success: true };
@@ -351,6 +376,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
 
     setActiveProfileId(target.id);
+    setActiveMissionId(getStudentCurrentMissionId(target));
     setIsLoggedIn(true);
     setCurrentView('welcome');
     return { success: true };

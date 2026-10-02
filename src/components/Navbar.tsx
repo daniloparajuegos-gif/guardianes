@@ -24,13 +24,29 @@ export const Navbar: React.FC = () => {
     isLoggedIn,
     cloudConnected,
     logout,
-    activeMissionId
+    activeMissionId,
+    setActiveMissionId
   } = useGuardian();
 
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
   const completedCount = activeProfile?.completedMissionIds.length || 0;
   const progressPercent = Math.round((completedCount / 15) * 100);
+
+  const studentCurrentMission = React.useMemo(() => {
+    if (!activeProfile) return 1;
+    if (activeProfile.completedMissionIds && activeProfile.completedMissionIds.length > 0) {
+      for (let i = 1; i <= 15; i++) {
+        if (!activeProfile.completedMissionIds.includes(i)) return i;
+      }
+      return 15;
+    }
+    return activeProfile.currentMissionId || 1;
+  }, [activeProfile]);
+
+  const displayMissionId = currentView === 'mission'
+    ? (activeMissionId || studentCurrentMission)
+    : studentCurrentMission;
 
   return (
     <>
@@ -246,7 +262,12 @@ export const Navbar: React.FC = () => {
               {/* Misión actual */}
               <button
                 type="button"
-                onClick={() => setCurrentView('mission')}
+                onClick={() => {
+                  if (currentView !== 'mission') {
+                    setActiveMissionId(studentCurrentMission);
+                  }
+                  setCurrentView('mission');
+                }}
                 className={`flex-1 py-1 px-1 rounded-xl flex flex-col items-center gap-0.5 text-[10px] font-bold transition-all ${
                   currentView === 'mission'
                     ? 'text-emerald-700 bg-emerald-50/80 font-black'
@@ -256,7 +277,7 @@ export const Navbar: React.FC = () => {
                 <div className={`p-1 rounded-lg ${currentView === 'mission' ? 'bg-emerald-600 text-white shadow-xs' : ''}`}>
                   <Compass className="w-4 h-4" />
                 </div>
-                <span className="truncate">Misión {activeMissionId || 1}</span>
+                <span className="truncate">Misión {displayMissionId}</span>
               </button>
 
               {/* Pasaporte */}
