@@ -587,7 +587,9 @@ export const AdventureMap: React.FC = () => {
                 <div
                   key={node.id}
                   style={{ left: `${node.x}%`, top: `${node.y}%` }}
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30"
+                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${
+                    isSelected ? 'z-50' : 'z-30'
+                  }`}
                 >
                   {/* Botón Circular del Nodo / Medallón de Expedición */}
                   <div className="relative group flex flex-col items-center">
@@ -761,7 +763,7 @@ export const AdventureMap: React.FC = () => {
 
         {/* Ficha Flotante de Misión en Móvil (Ubicada en la parte inferior del mapa interactivo) */}
         {activeTooltipId !== null && activeMission && (
-          <div className="sm:hidden absolute bottom-2.5 inset-x-2.5 z-40 bg-black/90 backdrop-blur-md rounded-2xl p-3 border-2 border-emerald-400 shadow-2xl animate-scaleUp text-white">
+          <div className="sm:hidden absolute bottom-2.5 inset-x-2.5 z-[60] bg-black/90 backdrop-blur-md rounded-2xl p-3 border-2 border-emerald-400 shadow-2xl animate-scaleUp text-white">
             <div className="flex items-start justify-between gap-2 border-b border-white/15 pb-2 mb-2">
               <div className="flex items-center gap-2 min-w-0">
                 <span className="text-xl shrink-0">{activeMission.icon}</span>
