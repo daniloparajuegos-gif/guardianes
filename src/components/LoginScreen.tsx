@@ -104,11 +104,11 @@ export const LoginScreen: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-4 sm:p-6 bg-gradient-to-b from-[#f7fbf7] via-emerald-50/50 to-[#eef7ee]">
+    <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-3 sm:p-6 bg-gradient-to-b from-[#f7fbf7] via-emerald-50/50 to-[#eef7ee]">
       <div className="w-full max-w-4xl bg-white border-2 border-emerald-300 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
         
         {/* Columna Izquierda: Identidad y Seguridad */}
-        <div className="md:w-5/12 bg-gradient-to-br from-emerald-800 via-forest-700 to-teal-900 text-white p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+        <div className="md:w-5/12 bg-gradient-to-br from-emerald-800 via-forest-700 to-teal-900 text-white p-5 sm:p-8 flex flex-col justify-between relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/20 rounded-full blur-2xl pointer-events-none" />
           
           <div className="relative z-10 space-y-4">
@@ -146,7 +146,7 @@ export const LoginScreen: React.FC = () => {
           </div>
 
           {/* Botón Acceso Exclusivo Docente */}
-          <div className="relative z-10 mt-8 pt-6 border-t border-white/20">
+          <div className="relative z-10 mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/20">
             <button
               onClick={() => {
                 setActiveTab('teacher_login');
@@ -165,7 +165,7 @@ export const LoginScreen: React.FC = () => {
         </div>
 
         {/* Columna Derecha: Formularios de Acceso */}
-        <div className="md:w-7/12 p-6 sm:p-10 flex flex-col justify-between">
+        <div className="md:w-7/12 p-4 sm:p-8 lg:p-10 flex flex-col justify-between">
           
           <div>
             {/* Pestañas Superiores de Selección */}

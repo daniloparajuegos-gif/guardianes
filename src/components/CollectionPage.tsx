@@ -36,25 +36,23 @@ export const CollectionPage: React.FC = () => {
   }, [filters, collection]);
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0f1712', display: 'flex', flexDirection: 'column' }}>
+    <div className="min-h-screen bg-[#0f1712] flex flex-col">
       
-      <div style={{ flex: 1, padding: '24px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-        <h1 style={{ color: '#fff', margin: '0 0 24px 0', fontSize: '2rem' }}>Colección del Territorio</h1>
+      <div className="flex-1 px-3 sm:px-6 py-4 sm:py-8 max-w-6xl mx-auto w-full">
+        <h1 className="text-white font-display font-black text-2xl sm:text-3xl mb-4 sm:mb-6">
+          Colección del Territorio
+        </h1>
         
         <CollectionProgress discoveredCount={discoveredCount} totalCount={30} />
         
         <CollectionFilters filters={filters} setFilters={setFilters} />
         
         {filteredItems.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '48px', color: '#a0aab2' }}>
+          <div className="text-center py-12 text-slate-400 text-xs sm:text-sm">
             No se encontraron objetos con los filtros seleccionados.
           </div>
         ) : (
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', 
-            gap: '16px' 
-          }}>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 sm:gap-4">
             {filteredItems.map(item => (
               <CollectionCard 
                 key={item.id}

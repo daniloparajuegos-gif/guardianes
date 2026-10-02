@@ -59,36 +59,38 @@ export const RewardModal: React.FC<RewardModalProps> = ({ reward, onContinue, on
       transition: 'opacity 0.5s ease-in-out',
       backdropFilter: 'blur(6px)'
     }}>
-      <div style={{
-        backgroundColor: '#1a2920',
-        borderRadius: '16px',
-        maxWidth: '450px',
-        width: '100%',
-        border: `1px solid ${aura.border.split(' ')[2]}`,
-        boxShadow: `0 15px 40px -10px ${aura.border.split(' ')[2]}44`,
-        padding: '32px',
-        textAlign: 'center',
-        transform: show ? 'scale(1)' : 'scale(0.8)',
-        transition: 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-      }}>
-        <h2 style={{ color: '#C9A24D', margin: '0 0 24px 0', fontSize: '1.25rem', letterSpacing: '2px' }}>
+      <div 
+        className="max-h-[92vh] overflow-y-auto p-5 sm:p-8"
+        style={{
+          backgroundColor: '#1a2920',
+          borderRadius: '16px',
+          maxWidth: '450px',
+          width: '100%',
+          border: `1px solid ${aura.border.split(' ')[2]}`,
+          boxShadow: `0 15px 40px -10px ${aura.border.split(' ')[2]}44`,
+          textAlign: 'center',
+          transform: show ? 'scale(1)' : 'scale(0.8)',
+          transition: 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+        }}
+      >
+        <h2 style={{ color: '#C9A24D', margin: '0 0 16px 0', fontSize: '1.2rem', letterSpacing: '2px' }}>
           ¡NUEVO DESCUBRIMIENTO!
         </h2>
 
-        <div style={{
-          width: '170px',
-          height: '170px',
-          margin: '0 auto 24px',
-          backgroundColor: '#0f1712',
-          backgroundImage: aura.background,
-          borderRadius: '50%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          boxShadow: aura.glow,
-          border: aura.border,
-          position: 'relative'
-        }}>
+        <div 
+          className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-4"
+          style={{
+            backgroundColor: '#0f1712',
+            backgroundImage: aura.background,
+            borderRadius: '50%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            boxShadow: aura.glow,
+            border: aura.border,
+            position: 'relative'
+          }}
+        >
           <img 
             src={reward.image} 
             alt={reward.name} 

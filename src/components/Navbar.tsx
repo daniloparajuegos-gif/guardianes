@@ -9,7 +9,8 @@ import {
   GraduationCap, 
   ChevronDown,
   LogOut,
-  LogIn
+  LogIn,
+  Sparkles
 } from 'lucide-react';
 import { StudentProfileModal } from './StudentProfileModal';
 
@@ -22,7 +23,8 @@ export const Navbar: React.FC = () => {
     toggleSound,
     isLoggedIn,
     cloudConnected,
-    logout
+    logout,
+    activeMissionId
   } = useGuardian();
 
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
@@ -216,6 +218,152 @@ export const Navbar: React.FC = () => {
         isOpen={isProfileModalOpen} 
         onClose={() => setIsProfileModalOpen(false)} 
       />
+
+      {/* Barra de Navegación Inferior para Dispositivos Móviles (Táctil y Cómoda) */}
+      <nav 
+        aria-label="Navegación móvil"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-emerald-200/90 py-1 px-1.5 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]"
+      >
+        <div className="flex items-center justify-around gap-1 max-w-lg mx-auto">
+          {isLoggedIn ? (
+            <>
+              {/* Mapa */}
+              <button
+                type="button"
+                onClick={() => setCurrentView('map')}
+                className={`flex-1 py-1 px-1 rounded-xl flex flex-col items-center gap-0.5 text-[10px] font-bold transition-all ${
+                  currentView === 'map'
+                    ? 'text-emerald-700 bg-emerald-50/80 font-black'
+                    : 'text-slate-600 hover:text-emerald-800'
+                }`}
+              >
+                <div className={`p-1 rounded-lg ${currentView === 'map' ? 'bg-emerald-600 text-white shadow-xs' : ''}`}>
+                  <Map className="w-4 h-4" />
+                </div>
+                <span className="truncate">Mapa</span>
+              </button>
+
+              {/* Misión actual */}
+              <button
+                type="button"
+                onClick={() => setCurrentView('mission')}
+                className={`flex-1 py-1 px-1 rounded-xl flex flex-col items-center gap-0.5 text-[10px] font-bold transition-all ${
+                  currentView === 'mission'
+                    ? 'text-emerald-700 bg-emerald-50/80 font-black'
+                    : 'text-slate-600 hover:text-emerald-800'
+                }`}
+              >
+                <div className={`p-1 rounded-lg ${currentView === 'mission' ? 'bg-emerald-600 text-white shadow-xs' : ''}`}>
+                  <Compass className="w-4 h-4" />
+                </div>
+                <span className="truncate">Misión {activeMissionId || 1}</span>
+              </button>
+
+              {/* Pasaporte */}
+              <button
+                type="button"
+                onClick={() => setCurrentView('passport')}
+                className={`flex-1 py-1 px-1 rounded-xl flex flex-col items-center gap-0.5 text-[10px] font-bold transition-all relative ${
+                  currentView === 'passport'
+                    ? 'text-emerald-700 bg-emerald-50/80 font-black'
+                    : 'text-slate-600 hover:text-emerald-800'
+                }`}
+              >
+                <div className={`p-1 rounded-lg ${currentView === 'passport' ? 'bg-emerald-600 text-white shadow-xs' : ''}`}>
+                  <BookOpen className="w-4 h-4" />
+                </div>
+                <span className="truncate">Pasaporte</span>
+                {activeProfile && activeProfile.earnedBadges.length > 0 && (
+                  <span className="absolute top-0.5 right-1 w-4 h-4 rounded-full bg-amber-400 text-forest-950 text-[9px] font-black flex items-center justify-center shadow-xs">
+                    {activeProfile.earnedBadges.length}
+                  </span>
+                )}
+              </button>
+
+              {/* Colección */}
+              <button
+                type="button"
+                onClick={() => setCurrentView('collection')}
+                className={`flex-1 py-1 px-1 rounded-xl flex flex-col items-center gap-0.5 text-[10px] font-bold transition-all relative ${
+                  currentView === 'collection'
+                    ? 'text-emerald-700 bg-emerald-50/80 font-black'
+                    : 'text-slate-600 hover:text-emerald-800'
+                }`}
+              >
+                <div className={`p-1 rounded-lg ${currentView === 'collection' ? 'bg-emerald-600 text-white shadow-xs' : ''}`}>
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <span className="truncate">Colección</span>
+                {activeProfile && activeProfile.collection && Object.keys(activeProfile.collection).length > 0 && (
+                  <span className="absolute top-0.5 right-0.5 px-1 rounded-full bg-amber-400 text-forest-950 text-[9px] font-black flex items-center justify-center shadow-xs">
+                    {Object.keys(activeProfile.collection).length}
+                  </span>
+                )}
+              </button>
+
+              {/* Panel Docente */}
+              <button
+                type="button"
+                onClick={() => setCurrentView('teacher')}
+                className={`flex-1 py-1 px-1 rounded-xl flex flex-col items-center gap-0.5 text-[10px] font-bold transition-all ${
+                  currentView === 'teacher'
+                    ? 'text-amber-900 bg-amber-50/80 font-black'
+                    : 'text-slate-600 hover:text-amber-800'
+                }`}
+              >
+                <div className={`p-1 rounded-lg ${currentView === 'teacher' ? 'bg-amber-500 text-white shadow-xs' : ''}`}>
+                  <GraduationCap className="w-4 h-4 text-amber-600 group-hover:text-amber-700" />
+                </div>
+                <span className="truncate">Docente</span>
+              </button>
+            </>
+          ) : (
+            <>
+              {/* Inicio */}
+              <button
+                type="button"
+                onClick={() => setCurrentView('welcome')}
+                className={`flex-1 py-1.5 px-2 rounded-xl flex flex-col items-center gap-0.5 text-[11px] font-bold transition-all ${
+                  currentView === 'welcome'
+                    ? 'text-emerald-700 bg-emerald-50 font-black'
+                    : 'text-slate-600 hover:text-emerald-800'
+                }`}
+              >
+                <Compass className="w-4 h-4" />
+                <span>Inicio</span>
+              </button>
+
+              {/* Ingresar */}
+              <button
+                type="button"
+                onClick={() => setCurrentView('login')}
+                className={`flex-1 py-1.5 px-2 rounded-xl flex flex-col items-center gap-0.5 text-[11px] font-bold transition-all ${
+                  currentView === 'login'
+                    ? 'text-emerald-700 bg-emerald-50 font-black'
+                    : 'text-slate-600 hover:text-emerald-800'
+                }`}
+              >
+                <LogIn className="w-4 h-4" />
+                <span>Ingresar</span>
+              </button>
+
+              {/* Panel Docente */}
+              <button
+                type="button"
+                onClick={() => setCurrentView('teacher')}
+                className={`flex-1 py-1.5 px-2 rounded-xl flex flex-col items-center gap-0.5 text-[11px] font-bold transition-all ${
+                  currentView === 'teacher'
+                    ? 'text-amber-900 bg-amber-50 font-black'
+                    : 'text-slate-600 hover:text-amber-800'
+                }`}
+              >
+                <GraduationCap className="w-4 h-4 text-amber-600" />
+                <span>Docente</span>
+              </button>
+            </>
+          )}
+        </div>
+      </nav>
     </>
   );
 };

@@ -29,13 +29,13 @@ export const GuardianPassport: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 animate-fadeIn">
+    <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-5 sm:space-y-8 animate-fadeIn">
       
       {/* Cabecera del Pasaporte en Estilo Bitácora Luminosa */}
-      <div className="bg-gradient-to-r from-emerald-800 via-forest-700 to-teal-800 text-white rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-r from-emerald-800 via-forest-700 to-teal-800 text-white rounded-3xl p-5 sm:p-8 lg:p-10 shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/20 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6 relative z-10">
           <div className="flex items-start gap-4">
             <div className="w-16 h-16 rounded-2xl bg-white/20 border-2 border-white/30 flex items-center justify-center text-3xl shadow-md shrink-0">
               📖

@@ -305,20 +305,22 @@ export const MissionView: React.FC = () => {
         </div>
 
         {/* Botones de navegación */}
-        <div className="pt-4 flex justify-between items-center">
+        <div className="pt-4 flex flex-col-reverse sm:flex-row justify-between items-stretch sm:items-center gap-3">
           <button
+            type="button"
             onClick={() => setStage(prev => prev - 1)}
-            className="px-5 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50"
+            className="w-full sm:w-auto px-5 py-3 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 text-center cursor-pointer"
           >
             ← Volver a etapa anterior
           </button>
 
           <button
+            type="button"
             onClick={() => setStage(prev => prev + 1)}
             disabled={!allAnswered}
-            className={`px-7 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wider transition-all flex items-center gap-2 ${
+            className={`w-full sm:w-auto px-7 py-3.5 rounded-xl text-xs sm:text-sm font-bold tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer ${
               allAnswered
-                ? 'bg-gradient-to-r from-emerald-600 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white shadow-md shadow-emerald-600/25'
+                ? 'bg-gradient-to-r from-emerald-600 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white shadow-md shadow-emerald-600/25 active:scale-98'
                 : 'bg-slate-200 text-slate-400 border border-slate-300 cursor-not-allowed'
             }`}
           >
@@ -331,52 +333,63 @@ export const MissionView: React.FC = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-8 animate-fadeIn">
+    <div className="max-w-5xl mx-auto px-3 sm:px-6 py-4 sm:py-8 space-y-5 sm:space-y-8 animate-fadeIn">
       
       {/* Barra de cabecera con botón de regreso y datos de la misión */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-emerald-200/80 pb-5">
+      <div className="flex flex-row items-center justify-between gap-2 border-b border-emerald-200/80 pb-3 sm:pb-5">
         <button
+          type="button"
           onClick={() => setCurrentView('map')}
-          className="flex items-center gap-2 text-xs font-bold text-emerald-800 hover:text-emerald-600 transition-colors bg-white px-3 py-1.5 rounded-xl border border-emerald-200 shadow-xs"
+          className="flex items-center gap-1.5 sm:gap-2 text-xs font-bold text-emerald-800 hover:text-emerald-600 transition-colors bg-white px-2.5 sm:px-3 py-1.5 rounded-xl border border-emerald-200 shadow-xs cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Volver al Mapa de Misiones</span>
+          <span className="hidden sm:inline">Volver al Mapa de Misiones</span>
+          <span className="sm:hidden">Mapa</span>
         </button>
 
-        <div className="flex items-center gap-2 text-xs">
-          <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 font-mono font-bold">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-xs">
+          <span className="px-2.5 sm:px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 font-mono font-bold text-[10px] sm:text-xs">
             {mission.isFinalMission ? 'MISIÓN FINAL' : `MISIÓN ${mission.id}`}
           </span>
           <span className="text-emerald-300">•</span>
-          <span className="text-forest-800 font-bold">{mission.territoryZone}</span>
+          <span className="text-forest-800 font-bold truncate max-w-[140px] sm:max-w-none text-[11px] sm:text-xs">{mission.territoryZone}</span>
         </div>
       </div>
 
       {/* Selector de Etapas Tipo Línea de Tiempo Luminosa */}
-      <div className="bg-white border-2 border-emerald-200 rounded-2xl p-2 sm:p-2.5 overflow-x-auto shadow-sm">
-        <div className="flex items-center justify-between min-w-[620px] gap-1.5">
-          {STAGE_NAMES.map((s, idx) => {
-            const Icon = s.icon;
-            const isCurrent = stage === idx;
-            const isPassed = stage > idx;
+      <div className="space-y-1.5">
+        <div className="bg-white border-2 border-emerald-200 rounded-2xl p-2 sm:p-2.5 overflow-x-auto shadow-sm">
+          <div className="flex items-center justify-between min-w-[560px] gap-1.5">
+            {STAGE_NAMES.map((s, idx) => {
+              const Icon = s.icon;
+              const isCurrent = stage === idx;
+              const isPassed = stage > idx;
 
-            return (
-              <button
-                key={s.label}
-                onClick={() => setStage(idx)}
-                className={`flex-1 py-2 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 transition-all ${
-                  isCurrent
-                    ? 'bg-emerald-600 text-white shadow-sm shadow-emerald-600/30'
-                    : isPassed
-                    ? 'bg-emerald-50 text-emerald-800 hover:bg-emerald-100'
-                    : 'text-slate-400 hover:text-slate-600'
-                }`}
-              >
-                <Icon className={`w-4 h-4 ${isCurrent ? 'text-amber-200' : isPassed ? 'text-emerald-600' : 'text-slate-400'}`} />
-                <span className="text-[10px] tracking-tight">{s.title}</span>
-              </button>
-            );
-          })}
+              return (
+                <button
+                  key={s.label}
+                  type="button"
+                  onClick={() => setStage(idx)}
+                  className={`flex-1 py-1.5 sm:py-2 px-1.5 sm:px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-1 transition-all cursor-pointer ${
+                    isCurrent
+                      ? 'bg-emerald-600 text-white shadow-sm shadow-emerald-600/30'
+                      : isPassed
+                      ? 'bg-emerald-50 text-emerald-800 hover:bg-emerald-100'
+                      : 'text-slate-400 hover:text-slate-600'
+                  }`}
+                >
+                  <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isCurrent ? 'text-amber-200' : isPassed ? 'text-emerald-600' : 'text-slate-400'}`} />
+                  <span className="text-[9px] sm:text-[10px] tracking-tight">{s.title}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Indicador de etapa para celular */}
+        <div className="sm:hidden px-2 text-[11px] font-bold text-forest-700 flex items-center justify-between">
+          <span>Etapa {stage + 1} de {STAGE_NAMES.length}: {STAGE_NAMES[stage].label}</span>
+          <span className="text-emerald-700 font-mono font-black">{Math.round(((stage + 1) / STAGE_NAMES.length) * 100)}%</span>
         </div>
       </div>
 
@@ -441,8 +454,9 @@ export const MissionView: React.FC = () => {
 
           <div className="pt-4 flex justify-end">
             <button
+              type="button"
               onClick={() => setStage(1)}
-              className="px-7 py-3.5 bg-gradient-to-r from-emerald-600 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-emerald-600 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
             >
               <span>PASAR A OBSERVAR EL ESCENARIO</span>
               <ArrowRight className="w-4 h-4" />
@@ -529,16 +543,18 @@ export const MissionView: React.FC = () => {
             </div>
           </div>
 
-          <div className="pt-4 flex justify-between items-center">
+          <div className="pt-4 flex flex-col-reverse sm:flex-row justify-between items-stretch sm:items-center gap-3">
             <button
+              type="button"
               onClick={() => setStage(0)}
-              className="px-5 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50"
+              className="w-full sm:w-auto px-5 py-3 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 text-center cursor-pointer"
             >
               ← Volver
             </button>
             <button
+              type="button"
               onClick={() => setStage(2)}
-              className="px-7 py-3.5 bg-gradient-to-r from-emerald-600 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2"
+              className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-emerald-600 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
             >
               <span>CONTINUAR A LA LECTURA</span>
               <ArrowRight className="w-4 h-4" />
@@ -663,16 +679,18 @@ export const MissionView: React.FC = () => {
           </div>
 
           {/* Botón para pasar al rastreo de pistas */}
-          <div className="pt-4 flex justify-between items-center">
+          <div className="pt-4 flex flex-col-reverse sm:flex-row justify-between items-stretch sm:items-center gap-3">
             <button
+              type="button"
               onClick={() => setStage(1)}
-              className="px-5 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50"
+              className="w-full sm:w-auto px-5 py-3 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 text-center cursor-pointer"
             >
               ← Volver a observar
             </button>
             <button
+              type="button"
               onClick={() => setStage(3)}
-              className="px-8 py-3.5 bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
             >
               <span>INICIAR RASTREO DE PISTAS (LITERAL)</span>
               <ArrowRight className="w-4 h-4" />
@@ -764,18 +782,18 @@ export const MissionView: React.FC = () => {
             ))}
           </div>
 
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <div className="pt-4 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3">
             <button
               type="button"
               onClick={() => setStage(5)}
-              className="px-5 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50"
+              className="w-full sm:w-auto px-5 py-3 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 text-center cursor-pointer"
             >
               ← Volver a etapa crítica
             </button>
 
             <button
               type="submit"
-              className="px-8 py-3.5 bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
             >
               <span>REGISTRAR EVIDENCIA Y OBTENER INSIGNIA</span>
               <Send className="w-4 h-4 text-amber-100" />

@@ -13,22 +13,12 @@ interface CollectionFiltersProps {
 }
 
 export const CollectionFilters: React.FC<CollectionFiltersProps> = ({ filters, setFilters }) => {
-  const selectStyle = {
-    padding: '8px 12px',
-    borderRadius: '8px',
-    backgroundColor: '#0f1712',
-    color: '#fff',
-    border: '1px solid #2c3e30',
-    outline: 'none',
-    cursor: 'pointer'
-  };
-
   return (
-    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
+    <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mb-6">
       <select
         value={filters.discoveryState}
         onChange={(e) => setFilters({ ...filters, discoveryState: e.target.value as any })}
-        style={selectStyle}
+        className="flex-1 py-2 px-3 rounded-xl bg-[#0f1712] text-white border border-[#2c3e30] outline-none text-xs sm:text-sm font-medium cursor-pointer"
       >
         <option value="all">Todos los objetos</option>
         <option value="discovered">Descubiertos</option>
@@ -38,7 +28,7 @@ export const CollectionFilters: React.FC<CollectionFiltersProps> = ({ filters, s
       <select
         value={filters.rarity}
         onChange={(e) => setFilters({ ...filters, rarity: e.target.value as any })}
-        style={selectStyle}
+        className="flex-1 py-2 px-3 rounded-xl bg-[#0f1712] text-white border border-[#2c3e30] outline-none text-xs sm:text-sm font-medium cursor-pointer"
       >
         <option value="all">Todas las rarezas</option>
         <option value="common">Común</option>
@@ -50,7 +40,7 @@ export const CollectionFilters: React.FC<CollectionFiltersProps> = ({ filters, s
       <select
         value={filters.zone}
         onChange={(e) => setFilters({ ...filters, zone: e.target.value as any })}
-        style={selectStyle}
+        className="flex-1 py-2 px-3 rounded-xl bg-[#0f1712] text-white border border-[#2c3e30] outline-none text-xs sm:text-sm font-medium cursor-pointer"
       >
         <option value="all">Todas las zonas</option>
         <option value="Bosque y Sabana">Bosque y Sabana</option>

@@ -52,10 +52,11 @@ export const CollectionDetailModal: React.FC<CollectionDetailModalProps> = ({ it
         backgroundColor: '#1a2920',
         borderRadius: '16px',
         maxWidth: '400px',
+        maxHeight: '90vh',
+        overflowY: 'auto',
         width: '100%',
         border: `1px solid ${isDiscovered ? aura.borderColor : '#2c3e30'}`,
         boxShadow: isDiscovered ? `0 10px 30px -10px ${aura.borderColor}66` : 'none',
-        overflow: 'hidden',
         position: 'relative'
       }}>
         <button
