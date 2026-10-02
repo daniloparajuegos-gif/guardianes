@@ -333,7 +333,7 @@ export const MissionView: React.FC = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-3 sm:px-6 py-4 sm:py-8 space-y-5 sm:space-y-8 animate-fadeIn">
+    <div className="w-full max-w-5xl mx-auto px-3 sm:px-6 py-4 sm:py-8 space-y-5 sm:space-y-8 animate-fadeIn min-w-0">
       
       {/* Barra de cabecera con botón de regreso y datos de la misión */}
       <div className="flex flex-row items-center justify-between gap-2 border-b border-emerald-200/80 pb-3 sm:pb-5">

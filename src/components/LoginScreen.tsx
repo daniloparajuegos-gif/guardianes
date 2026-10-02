@@ -104,7 +104,7 @@ export const LoginScreen: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-3 sm:p-6 bg-gradient-to-b from-[#f7fbf7] via-emerald-50/50 to-[#eef7ee]">
+    <div className="w-full max-w-full min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-3 sm:p-6 bg-gradient-to-b from-[#f7fbf7] via-emerald-50/50 to-[#eef7ee] overflow-x-hidden">
       <div className="w-full max-w-4xl bg-white border-2 border-emerald-300 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
         
         {/* Columna Izquierda: Identidad y Seguridad */}
@@ -169,31 +169,31 @@ export const LoginScreen: React.FC = () => {
           
           <div>
             {/* Pestañas Superiores de Selección */}
-            <div className="flex rounded-2xl bg-emerald-50 p-1.5 border border-emerald-200 mb-6">
+            <div className="flex rounded-2xl bg-emerald-50 p-1 border border-emerald-200 mb-6 gap-1">
               <button
                 type="button"
                 onClick={() => { setActiveTab('student_login'); setStudentLoginError(''); }}
-                className={`flex-1 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                className={`flex-1 py-2 sm:py-2.5 px-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                   activeTab === 'student_login'
                     ? 'bg-emerald-600 text-white shadow-sm'
                     : 'text-forest-700 hover:text-emerald-900'
                 }`}
               >
-                <UserCheck className="w-4 h-4" />
-                <span>Ingresar (Tengo Cuenta)</span>
+                <UserCheck className="w-4 h-4 shrink-0" />
+                <span className="truncate">Ingresar (Tengo Cuenta)</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => { setActiveTab('student_register'); setRegisterError(''); }}
-                className={`flex-1 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                className={`flex-1 py-2 sm:py-2.5 px-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                   activeTab === 'student_register'
                     ? 'bg-emerald-600 text-white shadow-sm'
                     : 'text-forest-700 hover:text-emerald-900'
                 }`}
               >
-                <UserPlus className="w-4 h-4" />
-                <span>Nuevo Guardián</span>
+                <UserPlus className="w-4 h-4 shrink-0" />
+                <span className="truncate">Nuevo Guardián</span>
               </button>
             </div>
 

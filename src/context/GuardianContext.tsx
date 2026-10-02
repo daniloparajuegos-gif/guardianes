@@ -209,6 +209,11 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   const [currentView, setCurrentView] = useState<AppView>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const urlView = params.get('view') as AppView;
+      if (urlView) return urlView;
+    }
     const saved = localStorage.getItem('guardianes_is_logged_in') === 'true';
     return saved ? 'welcome' : 'login';
   });

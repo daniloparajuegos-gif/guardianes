@@ -29,7 +29,7 @@ export const GuardianPassport: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-5 sm:space-y-8 animate-fadeIn">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-5 sm:space-y-8 animate-fadeIn min-w-0">
       
       {/* Cabecera del Pasaporte en Estilo Bitácora Luminosa */}
       <div className="bg-gradient-to-r from-emerald-800 via-forest-700 to-teal-800 text-white rounded-3xl p-5 sm:p-8 lg:p-10 shadow-xl relative overflow-hidden">

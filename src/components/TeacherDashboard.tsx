@@ -58,7 +58,7 @@ export const TeacherDashboard: React.FC = () => {
     };
 
     return (
-      <div className="max-w-2xl mx-auto px-4 py-12 sm:py-16 animate-fadeIn">
+      <div className="w-full max-w-2xl mx-auto px-4 py-12 sm:py-16 animate-fadeIn min-w-0">
         <div className="bg-white border-2 border-emerald-300/80 rounded-3xl p-6 sm:p-10 shadow-xl space-y-6 text-center">
           
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-600 text-white flex items-center justify-center mx-auto shadow-md shadow-amber-500/30">
@@ -192,7 +192,7 @@ export const TeacherDashboard: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 animate-fadeIn">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8 animate-fadeIn min-w-0">
       
       {/* Cabecera del Panel Docente Clara y Profesional */}
       <div className="bg-gradient-to-r from-emerald-800 via-forest-700 to-amber-700 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">

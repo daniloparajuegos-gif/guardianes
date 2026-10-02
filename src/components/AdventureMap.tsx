@@ -117,10 +117,10 @@ export const AdventureMap: React.FC = () => {
   const activeMission = MISSIONS_DATA.find(m => m.id === activeTooltipId);
 
   return (
-    <div className="max-w-[1440px] mx-auto px-2 sm:px-4 lg:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6 animate-fadeIn">
+    <div className="w-full max-w-[1440px] mx-auto px-2 sm:px-4 lg:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6 animate-fadeIn min-w-0">
       
       {/* Barra de Controles y Selector de Vista */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white/95 border-2 border-emerald-200/90 rounded-2xl p-3 sm:px-6 shadow-sm">
+      <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white/95 border-2 border-emerald-200/90 rounded-2xl p-3 sm:px-6 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-forest-600 flex items-center justify-center text-amber-300 shadow-xs shrink-0">
             <Compass className="w-5 h-5" />
@@ -183,7 +183,7 @@ export const AdventureMap: React.FC = () => {
 
       {/* Indicador de Desplazamiento para Celulares */}
       {viewMode === 'visual_map' && (
-        <div className="md:hidden flex items-center justify-between gap-2 px-3.5 py-2 rounded-2xl bg-amber-50 border border-amber-300 text-amber-950 text-xs font-semibold shadow-2xs">
+        <div className="w-full md:hidden flex items-center justify-between gap-2 px-3.5 py-2 rounded-2xl bg-amber-50 border border-amber-300 text-amber-950 text-xs font-semibold shadow-2xs">
           <span className="flex items-center gap-2 truncate">
             <span className="text-base animate-bounce">👉</span>
             <span>Desliza para explorar todo el territorio (15 misiones)</span>
@@ -202,7 +202,7 @@ export const AdventureMap: React.FC = () => {
           VISTA 1: MAPA INTERACTIVO ILUSTRADO (CON LA IMAGEN DE FONDO EN ALTA CALIDAD)
           ========================================================================= */}
       {viewMode === 'visual_map' && (
-        <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-x-auto overflow-y-hidden border-2 sm:border-4 border-amber-950/40 shadow-2xl bg-forest-950 select-none">
+        <div className="relative w-full max-w-full rounded-2xl sm:rounded-3xl overflow-x-auto overflow-y-hidden border-2 sm:border-4 border-amber-950/40 shadow-2xl bg-forest-950 select-none">
           
           {/* Contenedor con relación de aspecto 16:9 y scroll horizontal en móviles */}
           <div className="relative w-full aspect-[16/9] min-w-[760px] min-h-[440px]">
@@ -742,7 +742,7 @@ export const AdventureMap: React.FC = () => {
           {/* =============================================================
               TABLERO INFERIOR: "NIVELES DE LA AVENTURA" (ESTILO MADERA TALLADA)
               ============================================================= */}
-          <div className="bg-gradient-to-r from-[#2c1a0e] via-[#1f1208] to-[#2c1a0e] border-t-4 border-[#8c5930] p-4 sm:p-5 text-white shadow-2xl relative overflow-hidden">
+          <div className="w-full bg-gradient-to-r from-[#2c1a0e] via-[#1f1208] to-[#2c1a0e] border-t-4 border-[#8c5930] p-4 sm:p-5 text-white shadow-2xl relative overflow-hidden">
             {/* Vetas y textura sutil de madera */}
             <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#d4a373_1px,transparent_1px)] [background-size:16px_16px]" />
 
@@ -920,7 +920,7 @@ export const AdventureMap: React.FC = () => {
           VISTA 2: LISTA DE FICHAS DE EXPEDICIÓN (PARA ESTUDIANTES QUE PREFIERAN LISTA)
           ========================================================================= */}
       {viewMode === 'cards' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fadeIn">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fadeIn">
           {MISSIONS_DATA.map((mission) => {
             const status = getMissionStatus(mission.id);
             const isCompleted = status === 'completed';

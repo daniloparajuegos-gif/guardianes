@@ -16,7 +16,7 @@ export const HeroScreen: React.FC = () => {
   const hasStarted = activeProfile.completedMissionIds.length > 0;
 
   return (
-    <div className="relative min-h-[calc(100vh-4.5rem)] flex flex-col justify-between overflow-hidden bg-gradient-to-b from-[#f7fbf7] via-emerald-50/50 to-[#eef7ee]">
+    <div className="w-full relative min-h-[calc(100vh-4.5rem)] flex flex-col justify-between overflow-hidden bg-gradient-to-b from-[#f7fbf7] via-emerald-50/50 to-[#eef7ee]">
       
       {/* Elementos visuales luminosos de fondo */}
       <div className="absolute inset-0 pointer-events-none">
@@ -35,7 +35,7 @@ export const HeroScreen: React.FC = () => {
       </div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 pb-12 flex-1 flex flex-col justify-center">
+      <div className="w-full relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 pb-12 flex-1 flex flex-col justify-center min-w-0">
         
         {/* Insignia de contexto territorial */}
         <div className="flex flex-wrap items-center gap-2 mb-6">
@@ -168,8 +168,8 @@ export const HeroScreen: React.FC = () => {
       </div>
 
       {/* Franja de resumen clara */}
-      <div className="relative z-10 border-t border-emerald-200/80 bg-white/80 backdrop-blur-sm py-4">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-forest-700 font-medium">
+      <div className="w-full relative z-10 border-t border-emerald-200/80 bg-white/80 backdrop-blur-sm py-4">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-forest-700 font-medium">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
             <span>14 Misiones territoriales + Misión Final de Síntesis</span>
@@ -178,7 +178,7 @@ export const HeroScreen: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <span>Diseñado para computador</span>
+            <span>Adaptado para dispositivos móviles y computador</span>
             <span className="text-emerald-300">•</span>
             <span className="text-forest-900 font-bold">100% fiel al documento pedagógico</span>
           </div>

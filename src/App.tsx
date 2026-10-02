@@ -28,16 +28,16 @@ const MainContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f5faf5] text-[#132a13] selection:bg-emerald-500 selection:text-white font-sans">
+    <div className="w-full max-w-full min-h-screen flex flex-col bg-[#f5faf5] text-[#132a13] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden">
       <Navbar />
 
-      <main className="flex-1 pb-16 md:pb-0">
+      <main className="flex-1 w-full max-w-full min-w-0 pb-16 md:pb-0">
         {renderView()}
       </main>
 
       {/* Pie de página institucional claro y profesional */}
-      <footer className="border-t border-emerald-200/80 bg-white/90 py-6 mb-14 md:mb-0 text-xs text-forest-700 shadow-inner">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <footer className="w-full border-t border-emerald-200/80 bg-white/90 py-6 mb-14 md:mb-0 text-xs text-forest-700 shadow-inner">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
             <span className="font-display font-bold text-forest-900 tracking-wide">
               GUARDIANES DEL BOSQUE
