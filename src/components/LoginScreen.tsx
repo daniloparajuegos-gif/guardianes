@@ -41,7 +41,7 @@ export const LoginScreen: React.FC = () => {
   const [studentPin, setStudentPin] = useState<string>('');
   const [showStudentPin, setShowStudentPin] = useState<boolean>(false);
   const [studentLoginError, setStudentLoginError] = useState<string>('');
-  const [multipleCandidates, setMultipleCandidates] = useState<StudentProfile[] | null>(null);
+  const [createdProfile, setCreatedProfile] = useState<StudentProfile | null>(null);
 
   // Estado para Registro de Nuevo Estudiante
   const [newName, setNewName] = useState<string>('');
@@ -207,19 +207,28 @@ export const LoginScreen: React.FC = () => {
               <form onSubmit={handleStudentLogin} className="space-y-4 animate-fadeIn">
                 
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1.5">
-                    Tu Nombre Completo o Usuario de Guardián:
-                  </label>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                      <UserCheck className="w-4 h-4 text-emerald-700" />
+                      <span>Tu Usuario ID de Guardián:</span>
+                    </label>
+                    <span className="text-[10px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                      ID Único e Individual
+                    </span>
+                  </div>
                   <input
                     type="text"
                     required
                     value={identifier}
-                    onChange={(e) => { setIdentifier(e.target.value); setMultipleCandidates(null); setStudentLoginError(''); }}
-                    placeholder="Ej. Mariana Gómez o mariana.gomez"
-                    className="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white font-medium"
+                    onChange={(e) => {
+                      setIdentifier(e.target.value);
+                      setStudentLoginError('');
+                    }}
+                    placeholder="Ej. daniela.gom.47 o @daniela.gom.47"
+                    className="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl text-sm font-mono font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white"
                   />
-                  <span className="text-[11px] text-slate-500 mt-1 block">
-                    Ingresa el nombre con el que te registraste en clase.
+                  <span className="text-[11px] text-slate-500 mt-1.5 block leading-tight">
+                    Ingresa el usuario único generado automáticamente al registrarte. Si no lo recuerdas, pídeselo a tu profesor (está visible en el Panel Docente).
                   </span>
                 </div>
 
@@ -227,7 +236,7 @@ export const LoginScreen: React.FC = () => {
                   <div className="flex items-center justify-between mb-1.5">
                     <label className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
                       <KeyRound className="w-3.5 h-3.5 text-amber-600" />
-                      PIN Secreto de 4 Dígitos:
+                      <span>PIN Secreto de 4 Dígitos:</span>
                     </label>
                     <span className="text-[10px] text-slate-500">
                       (Si no tienes PIN, déjalo en blanco)
@@ -253,85 +262,6 @@ export const LoginScreen: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Selector de Perfil si hay varios estudiantes con el mismo nombre */}
-                {multipleCandidates && multipleCandidates.length > 0 && (
-                  <div className="p-4 rounded-2xl bg-amber-50/95 border-2 border-amber-300 shadow-md space-y-3 animate-fadeIn">
-                    <div className="flex items-start gap-2.5">
-                      <div className="w-8 h-8 rounded-full bg-amber-200 border border-amber-400 flex items-center justify-center text-base shrink-0 font-bold">
-                        👥
-                      </div>
-                      <div>
-                        <h4 className="text-xs sm:text-sm font-black text-amber-950">
-                          Hay {multipleCandidates.length} Guardianes con el nombre "{identifier.trim()}"
-                        </h4>
-                        <p className="text-[11px] text-amber-800 leading-snug mt-0.5">
-                          Toca tu tarjeta según tu grado o emblema para abrir exactamente tu propio pasaporte:
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-2 pt-1 max-h-56 overflow-y-auto pr-1">
-                      {multipleCandidates.map((cand) => {
-                        const avatarInfo = AVATAR_OPTIONS.find(a => a.id === cand.avatar) || AVATAR_OPTIONS[0];
-                        return (
-                          <button
-                            key={cand.id}
-                            type="button"
-                            onClick={() => {
-                              setStudentLoginError('');
-                              const res = login(cand.id, studentPin);
-                              if (!res.success) {
-                                setStudentLoginError(res.message || `El PIN ingresado no es el de ${cand.name}.`);
-                              }
-                            }}
-                            className="w-full text-left p-3 rounded-xl bg-white hover:bg-emerald-50 border-2 border-amber-200 hover:border-emerald-500 transition-all shadow-xs flex items-center justify-between group cursor-pointer"
-                          >
-                            <div className="flex items-center gap-2.5 min-w-0">
-                              <div className="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-xl group-hover:scale-110 transition-transform shrink-0">
-                                {avatarInfo.icon}
-                              </div>
-                              <div className="min-w-0">
-                                <div className="text-xs sm:text-sm font-black text-slate-900 group-hover:text-emerald-900 truncate">
-                                  {cand.name}
-                                </div>
-                                <div className="flex items-center gap-1.5 mt-0.5 text-[10px] sm:text-[11px] text-slate-500 flex-wrap">
-                                  <span className="font-bold px-1.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px]">
-                                    {cand.grade || '7°'}
-                                  </span>
-                                  <span className="text-slate-600 font-mono">@{cand.username}</span>
-                                  <span className="text-slate-300">•</span>
-                                  <span className="text-emerald-700 font-semibold">
-                                    Misión {cand.currentMissionId || (cand.completedMissionIds?.length ? cand.completedMissionIds.length + 1 : 1)}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 group-hover:bg-emerald-600 group-hover:text-white px-2.5 py-1.5 rounded-lg border border-emerald-200 transition-all shrink-0 ml-2">
-                              <span>Soy yo</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    <div className="pt-1 flex justify-between items-center text-[11px]">
-                      <span className="text-amber-800/80">Verifica tu PIN arriba antes de tocar.</span>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setMultipleCandidates(null);
-                          setIdentifier('');
-                        }}
-                        className="font-bold text-amber-900 hover:text-emerald-800 underline cursor-pointer"
-                      >
-                        Limpiar y volver a escribir
-                      </button>
-                    </div>
-                  </div>
-                )}
-
                 {studentLoginError && (
                   <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-300 text-xs text-rose-800 flex items-center gap-2 animate-fadeIn font-medium">
                     <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
@@ -342,7 +272,7 @@ export const LoginScreen: React.FC = () => {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-4 bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3.5 px-4 bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>ABRIR MI PASAPORTE Y CONTINUAR</span>
                     <ArrowRight className="w-4 h-4" />
@@ -544,13 +474,13 @@ export const LoginScreen: React.FC = () => {
                       type="button"
                       onClick={() => {
                         setActiveTab('student_login');
-                        setIdentifier(demo.name);
+                        setIdentifier(demo.user);
                         setStudentPin(demo.pin);
                         setStudentLoginError('');
                       }}
                       className="px-2.5 py-1.5 rounded-lg bg-white border border-emerald-300 text-[11px] font-bold text-emerald-800 hover:bg-emerald-100 transition-colors shadow-2xs flex items-center gap-1 cursor-pointer"
                     >
-                      <span>{demo.name}</span>
+                      <span>@{demo.user}</span>
                       <span className="text-[10px] text-slate-400 font-normal">PIN: 1234</span>
                     </button>
                   ))}

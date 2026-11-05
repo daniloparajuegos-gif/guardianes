@@ -26,7 +26,7 @@ interface GuardianContextType {
   claimReward: () => void;
   setCurrentView: (view: AppView) => void;
   setActiveMissionId: (id: number) => void;
-  loginWithCredentials: (identifier: string, enteredPin?: string) => { success: boolean; message?: string; multipleMatches?: StudentProfile[] };
+  loginWithCredentials: (identifier: string, enteredPin?: string) => { success: boolean; message?: string };
   login: (profileId: string, enteredPin?: string) => { success: boolean; message?: string };
   logout: () => void;
   teacherLogin: (pass: string) => { success: boolean; message?: string };
@@ -315,14 +315,14 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       if (!entered) {
         return { 
           success: false, 
-          message: `El perfil de ${target.name.split(' ')[0]} requiere su PIN de 4 dígitos. Por favor escríbelo para entrar.` 
+          message: `El usuario @${target.username} requiere su PIN de 4 dígitos. Por favor escríbelo para entrar.` 
         };
       }
 
       if (entered !== expected) {
         return { 
           success: false, 
-          message: `El PIN de 4 dígitos es incorrecto para ${target.name.split(' ')[0]}. Si lo olvidaste, solicítalo a tu docente.` 
+          message: `El PIN ingresado es incorrecto para @${target.username}. Si lo olvidaste, solicítalo a tu docente.` 
         };
       }
     }
@@ -334,58 +334,48 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return { success: true };
   };
 
-  // Login para estudiantes mediante identificador privado (Usuario o Nombre) + PIN
+  // Login estricto por Usuario ID único (o id) asignado automáticamente
   const loginWithCredentials = (identifier: string, enteredPin?: string) => {
     const cleanId = normalize(identifier);
     if (!cleanId) {
-      return { success: false, message: 'Por favor ingresa tu código de estudiante o tu nombre.' };
+      return { success: false, message: 'Por favor ingresa tu Usuario ID de Guardián o tu nombre.' };
     }
 
-    // 1. Coincidencia exacta por username (@usuario o usuario)
-    const exactUserMatches = profiles.filter(p => normalize(p.username || '') === cleanId);
-    if (exactUserMatches.length === 1) {
-      return executeLoginForProfile(exactUserMatches[0], enteredPin);
+    // 1. PRIORIDAD MÁXIMA: Coincidencia por Usuario ID único (ej. "daniela.gom.47" o "@daniela.gom.47" o id)
+    const exactUser = profiles.find(p => 
+      normalize(p.username || '') === cleanId || 
+      p.id.toLowerCase() === cleanId
+    );
+    if (exactUser) {
+      return executeLoginForProfile(exactUser, enteredPin);
     }
 
-    // 2. Coincidencia exacta por nombre completo (ej: "Daniela Perez")
-    const exactFullNameMatches = profiles.filter(p => normalize(p.name) === cleanId);
-    if (exactFullNameMatches.length === 1) {
-      return executeLoginForProfile(exactFullNameMatches[0], enteredPin);
+    // 2. Coincidencia exacta por nombre completo (si es único en el sistema)
+    const nameMatches = profiles.filter(p => normalize(p.name) === cleanId);
+    if (nameMatches.length === 1) {
+      return executeLoginForProfile(nameMatches[0], enteredPin);
     }
-
-    // 3. Coincidencia amplia (primer nombre, coincidencia de inicio o usuario)
-    const candidates = profiles.filter(p => {
-      const pName = normalize(p.name);
-      const pUser = normalize(p.username || '');
-      const pFirst = pName.split(' ')[0];
-
-      return (
-        pUser === cleanId ||
-        pName === cleanId ||
-        pFirst === cleanId ||
-        pName.startsWith(cleanId + ' ') ||
-        pUser.startsWith(cleanId)
-      );
-    });
-
-    if (candidates.length === 0) {
-      return { 
-        success: false, 
-        message: 'No encontramos ningún Guardián con esos datos. Verifica cómo escribiste tu nombre o regístrate en "Nuevo Guardián".' 
+    if (nameMatches.length > 1) {
+      return {
+        success: false,
+        message: `Hay varias estudiantes registradas con el nombre "${identifier.trim()}". Para entrar a tu propio avance debes usar tu Usuario ID único (ej: @${nameMatches[0].username}). Consúltalo en el Panel del Docente.`
       };
     }
 
-    // Si solo hay un estudiante que coincide, ingresa directamente
-    if (candidates.length === 1) {
-      return executeLoginForProfile(candidates[0], enteredPin);
+    // 3. Si escribió un primer nombre genérico (ej. "Daniela")
+    const firstNameMatches = profiles.filter(p => normalize(p.name).split(' ')[0] === cleanId);
+    if (firstNameMatches.length > 1) {
+      return {
+        success: false,
+        message: `Hay varias compañeras llamadas "${identifier.trim()}". Para evitar confusiones, debes ingresar con tu Usuario ID único asignado (ej: @${firstNameMatches[0].username}). Tu profesor puede darte tu usuario.`
+      };
+    } else if (firstNameMatches.length === 1) {
+      return executeLoginForProfile(firstNameMatches[0], enteredPin);
     }
 
-    // Si hay MÚLTIPLES coincidencias (ej: varias compañeras con el mismo nombre y clave 1234)
-    // Retornamos las opciones para que el estudiante elija su propia tarjeta en la pantalla
-    return {
-      success: false,
-      multipleMatches: candidates,
-      message: `Encontramos ${candidates.length} Guardianes con el nombre "${identifier.trim()}". Por favor selecciona tu perfil abajo:`
+    return { 
+      success: false, 
+      message: `No encontramos ningún Guardián con el usuario o código "${identifier.trim()}". Verifica cómo lo escribiste o consúltalo con tu docente en el Panel Docente.` 
     };
   };
 
@@ -459,13 +449,11 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       currentMissionId: 1, collection: {}, missionRewards: {} };
 
     setProfiles(prev => [...prev, newProfile]);
-    setActiveProfileId(newProfile.id);
-    setIsLoggedIn(true);
-    setCurrentView('welcome');
 
     // Sincronizar en la nube inmediatamente
     saveProfileToCloud(newProfile);
 
+    // Retornamos el perfil creado para que la pantalla de registro muestre su Usuario ID único
     return { success: true, profile: newProfile };
   };
 
