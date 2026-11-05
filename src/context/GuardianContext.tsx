@@ -34,6 +34,7 @@ interface GuardianContextType {
   registerStudent: (name: string, grade: string, avatar: string, pin?: string) => { success: boolean; profile: StudentProfile; message?: string };
   deleteStudentProfile: (profileId: string) => { success: boolean; message?: string };
   resetAllProfilesToDefault: () => void;
+  restoreBackupProfiles: (backupProfiles: StudentProfile[]) => Promise<{ success: boolean; count?: number; message?: string }>;
   createProfile: (name: string, grade: string, avatar: string, pin?: string) => void;
   updateMyProfile: (avatar: string, pin?: string) => void;
   selectProfile: (id: string) => void;
@@ -466,6 +467,42 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   };
 
+  const restoreBackupProfiles = async (importedProfiles: StudentProfile[]) => {
+    if (!Array.isArray(importedProfiles) || importedProfiles.length === 0) {
+      return { success: false, message: 'El archivo no contiene perfiles de estudiantes válidos.' };
+    }
+    try {
+      const validProfiles: StudentProfile[] = importedProfiles.map((p, idx) => ({
+        id: p.id || `student_${Date.now()}_${idx}`,
+        name: p.name || `Estudiante ${idx + 1}`,
+        username: p.username || `estudiante.${idx + 1}`,
+        grade: p.grade || '7°A',
+        avatar: p.avatar || 'fauna',
+        pin: p.pin !== undefined && p.pin !== '' ? String(p.pin) : '1234',
+        createdAt: p.createdAt || new Date().toISOString(),
+        completedMissionIds: Array.isArray(p.completedMissionIds) ? p.completedMissionIds : [],
+        earnedBadges: Array.isArray(p.earnedBadges) ? p.earnedBadges : [],
+        answers: p.answers || {},
+        evidences: p.evidences || {},
+        passportEntries: Array.isArray(p.passportEntries) ? p.passportEntries : [],
+        currentMissionId: p.currentMissionId || 1,
+        collection: p.collection || {},
+        missionRewards: p.missionRewards || {}
+      }));
+
+      setProfiles(validProfiles);
+      localStorage.setItem('guardianes_profiles', JSON.stringify(validProfiles));
+
+      for (const p of validProfiles) {
+        await saveProfileToCloud(p);
+      }
+      return { success: true, count: validProfiles.length };
+    } catch (e: any) {
+      console.error('Error restaurando copia de seguridad:', e);
+      return { success: false, message: 'Ocurrió un error al procesar el archivo de copia.' };
+    }
+  };
+
   const createProfile = (name: string, grade: string, avatar: string, pin?: string) => {
     registerStudent(name, grade, avatar, pin);
   };
@@ -681,6 +718,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         registerStudent,
         deleteStudentProfile,
         resetAllProfilesToDefault,
+        restoreBackupProfiles,
         createProfile,
         updateMyProfile,
         selectProfile,

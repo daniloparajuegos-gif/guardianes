@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useGuardian } from '../context/GuardianContext';
-import { DEMO_TEACHER_STUDENTS } from '../data/pedagogicalData';
+import { DEMO_TEACHER_STUDENTS, MISSIONS_DATA } from '../data/pedagogicalData';
 import { 
   GraduationCap, 
   Users, 
@@ -20,7 +20,11 @@ import {
   Trash2,
   RefreshCw,
   CheckCircle2,
-  X
+  X,
+  Database,
+  FileSpreadsheet,
+  Upload,
+  FileText
 } from 'lucide-react';
 
 export const TeacherDashboard: React.FC = () => {
@@ -33,6 +37,7 @@ export const TeacherDashboard: React.FC = () => {
     teacherLogout,
     deleteStudentProfile,
     resetAllProfilesToDefault,
+    restoreBackupProfiles,
     cloudConnected,
     setCurrentView
   } = useGuardian();
@@ -43,6 +48,9 @@ export const TeacherDashboard: React.FC = () => {
   const [studentToDelete, setStudentToDelete] = useState<{ id: string; name: string } | null>(null);
   const [actionFeedback, setActionFeedback] = useState<string>('');
   const [showResetConfirm, setShowResetConfirm] = useState<boolean>(false);
+  const [showBackupModal, setShowBackupModal] = useState<boolean>(false);
+  const [isRestoring, setIsRestoring] = useState<boolean>(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Si no está autenticado como docente, mostrar pantalla de bloqueo / acceso seguro
   if (!isTeacherAuthenticated) {
@@ -181,14 +189,267 @@ export const TeacherDashboard: React.FC = () => {
 
   const selectedStudent = studentList.find(s => s.id === selectedStudentId) || studentList[0];
 
-  const handleExportData = () => {
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(studentList, null, 2));
+  // 1. Descarga del respaldo completo del sistema (100% de los datos de todos los estudiantes)
+  const handleExportFullBackup = () => {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+    const dateFormatted = new Date().toLocaleDateString('es-CO');
+    
+    const backupData = {
+      sistema: "Guardianes del Bosque",
+      tipo: "COPIA_DE_SEGURIDAD_COMPLETA",
+      version: "1.0",
+      fechaExportacion: new Date().toISOString(),
+      fechaFormateada: dateFormatted,
+      totalEstudiantes: profiles.length,
+      institucion: "Corporación Universitaria Iberoamericana",
+      programa: "Maestría en Educación",
+      autores: [
+        "Danilo Enrique Insuasty Delgado",
+        "María Fernanda Gutiérrez Chica"
+      ],
+      perfilesEstudiantes: profiles
+    };
+
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupData, null, 2));
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", `reporte_pedagogico_docente_${Date.now()}.json`);
+    downloadAnchor.setAttribute("download", `copia_seguridad_completa_guardianes_${timestamp}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
+    
+    setActionFeedback(`¡Copia de seguridad completa descargada exitosamente (${profiles.length} perfiles con todas sus respuestas y avances)!`);
+    setTimeout(() => setActionFeedback(''), 5000);
+  };
+
+  // 2. Exportación a Excel / CSV de las respuestas detalladas por pregunta y nivel de lectura
+  const handleExportCSV = () => {
+    const BOM = "\uFEFF"; // Para que Excel en español reconozca caracteres con tildes y ñ
+    const headers = [
+      "ID Estudiante",
+      "Nombre Estudiante",
+      "Usuario",
+      "Grado",
+      "Misión ID",
+      "Título Misión",
+      "Zona Territorial",
+      "Nivel de Comprensión",
+      "ID Pregunta",
+      "Pregunta Formulada",
+      "Opción Seleccionada (ID)",
+      "Respuesta Seleccionada (Texto)",
+      "¿Es Correcta?",
+      "Argumentación Escrita del Estudiante",
+      "Fecha y Hora de Respuesta"
+    ];
+
+    const escapeCsv = (val: any) => {
+      if (val === undefined || val === null) return '""';
+      const str = String(val).replace(/"/g, '""').replace(/\r?\n/g, ' ');
+      return `"${str}"`;
+    };
+
+    const rows: string[] = [headers.join(",")];
+
+    const questionMap = new Map<string, { missionId: number; missionTitle: string; zone: string; level: string; questionText: string; options: Record<string, string> }>();
+    
+    MISSIONS_DATA.forEach(m => {
+      const allQ = [
+        ...m.literalQuestions.map(q => ({ q, level: 'Literal' })),
+        ...m.inferentialQuestions.map(q => ({ q, level: 'Inferencial' })),
+        ...m.criticalQuestions.map(q => ({ q, level: 'Crítico' }))
+      ];
+      allQ.forEach(({ q, level }) => {
+        const optMap: Record<string, string> = {};
+        q.options.forEach(opt => {
+          optMap[opt.id] = opt.text;
+        });
+        questionMap.set(q.id, {
+          missionId: m.id,
+          missionTitle: m.title,
+          zone: m.territoryZone,
+          level,
+          questionText: q.questionText,
+          options: optMap
+        });
+      });
+    });
+
+    profiles.forEach(p => {
+      const answersList = Object.values(p.answers || {});
+      if (answersList.length === 0) {
+        rows.push([
+          escapeCsv(p.id),
+          escapeCsv(p.name),
+          escapeCsv(p.username),
+          escapeCsv(p.grade),
+          escapeCsv("-"),
+          escapeCsv("Sin misiones iniciadas"),
+          escapeCsv("-"),
+          escapeCsv("-"),
+          escapeCsv("-"),
+          escapeCsv("-"),
+          escapeCsv("-"),
+          escapeCsv("-"),
+          escapeCsv("-"),
+          escapeCsv("-"),
+          escapeCsv("-")
+        ].join(","));
+      } else {
+        answersList.forEach(ans => {
+          const qInfo = questionMap.get(ans.questionId);
+          const missionId = qInfo ? qInfo.missionId : (ans.questionId.split('_')[0] || '-');
+          const missionTitle = qInfo ? qInfo.missionTitle : `Misión ${missionId}`;
+          const zone = qInfo ? qInfo.zone : '-';
+          const level = qInfo ? qInfo.level : (ans.questionId.includes('_l') ? 'Literal' : ans.questionId.includes('_i') ? 'Inferencial' : 'Crítico');
+          const questionText = qInfo ? qInfo.questionText : ans.questionId;
+          const optionText = qInfo && qInfo.options[ans.selectedOptionId] ? qInfo.options[ans.selectedOptionId] : ans.selectedOptionId;
+          const isCorrectStr = ans.isCorrect === true ? "SÍ" : ans.isCorrect === false ? "NO" : "Formativa/Crítica";
+
+          rows.push([
+            escapeCsv(p.id),
+            escapeCsv(p.name),
+            escapeCsv(p.username),
+            escapeCsv(p.grade),
+            escapeCsv(missionId),
+            escapeCsv(missionTitle),
+            escapeCsv(zone),
+            escapeCsv(level),
+            escapeCsv(ans.questionId),
+            escapeCsv(questionText),
+            escapeCsv(ans.selectedOptionId),
+            escapeCsv(optionText),
+            escapeCsv(isCorrectStr),
+            escapeCsv(ans.writtenArgument || ""),
+            escapeCsv(ans.answeredAt ? new Date(ans.answeredAt).toLocaleString('es-CO') : "")
+          ].join(","));
+        });
+      }
+    });
+
+    const csvContent = BOM + rows.join("\r\n");
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const downloadAnchor = document.createElement('a');
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+    downloadAnchor.setAttribute("href", url);
+    downloadAnchor.setAttribute("download", `respuestas_comprension_lectora_guardianes_${timestamp}.csv`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    URL.revokeObjectURL(url);
+
+    setActionFeedback("¡Reporte de respuestas descargado en formato Excel / CSV para tu investigación!");
+    setTimeout(() => setActionFeedback(''), 5000);
+  };
+
+  // 3. Exportación a Excel / CSV de reflexiones del pasaporte y desafíos ambientales
+  const handleExportReflectionsCSV = () => {
+    const BOM = "\uFEFF";
+    const headers = [
+      "ID Estudiante",
+      "Nombre Estudiante",
+      "Grado",
+      "Tipo de Registro",
+      "Misión ID",
+      "Título Misión / Desafío",
+      "Insignia Obtenida",
+      "Texto de Reflexión / Acción Comunitaria",
+      "Fecha de Realización"
+    ];
+
+    const escapeCsv = (val: any) => {
+      if (val === undefined || val === null) return '""';
+      const str = String(val).replace(/"/g, '""').replace(/\r?\n/g, ' ');
+      return `"${str}"`;
+    };
+
+    const rows: string[] = [headers.join(",")];
+
+    profiles.forEach(p => {
+      (p.passportEntries || []).forEach(entry => {
+        rows.push([
+          escapeCsv(p.id),
+          escapeCsv(p.name),
+          escapeCsv(p.grade),
+          escapeCsv("Reflexión Pasaporte"),
+          escapeCsv(entry.missionId),
+          escapeCsv(entry.missionTitle),
+          escapeCsv(entry.badgeName),
+          escapeCsv(entry.reflection),
+          escapeCsv(entry.completedAt)
+        ].join(","));
+      });
+
+      Object.values(p.evidences || {}).forEach(ev => {
+        const submittedText = typeof ev.submittedData === 'object'
+          ? Object.entries(ev.submittedData).map(([k, v]) => `${k}: ${v}`).join(' | ')
+          : String(ev.submittedData);
+
+        rows.push([
+          escapeCsv(p.id),
+          escapeCsv(p.name),
+          escapeCsv(p.grade),
+          escapeCsv("Desafío Ambiental"),
+          escapeCsv(ev.missionId),
+          escapeCsv(ev.challengeTitle),
+          escapeCsv("-"),
+          escapeCsv(submittedText),
+          escapeCsv(ev.submittedAt ? new Date(ev.submittedAt).toLocaleString('es-CO') : "-")
+        ].join(","));
+      });
+    });
+
+    const csvContent = BOM + rows.join("\r\n");
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const downloadAnchor = document.createElement('a');
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+    downloadAnchor.setAttribute("href", url);
+    downloadAnchor.setAttribute("download", `reflexiones_y_desafios_guardianes_${timestamp}.csv`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    URL.revokeObjectURL(url);
+
+    setActionFeedback("¡Reporte de reflexiones y desafíos descargado en CSV / Excel!");
+    setTimeout(() => setActionFeedback(''), 5000);
+  };
+
+  // 4. Restauración de copia de seguridad desde archivo .JSON
+  const handleFileRestore = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setIsRestoring(true);
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+      const profilesToRestore = Array.isArray(parsed) 
+        ? parsed 
+        : (parsed.perfilesEstudiantes || parsed.profiles || []);
+
+      if (!Array.isArray(profilesToRestore) || profilesToRestore.length === 0) {
+        alert('El archivo no contiene un formato válido de copia de seguridad de Guardianes del Bosque.');
+        setIsRestoring(false);
+        return;
+      }
+
+      const res = await restoreBackupProfiles(profilesToRestore);
+      if (res.success) {
+        setActionFeedback(`¡Copia de seguridad restaurada exitosamente! Se actualizaron ${res.count} estudiantes con sus respuestas y avances.`);
+        setShowBackupModal(false);
+        setTimeout(() => setActionFeedback(''), 5000);
+      } else {
+        alert(res.message || 'Error al restaurar copia de seguridad.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Error al leer el archivo. Asegúrate de seleccionar un archivo .json válido.');
+    } finally {
+      setIsRestoring(false);
+      if (e.target) e.target.value = '';
+    }
   };
 
   return (
@@ -231,12 +492,12 @@ export const TeacherDashboard: React.FC = () => {
 
           <div className="flex items-center gap-2">
               <button
-                onClick={handleExportData}
-                className="px-3 py-2 bg-white hover:bg-emerald-50 text-forest-900 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
-                title="Descargar datos en JSON"
+                onClick={() => setShowBackupModal(true)}
+                className="px-3.5 py-2 bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 text-forest-950 rounded-xl text-xs font-black transition-all flex items-center gap-2 shadow-md shadow-amber-900/20 cursor-pointer active:scale-98"
+                title="Centro de copias de seguridad, reportes para Excel y restauración"
               >
-                <Download className="w-3.5 h-3.5 text-emerald-700" />
-                <span>Exportar</span>
+                <Database className="w-4 h-4 text-forest-950 shrink-0" />
+                <span>Copias y Reportes</span>
               </button>
 
               <button
@@ -651,6 +912,169 @@ export const TeacherDashboard: React.FC = () => {
           Estrategia pedagógica gamificada para el fortalecimiento de la comprensión lectora en educación ambiental con estudiantes de Grado 7°.
         </p>
       </div>
+
+      {/* Input oculto para restaurar copias de seguridad */}
+      <input 
+        ref={fileInputRef} 
+        type="file" 
+        accept=".json" 
+        onChange={handleFileRestore} 
+        className="hidden" 
+      />
+
+      {/* Modal del Centro de Copias de Seguridad y Reportes */}
+      {showBackupModal && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 animate-fadeIn overflow-y-auto">
+          <div className="bg-white border-2 border-emerald-300 rounded-3xl p-5 sm:p-8 max-w-2xl w-full shadow-2xl space-y-6 animate-scaleUp my-auto">
+            
+            {/* Cabecera del Modal */}
+            <div className="flex items-start justify-between gap-3 border-b border-slate-100 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <Database className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-display font-black text-lg sm:text-xl text-slate-900">
+                    Centro de Copias de Seguridad y Reportes
+                  </h3>
+                  <p className="text-xs text-slate-500 font-reading">
+                    Respaldo del avance de los estudiantes, respuestas de misiones y exportación para la tesis.
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowBackupModal(false)}
+                className="p-1.5 text-slate-400 hover:text-slate-700 rounded-xl hover:bg-slate-100 transition-colors"
+                title="Cerrar ventana"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Opciones de Copia y Exportación */}
+            <div className="grid grid-cols-1 gap-3.5 max-h-[60vh] overflow-y-auto pr-1">
+              
+              {/* Opción 1: Respaldo Completo JSON */}
+              <div className="p-4 sm:p-4.5 rounded-2xl border-2 border-emerald-200 bg-emerald-50/50 hover:bg-emerald-50 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 group">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="p-1.5 rounded-lg bg-emerald-600 text-white shadow-xs">
+                      <Database className="w-4 h-4" />
+                    </span>
+                    <h4 className="font-display font-bold text-sm text-emerald-950">
+                      Copia de Seguridad Maestra (.JSON)
+                    </h4>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed font-reading">
+                    Descarga el <strong>100% de la información</strong>: todos los perfiles de los niños, cada una de sus respuestas, justificaciones escritas, reflexiones del pasaporte, desafíos y avances. Sirve como respaldo total que puede restaurarse en cualquier momento.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleExportFullBackup}
+                  className="w-full sm:w-auto shrink-0 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-98"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Descargar Respaldo</span>
+                </button>
+              </div>
+
+              {/* Opción 2: Reporte Excel/CSV de Respuestas por Nivel */}
+              <div className="p-4 sm:p-4.5 rounded-2xl border-2 border-sky-200 bg-sky-50/50 hover:bg-sky-50 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 group">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="p-1.5 rounded-lg bg-sky-600 text-white shadow-xs">
+                      <FileSpreadsheet className="w-4 h-4" />
+                    </span>
+                    <h4 className="font-display font-bold text-sm text-sky-950">
+                      Matriz de Respuestas para Excel (.CSV)
+                    </h4>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed font-reading">
+                    Genera una tabla lista para <strong>Microsoft Excel</strong> o <strong>Google Sheets</strong> con el detalle de cada pregunta: misión, nivel (Literal, Inferencial, Crítico), pregunta, opción elegida, acierto y los argumentos escritos redactados por el estudiante.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleExportCSV}
+                  className="w-full sm:w-auto shrink-0 px-4 py-2.5 rounded-xl bg-sky-700 hover:bg-sky-800 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-98"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Exportar a Excel</span>
+                </button>
+              </div>
+
+              {/* Opción 3: Reporte Excel/CSV de Reflexiones y Desafíos */}
+              <div className="p-4 sm:p-4.5 rounded-2xl border-2 border-amber-200 bg-amber-50/50 hover:bg-amber-50 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 group">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="p-1.5 rounded-lg bg-amber-600 text-white shadow-xs">
+                      <FileText className="w-4 h-4" />
+                    </span>
+                    <h4 className="font-display font-bold text-sm text-amber-950">
+                      Bitácora de Reflexiones y Desafíos (.CSV)
+                    </h4>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed font-reading">
+                    Exporta todos los textos cualitativos redactados por los estudiantes en su <strong>Pasaporte del Guardián</strong> y las propuestas de acción comunitaria enviadas en los desafíos ambientales.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleExportReflectionsCSV}
+                  className="w-full sm:w-auto shrink-0 px-4 py-2.5 rounded-xl bg-amber-700 hover:bg-amber-800 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-98"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Exportar Bitácora</span>
+                </button>
+              </div>
+
+              {/* Opción 4: Restaurar Copia */}
+              <div className="p-4 sm:p-4.5 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/80 hover:bg-slate-100/80 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="p-1.5 rounded-lg bg-slate-700 text-white shadow-xs">
+                      <Upload className="w-4 h-4" />
+                    </span>
+                    <h4 className="font-display font-bold text-sm text-slate-900">
+                      Restaurar Copia de Seguridad
+                    </h4>
+                  </div>
+                  <p className="text-xs text-slate-500 leading-relaxed font-reading">
+                    Si formateaste el equipo o deseas cargar datos de otra jornada, selecciona un archivo <code>.json</code> previamente respaldado para restaurar a los estudiantes y sus respuestas.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  disabled={isRestoring}
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-full sm:w-auto shrink-0 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 disabled:opacity-50 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-98"
+                >
+                  <Upload className="w-3.5 h-3.5" />
+                  <span>{isRestoring ? 'Restaurando...' : 'Subir Archivo .JSON'}</span>
+                </button>
+              </div>
+
+            </div>
+
+            {/* Pie del Modal */}
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] text-slate-400">
+                Total estudiantes actuales: <strong>{profiles.length}</strong>
+              </span>
+              <button
+                type="button"
+                onClick={() => setShowBackupModal(false)}
+                className="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-100 text-xs font-bold transition-colors cursor-pointer"
+              >
+                Cerrar
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
 
       {/* Modal de Confirmación para Eliminar Estudiante */}
       {studentToDelete && (
