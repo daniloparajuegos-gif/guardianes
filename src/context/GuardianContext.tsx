@@ -313,7 +313,8 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       return { success: false, message: 'Por favor ingresa tu código de estudiante o tu nombre.' };
     }
 
-    // Coincidencia flexible: nombre completo, usuario (@...), primer nombre o partes
+    // Coincidencia exacta: nombre completo, usuario o primer nombre exacto
+    // NO se usa includes() bidireccional para evitar que "danilo" encuentre a "dani"
     const target = profiles.find(p => {
       const pName = normalize(p.name);
       const pUser = normalize(p.username || '');
@@ -323,10 +324,8 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         pUser === cleanId ||
         pName === cleanId ||
         pFirst === cleanId ||
-        pUser.includes(cleanId) ||
-        pName.includes(cleanId) ||
-        cleanId.includes(pUser) ||
-        cleanId.includes(pFirst)
+        pName.startsWith(cleanId + ' ') ||
+        pUser.startsWith(cleanId)
       );
     });
 
