@@ -26,7 +26,7 @@ interface GuardianContextType {
   claimReward: () => void;
   setCurrentView: (view: AppView) => void;
   setActiveMissionId: (id: number) => void;
-  loginWithCredentials: (identifier: string, enteredPin?: string) => { success: boolean; message?: string };
+  loginWithCredentials: (identifier: string, enteredPin?: string) => { success: boolean; message?: string; multipleMatches?: StudentProfile[] };
   login: (profileId: string, enteredPin?: string) => { success: boolean; message?: string };
   logout: () => void;
   teacherLogin: (pass: string) => { success: boolean; message?: string };
@@ -306,37 +306,8 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       .replace(/[\u0300-\u036f]/g, "")
       .replace(/\s+/g, ' ');
 
-  // Login para estudiantes mediante identificador privado (Usuario o Nombre) + PIN
-  const loginWithCredentials = (identifier: string, enteredPin?: string) => {
-    const cleanId = normalize(identifier);
-    if (!cleanId) {
-      return { success: false, message: 'Por favor ingresa tu código de estudiante o tu nombre.' };
-    }
-
-    // Coincidencia exacta: nombre completo, usuario o primer nombre exacto
-    // NO se usa includes() bidireccional para evitar que "danilo" encuentre a "dani"
-    const target = profiles.find(p => {
-      const pName = normalize(p.name);
-      const pUser = normalize(p.username || '');
-      const pFirst = pName.split(' ')[0];
-
-      return (
-        pUser === cleanId ||
-        pName === cleanId ||
-        pFirst === cleanId ||
-        pName.startsWith(cleanId + ' ') ||
-        pUser.startsWith(cleanId)
-      );
-    });
-
-    if (!target) {
-      return { 
-        success: false, 
-        message: 'No encontramos ningún Guardián con esos datos. Verifica cómo escribiste tu nombre o regístrate en "Nuevo Guardián".' 
-      };
-    }
-
-    // Verificación de PIN si el perfil lo tiene configurado
+  // Helper interno para ejecutar el login de un perfil validando su PIN
+  const executeLoginForProfile = (target: StudentProfile, enteredPin?: string) => {
     if (target.pin && target.pin.trim() !== '') {
       const expected = target.pin.trim();
       const entered = (enteredPin || '').trim();
@@ -344,7 +315,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       if (!entered) {
         return { 
           success: false, 
-          message: `El perfil de ${target.name.split(' ')[0]} requiere su PIN de 4 dígitos (PIN predeterminado: ${target.pin}). Por favor escríbelo para entrar.` 
+          message: `El perfil de ${target.name.split(' ')[0]} requiere su PIN de 4 dígitos. Por favor escríbelo para entrar.` 
         };
       }
 
@@ -361,6 +332,61 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setIsLoggedIn(true);
     setCurrentView('welcome');
     return { success: true };
+  };
+
+  // Login para estudiantes mediante identificador privado (Usuario o Nombre) + PIN
+  const loginWithCredentials = (identifier: string, enteredPin?: string) => {
+    const cleanId = normalize(identifier);
+    if (!cleanId) {
+      return { success: false, message: 'Por favor ingresa tu código de estudiante o tu nombre.' };
+    }
+
+    // 1. Coincidencia exacta por username (@usuario o usuario)
+    const exactUserMatches = profiles.filter(p => normalize(p.username || '') === cleanId);
+    if (exactUserMatches.length === 1) {
+      return executeLoginForProfile(exactUserMatches[0], enteredPin);
+    }
+
+    // 2. Coincidencia exacta por nombre completo (ej: "Daniela Perez")
+    const exactFullNameMatches = profiles.filter(p => normalize(p.name) === cleanId);
+    if (exactFullNameMatches.length === 1) {
+      return executeLoginForProfile(exactFullNameMatches[0], enteredPin);
+    }
+
+    // 3. Coincidencia amplia (primer nombre, coincidencia de inicio o usuario)
+    const candidates = profiles.filter(p => {
+      const pName = normalize(p.name);
+      const pUser = normalize(p.username || '');
+      const pFirst = pName.split(' ')[0];
+
+      return (
+        pUser === cleanId ||
+        pName === cleanId ||
+        pFirst === cleanId ||
+        pName.startsWith(cleanId + ' ') ||
+        pUser.startsWith(cleanId)
+      );
+    });
+
+    if (candidates.length === 0) {
+      return { 
+        success: false, 
+        message: 'No encontramos ningún Guardián con esos datos. Verifica cómo escribiste tu nombre o regístrate en "Nuevo Guardián".' 
+      };
+    }
+
+    // Si solo hay un estudiante que coincide, ingresa directamente
+    if (candidates.length === 1) {
+      return executeLoginForProfile(candidates[0], enteredPin);
+    }
+
+    // Si hay MÚLTIPLES coincidencias (ej: varias compañeras con el mismo nombre y clave 1234)
+    // Retornamos las opciones para que el estudiante elija su propia tarjeta en la pantalla
+    return {
+      success: false,
+      multipleMatches: candidates,
+      message: `Encontramos ${candidates.length} Guardianes con el nombre "${identifier.trim()}". Por favor selecciona tu perfil abajo:`
+    };
   };
 
   const login = (profileId: string, enteredPin?: string) => {
