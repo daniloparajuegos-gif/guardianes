@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { 
-  getFirestore, 
+  initializeFirestore, 
+  persistentLocalCache, 
+  persistentMultipleTabManager,
   collection, 
   doc, 
   setDoc, 
@@ -22,7 +24,15 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+
+// Habilitar persistencia offline automática (IndexedDB) con soporte multi-pestaña
+// Permite que las respuestas y misiones completadas se guarden localmente al instante
+// y se sincronicen con la nube sin pérdida de datos ante interrupciones de internet
+export const db = initializeFirestore(app, {
+  localCache: persistentLocalCache({
+    tabManager: persistentMultipleTabManager()
+  })
+});
 
 export const PROFILES_COLLECTION = 'student_profiles';
 

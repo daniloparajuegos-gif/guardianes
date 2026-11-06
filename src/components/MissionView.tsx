@@ -17,8 +17,11 @@ import {
   Info,
   Sun,
   Moon,
-  Send
+  Send,
+  Save,
+  Cloud
 } from 'lucide-react';
+import { saveProfileToCloud } from '../services/firebase';
 
 import { RewardModal } from './collection/RewardModal';
 
@@ -39,7 +42,54 @@ export const MissionView: React.FC = () => {
 
   // Etapas de la misión:
   // 0: Llegada, 1: Observa, 2: Lee, 3: Rastreo (Literal), 4: Investigación (Inferencial), 5: Decisión (Crítico), 6: Desafío Ambiental, 7: Insignia
-  const [stage, setStage] = useState<number>(0);
+  // Calcular etapa inicial según el progreso previo guardado del estudiante en esta misión
+  const calculateInitialStage = (): number => {
+    // Si ya completó la misión o tiene evidencia del desafío
+    if (activeProfile.completedMissionIds.includes(mission.id)) {
+      return 0; // En modo repaso empieza desde el inicio
+    }
+    if (activeProfile.evidences[mission.id]) {
+      return 7; // Ya envió el desafío, está en la pantalla de insignia
+    }
+    const hasCritical = mission.criticalQuestions.every(q => activeProfile.answers[q.id]?.selectedOptionId);
+    if (hasCritical) {
+      return 6; // Le toca el Desafío Ambiental
+    }
+    const hasInferential = mission.inferentialQuestions.every(q => activeProfile.answers[q.id]?.selectedOptionId);
+    if (hasInferential) {
+      return 5; // Le toca el Nivel Crítico
+    }
+    const hasLiteral = mission.literalQuestions.every(q => activeProfile.answers[q.id]?.selectedOptionId);
+    if (hasLiteral) {
+      return 4; // Le toca el Nivel Inferencial
+    }
+    return 0; // Inicio normal
+  };
+
+  const [stage, setStage] = useState<number>(calculateInitialStage);
+
+  // Estado visual de sincronización y guardado
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
+  const [saveToastMessage, setSaveToastMessage] = useState<string | null>(null);
+
+  const triggerSaveIndicator = () => {
+    setSaveStatus('saving');
+    setTimeout(() => {
+      setSaveStatus('saved');
+      setTimeout(() => setSaveStatus('idle'), 2500);
+    }, 350);
+  };
+
+  const handleManualSave = async () => {
+    setSaveStatus('saving');
+    const success = await saveProfileToCloud(activeProfile);
+    setSaveStatus('saved');
+    setSaveToastMessage(success ? '✓ ¡Progreso sincronizado en la nube!' : '✓ Guardado localmente en tu dispositivo');
+    setTimeout(() => {
+      setSaveStatus('idle');
+      setSaveToastMessage(null);
+    }, 3000);
+  };
 
   // Estados de lectura: tamaño de letra y modo pergamino/claro
   const [fontSize, setFontSize] = useState<'normal' | 'large' | 'xlarge'>('normal');
