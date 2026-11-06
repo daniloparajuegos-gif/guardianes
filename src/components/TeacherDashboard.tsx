@@ -24,7 +24,16 @@ import {
   Database,
   FileSpreadsheet,
   Upload,
-  FileText
+  FileText,
+  Calendar,
+  Clock,
+  ChevronDown,
+  ChevronUp,
+  Search,
+  Sparkles,
+  BookOpen,
+  MessageSquare,
+  Check
 } from 'lucide-react';
 
 export const TeacherDashboard: React.FC = () => {
@@ -43,6 +52,10 @@ export const TeacherDashboard: React.FC = () => {
   } = useGuardian();
 
   const [enteredPin, setEnteredPin] = useState('');
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [gradeFilter, setGradeFilter] = useState<string>('todos');
+  const [expandedMissionId, setExpandedMissionId] = useState<number | null>(null);
+  const [showSessionHistory, setShowSessionHistory] = useState<boolean>(false);
   const [authError, setAuthError] = useState('');
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [studentToDelete, setStudentToDelete] = useState<{ id: string; name: string } | null>(null);
@@ -136,44 +149,102 @@ export const TeacherDashboard: React.FC = () => {
     );
   }
 
+    // Helper para formatear fechas de manera amigable
+  const formatFriendlyDate = (isoString?: string): string => {
+    if (!isoString) return 'Sin fecha registrada';
+    try {
+      const d = new Date(isoString);
+      if (isNaN(d.getTime())) return isoString;
+      return d.toLocaleDateString('es-CO', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+    } catch {
+      return isoString;
+    }
+  };
+
+  // Helper para calcular la última actividad real del estudiante
+  const getStudentLatestActivity = (p: any) => {
+    const dates: number[] = [];
+    if (p.lastLoginAt) dates.push(new Date(p.lastLoginAt).getTime());
+    if (p.createdAt) dates.push(new Date(p.createdAt).getTime());
+    
+    Object.values(p.answers || {}).forEach((a: any) => {
+      if (a.answeredAt) dates.push(new Date(a.answeredAt).getTime());
+    });
+    Object.values(p.evidences || {}).forEach((e: any) => {
+      if (e.submittedAt) dates.push(new Date(e.submittedAt).getTime());
+    });
+    
+    if (dates.length === 0) {
+      return { date: new Date(), text: 'Sin actividad' };
+    }
+    
+    const maxTime = Math.max(...dates.filter(t => !isNaN(t)));
+    const latestDate = new Date(maxTime);
+    
+    const now = new Date();
+    const isToday = latestDate.toDateString() === now.toDateString();
+    const timeStr = latestDate.toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit', hour12: true });
+    
+    if (isToday) {
+      return { date: latestDate, text: `Hoy, ${timeStr}` };
+    }
+    
+    const dateStr = latestDate.toLocaleDateString('es-CO', { day: '2-digit', month: 'short' });
+    return { date: latestDate, text: `${dateStr}, ${timeStr}` };
+  };
+
   // Siempre mostramos los datos reales de Firebase (modo demo eliminado)
   const studentList = profiles.map(p => {
-        const completedCount = p.completedMissionIds.length;
-        const answersList = Object.values(p.answers);
-        
-        const literalAnswers = answersList.filter(a => a.questionId.includes('_l'));
-        const inferentialAnswers = answersList.filter(a => a.questionId.includes('_i'));
-        const criticalAnswers = answersList.filter(a => a.questionId.includes('_c'));
+    const completedCount = p.completedMissionIds.length;
+    const answersList = Object.values(p.answers);
+    
+    const literalAnswers = answersList.filter(a => a.questionId.includes('_l'));
+    const inferentialAnswers = answersList.filter(a => a.questionId.includes('_i'));
+    const criticalAnswers = answersList.filter(a => a.questionId.includes('_c'));
 
-        const literalAcc = literalAnswers.length > 0 
-          ? Math.round((literalAnswers.filter(a => a.isCorrect).length / literalAnswers.length) * 100)
-          : 0;
-        const inferentialAcc = inferentialAnswers.length > 0
-          ? Math.round((inferentialAnswers.filter(a => a.isCorrect).length / inferentialAnswers.length) * 100)
-          : 0;
-        const criticalAcc = criticalAnswers.length > 0
-          ? Math.round((criticalAnswers.filter(a => a.isCorrect).length / criticalAnswers.length) * 100)
-          : 0;
+    const literalAcc = literalAnswers.length > 0 
+      ? Math.round((literalAnswers.filter(a => a.isCorrect).length / literalAnswers.length) * 100)
+      : 0;
+    const inferentialAcc = inferentialAnswers.length > 0
+      ? Math.round((inferentialAnswers.filter(a => a.isCorrect).length / inferentialAnswers.length) * 100)
+      : 0;
+    const criticalAcc = criticalAnswers.length > 0
+      ? Math.round((criticalAnswers.filter(a => a.isCorrect).length / criticalAnswers.length) * 100)
+      : 0;
 
-        return {
-          id: p.id,
-          name: p.name,
-          username: p.username || p.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '.'),
-          pin: p.pin || 'Sin PIN',
-          grade: p.grade,
-          avatar: p.avatar,
-          completedMissionCount: completedCount,
-          completedMissionIds: p.completedMissionIds,
-          earnedBadges: p.earnedBadges,
-          literalAccuracy: literalAcc,
-          inferentialAccuracy: inferentialAcc,
-          criticalAccuracy: criticalAcc,
-          lastActive: new Date(p.createdAt).toLocaleDateString('es-CO'),
-          evidencesCount: Object.keys(p.evidences).length,
-          sampleReflection: p.passportEntries[0]?.reflection || 'Sin reflexiones aún',
-          isDemonstration: false
-        };
-      });
+    const activity = getStudentLatestActivity(p);
+
+    return {
+      id: p.id,
+      name: p.name,
+      username: p.username || p.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '.'),
+      pin: p.pin || 'Sin PIN',
+      grade: p.grade,
+      avatar: p.avatar,
+      completedMissionCount: completedCount,
+      completedMissionIds: p.completedMissionIds,
+      earnedBadges: p.earnedBadges,
+      literalAccuracy: literalAcc,
+      inferentialAccuracy: inferentialAcc,
+      criticalAccuracy: criticalAcc,
+      lastActive: activity.text,
+      createdAtText: formatFriendlyDate(p.createdAt),
+      lastLoginAtText: p.lastLoginAt ? formatFriendlyDate(p.lastLoginAt) : 'Sin login registrado',
+      loginCount: p.loginSessions?.length || (p.lastLoginAt ? 1 : 0),
+      loginSessions: p.loginSessions || [],
+      evidencesCount: Object.keys(p.evidences).length,
+      sampleReflection: p.passportEntries[0]?.reflection || 'Sin reflexiones aún',
+      rawProfile: p,
+      isDemonstration: false
+    };
+  });
 
   const totalStudents = studentList.length;
   const avgMissions = totalStudents > 0 
@@ -598,9 +669,9 @@ export const TeacherDashboard: React.FC = () => {
       {/* Tabla de Estudiantes y Visor de Respuestas */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        {/* Lista de Alumnos con Usuario y PIN visible para el Docente */}
-        <div className="bg-white border-2 border-slate-200 rounded-3xl p-5 space-y-4 shadow-sm">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+        {/* Lista de Alumnos con Buscador, Filtro y Último Acceso */}
+        <div className="bg-white border-2 border-slate-200 rounded-3xl p-5 space-y-3 shadow-sm">
+          <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
             <div>
               <h3 className="font-display font-bold text-base text-slate-900 flex items-center gap-2">
                 <Users className="w-4 h-4 text-emerald-600" />
@@ -613,68 +684,108 @@ export const TeacherDashboard: React.FC = () => {
             </span>
           </div>
 
-          <div className="space-y-2.5 max-h-[520px] overflow-y-auto pr-1">
-            {studentList.map((st) => {
-              const isSelected = selectedStudent?.id === st.id;
-              return (
-                <div
-                  key={st.id}
-                  onClick={() => setSelectedStudentId(st.id)}
-                  className={`p-3.5 rounded-2xl border-2 cursor-pointer transition-all ${
-                    isSelected
-                      ? 'bg-emerald-50 border-emerald-500 shadow-sm ring-2 ring-emerald-400/30'
-                      : 'bg-slate-50/70 border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/40'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-900 truncate max-w-[130px]">
-                      {st.name}
-                    </span>
-                    <div className="flex items-center gap-1">
-                      <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-md bg-white text-emerald-800 border border-emerald-300">
-                        {st.grade}
+          {/* Buscador de estudiantes */}
+          <div className="relative">
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5 pointer-events-none" />
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Buscar por nombre o @usuario..."
+              className="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 focus:bg-white text-slate-900 placeholder-slate-400"
+            />
+          </div>
+
+          {/* Filtro por Grado */}
+          <div className="flex items-center gap-1 overflow-x-auto pb-1 text-[11px]">
+            {['todos', '7°1', '7°2', '7°3', '7°4', '7°A'].map((g) => (
+              <button
+                key={g}
+                type="button"
+                onClick={() => setGradeFilter(g)}
+                className={`px-2.5 py-1 rounded-lg font-bold transition-colors shrink-0 cursor-pointer ${
+                  gradeFilter === g
+                    ? 'bg-emerald-600 text-white'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {g === 'todos' ? 'Todos' : g}
+              </button>
+            ))}
+          </div>
+
+          <div className="space-y-2 max-h-[500px] overflow-y-auto pr-1">
+            {studentList
+              .filter(st => {
+                const matchesSearch = st.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                      st.username.toLowerCase().includes(searchTerm.toLowerCase());
+                const matchesGrade = gradeFilter === 'todos' || st.grade === gradeFilter;
+                return matchesSearch && matchesGrade;
+              })
+              .map((st) => {
+                const isSelected = selectedStudent?.id === st.id;
+                return (
+                  <div
+                    key={st.id}
+                    onClick={() => setSelectedStudentId(st.id)}
+                    className={`p-3 rounded-2xl border-2 cursor-pointer transition-all ${
+                      isSelected
+                        ? 'bg-emerald-50 border-emerald-500 shadow-sm ring-2 ring-emerald-400/30'
+                        : 'bg-slate-50/70 border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/40'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold text-slate-900 truncate max-w-[130px]">
+                        {st.name}
                       </span>
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setStudentToDelete({ id: st.id, name: st.name });
-                        }}
-                        className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
-                        title={`Eliminar perfil de ${st.name}`}
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
+                      <div className="flex items-center gap-1">
+                        <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-md bg-white text-emerald-800 border border-emerald-300">
+                          {st.grade}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setStudentToDelete({ id: st.id, name: st.name });
+                          }}
+                          className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
+                          title={`Eliminar perfil de ${st.name}`}
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Fila con Usuario y PIN */}
+                    <div className="mt-1 flex items-center gap-2 text-[11px]">
+                      <span className="font-mono text-emerald-700 font-bold bg-white px-1.5 py-0.5 rounded border border-emerald-200">
+                        @{st.username}
+                      </span>
+                      {st.pin && st.pin !== 'Sin PIN' && (
+                        <span className="font-mono text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 text-[10px]">
+                          PIN: {st.pin}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="mt-1.5 flex items-center justify-between text-[10px] text-slate-500 font-medium">
+                      <span>Misiones: <strong>{st.completedMissionCount}/15</strong></span>
+                      <span className="flex items-center gap-0.5 text-slate-600">
+                        <Clock className="w-3 h-3 text-emerald-600" />
+                        {st.lastActive}
+                      </span>
+                    </div>
+
+                    {/* Micro barra de avance */}
+                    <div className="w-full h-1.5 bg-slate-200 rounded-full mt-1.5 overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full" 
+                        style={{ width: `${(st.completedMissionCount / 15) * 100}%` }}
+                      />
                     </div>
                   </div>
-
-                  {/* Fila con Usuario y PIN para asistencia rápida en clase */}
-                  <div className="mt-1.5 flex items-center gap-2 text-[11px]">
-                    <span className="font-mono text-emerald-700 font-bold bg-white px-1.5 py-0.5 rounded border border-emerald-200">
-                      @{st.username}
-                    </span>
-                    {st.pin && st.pin !== 'Sin PIN' && (
-                      <span className="font-mono text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 text-[10px]">
-                        PIN: {st.pin}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="mt-2 flex items-center justify-between text-[11px] text-slate-600 font-medium">
-                    <span>Misiones: {st.completedMissionCount}/15</span>
-                    <span className="text-slate-400 text-[10px]">{st.lastActive}</span>
-                  </div>
-
-                  {/* Micro barra de avance */}
-                  <div className="w-full h-2 bg-slate-200 rounded-full mt-2 overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full" 
-                      style={{ width: `${(st.completedMissionCount / 15) * 100}%` }}
-                    />
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </div>
 

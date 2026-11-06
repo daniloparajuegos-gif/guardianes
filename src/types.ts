@@ -89,6 +89,8 @@ export interface StudentProfile {
   avatar: string;
   pin?: string; // PIN de 4 dígitos para proteger su progreso en computadores compartidos
   createdAt: string;
+  lastLoginAt?: string;
+  loginSessions?: string[];
   completedMissionIds: number[];
   earnedBadges: string[];
   answers: Record<string, StudentAnswer>; // questionId -> StudentAnswer
