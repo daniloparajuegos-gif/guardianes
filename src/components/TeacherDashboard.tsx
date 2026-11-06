@@ -914,6 +914,324 @@ export const TeacherDashboard: React.FC = () => {
 
 
 
+              {/* Ficha de Conectividad, Registro e Inicios de Sesión */}
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/80 pb-2.5">
+                  <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5 uppercase tracking-wide">
+                    <Clock className="w-4 h-4 text-emerald-600" />
+                    Registro de Conectividad y Sesiones
+                  </span>
+                  <span className="text-[11px] font-mono text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md font-bold">
+                    {selectedStudent.loginCount} {selectedStudent.loginCount === 1 ? 'sesión iniciada' : 'sesiones iniciadas'}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div className="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs">
+                    <Calendar className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-[10px] text-slate-500 font-bold uppercase block">Fecha de Registro:</span>
+                      <span className="font-semibold text-slate-800">{selectedStudent.createdAtText}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs">
+                    <Clock className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-[10px] text-slate-500 font-bold uppercase block">Última Actividad Registrada:</span>
+                      <span className="font-semibold text-emerald-800">{selectedStudent.lastActive}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desplegable de Historial de Sesiones */}
+                {selectedStudent.loginSessions && selectedStudent.loginSessions.length > 0 && (
+                  <div className="pt-1">
+                    <button
+                      type="button"
+                      onClick={() => setShowSessionHistory(!showSessionHistory)}
+                      className="text-[11px] font-bold text-emerald-700 hover:text-emerald-900 flex items-center gap-1 transition-colors cursor-pointer"
+                    >
+                      {showSessionHistory ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                      <span>{showSessionHistory ? 'Ocultar historial de inicios de sesión' : 'Ver marcas de tiempo de inicios de sesión'}</span>
+                    </button>
+
+                    {showSessionHistory && (
+                      <div className="mt-2 p-3 bg-white border border-slate-200 rounded-xl space-y-1.5 max-h-36 overflow-y-auto text-xs animate-fadeIn font-mono">
+                        {selectedStudent.loginSessions.slice().reverse().map((sess: string, idx: number) => (
+                          <div key={idx} className="flex items-center justify-between py-0.5 border-b border-slate-100 last:border-0 text-[11px] text-slate-600">
+                            <span>Acceso #{selectedStudent.loginSessions.length - idx}</span>
+                            <span className="text-slate-800 font-semibold">{formatFriendlyDate(sess)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* SEGUIMIENTO COMPLETO DE LAS 15 MISIONES CON FECHAS Y RESPUESTAS */}
+              <div className="space-y-3 pt-2">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-slate-200 pb-2">
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                      <BookOpen className="w-4 h-4 text-emerald-700" />
+                      Bitácora de las 15 Misiones • Fechas y Respuestas
+                    </h4>
+                    <p className="text-[11px] text-slate-500">
+                      Toca cualquier misión para auditar respuestas, fechas y argumentos escritos en vivo sin descargar archivos.
+                    </p>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-emerald-900 bg-emerald-100 px-3 py-1 rounded-xl border border-emerald-300 self-start sm:self-auto">
+                    {selectedStudent.completedMissionCount} de 15 misiones completadas
+                  </span>
+                </div>
+
+                <div className="space-y-2.5">
+                  {MISSIONS_DATA.map((m) => {
+                    const isCompleted = selectedStudent.completedMissionIds.includes(m.id);
+                    const isExpanded = expandedMissionId === m.id;
+                    const passport = selectedStudent.rawProfile?.passportEntries?.find((e: any) => e.missionId === m.id);
+                    const evidence = selectedStudent.rawProfile?.evidences?.[m.id];
+                    
+                    const literalAns = m.literalQuestions.map(q => ({ q, a: selectedStudent.rawProfile?.answers?.[q.id] }));
+                    const inferentialAns = m.inferentialQuestions.map(q => ({ q, a: selectedStudent.rawProfile?.answers?.[q.id] }));
+                    const criticalAns = m.criticalQuestions.map(q => ({ q, a: selectedStudent.rawProfile?.answers?.[q.id] }));
+
+                    const answeredQuestionsCount = [...literalAns, ...inferentialAns, ...criticalAns].filter(x => x.a?.selectedOptionId).length;
+                    const hasActivity = answeredQuestionsCount > 0 || isCompleted || evidence;
+
+                    // Fecha más precisa de realización
+                    const completionDate = passport?.completedAt || (evidence?.submittedAt ? formatFriendlyDate(evidence.submittedAt) : null);
+                    
+                    return (
+                      <div 
+                        key={m.id}
+                        className={`border-2 rounded-2xl transition-all overflow-hidden ${
+                          isCompleted
+                            ? 'border-emerald-300 bg-white shadow-2xs'
+                            : hasActivity
+                            ? 'border-amber-300 bg-white'
+                            : 'border-slate-200 bg-slate-50/60'
+                        }`}
+                      >
+                        {/* Fila Encabezado de la Misión */}
+                        <div 
+                          onClick={() => setExpandedMissionId(isExpanded ? null : m.id)}
+                          className="p-3 sm:p-3.5 flex items-center justify-between gap-3 cursor-pointer hover:bg-slate-50 transition-colors"
+                        >
+                          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                            <span className={`w-8 h-8 rounded-xl font-bold font-mono text-xs flex items-center justify-center shrink-0 border ${
+                              isCompleted 
+                                ? 'bg-emerald-100 text-emerald-900 border-emerald-300' 
+                                : hasActivity 
+                                ? 'bg-amber-100 text-amber-900 border-amber-300' 
+                                : 'bg-slate-200 text-slate-500 border-slate-300'
+                            }`}>
+                              {m.id}
+                            </span>
+
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <h5 className="text-xs sm:text-sm font-bold text-slate-900 truncate">
+                                  {m.title}
+                                </h5>
+                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium">
+                                  {m.territoryZone}
+                                </span>
+                              </div>
+
+                              <div className="flex items-center gap-2 mt-0.5 text-[11px]">
+                                {isCompleted ? (
+                                  <span className="text-emerald-700 font-semibold flex items-center gap-1">
+                                    <Check className="w-3.5 h-3.5 text-emerald-600" />
+                                    <span>Realizada {completionDate ? `• ${completionDate}` : ''}</span>
+                                  </span>
+                                ) : hasActivity ? (
+                                  <span className="text-amber-700 font-semibold flex items-center gap-1">
+                                    <Clock className="w-3.5 h-3.5 text-amber-600" />
+                                    <span>En progreso ({answeredQuestionsCount}/9 preguntas respondidas)</span>
+                                  </span>
+                                ) : (
+                                  <span className="text-slate-400">Pendiente / No iniciada</span>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-2 shrink-0">
+                            <span className="text-[11px] font-bold text-emerald-700 hidden sm:inline">
+                              {isExpanded ? 'Cerrar' : 'Ver respuestas'}
+                            </span>
+                            <div className="p-1.5 rounded-lg bg-slate-100 text-slate-600">
+                              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Detalle Desplegable con todas las respuestas y argumentos */}
+                        {isExpanded && (
+                          <div className="p-4 border-t border-slate-200 bg-slate-50/80 space-y-3.5 animate-fadeIn text-xs">
+                            
+                            {/* Ficha rápida de Insignia y Fecha */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 bg-white p-3 rounded-xl border border-slate-200">
+                              <div>
+                                <span className="text-[10px] text-slate-500 font-bold uppercase block">Insignia Territorial:</span>
+                                <span className="font-bold text-amber-900 flex items-center gap-1.5 mt-0.5">
+                                  <Award className="w-3.5 h-3.5 text-amber-600" />
+                                  {m.badgeName}
+                                </span>
+                              </div>
+                              <div>
+                                <span className="text-[10px] text-slate-500 font-bold uppercase block">Fecha y Hora de la Misión:</span>
+                                <span className="font-semibold text-slate-800">
+                                  {completionDate || 'En proceso de resolución en el aula'}
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Nivel Literal */}
+                            <div className="space-y-2 bg-white p-3.5 rounded-xl border border-emerald-200 shadow-2xs">
+                              <span className="font-bold text-emerald-950 uppercase text-[11px] flex items-center gap-1.5">
+                                <Eye className="w-3.5 h-3.5 text-emerald-600" />
+                                Nivel 1: Literal (Identificación de Hechos)
+                              </span>
+                              <div className="space-y-2">
+                                {literalAns.map(({ q, a }, idx) => {
+                                  const chosen = q.options.find(o => o.id === a?.selectedOptionId);
+                                  return (
+                                    <div key={q.id} className="p-2.5 rounded-lg bg-emerald-50/40 border border-emerald-100 space-y-1">
+                                      <div className="font-semibold text-slate-900">{idx + 1}. {q.questionText}</div>
+                                      <div className="flex items-center justify-between text-[11px] flex-wrap gap-1">
+                                        <span className={chosen?.isCorrect ? 'text-emerald-800 font-bold' : 'text-slate-700'}>
+                                          Respuesta: {chosen ? chosen.text : <em className="text-slate-400">Sin responder</em>}
+                                        </span>
+                                        {chosen && (
+                                          <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${chosen.isCorrect ? 'bg-emerald-200 text-emerald-900' : 'bg-rose-100 text-rose-800'}`}>
+                                            {chosen.isCorrect ? '✓ Correcta' : 'Revisión'}
+                                          </span>
+                                        )}
+                                      </div>
+                                      {a?.answeredAt && (
+                                        <div className="text-[10px] text-slate-400 font-mono">
+                                          Respondida: {formatFriendlyDate(a.answeredAt)}
+                                        </div>
+                                      )}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+
+                            {/* Nivel Inferencial */}
+                            <div className="space-y-2 bg-white p-3.5 rounded-xl border border-sky-200 shadow-2xs">
+                              <span className="font-bold text-sky-950 uppercase text-[11px] flex items-center gap-1.5">
+                                <Search className="w-3.5 h-3.5 text-sky-600" />
+                                Nivel 2: Inferencial (Causas y Efectos)
+                              </span>
+                              <div className="space-y-2">
+                                {inferentialAns.map(({ q, a }, idx) => {
+                                  const chosen = q.options.find(o => o.id === a?.selectedOptionId);
+                                  return (
+                                    <div key={q.id} className="p-2.5 rounded-lg bg-sky-50/40 border border-sky-100 space-y-1">
+                                      <div className="font-semibold text-slate-900">{idx + 1}. {q.questionText}</div>
+                                      <div className="flex items-center justify-between text-[11px] flex-wrap gap-1">
+                                        <span className={chosen?.isCorrect ? 'text-sky-900 font-bold' : 'text-slate-700'}>
+                                          Respuesta: {chosen ? chosen.text : <em className="text-slate-400">Sin responder</em>}
+                                        </span>
+                                        {chosen && (
+                                          <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${chosen.isCorrect ? 'bg-sky-200 text-sky-900' : 'bg-rose-100 text-rose-800'}`}>
+                                            {chosen.isCorrect ? '✓ Correcta' : 'Revisión'}
+                                          </span>
+                                        )}
+                                      </div>
+                                      {a?.answeredAt && (
+                                        <div className="text-[10px] text-slate-400 font-mono">
+                                          Respondida: {formatFriendlyDate(a.answeredAt)}
+                                        </div>
+                                      )}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+
+                            {/* Nivel Crítico con Argumentos Escritos */}
+                            <div className="space-y-2 bg-white p-3.5 rounded-xl border border-amber-200 shadow-2xs">
+                              <span className="font-bold text-amber-950 uppercase text-[11px] flex items-center gap-1.5">
+                                <Scale className="w-3.5 h-3.5 text-amber-600" />
+                                Nivel 3: Crítico (Decisión y Argumentación Escrita)
+                              </span>
+                              <div className="space-y-2">
+                                {criticalAns.map(({ q, a }, idx) => {
+                                  const chosen = q.options.find(o => o.id === a?.selectedOptionId);
+                                  return (
+                                    <div key={q.id} className="p-2.5 rounded-lg bg-amber-50/40 border border-amber-100 space-y-1.5">
+                                      <div className="font-semibold text-slate-900">{idx + 1}. {q.questionText}</div>
+                                      <div className="text-[11px] text-slate-700">
+                                        Decisión: <strong className="text-amber-950">{chosen ? chosen.text : 'Sin responder'}</strong>
+                                      </div>
+                                      {a?.writtenArgument && (
+                                        <div className="p-3 bg-white rounded-lg border border-amber-200 text-[11px] text-slate-800 space-y-1 shadow-2xs">
+                                          <span className="font-bold text-amber-900 text-[10px] uppercase block">Argumento Escrito por el Estudiante:</span>
+                                          <p className="italic font-reading text-slate-800 leading-relaxed">"{a.writtenArgument}"</p>
+                                        </div>
+                                      )}
+                                      {a?.answeredAt && (
+                                        <div className="text-[10px] text-slate-400 font-mono">
+                                          Respondida: {formatFriendlyDate(a.answeredAt)}
+                                        </div>
+                                      )}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+
+                            {/* Desafío Ambiental */}
+                            {evidence ? (
+                              <div className="bg-emerald-50 border-2 border-emerald-300 rounded-xl p-3.5 space-y-2 shadow-2xs">
+                                <div className="flex items-center justify-between flex-wrap gap-1">
+                                  <span className="font-bold text-emerald-950 uppercase text-[11px] flex items-center gap-1.5">
+                                    <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+                                    Desafío Ambiental: {evidence.challengeTitle}
+                                  </span>
+                                  <span className="text-[10px] font-mono text-emerald-800 font-semibold">
+                                    Entregado: {formatFriendlyDate(evidence.submittedAt)}
+                                  </span>
+                                </div>
+                                <div className="space-y-1 bg-white p-2.5 rounded-lg border border-emerald-200">
+                                  {Object.entries(evidence.submittedData || {}).map(([key, val]) => (
+                                    <div key={key} className="text-[11px] leading-snug">
+                                      <span className="font-bold text-emerald-900 capitalize">{key}: </span>
+                                      <span className="text-slate-800 italic">{String(val)}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="text-[11px] text-slate-500 italic p-2.5 bg-white rounded-lg border border-slate-200">
+                                El estudiante aún no ha enviado la evidencia de este desafío ambiental.
+                              </div>
+                            )}
+
+                            {/* Reflexión del Pasaporte */}
+                            {passport && (
+                              <div className="bg-white border border-slate-200 rounded-xl p-3 space-y-1">
+                                <span className="text-[10px] font-bold text-amber-800 uppercase block">Reflexión de Campo en el Pasaporte:</span>
+                                <p className="italic text-slate-800 font-reading text-xs">"{passport.reflection}"</p>
+                                <span className="text-[10px] text-slate-400 block font-mono">Fecha de sellado: {passport.completedAt}</span>
+                              </div>
+                            )}
+
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* Insignias Obtenidas por el Estudiante */}
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-700 block">

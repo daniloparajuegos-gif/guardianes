@@ -406,6 +406,48 @@ export const MissionView: React.FC = () => {
         </div>
       </div>
 
+      {/* Barra de Guardado Rápido para el Estudiante */}
+      <div className="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-2.5 sm:p-3 flex items-center justify-between shadow-xs gap-2 animate-fadeIn">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm shadow-xs shrink-0">
+            💾
+          </div>
+          <div>
+            <span className="text-xs font-black text-emerald-950 block">¿Quieres asegurar tus respuestas?</span>
+            <span className="text-[11px] text-emerald-800 hidden sm:inline">Tu progreso se guarda automáticamente, pero puedes tocar para verificar en la nube:</span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleManualSave}
+          className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-black transition-all shadow-xs cursor-pointer border shrink-0 ${
+            saveStatus === 'saved'
+              ? 'bg-emerald-600 text-white border-emerald-700 scale-105'
+              : saveStatus === 'saving'
+              ? 'bg-amber-400 text-forest-950 border-amber-500 animate-pulse'
+              : 'bg-white hover:bg-emerald-100 text-emerald-900 border-emerald-400 hover:border-emerald-600'
+          }`}
+        >
+          {saveStatus === 'saved' ? (
+            <>
+              <CheckCircle2 className="w-4 h-4 text-amber-200" />
+              <span>✓ ¡GUARDADO EN LA NUBE!</span>
+            </>
+          ) : saveStatus === 'saving' ? (
+            <>
+              <Cloud className="w-4 h-4 animate-bounce" />
+              <span>Guardando...</span>
+            </>
+          ) : (
+            <>
+              <Save className="w-4 h-4 text-emerald-700" />
+              <span>GUARDAR MI PROGRESO</span>
+            </>
+          )}
+        </button>
+      </div>
+
       {/* Selector de Etapas Tipo Línea de Tiempo Luminosa */}
       <div className="space-y-1.5">
         <div className="bg-white border-2 border-emerald-200 rounded-2xl p-2 sm:p-2.5 overflow-x-auto shadow-sm">

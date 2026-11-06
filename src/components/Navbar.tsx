@@ -10,11 +10,25 @@ import {
   ChevronDown,
   LogOut,
   LogIn,
-  Sparkles
+  Sparkles,
+  Save,
+  CheckCircle2,
+  Cloud
 } from 'lucide-react';
+import { saveProfileToCloud } from '../services/firebase';
 import { StudentProfileModal } from './StudentProfileModal';
 
 export const Navbar: React.FC = () => {
+  const [globalSaveStatus, setGlobalSaveStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
+
+  const handleGlobalSave = async () => {
+    if (!activeProfile) return;
+    setGlobalSaveStatus('saving');
+    await saveProfileToCloud(activeProfile);
+    setGlobalSaveStatus('saved');
+    setTimeout(() => setGlobalSaveStatus('idle'), 3000);
+  };
+
   const { 
     activeProfile, 
     currentView, 
@@ -174,6 +188,36 @@ export const Navbar: React.FC = () => {
 
             {isLoggedIn && activeProfile ? (
               <div className="flex items-center gap-1.5 sm:gap-2">
+                {/* Botón Guardar Siempre Visible para el Estudiante */}
+                <button
+                  type="button"
+                  onClick={handleGlobalSave}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs transition-all shadow-xs cursor-pointer border ${
+                    globalSaveStatus === 'saved'
+                      ? 'bg-emerald-600 text-white border-emerald-700 shadow-sm scale-105'
+                      : globalSaveStatus === 'saving'
+                      ? 'bg-amber-400 text-forest-950 border-amber-500 animate-pulse'
+                      : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border-emerald-300 hover:border-emerald-500'
+                  }`}
+                  title="Guardar y confirmar que todo mi avance esté en la nube"
+                >
+                  {globalSaveStatus === 'saved' ? (
+                    <>
+                      <CheckCircle2 className="w-4 h-4 text-amber-200" />
+                      <span className="font-bold">¡Guardado!</span>
+                    </>
+                  ) : globalSaveStatus === 'saving' ? (
+                    <>
+                      <Cloud className="w-4 h-4 animate-bounce text-forest-950" />
+                      <span>Guardando...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Save className="w-4 h-4 text-emerald-700" />
+                      <span className="font-extrabold">Guardar</span>
+                    </>
+                  )}
+                </button>
                 {/* Perfil del Estudiante */}
                 <button
                   onClick={() => setIsProfileModalOpen(true)}
