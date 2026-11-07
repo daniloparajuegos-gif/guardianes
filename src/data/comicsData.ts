@@ -19,7 +19,7 @@ export interface ComicPanel {
   tailY?: number;
 }
 
-export const COMIC_MISSIONS_WITH_IMAGES: number[] = [1, 2, 3, 4, 5];
+export const COMIC_MISSIONS_WITH_IMAGES: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export const getComicPanelImage = (missionId: number, panelIndex: number) =>
   `/historietas/m${missionId}/p${panelIndex + 1}.webp`;
@@ -72,45 +72,45 @@ export const COMICS: Record<number, ComicPanel[]> = {
   6: [
     { title: "El mono de la cadena", narration: "Durante una misión en una comunidad cercana a Magangué, los Guardianes encontraron un mono que llevaba mucho tiempo viviendo en una vivienda." },
     { title: "Un espacio reducido", narration: "Permanecía sujeto mediante una cadena y pasaba gran parte del día en un espacio reducido." },
-    { title: "\"Lo criamos desde pequeño\"", narration: "La familia decía que lo quería mucho y que lo había criado desde pequeño.", speaker: "La señora", dialogue: "Lo criamos desde chiquito." },
-    { title: "Aves en jaulas", narration: "En otra vivienda encontraron aves mantenidas durante años en jaulas.", speaker: "Emanuel", dialogue: "¿Cuántos años llevarán ahí?" },
+    { title: "\"Lo criamos desde pequeño\"", narration: "La familia decía que lo quería mucho y que lo había criado desde pequeño.", speaker: "La señora", dialogue: "Lo criamos desde chiquito.", bubbleX: 45, bubbleY: 9, tailX: 32, tailY: 39 },
+    { title: "Aves en jaulas", narration: "En otra vivienda encontraron aves mantenidas durante años en jaulas.", speaker: "Emanuel", dialogue: "¿Cuántos años llevarán ahí?", bubbleX: 55, bubbleY: 57, tailX: 76, tailY: 42 },
     { title: "Comida y agua no bastan", narration: "Los Guardianes comprendieron que proporcionar alimento y agua no significa necesariamente satisfacer todas las necesidades de un animal silvestre. Los animales tienen comportamientos relacionados con movimiento, alimentación, refugio, interacción y reproducción." },
     { title: "Moverse y volar", narration: "Un mono necesita oportunidades de desplazamiento e interacción acordes con su especie; muchas aves necesitan posibilidades de movimiento y vuelo." },
     { title: "El cariño no lo hace doméstico", narration: "También entendieron que el cariño de una persona no convierte a un animal silvestre en doméstico. Cuando existe demanda de fauna silvestre como mascota, puede incentivarse la captura de nuevos individuos." },
   ],
   7: [
-    { title: "Algo se mueve entre las bolsas", narration: "Era mediodía y el calor hacía brillar el pavimento. Cerca de un basurero a cielo abierto, los Guardianes vieron moverse algo entre las bolsas rotas.", speaker: "Tomás", dialogue: "¿Vieron eso? Algo se movió." },
+    { title: "Algo se mueve entre las bolsas", narration: "Era mediodía y el calor hacía brillar el pavimento. Cerca de un basurero a cielo abierto, los Guardianes vieron moverse algo entre las bolsas rotas.", speaker: "Tomás", dialogue: "¿Vieron eso? Algo se movió.", bubbleX: 82, bubbleY: 9, tailX: 60, tailY: 16 },
     { title: "Perros y gatos de la calle", narration: "En un barrio de Magangué, los Guardianes encontraron perros y gatos que vivían en las calles. Algunos buscaban alimento entre residuos y otros presentaban heridas o enfermedades." },
-    { title: "El perro flaco y la familia de cachorros", narration: "Un perro flaco, con sarna en el lomo y las costillas marcadas, se acercó con desconfianza; detrás de él caminaba una perra seguida de varios cachorros.", speaker: "Sara", dialogue: "Tranquilo, amigo. No te vamos a hacer daño." },
-    { title: "Abandonado por la familia", narration: "Descubrieron que algunos habían sido abandonados después de haber sido animales de compañía. Una vecina contó que uno de esos perros había vivido en una casa de la cuadra hasta que la familia se mudó y lo dejó atrás.", speaker: "La vecina", dialogue: "Ese perrito vivía en esa casa." },
+    { title: "El perro flaco y la familia de cachorros", narration: "Un perro flaco, con sarna en el lomo y las costillas marcadas, se acercó con desconfianza; detrás de él caminaba una perra seguida de varios cachorros.", speaker: "Sara", dialogue: "Tranquilo, amigo. No te vamos a hacer daño.", bubbleX: 58, bubbleY: 84, tailX: 70, tailY: 64 },
+    { title: "Abandonado por la familia", narration: "Descubrieron que algunos habían sido abandonados después de haber sido animales de compañía. Una vecina contó que uno de esos perros había vivido en una casa de la cuadra hasta que la familia se mudó y lo dejó atrás.", speaker: "La vecina", dialogue: "Ese perrito vivía en esa casa.", bubbleX: 72, bubbleY: 25, tailX: 55, tailY: 42 },
     { title: "Los peligros de la calle", narration: "El abandono puede exponerlos al hambre, enfermedades, accidentes, peleas y maltrato." },
     { title: "Las verdaderas soluciones", narration: "El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las causas del problema. La tenencia responsable, la prevención del abandono, la atención veterinaria, la adopción y los programas de esterilización pueden contribuir a disminuir el número de animales que terminan en las calles." },
     { title: "De regreso a la escuela", narration: "Antes de irse, los Guardianes anotaron el lugar donde los habían encontrado y regresaron a la escuela pensando en lo que podían hacer." },
   ],
   8: [
-    { title: "La fotografía antigua", narration: "Desde lo alto de la colina, el viento caliente movía la fotografía entre las manos de los Guardianes. La imagen tenía más de cincuenta años y mostraba un valle cubierto por bosque seco tropical, con ceibas enormes y copas que se tocaban unas con otras.", speaker: "Tomás", dialogue: "Miren cómo era este valle..." },
-    { title: "Antes y ahora", narration: "Los Guardianes compararon una fotografía antigua con el paisaje actual. Donde antes había árboles y vegetación, ahora aparecían potreros, caminos y zonas intervenidas.", speaker: "Luna", dialogue: "¡No parece el mismo lugar!" },
+    { title: "La fotografía antigua", narration: "Desde lo alto de la colina, el viento caliente movía la fotografía entre las manos de los Guardianes. La imagen tenía más de cincuenta años y mostraba un valle cubierto por bosque seco tropical, con ceibas enormes y copas que se tocaban unas con otras.", speaker: "Tomás", dialogue: "Miren cómo era este valle...", bubbleX: 35, bubbleY: 15, tailX: 67, tailY: 40 },
+    { title: "Antes y ahora", narration: "Los Guardianes compararon una fotografía antigua con el paisaje actual. Donde antes había árboles y vegetación, ahora aparecían potreros, caminos y zonas intervenidas.", speaker: "Luna", dialogue: "¡No parece el mismo lugar!", bubbleX: 32, bubbleY: 13, tailX: 35, tailY: 44 },
     { title: "Tocones y tierra desnuda", narration: "Aquí y allá se veían troncos caídos, tocones cortados y parches de tierra desnuda donde ya casi no crecía nada." },
     { title: "Lo que es un bosque", narration: "Comprendieron que un bosque no es solamente un conjunto de árboles: allí existen animales, plantas, microorganismos, suelo, agua y relaciones ecológicas." },
     { title: "Lo que se pierde", narration: "Al desaparecer la cobertura vegetal pueden perderse refugios, alimento, sombra y protección del suelo." },
     { title: "Tocar la tierra seca", narration: "Uno de los Guardianes tocó la tierra seca bajo sus pies y comparó en silencio el paisaje que veía con el de la fotografía." },
   ],
   9: [
-    { title: "El mapa sobre la mesa", narration: "Sobre la mesa del salón, los Guardianes extendieron un mapa satelital de La Mojana y Magangué. Con el dedo siguieron las manchas verdes que todavía quedaban.", speaker: "Tomás", dialogue: "Quedan muy pocas manchas verdes." },
+    { title: "El mapa sobre la mesa", narration: "Sobre la mesa del salón, los Guardianes extendieron un mapa satelital de La Mojana y Magangué. Con el dedo siguieron las manchas verdes que todavía quedaban.", speaker: "Tomás", dialogue: "Quedan muy pocas manchas verdes.", bubbleX: 88, bubbleY: 24, tailX: 80, tailY: 47 },
     { title: "De conectado a dividido", narration: "El paisaje pasó de tener zonas de vegetación conectada a estar dividido por cultivos, potreros, viviendas y caminos." },
     { title: "Islas verdes", narration: "Ahora el verde aparecía en pequeños parches aislados, rodeados de cercas de alambre, potreros y carreteras destapadas." },
     { title: "Lo que da la tierra", narration: "La agricultura y la ganadería proporcionan recursos a las comunidades, pero la transformación excesiva puede fragmentar hábitats y modificar el suelo y el agua." },
     { title: "Familias campesinas", narration: "Muchas familias campesinas siembran maíz, yuca y plátano, y crían ganado en la sabana; de esas actividades depende buena parte de su alimento y su trabajo." },
-    { title: "Marcar el mapa", narration: "Los Guardianes debían analizar cómo utilizar el territorio sin ignorar las relaciones ecológicas. Para empezar, marcaron en el mapa cada parche de vegetación y observaron con cuidado qué los rodeaba.", speaker: "Luna", dialogue: "Marquemos cada parche, uno por uno." },
+    { title: "Marcar el mapa", narration: "Los Guardianes debían analizar cómo utilizar el territorio sin ignorar las relaciones ecológicas. Para empezar, marcaron en el mapa cada parche de vegetación y observaron con cuidado qué los rodeaba.", speaker: "Luna", dialogue: "Marquemos cada parche, uno por uno.", bubbleX: 14, bubbleY: 56, tailX: 19, tailY: 45 },
   ],
   10: [
-    { title: "El pescador y las dragas", narration: "El río bajaba ancho y oscuro. En la orilla, un pescador recogía su red con bocachicos y bagres, mientras a lo lejos se escuchaba el motor de las dragas que buscaban oro aguas arriba.", speaker: "Sara", dialogue: "¿Oyen ese motor a lo lejos?" },
+    { title: "El pescador y las dragas", narration: "El río bajaba ancho y oscuro. En la orilla, un pescador recogía su red con bocachicos y bagres, mientras a lo lejos se escuchaba el motor de las dragas que buscaban oro aguas arriba.", speaker: "Sara", dialogue: "¿Oyen ese motor a lo lejos?", bubbleX: 12, bubbleY: 6, tailX: 9, tailY: 17 },
     { title: "El caso del mercurio", narration: "En una zona relacionada con actividades mineras, los Guardianes estudiaron el caso del mercurio." },
     { title: "Mercurio para separar el oro", narration: "Aprendieron que en algunas minas se usa mercurio para separar el oro de la arena y del barro, y que parte de esa sustancia puede terminar en los caños y en el río." },
     { title: "Del ambiente a los organismos", narration: "Comprendieron que un contaminante puede entrar al ambiente y llegar a organismos." },
     { title: "Se acumula en la cadena alimentaria", narration: "Algunas sustancias pueden acumularse en los tejidos y aumentar su concentración a través de las relaciones alimentarias." },
     { title: "Hasta los seres humanos", narration: "Así, un problema que comienza en el agua puede terminar afectando organismos de diferentes niveles de una cadena alimentaria, incluidos los seres humanos que consumen determinados recursos." },
-    { title: "La comida de todos los días", narration: "El pescador escuchó con atención. Para él y su familia, el pescado del río era parte de la comida de todos los días.", speaker: "El pescador", dialogue: "En mi casa comemos pescado del río todos los días." },
+    { title: "La comida de todos los días", narration: "El pescador escuchó con atención. Para él y su familia, el pescado del río era parte de la comida de todos los días.", speaker: "El pescador", dialogue: "En mi casa comemos pescado del río todos los días.", bubbleX: 45, bubbleY: 8, tailX: 31, tailY: 33 },
   ],
   11: [
     { title: "Grava donde había bosque", narration: "El ruido de una retroexcavadora se escuchaba a lo lejos. Donde antes crecía un bosque junto al río, ahora había montículos de grava y huecos llenos de agua turbia.", speaker: "Emanuel", dialogue: "¿Aquí había un bosque?" },

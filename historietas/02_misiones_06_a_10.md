@@ -31,6 +31,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** La señora: "Lo criamos desde chiquito."
 
+**Globo:** en 45% 9%, cola hacia 32% 39%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] Una señora costeña de mediana edad, con delantal, sonríe con cariño mientras le ofrece un banano al mono aullador encadenado al árbol; a su lado, un señor muestra con las manos lo pequeño que era el mono cuando llegó. Los Guardianes escuchan con atención y respeto desde la entrada del patio. Ambiente afectuoso, luz cálida.
@@ -41,6 +43,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > En otra vivienda encontraron aves mantenidas durante años en jaulas.
 
 **Diálogo (opcional):** Emanuel: "¿Cuántos años llevarán ahí?"
+
+**Globo:** en 55% 57%, cola hacia 76% 42%
 
 **Prompt:**
 ```
@@ -85,6 +89,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** Tomás: "¿Vieron eso? Algo se movió."
 
+**Globo:** en 82% 9%, cola hacia 60% 16%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] Mediodía caluroso en un sector periférico de Magangué: pavimento que brilla por el calor, un basurero a cielo abierto con bolsas negras rotas. Algo se mueve entre las bolsas (solo se ve una cola). Los cuatro Guardianes (chaleco verde oliva, parche de hoja de ceiba) se detienen en la calle, cubriéndose del sol: Tomás (niño de 13 años, alto, pecas, gorra beige) señala; Sara (niña afrocolombiana, trenzas con cuentas amarillas, binoculares), Emanuel (niño zenú, sombrero vueltiao, cámara) y Luna (niña de 12 años, gafas redondas rojas, cinta amarilla, libreta verde) miran. Luz blanca y dura.
@@ -105,6 +111,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** Sara: "Tranquilo, amigo. No te vamos a hacer daño."
 
+**Globo:** en 58% 84%, cola hacia 70% 64%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] Primer plano a la altura del suelo: un perro criollo flaco, con parches sin pelo en el lomo y las costillas marcadas, se acerca despacio con la cabeza baja y la cola entre las patas, desconfiado. Detrás de él camina una perra delgada seguida por cuatro cachorros pequeños. Sara (niña afrocolombiana de 13 años, trenzas con cuentas amarillas, chaleco verde oliva) está en cuclillas, quieta, con la mano extendida con calma. Mirada tierna, sin heridas abiertas.
@@ -115,6 +123,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > Descubrieron que algunos habían sido abandonados después de haber sido animales de compañía. Una vecina contó que uno de esos perros había vivido en una casa de la cuadra hasta que la familia se mudó y lo dejó atrás.
 
 **Diálogo (opcional):** La vecina: "Ese perrito vivía en esa casa."
+
+**Globo:** en 72% 25%, cola hacia 55% 42%
 
 **Prompt:**
 ```
@@ -159,6 +169,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** Tomás: "Miren cómo era este valle..."
 
+**Globo:** en 35% 15%, cola hacia 67% 40%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] Plano medio de Tomás (niño de 13 años, alto, cabello castaño despeinado, pecas, gorra beige, chaleco verde oliva con parche de hoja de ceiba), con el rostro visible y asombrado, sosteniendo frente a él una fotografía antigua en blanco y negro, de bordes gastados, que se dobla con el viento. Dentro de la foto se ve un valle cubierto de bosque seco tropical con ceibas enormes de copas anchas que se tocan entre sí. Al fondo, desenfocado, el paisaje real desde lo alto de una colina. Luz caliente de mediodía.
@@ -169,6 +181,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > Los Guardianes compararon una fotografía antigua con el paisaje actual. Donde antes había árboles y vegetación, ahora aparecían potreros, caminos y zonas intervenidas.
 
 **Diálogo (opcional):** Luna: "¡No parece el mismo lugar!"
+
+**Globo:** en 32% 13%, cola hacia 35% 44%
 
 **Prompt:**
 ```
@@ -222,6 +236,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** Tomás: "Quedan muy pocas manchas verdes."
 
+**Globo:** en 88% 24%, cola hacia 80% 47%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] Interior de un salón de clases de colegio público de Magangué, con ventiladores de techo y ventanas de rejas: los cuatro Guardianes (chaleco verde oliva, parche de hoja de ceiba) inclinados sobre una mesa con un gran mapa satelital impreso. Tomás (niño de 13 años, pecas, gorra beige) sigue con el dedo una mancha verde; Luna (niña de 12 años, gafas redondas rojas, cinta amarilla, libreta verde), Sara (niña afrocolombiana, trenzas con cuentas amarillas) y Emanuel (niño zenú, sombrero vueltiao) observan. Luz natural de la mañana.
@@ -269,6 +285,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** Luna: "Marquemos cada parche, uno por uno."
 
+**Globo:** en 14% 56%, cola hacia 19% 45%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] De nuevo en el salón: primer plano del mapa satelital con varios parches verdes rodeados con círculos de marcador; las manos de Luna (niña de 12 años, gafas redondas rojas) y de Emanuel (niño zenú, sombrero vueltiao) marcan con marcadores de colores. Tomás (pecas, gorra beige) y Sara (trenzas con cuentas amarillas) miran de cerca con una lupa. Tono de investigación y trabajo en equipo.
@@ -284,6 +302,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > El río bajaba ancho y oscuro. En la orilla, un pescador recogía su red con bocachicos y bagres, mientras a lo lejos se escuchaba el motor de las dragas que buscaban oro aguas arriba.
 
 **Diálogo (opcional):** Sara: "¿Oyen ese motor a lo lejos?"
+
+**Globo:** en 12% 6%, cola hacia 9% 17%
 
 **Prompt:**
 ```
@@ -340,6 +360,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > El pescador escuchó con atención. Para él y su familia, el pescado del río era parte de la comida de todos los días.
 
 **Diálogo (opcional):** El pescador: "En mi casa comemos pescado del río todos los días."
+
+**Globo:** en 45% 8%, cola hacia 31% 33%
 
 **Prompt:**
 ```
