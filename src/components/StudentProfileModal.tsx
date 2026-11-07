@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useGuardian } from '../context/GuardianContext';
+import { useGuardian, isDemoProfile } from '../context/GuardianContext';
+import { DemoBadge } from './DemoBadge';
 import { X, Check, Compass, KeyRound, LogOut, ShieldCheck, Award } from 'lucide-react';
 
 interface Props {
@@ -82,6 +83,7 @@ export const StudentProfileModal: React.FC<Props> = ({ isOpen, onClose }) => {
                   <span className="text-xs font-bold px-2 py-0.5 rounded bg-emerald-200 text-emerald-900">
                     {activeProfile.grade}
                   </span>
+                  {isDemoProfile(activeProfile.id) && <DemoBadge />}
                   <span className="text-[11px] font-mono text-slate-500 font-medium">
                     Usuario: <strong className="text-emerald-800">{activeProfile.username}</strong>
                   </span>

@@ -49,7 +49,7 @@ export const LoginScreen: React.FC = () => {
   const [selectedAvatar, setSelectedAvatar] = useState<string>('fauna');
   const [newPin, setNewPin] = useState<string>('');
   const [registerError, setRegisterError] = useState<string>('');
-  const [registeredSuccessUser, setRegisteredSuccessUser] = useState<string | null>(null);
+  const [registeredProfile, setRegisteredProfile] = useState<StudentProfile | null>(null);
 
   // Estado para Acceso Docente
   const [teacherPass, setTeacherPass] = useState<string>('');
@@ -83,11 +83,21 @@ export const LoginScreen: React.FC = () => {
       return;
     }
 
+    if (registeredProfile) return; // Ya se creó: evitar perfiles duplicados por clics repetidos
+
     const res = registerStudent(newName, newGrade, selectedAvatar, newPin);
     if (!res.success) {
       setRegisterError(res.message || 'Error al registrar.');
     } else {
-      setRegisteredSuccessUser(res.profile.username);
+      setRegisteredProfile(res.profile);
+    }
+  };
+
+  const handleEnterAfterRegister = () => {
+    if (!registeredProfile) return;
+    const res = login(registeredProfile.id, registeredProfile.pin);
+    if (!res.success) {
+      setRegisterError(res.message || 'No se pudo entrar. Intenta por la pestaña "Ingresar".');
     }
   };
 
@@ -284,7 +294,49 @@ export const LoginScreen: React.FC = () => {
             {/* ========================================================
                 TAB 2: REGISTRO DE NUEVO GUARDIÁN
                 ======================================================== */}
-            {activeTab === 'student_register' && (
+            {activeTab === 'student_register' && registeredProfile && (
+              <div className="space-y-4 animate-fadeIn">
+                <div className="p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-400 text-center space-y-3">
+                  <div className="w-12 h-12 mx-auto rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-md">
+                    <Check className="w-7 h-7" />
+                  </div>
+                  <h3 className="font-display font-black text-lg text-emerald-900">
+                    ¡Tu pasaporte fue creado, {registeredProfile.name.split(' ')[0]}!
+                  </h3>
+                  <p className="text-xs text-slate-700">
+                    Este es tu <strong>Usuario ID</strong>. Escríbelo en tu cuaderno: lo necesitarás junto con tu PIN para entrar en las próximas clases.
+                  </p>
+                  <div className="py-3 px-4 bg-white border-2 border-dashed border-emerald-500 rounded-xl">
+                    <div className="text-[10px] uppercase tracking-wider font-bold text-slate-500">Tu Usuario ID</div>
+                    <div className="text-xl sm:text-2xl font-mono font-black text-emerald-800 break-all">
+                      @{registeredProfile.username}
+                    </div>
+                    <div className="text-[11px] text-slate-500 mt-1">Grado {registeredProfile.grade}</div>
+                  </div>
+                  <p className="text-[11px] text-amber-800 font-semibold">
+                    No vuelvas a registrarte: la próxima vez usa la pestaña "Ingresar".
+                  </p>
+                </div>
+
+                {registerError && (
+                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-300 text-xs text-rose-800 flex items-center gap-2 font-medium">
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                    <span>{registerError}</span>
+                  </div>
+                )}
+
+                <button
+                  type="button"
+                  onClick={handleEnterAfterRegister}
+                  className="w-full py-3.5 px-4 bg-gradient-to-r from-emerald-600 via-emerald-500 to-amber-500 hover:from-emerald-700 hover:to-amber-600 text-white font-bold text-xs sm:text-sm tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+                >
+                  <span>YA LO ANOTÉ, ENTRAR A MI AVENTURA</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+
+            {activeTab === 'student_register' && !registeredProfile && (
               <form onSubmit={handleRegister} className="space-y-4 animate-fadeIn">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="sm:col-span-2">

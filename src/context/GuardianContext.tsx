@@ -144,6 +144,11 @@ const INITIAL_PROFILES: StudentProfile[] = [
     currentMissionId: 3, collection: {}, missionRewards: {} }
 ];
 
+// Perfiles de ejemplo/demostración (no son estudiantes reales)
+export const DEMO_PROFILE_IDS: string[] = INITIAL_PROFILES.map(p => p.id);
+export const isDemoProfile = (profileId?: string | null): boolean =>
+  !!profileId && DEMO_PROFILE_IDS.includes(profileId);
+
 const GUEST_PROFILE: StudentProfile = {
   id: 'guest',
   name: 'Guardián Explorador',
@@ -423,15 +428,49 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Registro de nuevo estudiante individual
   const registerStudent = (name: string, grade: string, avatar: string, pin?: string) => {
-    const cleanName = name.trim();
+    const cleanName = name.trim().replace(/\s+/g, ' ');
     if (!cleanName) {
       return { success: false, profile: GUEST_PROFILE, message: 'Por favor ingresa un nombre válido.' };
     }
 
-    // Generar código/usuario único limpio: ej. valentina.m
-    const parts = cleanName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").split(' ');
+    // Solo letras y espacios: evita que se escriba un usuario (ej. "danna.cam.68") o el texto de ejemplo ("Ej.") como nombre
+    if (!/^[\p{L}' ]+$/u.test(cleanName)) {
+      return {
+        success: false,
+        profile: GUEST_PROFILE,
+        message: 'Escribe solo tu nombre y apellidos, sin números, puntos ni símbolos. Si ya tienes un usuario (como @danna.cam.68), entra por la pestaña "Ingresar".'
+      };
+    }
+    if (cleanName.split(' ').length < 2) {
+      return { success: false, profile: GUEST_PROFILE, message: 'Escribe tu nombre y al menos un apellido.' };
+    }
+
+    const cleanPin = (pin || '').trim();
+    if (!/^\d{4}$/.test(cleanPin)) {
+      return { success: false, profile: GUEST_PROFILE, message: 'Crea un PIN secreto de exactamente 4 números.' };
+    }
+
+    // Evitar perfiles duplicados: si ya existe alguien con el mismo nombre, no se crea otro
+    const existing = profiles.find(p => normalize(p.name) === normalize(cleanName));
+    if (existing) {
+      return {
+        success: false,
+        profile: GUEST_PROFILE,
+        message: `Ya existe un Guardián registrado con el nombre "${existing.name}" (${existing.grade}). Si eres tú, entra por la pestaña "Ingresar" con tu usuario. Si no lo recuerdas, pídelo a tu docente.`
+      };
+    }
+
+    // Generar código/usuario único: ej. valentina.mon.47 (sin repetir uno existente)
+    const parts = normalize(cleanName).replace(/'/g, '').split(' ');
     const userSlug = parts.length > 1 ? `${parts[0]}.${parts[1].slice(0, 3)}` : parts[0];
-    const username = `${userSlug}.${Math.floor(10 + Math.random() * 89)}`;
+    const taken = new Set(profiles.map(p => normalize(p.username || '')));
+    let username = '';
+    for (let attempt = 0; attempt < 200 && (!username || taken.has(username)); attempt++) {
+      username = `${userSlug}.${Math.floor(10 + Math.random() * 90)}`;
+    }
+    if (taken.has(username)) {
+      username = `${userSlug}.${Date.now().toString().slice(-4)}`;
+    }
 
     const newProfile: StudentProfile = {
       id: 'student_' + Date.now(),
@@ -439,7 +478,7 @@ export const GuardianProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       username,
       grade: grade || '7°A',
       avatar: avatar || 'fauna',
-      pin: pin?.trim() || '',
+      pin: cleanPin,
       createdAt: new Date().toISOString(),
       completedMissionIds: [],
       earnedBadges: [],

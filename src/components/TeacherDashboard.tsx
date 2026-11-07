@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { useGuardian } from '../context/GuardianContext';
+import { useGuardian, isDemoProfile } from '../context/GuardianContext';
+import { DemoBadge } from './DemoBadge';
 import { DEMO_TEACHER_STUDENTS, MISSIONS_DATA } from '../data/pedagogicalData';
 import { 
   GraduationCap, 
@@ -223,6 +224,7 @@ export const TeacherDashboard: React.FC = () => {
 
     return {
       id: p.id,
+      isDemo: isDemoProfile(p.id),
       name: p.name,
       username: p.username || p.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '.'),
       pin: p.pin || 'Sin PIN',
@@ -739,6 +741,7 @@ export const TeacherDashboard: React.FC = () => {
                         {st.name}
                       </span>
                       <div className="flex items-center gap-1">
+                        {st.isDemo && <DemoBadge />}
                         <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-md bg-white text-emerald-800 border border-emerald-300">
                           {st.grade}
                         </span>
@@ -808,6 +811,7 @@ export const TeacherDashboard: React.FC = () => {
                   </div>
                   <h3 className="font-display font-black text-2xl text-slate-900 mt-1">
                     {selectedStudent.name}
+                    {selectedStudent.isDemo && <DemoBadge className="ml-2 align-middle text-[10px]" />}
                   </h3>
                   <p className="text-xs text-slate-500 mt-0.5 font-medium">
                     Última actividad registrada: {selectedStudent.lastActive}
