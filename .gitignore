@@ -13,3 +13,6 @@ Thumbs.db
 
 # Respaldos locales con datos de estudiantes (no subir)
 respaldos/
+
+# Imágenes originales de las historietas (pesadas; en la app se usan las WebP de public/historietas)
+historietas/m*/

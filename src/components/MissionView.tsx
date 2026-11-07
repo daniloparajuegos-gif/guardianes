@@ -24,6 +24,8 @@ import {
 import { saveProfileToCloud } from '../services/firebase';
 
 import { RewardModal } from './collection/RewardModal';
+import { ComicViewer } from './ComicViewer';
+import { hasComic } from '../data/comicsData';
 
 export const MissionView: React.FC = () => {
   const { 
@@ -94,6 +96,8 @@ export const MissionView: React.FC = () => {
   // Estados de lectura: tamaño de letra y modo pergamino/claro
   const [fontSize, setFontSize] = useState<'normal' | 'large' | 'xlarge'>('normal');
   const [readingTheme, setReadingTheme] = useState<'light' | 'cream'>('light');
+  const [readingMode, setReadingMode] = useState<'text' | 'comic'>('text');
+  const comicAvailable = hasComic(mission.id);
 
   // Estado de respuestas seleccionadas en la sesión actual
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>(() => {
@@ -717,7 +721,35 @@ export const MissionView: React.FC = () => {
             </p>
           </div>
 
-          {/* Texto de lectura con diseño editorial de alto contraste */}
+          {/* Selector: leer como texto o como historieta (mismo contenido) */}
+          {comicAvailable && (
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+              <span className="text-xs font-bold text-forest-800">¿Cómo quieres leer el caso?</span>
+              <div className="flex bg-white border-2 border-emerald-200 rounded-xl p-1 text-xs font-bold w-full sm:w-auto">
+                <button
+                  type="button"
+                  onClick={() => setReadingMode('text')}
+                  className={`flex-1 sm:flex-none px-4 py-2 rounded-lg transition-all cursor-pointer ${readingMode === 'text' ? 'bg-emerald-600 text-white shadow-sm' : 'text-forest-700 hover:bg-emerald-50'}`}
+                >
+                  📖 Texto
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setReadingMode('comic')}
+                  className={`flex-1 sm:flex-none px-4 py-2 rounded-lg transition-all cursor-pointer ${readingMode === 'comic' ? 'bg-emerald-600 text-white shadow-sm' : 'text-forest-700 hover:bg-emerald-50'}`}
+                >
+                  💬 Historieta
+                </button>
+              </div>
+            </div>
+          )}
+
+          {comicAvailable && readingMode === 'comic' ? (
+            <div className="max-w-3xl mx-auto">
+              <ComicViewer missionId={mission.id} fontSize={fontSize} />
+            </div>
+          ) : (
+          /* Texto de lectura con diseño editorial de alto contraste */
           <div className={`rounded-3xl p-6 sm:p-12 shadow-md transition-all border-2 ${
             readingTheme === 'light'
               ? 'bg-white border-emerald-200 text-slate-900'
@@ -769,6 +801,7 @@ export const MissionView: React.FC = () => {
               </div>
             </div>
           </div>
+          )}
 
           {/* Botón para pasar al rastreo de pistas */}
           <div className="pt-4 flex flex-col-reverse sm:flex-row justify-between items-stretch sm:items-center gap-3">
