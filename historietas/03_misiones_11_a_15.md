@@ -13,6 +13,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** Emanuel: "¿Aquí había un bosque?"
 
+**Globo:** en 62% 8%, cola hacia 49% 30%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] Paisaje minero junto a un río del Caribe colombiano: montículos grises de grava y arena, cráteres llenos de agua turbia amarillo verdosa, y a lo lejos una retroexcavadora amarilla trabajando con una nube de polvo. Unos pocos árboles sobrevivientes en el borde. Los cuatro Guardianes (chaleco verde oliva, parche de hoja de ceiba) llegan por un camino de tierra: Tomás (niño de 13 años, alto, pecas, gorra beige), Sara (niña afrocolombiana de 13 años, trenzas con cuentas amarillas, binoculares), Emanuel (niño zenú de 12 años, sombrero vueltiao, cámara) y Luna (niña de 12 años, gafas redondas rojas, cinta amarilla, libreta verde). Luz dura, cielo blanquecino.
@@ -32,6 +34,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > La tierra estaba dura y agrietada, casi sin capa vegetal, y el río corría denso y de color marrón.
 
 **Diálogo (opcional):** Sara: "La tierra está dura como una piedra."
+
+**Globo:** en 72% 14%, cola hacia 41% 27%
 
 **Prompt:**
 ```
@@ -75,6 +79,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > Los Guardianes recorrieron diferentes sectores de Magangué y encontraron residuos acumulados en calles, lotes, zonas cercanas a viviendas y lugares próximos a caños y ciénagas.
 
 **Diálogo (opcional):** Tomás: "Hay basura por todas partes."
+
+**Globo:** en 14% 9%, cola hacia 20% 33%
 
 **Prompt:**
 ```
@@ -123,6 +129,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** Luna: "¡Qué humo tan fuerte!"
 
+**Globo:** en 50% 10%, cola hacia 42% 45%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] Esquina de un barrio al atardecer: un montón de basura ardiendo con una columna de humo negro y espeso que sube entre las casas con techo de zinc. Emanuel (niño zenú de 12 años, sombrero vueltiao, chaleco verde oliva) y Luna (niña de 12 años, gafas redondas rojas, cinta amarilla) se tapan la nariz con el brazo y miran el humo subir. Cielo naranja manchado de gris.
@@ -165,6 +173,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > Las personas del territorio comentaban que habían experimentado períodos de calor, lluvias fuertes, sequías y cambios repentinos del tiempo.
 
 **Diálogo (opcional):** Un vecino: "¡Ya uno no sabe ni cuándo va a llover!"
+
+**Globo:** en 56% 31%, cola hacia 66% 43%
 
 **Prompt:**
 ```
@@ -213,6 +223,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 
 **Diálogo (opcional):** Sara: "Miren esas nubes allá..."
 
+**Globo:** en 55% 14%, cola hacia 54% 45%
+
 **Prompt:**
 ```
 [BLOQUE DE ESTILO] Atardecer en la orilla del río Cauca: los cuatro Guardianes acostados o sentados en el playón miran un cielo enorme con nubes de tormenta a lo lejos y luz dorada cercana. Sara (niña afrocolombiana de 13 años, trenzas con cuentas amarillas) señala las nubes con el dedo. La casa de la abuela con su marca de creciente al fondo. Tono contemplativo y esperanzador.
@@ -228,6 +240,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > Desde la orilla, la ciénaga parecía un potrero verde. Casi no se veía el agua: solo hojas redondas y brillantes, y algunas flores de color lila.
 
 **Diálogo (opcional):** Sara: "¿Y dónde está el agua?"
+
+**Globo:** en 58% 38%, cola hacia 37% 31%
 
 **Prompt:**
 ```
@@ -248,6 +262,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > Un pescador les contó que desde hacía meses casi no podía atravesar la ciénaga con su canoa, porque las plantas se enredaban en el canalete.
 
 **Diálogo (opcional):** El pescador: "Ya ni puedo pasar con mi canoa."
+
+**Globo:** en 44% 8%, cola hacia 61% 20%
 
 **Prompt:**
 ```
@@ -276,7 +292,9 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 **Narración:**
 > Por eso, el equipo decidió que la primera herramienta de un Guardián no sería el machete, sino la pregunta.
 
-**Diálogo (opcional):** Emanuel: "Primero preguntar, después actuar."
+**Diálogo (opcional):** Luna: "Primero preguntar, después actuar."
+
+**Globo:** en 70% 10%, cola hacia 50% 35%
 
 **Prompt:**
 ```
@@ -293,6 +311,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > Después de completar sus misiones, los Guardianes reunieron las pistas.
 
 **Diálogo (opcional):** Luna: "¡Miren todo lo que hemos recogido!"
+
+**Globo:** en 78% 8%, cola hacia 61% 26%
 
 **Prompt:**
 ```
@@ -331,6 +351,8 @@ Al inicio de cada prompt va el **bloque de estilo** de `00_guia_estilo_y_persona
 > Comprendieron que ninguno de estos problemas estaba completamente aislado.
 
 **Diálogo (opcional):** Tomás: "Todo está unido..."
+
+**Globo:** en 70% 7%, cola hacia 80% 33%
 
 **Prompt:**
 ```

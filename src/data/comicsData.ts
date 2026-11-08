@@ -19,7 +19,7 @@ export interface ComicPanel {
   tailY?: number;
 }
 
-export const COMIC_MISSIONS_WITH_IMAGES: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+export const COMIC_MISSIONS_WITH_IMAGES: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 export const getComicPanelImage = (missionId: number, panelIndex: number) =>
   `/historietas/m${missionId}/p${panelIndex + 1}.webp`;
@@ -113,46 +113,46 @@ export const COMICS: Record<number, ComicPanel[]> = {
     { title: "La comida de todos los días", narration: "El pescador escuchó con atención. Para él y su familia, el pescado del río era parte de la comida de todos los días.", speaker: "El pescador", dialogue: "En mi casa comemos pescado del río todos los días.", bubbleX: 45, bubbleY: 8, tailX: 31, tailY: 33 },
   ],
   11: [
-    { title: "Grava donde había bosque", narration: "El ruido de una retroexcavadora se escuchaba a lo lejos. Donde antes crecía un bosque junto al río, ahora había montículos de grava y huecos llenos de agua turbia.", speaker: "Emanuel", dialogue: "¿Aquí había un bosque?" },
+    { title: "Grava donde había bosque", narration: "El ruido de una retroexcavadora se escuchaba a lo lejos. Donde antes crecía un bosque junto al río, ahora había montículos de grava y huecos llenos de agua turbia.", speaker: "Emanuel", dialogue: "¿Aquí había un bosque?", bubbleX: 62, bubbleY: 8, tailX: 49, tailY: 30 },
     { title: "Un territorio transformado", narration: "Los Guardianes observaron un territorio transformado por actividades mineras. Había zonas con vegetación removida y alteraciones del suelo y del agua." },
-    { title: "Tierra agrietada, río marrón", narration: "La tierra estaba dura y agrietada, casi sin capa vegetal, y el río corría denso y de color marrón.", speaker: "Sara", dialogue: "La tierra está dura como una piedra." },
+    { title: "Tierra agrietada, río marrón", narration: "La tierra estaba dura y agrietada, casi sin capa vegetal, y el río corría denso y de color marrón.", speaker: "Sara", dialogue: "La tierra está dura como una piedra.", bubbleX: 72, bubbleY: 14, tailX: 41, tailY: 27 },
     { title: "Efectos que viajan", narration: "Comprendieron que la extracción de recursos puede modificar el paisaje y que sus efectos pueden desplazarse mediante el agua, el viento y los organismos." },
     { title: "Lluvia y viento", narration: "Cuando llovía, el agua bajaba por las laderas peladas arrastrando barro hacia los caños, y en verano el viento levantaba polvo que caía sobre los cultivos cercanos." },
     { title: "El mapa de los cambios", narration: "La misión era identificar las relaciones entre extracción, territorio y ecosistemas. Con la libreta en la mano, el equipo empezó a dibujar un mapa de todo lo que había cambiado." },
   ],
   12: [
-    { title: "Residuos por todas partes", narration: "Los Guardianes recorrieron diferentes sectores de Magangué y encontraron residuos acumulados en calles, lotes, zonas cercanas a viviendas y lugares próximos a caños y ciénagas.", speaker: "Tomás", dialogue: "Hay basura por todas partes." },
+    { title: "Residuos por todas partes", narration: "Los Guardianes recorrieron diferentes sectores de Magangué y encontraron residuos acumulados en calles, lotes, zonas cercanas a viviendas y lugares próximos a caños y ciénagas.", speaker: "Tomás", dialogue: "Hay basura por todas partes.", bubbleX: 14, bubbleY: 9, tailX: 20, tailY: 33 },
     { title: "Bolsas, envases, llantas", narration: "Había bolsas, envases, restos de alimentos, llantas y otros residuos abandonados sobre el suelo." },
     { title: "La lluvia los arrastra", narration: "Cuando llovía, parte de estos materiales podía ser arrastrada hacia canales y cuerpos de agua." },
     { title: "Residuos en el agua", narration: "En algunos puntos encontraron residuos flotando o acumulados en cuerpos de agua. Los animales podían entrar en contacto con ellos o ingerirlos accidentalmente." },
     { title: "El suelo también se daña", narration: "En tierra, los residuos podían deteriorar el suelo y afectar organismos." },
-    { title: "El humo de la quema", narration: "Además, cuando algunas personas quemaban basura, se producía humo y se liberaban sustancias contaminantes al aire.", speaker: "Luna", dialogue: "¡Qué humo tan fuerte!" },
+    { title: "El humo de la quema", narration: "Además, cuando algunas personas quemaban basura, se producía humo y se liberaban sustancias contaminantes al aire.", speaker: "Luna", dialogue: "¡Qué humo tan fuerte!", bubbleX: 50, bubbleY: 10, tailX: 42, tailY: 45 },
     { title: "No desaparece aunque no la veamos", narration: "Los Guardianes comprendieron que la contaminación no desaparece porque dejemos de verla. Un residuo en una calle puede ser transportado por el agua; un contaminante del agua puede entrar en contacto con organismos; y la quema puede trasladar contaminantes al aire." },
     { title: "Un sistema conectado", narration: "Calles, suelos, caños, ciénagas, vegetación, animales y personas forman un sistema conectado." },
   ],
   13: [
     { title: "Las marcas en la pared", narration: "En la orilla del río Cauca, en La Mojana, una abuela señaló las marcas que las crecientes habían dejado en la pared de su casa. «Un año el agua llegó hasta aquí», dijo, «y al año siguiente este mismo playón se agrietó de tanta sequía»." },
-    { title: "Lo que contaban las personas", narration: "Las personas del territorio comentaban que habían experimentado períodos de calor, lluvias fuertes, sequías y cambios repentinos del tiempo.", speaker: "Un vecino", dialogue: "¡Ya uno no sabe ni cuándo va a llover!" },
+    { title: "Lo que contaban las personas", narration: "Las personas del territorio comentaban que habían experimentado períodos de calor, lluvias fuertes, sequías y cambios repentinos del tiempo.", speaker: "Un vecino", dialogue: "¡Ya uno no sabe ni cuándo va a llover!", bubbleX: 56, bubbleY: 31, tailX: 66, tailY: 43 },
     { title: "Pozos secos y cosechas perdidas", narration: "Hablaban de veranos cada vez más largos y calientes, de pozos que se secaban, de cosechas perdidas y de aguaceros fuertes que llegaban cuando nadie los esperaba." },
     { title: "Variaciones naturales y actividades humanas", narration: "Los Guardianes estudiaron que el clima tiene variaciones naturales, pero que las actividades humanas, especialmente la emisión de gases de efecto invernadero por combustibles fósiles y la deforestación, contribuyen al calentamiento global y pueden modificar condiciones climáticas." },
     { title: "Tala y quema en la región", narration: "En la región también habían visto la tala de bosques y la quema de rastrojos." },
     { title: "No todo tiene una sola causa", narration: "El equipo comprendió que no todos los eventos meteorológicos tienen una única causa humana, pero que el calentamiento global modifica el sistema climático y puede aumentar ciertos riesgos y cambios regionales." },
-    { title: "Leer el cielo", narration: "Al terminar, los Guardianes miraron el cielo y entendieron que leer el clima también es una forma de leer el territorio.", speaker: "Sara", dialogue: "Miren esas nubes allá..." },
+    { title: "Leer el cielo", narration: "Al terminar, los Guardianes miraron el cielo y entendieron que leer el clima también es una forma de leer el territorio.", speaker: "Sara", dialogue: "Miren esas nubes allá...", bubbleX: 55, bubbleY: 14, tailX: 54, tailY: 45 },
   ],
   14: [
-    { title: "Un potrero sobre el agua", narration: "Desde la orilla, la ciénaga parecía un potrero verde. Casi no se veía el agua: solo hojas redondas y brillantes, y algunas flores de color lila.", speaker: "Sara", dialogue: "¿Y dónde está el agua?" },
+    { title: "Un potrero sobre el agua", narration: "Desde la orilla, la ciénaga parecía un potrero verde. Casi no se veía el agua: solo hojas redondas y brillantes, y algunas flores de color lila.", speaker: "Sara", dialogue: "¿Y dónde está el agua?", bubbleX: 58, bubbleY: 38, tailX: 37, tailY: 31 },
     { title: "Tarulla por todas partes", narration: "En una ciénaga, los Guardianes observaron una gran cantidad de tarulla cubriendo la superficie del agua." },
-    { title: "El pescador que no puede pasar", narration: "Un pescador les contó que desde hacía meses casi no podía atravesar la ciénaga con su canoa, porque las plantas se enredaban en el canalete.", speaker: "El pescador", dialogue: "Ya ni puedo pasar con mi canoa." },
+    { title: "El pescador que no puede pasar", narration: "Un pescador les contó que desde hacía meses casi no podía atravesar la ciénaga con su canoa, porque las plantas se enredaban en el canalete.", speaker: "El pescador", dialogue: "Ya ni puedo pasar con mi canoa.", bubbleX: 44, bubbleY: 8, tailX: 61, tailY: 20 },
     { title: "Investigar antes de actuar", narration: "Antes de intervenir, decidieron investigar qué especie era, por qué había aumentado y qué efectos estaba produciendo. Tomaron fotografías, hicieron preguntas a los vecinos y buscaron información sobre plantas acuáticas." },
     { title: "Introducida, invasora... o no", narration: "Comprendieron que una especie introducida puede convertirse en invasora cuando causa impactos y se establece de manera que afecta comunidades o procesos ecológicos. No toda presencia abundante significa automáticamente que una especie sea invasora; primero hay que comprender el contexto." },
-    { title: "La primera herramienta: la pregunta", narration: "Por eso, el equipo decidió que la primera herramienta de un Guardián no sería el machete, sino la pregunta.", speaker: "Emanuel", dialogue: "Primero preguntar, después actuar." },
+    { title: "La primera herramienta: la pregunta", narration: "Por eso, el equipo decidió que la primera herramienta de un Guardián no sería el machete, sino la pregunta.", speaker: "Luna", dialogue: "Primero preguntar, después actuar.", bubbleX: 70, bubbleY: 10, tailX: 50, tailY: 35 },
   ],
   15: [
-    { title: "Reunir las pistas", narration: "Después de completar sus misiones, los Guardianes reunieron las pistas.", speaker: "Luna", dialogue: "¡Miren todo lo que hemos recogido!" },
+    { title: "Reunir las pistas", narration: "Después de completar sus misiones, los Guardianes reunieron las pistas.", speaker: "Luna", dialogue: "¡Miren todo lo que hemos recogido!", bubbleX: 78, bubbleY: 8, tailX: 61, tailY: 26 },
     { title: "Las primeras misiones", narration: "Recordaron las iguanas y la importancia de las hembras reproductoras; las icoteas, chigüiros y pisingos afectados por la cacería; el jaguar y la transformación del hábitat;" },
     { title: "Los animales en las casas", narration: "los animales silvestres mantenidos como mascotas; los monos encadenados y las aves enjauladas; los perros y gatos abandonados;" },
     { title: "El territorio herido", narration: "los bosques talados; los paisajes transformados; la minería y el mercurio; los residuos del municipio; el cambio climático y la tarulla en los humedales." },
-    { title: "Ningún problema está aislado", narration: "Comprendieron que ninguno de estos problemas estaba completamente aislado.", speaker: "Tomás", dialogue: "Todo está unido..." },
+    { title: "Ningún problema está aislado", narration: "Comprendieron que ninguno de estos problemas estaba completamente aislado.", speaker: "Tomás", dialogue: "Todo está unido...", bubbleX: 70, bubbleY: 7, tailX: 80, tailY: 33 },
     { title: "Cómo se conectan", narration: "El cambio del hábitat puede afectar a una especie; la disminución de una población puede alterar relaciones ecológicas; un contaminante puede desplazarse por el agua y las cadenas alimentarias; la transformación del territorio puede modificar suelo, vegetación y agua; y las decisiones humanas pueden afectar tanto a los ecosistemas como a las comunidades." },
     { title: "Proteger las relaciones", narration: "Los Guardianes descubrieron que proteger la naturaleza no significa salvar una especie aislada." },
     { title: "El territorio del que todos hacemos parte", narration: "Significa comprender las relaciones que mantienen vivo el territorio del que todos hacemos parte." },

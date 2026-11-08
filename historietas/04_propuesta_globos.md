@@ -45,7 +45,7 @@
 | | 7: Leer el cielo | Sara | 🆕 "Miren esas nubes allá..." | Cierre |
 | **14** La planta que cubrió el agua | 1: Un potrero sobre el agua | Sara | 🆕 "¿Y dónde está el agua?" | Llegada |
 | | 3: El pescador que no puede pasar | El pescador | 🆕 "Ya ni puedo pasar con mi canoa." | Emoción |
-| | 6: La primera herramienta | Emanuel | ✅ "Primero preguntar, después actuar." | Cierre |
+| | 6: La primera herramienta | Luna | ✅ "Primero preguntar, después actuar." (era Emanuel; en la imagen habla Luna) | Cierre |
 | **15** El equilibrio perdido | 1: Reunir las pistas | Luna | 🆕 "¡Miren todo lo que hemos recogido!" | Llegada |
 | | 5: Ningún problema está aislado | Tomás | 🆕 "Todo está unido..." | Descubrimiento |
 
