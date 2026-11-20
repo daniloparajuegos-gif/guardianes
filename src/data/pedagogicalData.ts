@@ -945,10 +945,10 @@ También entendieron que el cariño de una persona no convierte a un animal silv
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Cómo permanecía el mono en la vivienda?',
         options: [
-          { id: 'a', text: 'Un mono aullador atado con una cadena a un árbol.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe al mono en cautiverio.' },
-          { id: 'b', text: 'Un grupo de ardillas comiendo frutas en el suelo.', feedback: '🔎 El animal retenido era un primate de la región.' },
-          { id: 'c', text: 'Un oso perezoso durmiendo en las ramas altas.', feedback: '🔎 Revisa qué animal estaba amarrado en el patio.' },
-          { id: 'd', text: 'Dos iguanas hembras descansando sobre una cerca.', feedback: '🔎 La misión trata sobre el cautiverio de monos.' }
+          { id: 'a', text: 'Sujeto con una cadena y en un espacio reducido gran parte del día.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto dice que el mono permanecía sujeto mediante una cadena en un espacio reducido.' },
+          { id: 'b', text: 'Suelto, saltando por los árboles del patio.', feedback: '🔎 Relee la primera parte: el mono no estaba libre.' },
+          { id: 'c', text: 'Dentro de una pecera grande en la sala.', feedback: '🔎 Busca en el texto cómo estaba sujeto el mono.' },
+          { id: 'd', text: 'Durmiendo en una cama junto a los niños.', feedback: '🔎 El texto habla de una cadena y de un espacio reducido.' }
         ],
         pedagogicalTip: 'Localiza la descripción en la segunda frase del primer párrafo.'
       },
@@ -1306,10 +1306,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué elementos forman parte del bosque según el texto?',
         options: [
-          { id: 'a', text: 'Un páramo frío de alta montaña con frailejones.', feedback: '🔎 El contexto geográfico de Magangué es bosque seco y sabana tropical.' },
-          { id: 'b', text: 'Un bosque nublado de cordillera con orquídeas.', feedback: '🔎 Revisa el ecosistema caluroso y estacional que se describe.' },
-          { id: 'c', text: 'El bosque seco tropical de la región caribeña.', isCorrect: true, feedback: '🌿 ¡Exacto! Es uno de los ecosistemas más amenazados del país.' },
-          { id: 'd', text: 'Una plantación de pinos sembrada para hacer papel.', feedback: '🔎 Se trata del bosque seco natural que pierde su cobertura.' }
+          { id: 'a', text: 'Solo los árboles más altos, como las ceibas.', feedback: '🔎 El texto dice que un bosque no es solamente un conjunto de árboles.' },
+          { id: 'b', text: 'Únicamente los animales grandes que viven allí.', feedback: '🔎 Además de los animales, el texto nombra plantas, microorganismos, suelo y agua.' },
+          { id: 'c', text: 'Animales, plantas, microorganismos, suelo, agua y las relaciones entre ellos.', isCorrect: true, feedback: '🌿 ¡Exacto! El bosque es una red de seres vivos, suelo, agua y relaciones ecológicas.' },
+          { id: 'd', text: 'Los potreros, los caminos y las cercas.', feedback: '🔎 Esos elementos aparecieron cuando se perdió el bosque; no forman parte de él.' }
         ],
         pedagogicalTip: 'Extrae la lista de componentes de la tercera frase.'
       },
@@ -1320,10 +1320,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué puede perderse cuando desaparece la vegetación?',
         options: [
-          { id: 'a', text: 'Sombra fresca, humedad en el suelo y semillas que alimentan fauna.', isCorrect: true, feedback: '🌿 ¡Muy bien! Los árboles protegen la humedad y nutren la fauna.' },
-          { id: 'b', text: 'Metales preciosos y piedras de colores brillantes.', feedback: '🔎 Las funciones descritas son ecológicas: sombra, suelo y refugio.' },
-          { id: 'c', text: 'Calor sofocante y polvo seco que vuela por el aire.', feedback: '🔎 El calor y el polvo aparecen cuando se talan los árboles.' },
-          { id: 'd', text: 'Inundaciones constantes durante todo el verano.', feedback: '🔎 El bosque regula el agua y amortigua los vientos fuertes.' }
+          { id: 'a', text: 'Refugios y alimento para los animales, sombra y protección del suelo.', isCorrect: true, feedback: '🌿 ¡Muy bien! El texto nombra refugios, alimento, sombra y protección del suelo.' },
+          { id: 'b', text: 'Metales preciosos y piedras de colores brillantes.', feedback: '🔎 Busca lo que el texto dice que se pierde al desaparecer la cobertura vegetal.' },
+          { id: 'c', text: 'El calor del mediodía y el polvo del camino.', feedback: '🔎 Al perder vegetación hay más calor y polvo, no menos.' },
+          { id: 'd', text: 'Las inundaciones de todo el verano.', feedback: '🔎 Relee la última parte: se pierden refugios, alimento, sombra y protección del suelo.' }
         ],
         pedagogicalTip: 'Localiza la última oración del caso.'
       }
@@ -1336,10 +1336,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede la pérdida de árboles afectar a animales?',
         options: [
-          { id: 'a', text: 'Porque las motosierras calientan el suelo con su motor de gasolina.', feedback: '🔎 La causa es la pérdida de la cubierta vegetal y de la sombra.' },
-          { id: 'b', text: 'Porque los animales del bosque se llevan la humedad en sus patas.', feedback: '🔎 Al quitar los árboles, el suelo queda desprotegido frente al sol y la lluvia.' },
-          { id: 'c', text: 'El suelo no cambia, sigue teniendo la misma fertilidad con o sin monte.', feedback: '🔎 La tierra descubierta se erosiona y pierde sus nutrientes con rapidez.' },
-          { id: 'd', text: 'Porque las raíces sostenían la tierra y las hojas guardaban la humedad.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Sin árboles, el sol reseca la tierra y el viento se lleva el suelo fértil.' }
+          { id: 'a', text: 'Porque las motosierras asustan a los animales para siempre.', feedback: '🔎 Piensa en lo que los animales encontraban en el bosque.' },
+          { id: 'b', text: 'Porque los animales prefieren vivir en los potreros abiertos.', feedback: '🔎 Sin árboles, los animales pierden lo que necesitan para vivir.' },
+          { id: 'c', text: 'No los afecta, porque los animales comen en cualquier parte.', feedback: '🔎 El texto dice que al desaparecer la vegetación pueden perderse refugios y alimento.' },
+          { id: 'd', text: 'Porque se quedan sin refugio, sin alimento y sin sombra para vivir.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Los árboles dan a los animales nidos, comida y sombra.' }
         ],
         pedagogicalTip: 'Conecta la tala de árboles con la destrucción del hogar y la despensa de las especies.'
       },
@@ -1350,10 +1350,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre vegetación y protección del suelo?',
         options: [
-          { id: 'a', text: 'Los animales aprenden a fabricar sombrillas con ramas secas.', feedback: '🔎 La fauna huye o muere al destruirse su hábitat natural.' },
-          { id: 'b', text: 'Los pájaros y mamíferos se quedan sin nidos, comida ni sombra para vivir.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El bosque es la casa y el sustento de la fauna silvestre.' },
-          { id: 'c', text: 'Las aves prefieren vivir en el suelo para caminar más cómodas.', feedback: '🔎 Muchas aves necesitan copas altas para anidar y alimentarse.' },
-          { id: 'd', text: 'Los animales se alegran porque ahora entra más luz solar al suelo.', feedback: '🔎 La pérdida de árboles destruye las fuentes de frutos y semillas.' }
+          { id: 'a', text: 'La vegetación vuelve el suelo más duro y seco.', feedback: '🔎 Es al revés: sin vegetación el suelo se reseca y se compacta.' },
+          { id: 'b', text: 'Las raíces sostienen la tierra y las hojas la protegen del sol y la lluvia.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! La vegetación sujeta el suelo y lo protege; sin ella, la tierra queda desnuda.' },
+          { id: 'c', text: 'No hay relación: el suelo es igual con o sin plantas.', feedback: '🔎 Recuerda los parches de tierra desnuda donde ya casi no crecía nada.' },
+          { id: 'd', text: 'La vegetación se come los nutrientes y deja el suelo pobre.', feedback: '🔎 Las plantas aportan materia orgánica y protegen el suelo de la erosión.' }
         ],
         pedagogicalTip: 'Piensa en las raíces como una red que sostiene el suelo frente a la fuerza del agua y el viento.'
       },
@@ -1410,10 +1410,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué recuperar un bosque implica más que sembrar árboles?',
         options: [
-          { id: 'a', text: 'Porque un bosque seco no sirve para nada y solo produce ramas con espinas.', feedback: '🔎 El bosque seco protege acuíferos y alberga especies únicas del Caribe.' },
-          { id: 'b', text: 'Porque retiene agua en sequías, frena huracanes y da hogar a fauna única.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Este bosque es un escudo natural contra el cambio climático.' },
-          { id: 'c', text: 'Solo para que los poetas escriban canciones sobre árboles antiguos.', feedback: '🔎 Presta servicios ambientales indispensables para la vida campesina.' },
-          { id: 'd', text: 'Porque la madera fina se vende muy cara a compradores extranjeros.', feedback: '🔎 El valor real del bosque está en mantener vivo y fértil el territorio.' }
+          { id: 'a', text: 'Porque basta con sembrar cualquier árbol, aunque no sea de la región.', feedback: '🔎 Recuperar el bosque exige pensar en todas sus relaciones, no solo en sembrar.' },
+          { id: 'b', text: 'Porque un bosque incluye animales, plantas, suelo, agua y sus relaciones, y todo eso necesita recuperarse.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Un bosque es una red; recuperarlo es devolverle sus relaciones ecológicas.' },
+          { id: 'c', text: 'Solo para que el paisaje se vea verde en las fotografías.', feedback: '🔎 La razón es ecológica: el bosque sostiene la vida del territorio.' },
+          { id: 'd', text: 'Porque la madera fina se vende muy cara.', feedback: '🔎 Recuperar un bosque no busca venderlo, sino que vuelva a funcionar como ecosistema.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Distingue entre plantar árboles en hilera y restaurar un ecosistema forestal complejo y biodiverso.'
@@ -1465,10 +1465,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué actividades aparecen en el paisaje?',
         options: [
-          { id: 'a', text: 'Una selva continua e impenetrable que cubre cientos de kilómetros.', feedback: '🔎 El paisaje estaba dividido por caminos, cercas y fincas.' },
-          { id: 'b', text: 'Una gran ciudad llena de edificios altos y avenidas con semáforos.', feedback: '🔎 Se trata de una zona rural con mezcla de agricultura y parches verdes.' },
-          { id: 'c', text: 'Un paisaje con parches de bosque aislados entre potreros y cultivos.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe la fragmentación del territorio.' },
-          { id: 'd', text: 'Una playa desértica de arena blanca junto a un puerto marítimo.', feedback: '🔎 El entorno es la sabana y humedales de la región ribereña.' }
+          { id: 'a', text: 'La minería con dragas en el río.', feedback: '🔎 El texto habla de agricultura y ganadería, no de minería.' },
+          { id: 'b', text: 'La pesca en barcos grandes en el mar.', feedback: '🔎 Busca las actividades que dividieron la vegetación en el mapa.' },
+          { id: 'c', text: 'Cultivos, potreros, viviendas y caminos.', isCorrect: true, feedback: '🌿 ¡Correcto! El paisaje quedó dividido por cultivos, potreros, viviendas y caminos.' },
+          { id: 'd', text: 'Fábricas y edificios de una gran ciudad.', feedback: '🔎 Relee la frase que explica en qué se dividió el paisaje.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera oración.'
       },
@@ -1811,10 +1811,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué actividad transformó el territorio?',
         options: [
-          { id: 'a', text: 'Suelos negros muy húmedos cubiertos de flores de colores.', feedback: '🔎 El problema encontrado era el desgaste y resequedad de la tierra.' },
-          { id: 'b', text: 'Rocas de granito pulido traídas por un glaciar de hielo.', feedback: '🔎 En la sabana caribeña el impacto es la degradación del suelo fértil.' },
-          { id: 'c', text: 'Grandes lagos de aguas cristalinas rodeados de palmeras.', feedback: '🔎 La misión aborda el daño al suelo por malas prácticas agrícolas.' },
-          { id: 'd', text: 'Tierra dura, grietas en el suelo y poca capa vegetal fértil.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe la pérdida de suelo y la erosión.' }
+          { id: 'a', text: 'La ganadería extensiva con potreros llenos de vacas.', feedback: '🔎 El texto habla de una retroexcavadora y de actividades mineras, no de ganado.' },
+          { id: 'b', text: 'La construcción de una carretera hacia el pueblo.', feedback: '🔎 Busca qué actividades observaron los Guardianes junto al río.' },
+          { id: 'c', text: 'La siembra de arroz en las orillas del río.', feedback: '🔎 Fíjate en la máquina que se escuchaba y en lo que quedó donde antes había bosque.' },
+          { id: 'd', text: 'Las actividades mineras con retroexcavadoras junto al río.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto dice que el territorio fue transformado por actividades mineras.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera oración del caso.'
       },
@@ -1825,10 +1825,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué componentes fueron afectados?',
         options: [
-          { id: 'a', text: 'El paso constante de bicicletas de carreras los fines de semana.', feedback: '🔎 Las causas reales son ganadería excesiva y quemas agrícolas.' },
-          { id: 'b', text: 'El sobrepastoreo de ganado y las quemas repetidas de rastrojo.', isCorrect: true, feedback: '🌿 ¡Exacto! Pisotear sin descanso y quemar desgasta la tierra.' },
-          { id: 'c', text: 'El aterrizaje de avionetas comerciales en los potreros.', feedback: '🔎 Revisa las prácticas agropecuarias que dañan la tierra en el texto.' },
-          { id: 'd', text: 'La recolección de mangos maduros durante la época de cosecha.', feedback: '🔎 El pisoteo del ganado aprieta la tierra y no deja entrar aire ni agua.' }
+          { id: 'a', text: 'Solo los animales domésticos de las casas cercanas.', feedback: '🔎 El texto menciona cambios en elementos del paisaje, no en mascotas.' },
+          { id: 'b', text: 'La vegetación, el suelo y el agua del río.', isCorrect: true, feedback: '🌿 ¡Exacto! Hubo vegetación removida y alteraciones del suelo y del agua.' },
+          { id: 'c', text: 'Las escuelas y las calles del centro del pueblo.', feedback: '🔎 Revisa qué elementos de la naturaleza cambiaron junto al río.' },
+          { id: 'd', text: 'El aire de la ciudad y las nubes del cielo.', feedback: '🔎 Relee la frase que habla de vegetación removida y alteraciones del suelo y del agua.' }
         ],
         pedagogicalTip: 'Observa la segunda oración de la lectura.'
       },
@@ -1839,10 +1839,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Por qué los efectos pueden desplazarse según el texto?',
         options: [
-          { id: 'a', text: 'Monedas antiguas de oro y vasijas de plata brillante.', feedback: '🔎 Lo que pierde el suelo son sus propiedades biológicas y nutrientes.' },
-          { id: 'b', text: 'Capas de hielo congelado que guardan el frío de la noche.', feedback: '🔎 La pérdida es de fertilidad, agua y microorganismos del suelo.' },
-          { id: 'c', text: 'Nutrientes, gusanos benéficos, humedad y vida microscópica.', isCorrect: true, feedback: '🌿 ¡Muy bien! Un suelo sano está lleno de vida y materia orgánica.' },
-          { id: 'd', text: 'Gases tóxicos que quemaban las raíces de las plantas.', feedback: '🔎 El suelo vivo tiene materia orgánica que alimenta los cultivos.' }
+          { id: 'a', text: 'Porque las máquinas mineras recorren todo el municipio.', feedback: '🔎 El texto nombra tres medios naturales que llevan los efectos a otros lugares.' },
+          { id: 'b', text: 'Porque los Guardianes llevaron el barro en sus botas.', feedback: '🔎 Busca los tres medios que menciona la lectura: uno corre, otro sopla y otro se mueve.' },
+          { id: 'c', text: 'Porque el agua, el viento y los organismos los llevan a otros lugares.', isCorrect: true, feedback: '🌿 ¡Muy bien! El texto dice que los efectos pueden desplazarse mediante el agua, el viento y los organismos.' },
+          { id: 'd', text: 'Porque la grava se mueve sola cuando hace calor.', feedback: '🔎 La lectura explica que los efectos viajan con el agua, el viento y los organismos.' }
         ],
         pedagogicalTip: 'Extrae los tres vectores de propagación en la tercera frase.'
       }
@@ -1869,10 +1869,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo puede el agua transportar contaminantes o sedimentos?',
         options: [
-          { id: 'a', text: 'El maíz y la yuca crecen el triple de rápido en suelos erosionados.', feedback: '🔎 Sin abono natural ni agua retenida, las plantas no crecen bien.' },
-          { id: 'b', text: 'Las vacas prefieren comer piedras en lugar de pasto verde y fresco.', feedback: '🔎 El ganado se desnutre al acabarse el pasto de buena calidad.' },
-          { id: 'c', text: 'El suelo pierde fertilidad, no retiene humedad y rinde menos comida.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! La tierra cansada da cosechas más pobres a las familias.' },
-          { id: 'd', text: 'El suelo se vuelve tan suave que las personas se hunden hasta la rodilla.', feedback: '🔎 El pisoteo aprieta la tierra volviéndola dura como ladrillo.' }
+          { id: 'a', text: 'El agua limpia la tierra y hace desaparecer el barro.', feedback: '🔎 El barro no desaparece: el agua lo lleva a otro lugar.' },
+          { id: 'b', text: 'El agua solo transporta peces, nunca barro ni sustancias.', feedback: '🔎 Relee qué arrastraba el agua cuando llovía.' },
+          { id: 'c', text: 'La lluvia baja por las laderas peladas, arrastra barro y lo lleva a los caños y al río.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Sin vegetación, el agua de lluvia arrastra barro y sustancias hacia los caños.' },
+          { id: 'd', text: 'El agua sube desde el río hasta las montañas llevando grava.', feedback: '🔎 El agua corre de lo alto a lo bajo: de las laderas hacia los caños.' }
         ],
         pedagogicalTip: 'Imagina el río como una cinta transportadora: lo que se echa en la cabecera llega a las ciénagas bajas.'
       },
@@ -1883,10 +1883,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué los efectos ambientales pueden extenderse más allá del sitio de extracción?',
         options: [
-          { id: 'a', text: 'No existe relación, la comida que comemos viene de fábricas lejanas.', feedback: '🔎 Casi todos los alimentos nacen del suelo fértil cultivado por campesinos.' },
-          { id: 'b', text: 'Cuidar el suelo solo sirve para que los caminos se vean más bonitos.', feedback: '🔎 La seguridad alimentaria depende directamente de la salud de la tierra.' },
-          { id: 'c', text: 'El suelo erosionado produce alimentos con más vitaminas y minerales.', feedback: '🔎 La tierra desgastada produce alimentos de menor calidad y cantidad.' },
-          { id: 'd', text: 'Un suelo sano produce alimentos nutritivos y asegura la comida del pueblo.', isCorrect: true, feedback: '🌿 ¡Muy bien! Cuidar la tierra es cuidar el plato de comida de las familias.' }
+          { id: 'a', text: 'Porque la mina se agranda sola cada noche.', feedback: '🔎 Piensa en lo que transportan el agua y el viento.' },
+          { id: 'b', text: 'Porque los efectos se quedan siempre en el hueco donde se excavó.', feedback: '🔎 El texto dice lo contrario: los efectos pueden desplazarse.' },
+          { id: 'c', text: 'Porque los vecinos prefieren vivir lejos del río.', feedback: '🔎 Fíjate en el barro que llega a los caños y en el polvo que cae sobre los cultivos.' },
+          { id: 'd', text: 'Porque el barro viaja con la lluvia hasta los caños y el viento lleva el polvo a los cultivos cercanos.', isCorrect: true, feedback: '🌿 ¡Excelente! El daño no se queda quieto: el agua y el viento lo llevan a otros lugares.' }
         ],
         pedagogicalTip: 'Sintetiza: el agua fluye, el viento sopla y la fauna migra; el daño no se queda quieto.'
       }
@@ -1899,10 +1899,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué medidas de prevención y restauración propondrías?',
         options: [
-          { id: 'a', text: 'Poner más vacas en el mismo lote para que aprieten más la tierra.', feedback: '🔎 Aumentar el ganado en un lote agotado acelera la desertificación.' },
-          { id: 'b', text: 'Rotar potreros para descanso, sembrar árboles forrajeros y no quemar.', isCorrect: true, feedback: '🌿 ¡Brillante! La rotación y los árboles nutren el suelo y dan sombra al ganado.' },
-          { id: 'c', text: 'Quemar con fuego toda la finca antes de que empiece a llover.', feedback: '🔎 Las quemas matan la vida del suelo y aumentan la erosión.' },
-          { id: 'd', text: 'Bañar los potreros con venenos químicos para que no nazcan hierbas.', feedback: '🔎 Los venenos destruyen los insectos y microorganismos benéficos.' }
+          { id: 'a', text: 'Seguir excavando para que los huecos se llenen de agua y formen lagos.', feedback: '🔎 Más excavación aumenta el daño al suelo y al agua.' },
+          { id: 'b', text: 'Sembrar vegetación nativa en las orillas, recuperar el suelo y evitar que el barro llegue al río.', isCorrect: true, feedback: '🌿 ¡Brillante! Restaurar la vegetación sujeta el suelo y protege el agua.' },
+          { id: 'c', text: 'Tapar los huecos con basura para que el terreno quede plano.', feedback: '🔎 La basura contamina el suelo y el agua; no restaura el ecosistema.' },
+          { id: 'd', text: 'Dejar el terreno pelado para que se seque más rápido.', feedback: '🔎 Un suelo sin vegetación se erosiona y el barro sigue llegando al río.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Formula medidas de restauración ecológica de suelos y protección estricta de ecosistemas frágiles.'
@@ -1914,10 +1914,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué debería revisarse antes y durante una actividad extractiva?',
         options: [
-          { id: 'a', text: 'Enseñar técnicas de abono orgánico y dar apoyo para sembrar cercas vivas.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! La capacitación y el apoyo práctico mejoran la producción.' },
-          { id: 'b', text: 'Quitarle la finca a los campesinos que tengan un pedazo de tierra seca.', feedback: '🔎 Se debe apoyar a las familias con educación y herramientas, no con castigos.' },
-          { id: 'c', text: 'Decirles que abandonen el campo y se muden a buscar empleo a la capital.', feedback: '🔎 El campo es el corazón de la alimentación y de la cultura ribereña.' },
-          { id: 'd', text: 'Prohibir que la gente tenga animales domésticos o críe terneros.', feedback: '🔎 La ganadería bien manejada puede convivir en armonía con los árboles.' }
+          { id: 'a', text: 'Cómo afectará el suelo, el agua, la vegetación y a las comunidades, y vigilarlo mientras se trabaja.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! Antes de extraer hay que estudiar los impactos y después vigilarlos.' },
+          { id: 'b', text: 'Solo cuánto material se va a sacar cada día.', feedback: '🔎 La ganancia no es lo único: también hay que revisar el daño al territorio.' },
+          { id: 'c', text: 'Qué color tendrán las máquinas de la obra.', feedback: '🔎 Lo importante son los efectos sobre el agua, el suelo y las personas.' },
+          { id: 'd', text: 'Nada, porque los efectos se notan solo años después.', feedback: '🔎 Revisar antes y durante permite prevenir daños que luego son difíciles de reparar.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta la necesidad de estudios de impacto ambiental participativos y monitoreo en tiempo real.'
@@ -1929,10 +1929,10 @@ El equipo comprendió que alimentar ocasionalmente a un animal no soluciona las 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué la restauración ambiental es importante?',
         options: [
-          { id: 'a', text: 'Solo para que las lombrices de tierra tengan un lugar donde dormir.', feedback: '🔎 El suelo es la base de la alimentación, los bosques y el agua dulce.' },
-          { id: 'b', text: 'Porque la tierra limpia hace que los zapatos se ensucien menos al caminar.', feedback: '🔎 Proteger el suelo garantiza la vida y la comida de las futuras generaciones.' },
-          { id: 'c', text: 'Porque el suelo tarda siglos en formarse y si se pierde, no hay cosechas.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Pocos centímetros de tierra fértil sostienen toda la vida.' },
-          { id: 'd', text: 'No tiene importancia protegerlo, porque la tierra se puede comprar en bolsas.', feedback: '🔎 No es posible reemplazar millones de hectáreas de suelo fértil con tierra comprada.' }
+          { id: 'a', text: 'Solo para que las lombrices de tierra tengan un lugar donde dormir.', feedback: '🔎 La restauración beneficia al suelo, al agua, a la vegetación y a las personas.' },
+          { id: 'b', text: 'Porque así el paisaje se ve bonito en las fotografías.', feedback: '🔎 La razón principal es recuperar el ecosistema y proteger a quienes viven de él.' },
+          { id: 'c', text: 'Porque ayuda a recuperar el suelo, el agua y la vegetación que dañó la extracción, y protege a quienes viven del territorio.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Restaurar es reparar el daño y devolverle la vida al territorio.' },
+          { id: 'd', text: 'No tiene importancia, porque la tierra se puede comprar en bolsas.', feedback: '🔎 No es posible reemplazar con tierra comprada el suelo fértil y los ecosistemas perdidos.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Defiende la restauración como un acto de reparación ecológica y justicia con el territorio.'
@@ -2002,10 +2002,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué podía ocurrir con algunos residuos cuando llovía?',
         options: [
-          { id: 'a', text: 'En la cima de un cerro de piedra muy alejado del pueblo.', feedback: '🔎 El vertimiento ocurría en el caño que pasa junto a las casas.' },
-          { id: 'b', text: 'En un relleno sanitario moderno con sellado especial.', feedback: '🔎 Era un botadero a cielo abierto dentro del cuerpo de agua.' },
-          { id: 'c', text: 'En un caño cercano a las viviendas del barrio.', isCorrect: true, feedback: '🌿 ¡Exacto! Los desechos estaban dentro del cauce del agua.' },
-          { id: 'd', text: 'En la sala de espera de la estación de policía local.', feedback: '🔎 La basura tapaba el caño y amenazaba con inundaciones.' }
+          { id: 'a', text: 'Se disolvían en el agua y desaparecían.', feedback: '🔎 El texto dice que la contaminación no desaparece: cambia de lugar.' },
+          { id: 'b', text: 'Se quedaban siempre en el mismo sitio.', feedback: '🔎 Relee la última frase del primer párrafo.' },
+          { id: 'c', text: 'Podían ser arrastrados hacia canales y cuerpos de agua.', isCorrect: true, feedback: '🌿 ¡Exacto! La lluvia arrastra parte de los residuos hacia canales, caños y ciénagas.' },
+          { id: 'd', text: 'Se convertían en abono para las plantas.', feedback: '🔎 Bolsas, envases y llantas no se vuelven abono; la lluvia los arrastra.' }
         ],
         pedagogicalTip: 'Observa la última frase del primer párrafo.'
       },
@@ -2016,10 +2016,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué componentes del ambiente podían verse afectados?',
         options: [
-          { id: 'a', text: 'Mal olor, mosquitos, agua tapada y peligro de inundación.', isCorrect: true, feedback: '🌿 ¡Muy bien! La basura estancada causa enfermedades y desbordamientos.' },
-          { id: 'b', text: 'El agua se volvió dulce y cristalina como agua de manantial.', feedback: '🔎 La descomposición de basura contamina el agua y atrae plagas.' },
-          { id: 'c', text: 'Llegaron muchos turistas extranjeros a tomar fotos del lugar.', feedback: '🔎 El sitio olía mal y representaba un peligro de salud pública.' },
-          { id: 'd', text: 'Aparecieron peces de colores nadando felices entre el lodo.', feedback: '🔎 Los peces mueren por falta de oxígeno cuando el agua se pudre.' }
+          { id: 'a', text: 'El agua, el suelo, el aire, los animales y las personas.', isCorrect: true, feedback: '🌿 ¡Muy bien! El texto los presenta como un sistema conectado.' },
+          { id: 'b', text: 'Solo las calles del centro del municipio.', feedback: '🔎 El texto menciona también caños, ciénagas, suelo, aire y organismos.' },
+          { id: 'c', text: 'Únicamente los peces de la ciénaga.', feedback: '🔎 Además del agua, el texto habla del suelo, del aire, de los animales y de las personas.' },
+          { id: 'd', text: 'Ninguno, porque la basura no afecta a la naturaleza.', feedback: '🔎 El texto explica que la contaminación no desaparece porque dejemos de verla.' }
         ],
         pedagogicalTip: 'Extrae la red de componentes descrita en el segundo y tercer párrafo.'
       }
@@ -2046,10 +2046,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué contaminar un cuerpo de agua puede afectar a organismos que no viven permanentemente allí?',
         options: [
-          { id: 'a', text: 'Para que la alcaldía no tenga que hacer ningún trabajo en todo el año.', feedback: '🔎 La comunidad y el municipio deben trabajar juntos con responsabilidad.' },
-          { id: 'b', text: 'Porque todos botamos basura a diario y si el caño se tapa, nos inundamos todos.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El caño es compartido y su cuidado exige el esfuerzo de todos.' },
-          { id: 'c', text: 'Porque es un castigo obligatorio que impone la escuela en vacaciones.', feedback: '🔎 Cuidar el agua limpia es una necesidad vital para la salud del barrio.' },
-          { id: 'd', text: 'Con que limpie una sola persona alcanza para desocupar todo el caño.', feedback: '🔎 Si muchos siguen botando basura, el esfuerzo de uno solo no será suficiente.' }
+          { id: 'a', text: 'Porque esos organismos nunca se acercan al agua.', feedback: '🔎 Piensa en los animales que llegan al caño solo a beber o a comer.' },
+          { id: 'b', text: 'Porque animales y personas llegan a beber, comer o bañarse y entran en contacto con los residuos.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! Aunque no vivan en el agua, la usan y pueden tocar o ingerir los contaminantes.' },
+          { id: 'c', text: 'Porque la contaminación del agua solo afecta a los peces.', feedback: '🔎 El texto dice que los animales pueden entrar en contacto con los residuos o ingerirlos.' },
+          { id: 'd', text: 'Porque el agua sucia se limpia sola antes de que alguien la use.', feedback: '🔎 La contaminación no desaparece sola; sigue afectando a quien usa el agua.' }
         ],
         pedagogicalTip: 'Piensa en las especies que van al agua solo a beber o alimentarse: ganado, aves, seres humanos.'
       },
@@ -2060,10 +2060,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Qué relación existe entre quema de residuos y contaminación del aire?',
         options: [
-          { id: 'a', text: 'Los plásticos se rompen en partes diminutas que los peces tragan al comer.', isCorrect: true, feedback: '🌿 ¡Muy bien! Los microplásticos entran a la cadena alimentaria de los peces.' },
-          { id: 'b', text: 'Las botellas plásticas sirven de casita abrigada para los alevinos del río.', feedback: '🔎 La basura asfixia los fondos y envenena a la fauna acuática.' },
-          { id: 'c', text: 'El plástico se deshace en dos días y alimenta a las plantas de la orilla.', feedback: '🔎 El plástico no es biodegradable y contamina por siglos los humedales.' },
-          { id: 'd', text: 'Los peces del caño aprenden a fabricar herramientas con tapas de gaseosa.', feedback: '🔎 Muchos peces mueren atorados con plásticos en sus estómagos.' }
+          { id: 'a', text: 'Al quemar basura se produce humo que libera sustancias contaminantes al aire.', isCorrect: true, feedback: '🌿 ¡Muy bien! La quema no elimina la contaminación: la traslada al aire que respiramos.' },
+          { id: 'b', text: 'Quemar basura limpia el aire porque elimina los malos olores.', feedback: '🔎 El texto dice que la quema produce humo y libera sustancias contaminantes.' },
+          { id: 'c', text: 'No hay relación: el humo desaparece en cuanto sube.', feedback: '🔎 Recuerda: la contaminación no desaparece porque dejemos de verla.' },
+          { id: 'd', text: 'La quema solo afecta el suelo donde se hace la fogata.', feedback: '🔎 El texto explica que la quema traslada contaminantes al aire.' }
         ],
         pedagogicalTip: 'Recuerda: la materia no se destruye; quemar plástico traslada el veneno del suelo a los pulmones.'
       }
@@ -2106,10 +2106,10 @@ Los Guardianes comprendieron que la contaminación no desaparece porque dejemos 
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué solucionar la contaminación requiere acciones de toda la comunidad?',
         options: [
-          { id: 'a', text: 'Solo para que las calles del barrio se vean limpias cuando pasen carros.', feedback: '🔎 La razón principal es la salud pública, la vida de los peces y evitar inundaciones.' },
-          { id: 'b', text: 'Porque un caño tapado enferma a los niños y causa pérdidas a toda la comunidad.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! La basura estancada es un foco grave de epidemias e inundación.' },
-          { id: 'c', text: 'Porque a los mosquitos les molesta que haya agua corriendo por las cunetas.', feedback: '🔎 El agua estancada por basuras es donde nacen mosquitos transmisores del dengue.' },
-          { id: 'd', text: 'No tiene importancia mantenerlo limpio, el agua sucia es normal en el pueblo.', feedback: '🔎 Vivir en un ambiente limpio y con caños sanos es un derecho de todos.' }
+          { id: 'a', text: 'Porque basta con que la alcaldía limpie una vez al año.', feedback: '🔎 Si muchas personas siguen botando basura, una limpieza al año no alcanza.' },
+          { id: 'b', text: 'Porque calles, caños, ciénagas, animales y personas forman un sistema conectado y todos producimos residuos.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Si todos generamos residuos, todos debemos cuidar el sistema que compartimos.' },
+          { id: 'c', text: 'Porque es una tarea solo de los niños de la escuela.', feedback: '🔎 La responsabilidad es compartida entre personas, comunidad e instituciones.' },
+          { id: 'd', text: 'No hace falta: cada quien puede botar la basura donde quiera.', feedback: '🔎 La basura de uno termina afectando el agua, el aire y la salud de todos.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Sustenta el principio de bien común y corresponsabilidad ciudadana e institucional.'
@@ -2193,10 +2193,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué diferencia establece el texto entre el clima y eventos particulares?',
         options: [
-          { id: 'a', text: 'Abundancia de pasto verde y ríos llenos de peces todo el tiempo.', feedback: '🔎 La sequía extrema seca los pozos y marchita los cultivos del campo.' },
-          { id: 'b', text: 'Baja en el precio de todos los alimentos en las tiendas del barrio.', feedback: '🔎 Al perderse cosechas, la comida escasea y sube de precio.' },
-          { id: 'c', text: 'Aparición de nuevos manantiales de agua dulce en los patios.', feedback: '🔎 Los campesinos sufren por la falta de agua para sus animales.' },
-          { id: 'd', text: 'Pozos secos, pérdida de cosechas y muerte de ganado por sed.', isCorrect: true, feedback: '🌿 ¡Muy bien! Esos son los efectos directos que golpean a las familias campesinas.' }
+          { id: 'a', text: 'Que el clima y cada aguacero son exactamente lo mismo.', feedback: '🔎 El texto los distingue: no todo evento tiene una única causa.' },
+          { id: 'b', text: 'Que todos los eventos del tiempo son causados por las personas.', feedback: '🔎 El texto dice que no todos los eventos meteorológicos tienen una única causa humana.' },
+          { id: 'c', text: 'Que el clima nunca cambia y solo cambian los aguaceros.', feedback: '🔎 El texto explica que el calentamiento global sí modifica el sistema climático.' },
+          { id: 'd', text: 'Que no todo evento tiene una única causa humana, pero el calentamiento global modifica el clima y aumenta ciertos riesgos.', isCorrect: true, feedback: '🌿 ¡Muy bien! Un evento aislado no siempre se explica solo por la acción humana, aunque el clima en conjunto sí está cambiando.' }
         ],
         pedagogicalTip: 'Localiza la diferenciación en el segundo párrafo.'
       }
@@ -2209,10 +2209,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué no todo evento meteorológico tiene una única causa humana?',
         options: [
-          { id: 'a', text: 'Los árboles caídos atraen rayos y centellas que encienden el suelo.', feedback: '🔎 La tala libera gases de efecto invernadero y destruye el ciclo de humedad.' },
-          { id: 'b', text: 'Los árboles guardan carbono; al quemarlos, el calor se queda en el aire.', isCorrect: true, feedback: '🌿 ¡Gran deducción! Los árboles absorben carbono y refrescan el ambiente con vapor de agua.' },
-          { id: 'c', text: 'Las hojas verdes reflejan la luz de la luna hacia el espacio exterior.', feedback: '🔎 La vegetación funciona como un regulador natural de la temperatura.' },
-          { id: 'd', text: 'No tiene relación, el aire caliente viene únicamente del fondo del mar.', feedback: '🔎 La deforestación en tierra firme calienta directamente el clima local.' }
+          { id: 'a', text: 'Porque las personas no tienen ninguna relación con el clima.', feedback: '🔎 El texto dice que las actividades humanas sí contribuyen al calentamiento global.' },
+          { id: 'b', text: 'Porque el clima también tiene variaciones naturales que se suman a las causadas por las personas.', isCorrect: true, feedback: '🌿 ¡Gran deducción! El clima varía de forma natural y la acción humana agrega cambios a esa variación.' },
+          { id: 'c', text: 'Porque todos los aguaceros los provocan las quemas de rastrojo.', feedback: '🔎 Las quemas contribuyen, pero no explican cada evento por sí solas.' },
+          { id: 'd', text: 'Porque el tiempo atmosférico depende solo de la suerte.', feedback: '🔎 El texto habla de variaciones naturales y de actividades humanas, no de suerte.' }
         ],
         pedagogicalTip: 'Distingue entre la variabilidad natural del planeta y el calentamiento acelerado por actividades humanas.'
       },
@@ -2223,10 +2223,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Cómo pueden las emisiones humanas contribuir al calentamiento global?',
         options: [
-          { id: 'a', text: 'Los campesinos no saben cuándo sembrar porque las lluvias no llegan a tiempo.', isCorrect: true, feedback: '🌿 ¡Excelente deducción! El desorden climático hace fracasar las siembras tradicionales.' },
-          { id: 'b', text: 'Las plantas de yuca deciden caminar hacia zonas con más sombra y agua.', feedback: '🔎 La siembra depende de las lluvias regulares para que las semillas broten.' },
-          { id: 'c', text: 'Los agricultores prefieren esperar a que el maíz caiga del cielo solo.', feedback: '🔎 Las temporadas secas prolongadas secan las plántulas recién nacidas.' },
-          { id: 'd', text: 'El cambio de clima hace que las matas de plátano den cosechas de manzana.', feedback: '🔎 Las semillas se pierden si no llueve en las semanas previstas.' }
+          { id: 'a', text: 'Los gases de los combustibles fósiles se acumulan en la atmósfera y retienen el calor.', isCorrect: true, feedback: '🌿 ¡Excelente! Es el efecto invernadero: los gases atrapan el calor y calientan el planeta.' },
+          { id: 'b', text: 'Los gases enfrían el aire y hacen que llueva más.', feedback: '🔎 Los gases de efecto invernadero retienen el calor; no enfrían el planeta.' },
+          { id: 'c', text: 'Las emisiones desaparecen apenas salen de los carros.', feedback: '🔎 Los gases se acumulan en la atmósfera durante mucho tiempo.' },
+          { id: 'd', text: 'Solo los volcanes producen gases que calientan el planeta.', feedback: '🔎 El texto señala la emisión de gases por combustibles fósiles como una causa humana.' }
         ],
         pedagogicalTip: 'Explica el mecanismo del efecto invernadero: retención del calor por acumulación de gases.'
       },
@@ -2237,10 +2237,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Las pistas ocultas',
         questionText: '¿Por qué la deforestación puede relacionarse con el cambio climático?',
         options: [
-          { id: 'a', text: 'Poner aires acondicionados en los potreros para enfriar a las vacas.', feedback: '🔎 Las soluciones reales son la restauración ecológica y el cuidado del agua.' },
-          { id: 'b', text: 'Construir techos de zinc gigantes sobre todo el monte del municipio.', feedback: '🔎 El zinc concentra más calor; la sombra natural de los árboles es la que refresca.' },
-          { id: 'c', text: 'Sembrar árboles y cuidar humedales ayuda a refrescar el aire y retener agua.', isCorrect: true, feedback: '🌿 ¡Muy bien! La vegetación y el agua amortiguan el impacto de las altas temperaturas.' },
-          { id: 'd', text: 'Dejar de tomar agua para acostumbrarse a vivir con la sequía permanente.', feedback: '🔎 La adaptación comunitaria protege los pozos, reservorios y bosques nativos.' }
+          { id: 'a', text: 'Porque los árboles talados atraen más lluvia.', feedback: '🔎 Al talar se pierde la capacidad del bosque de guardar carbono.' },
+          { id: 'b', text: 'Porque los bosques calientan el aire con sus hojas.', feedback: '🔎 Los bosques refrescan el ambiente y guardan carbono.' },
+          { id: 'c', text: 'Porque los árboles guardan carbono y, al talarlos o quemarlos, ese carbono vuelve al aire como gas que calienta el planeta.', isCorrect: true, feedback: '🌿 ¡Muy bien! Talar y quemar libera gases de efecto invernadero y quita la sombra que refresca.' },
+          { id: 'd', text: 'No tiene relación: el clima depende solo del mar.', feedback: '🔎 El texto nombra la deforestación como una actividad humana que contribuye al calentamiento.' }
         ],
         pedagogicalTip: 'Recuerda: el árbol vivo guarda carbono; el árbol talado o quemado lo devuelve como gas invernadero.'
       }
@@ -2268,10 +2268,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Por qué es importante distinguir entre tiempo atmosférico y clima?',
         options: [
-          { id: 'a', text: 'Gastando toda el agua del pozo rápido antes de que se la tome el vecino.', feedback: '🔎 El egoísmo deja a todo el pueblo sin agua en época de sequía.' },
-          { id: 'b', text: 'Organizando comités de agua, sembrando árboles nativos y cuidando aljibes.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! La unión campesina asegura el agua en veranos difíciles.' },
-          { id: 'c', text: 'Mudándose todos los meses a un barrio diferente para no sentir el calor.', feedback: '🔎 Se deben mejorar las condiciones del propio territorio con sombra y cuidado.' },
-          { id: 'd', text: 'Prohibiendo que los niños tomen agua durante las clases de la escuela.', feedback: '🔎 La gestión comunitaria busca cuidar y repartir el agua con equidad.' }
+          { id: 'a', text: 'Porque son dos palabras distintas para decir lo mismo.', feedback: '🔎 El tiempo es lo que pasa hoy; el clima es la tendencia de muchos años.' },
+          { id: 'b', text: 'Porque un aguacero o un día de calor no basta para hablar de cambio climático; hay que mirar lo que pasa durante muchos años.', isCorrect: true, feedback: '🌿 ¡Decisión sabia! El tiempo cambia de un día a otro; el clima se reconoce en las tendencias de décadas.' },
+          { id: 'c', text: 'Porque el clima cambia todos los días y el tiempo nunca cambia.', feedback: '🔎 Es al revés: el tiempo cambia a diario y el clima es el comportamiento de largo plazo.' },
+          { id: 'd', text: 'No es importante: si hoy hace fresco, el calentamiento global no existe.', feedback: '🔎 Un día fresco no niega una tendencia de calentamiento de muchos años.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Enfatiza la escala temporal: tiempo = hoy (horas/días); clima = tendencia histórica (décadas/siglos).'
@@ -2283,10 +2283,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'La decisión del Guardián',
         questionText: '¿Qué responsabilidades pueden asumir comunidad, instituciones y personas?',
         options: [
-          { id: 'a', text: 'Porque el agua dulce y la sombra vegetal son el sustento de la vida diaria.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Adaptarse al clima protege la salud, los cultivos y el futuro.' },
-          { id: 'b', text: 'Solo para que los abuelos no se quejen de que hace calor al mediodía.', feedback: '🔎 La supervivencia de las fincas y de la gente depende de cómo cuidemos los recursos.' },
-          { id: 'c', text: 'Porque a los animales silvestres les molesta que las nubes tapen el sol.', feedback: '🔎 Los humedales sanos actúan como esponjas frente a crecientes y sequías.' },
-          { id: 'd', text: 'No hace falta adaptarse, el clima siempre vuelve a ser el mismo de antes.', feedback: '🔎 El calentamiento global exige cambios urgentes en la forma de cuidar el bosque.' }
+          { id: 'a', text: 'Las personas, no quemar ni talar; la comunidad, cuidar el agua y los bosques; las instituciones, proteger el territorio y apoyar a las familias.', isCorrect: true, feedback: '🌿 ¡Gran pensamiento crítico! Cada uno, en su escala, puede reducir las causas y prepararse para los efectos.' },
+          { id: 'b', text: 'Solo los países ricos tienen responsabilidad; aquí no se puede hacer nada.', feedback: '🔎 Las acciones locales también cuentan para mitigar y adaptarse.' },
+          { id: 'c', text: 'Solo los abuelos deben preocuparse por el clima.', feedback: '🔎 La responsabilidad es de todas las personas, la comunidad y las instituciones.' },
+          { id: 'd', text: 'Nadie: el clima siempre vuelve a ser como antes.', feedback: '🔎 El calentamiento global exige cambios en la forma de cuidar el territorio.' }
         ],
         requiresWrittenArgument: true,
         pedagogicalTip: 'Distribuye responsabilidades según escala: individual (hábitos), comunitaria (resiliencia local) e institucional (políticas públicas).'
@@ -2338,10 +2338,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué planta observaron?',
         options: [
-          { id: 'a', text: 'Un manto verde y denso de plantas flotantes cubriendo toda la ciénaga.', isCorrect: true, feedback: '🌿 ¡Correcto! El texto describe la alfombra espesa de tarulla o jacinto.' },
-          { id: 'b', text: 'Un bosque de pinos gigantes que creció en medio del agua salada.', feedback: '🔎 La especie observada era una planta acuática flotante en agua dulce.' },
-          { id: 'c', text: 'Una manada de hipopótamos africanos caminando por la plaza central.', feedback: '🔎 El caso trata sobre la proliferación de vegetación sobre el agua.' },
-          { id: 'd', text: 'Una mancha de petróleo negro cubriendo las orillas del puerto.', feedback: '🔎 Se trataba de una planta flotante que no dejaba pasar las canoas.' }
+          { id: 'a', text: 'Tarulla, una planta acuática que cubría la superficie del agua.', isCorrect: true, feedback: '🌿 ¡Correcto! Los Guardianes observaron gran cantidad de tarulla en la ciénaga.' },
+          { id: 'b', text: 'Un bosque de mangle en la orilla del mar.', feedback: '🔎 El texto habla de una planta que flotaba sobre la ciénaga.' },
+          { id: 'c', text: 'Algas marinas traídas por un barco.', feedback: '🔎 Busca el nombre de la planta en el texto.' },
+          { id: 'd', text: 'Pasto de potrero sembrado para el ganado.', feedback: '🔎 La ciénaga parecía un potrero, pero en realidad estaba cubierta por tarulla.' }
         ],
         pedagogicalTip: 'La respuesta está en la primera línea.'
       },
@@ -2352,10 +2352,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Dónde se encontraba la planta?',
         options: [
-          { id: 'a', text: 'Un alga marina venenosa traída en las hélices de un submarino.', feedback: '🔎 En las ciénagas caribeñas prolifera la tarulla en aguas con aguas servidas.' },
-          { id: 'b', text: 'Matorrales de espinos secos que flotaban como balsas de madera.', feedback: '🔎 La planta acuática con flores lilas es conocida como tarulla o buchón.' },
-          { id: 'c', text: 'Hojas secas de eucalipto caídas desde las copas de los árboles.', feedback: '🔎 Se trata de una especie acuática de rápida multiplicación en humedales.' },
-          { id: 'd', text: 'La tarulla o jacinto de agua que tapaba por completo el espejo de agua.', isCorrect: true, feedback: '🌿 ¡Exacto! La tarulla se multiplicó en exceso por los nutrientes del agua.' }
+          { id: 'a', text: 'En un potrero lleno de ganado.', feedback: '🔎 La ciénaga solo parecía un potrero desde la orilla.' },
+          { id: 'b', text: 'En la orilla del mar Caribe.', feedback: '🔎 Relee dónde estaban los Guardianes.' },
+          { id: 'c', text: 'En el patio de una casa del pueblo.', feedback: '🔎 El texto dice que la planta cubría la superficie de un cuerpo de agua.' },
+          { id: 'd', text: 'En una ciénaga, cubriendo la superficie del agua.', isCorrect: true, feedback: '🌿 ¡Exacto! La tarulla cubría casi por completo el agua de la ciénaga.' }
         ],
         pedagogicalTip: 'Localiza el escenario en la primera oración.'
       },
@@ -2366,10 +2366,10 @@ El equipo comprendió que no todos los eventos meteorológicos tienen una única
         levelLabel: 'Los ojos del Guardián',
         questionText: '¿Qué decidieron investigar antes de intervenir?',
         options: [
-          { id: 'a', text: 'Los peces aprendieron a caminar sobre las hojas verdes de la planta.', feedback: '🔎 La sombra total en el fondo impide que nazcan algas y falte el aire a los peces.' },
-          { id: 'b', text: 'No podían navegar en canoa y los peces empezaron a asfixiarse abajo.', isCorrect: true, feedback: '🌿 ¡Muy bien! El manto tapa la luz, agota el oxígeno y tranca el paso de canoas.' },
-          { id: 'c', text: 'Las canoas flotaban más rápido y navegaban con mayor facilidad.', feedback: '🔎 La masa vegetal enreda los canaletes y motores impidiendo la pesca.' },
-          { id: 'd', text: 'El agua se volvió de sabor dulce como jugo de frutas maduras.', feedback: '🔎 Al morir la planta, se pudre en el fondo y genera mal olor y asfixia acuática.' }
+          { id: 'a', text: 'Cuánto pagarían por cortar la planta con machete.', feedback: '🔎 Antes de intervenir decidieron investigar, no cortar.' },
+          { id: 'b', text: 'Qué especie era, por qué había aumentado y qué efectos estaba produciendo.', isCorrect: true, feedback: '🌿 ¡Muy bien! Esas fueron las tres preguntas que se hicieron antes de actuar.' },
+          { id: 'c', text: 'Cómo vender las flores lilas en el mercado.', feedback: '🔎 Busca las tres cosas que decidieron investigar.' },
+          { id: 'd', text: 'Quién había sembrado la planta en la ciénaga.', feedback: '🔎 Relee la frase que empieza con «Antes de intervenir».' }
         ],
         pedagogicalTip: 'Extrae las tres preguntas de investigación en la segunda oración.'
       }

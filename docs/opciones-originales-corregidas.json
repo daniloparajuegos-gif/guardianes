@@ -1,0 +1,640 @@
+{
+ "m11_l1": {
+  "questionText": "¿Qué actividad transformó el territorio?",
+  "correcta": "d",
+  "opciones_originales": [
+   [
+    "a",
+    "Suelos negros muy húmedos cubiertos de flores de colores."
+   ],
+   [
+    "b",
+    "Rocas de granito pulido traídas por un glaciar de hielo."
+   ],
+   [
+    "c",
+    "Grandes lagos de aguas cristalinas rodeados de palmeras."
+   ],
+   [
+    "d",
+    "Tierra dura, grietas en el suelo y poca capa vegetal fértil."
+   ]
+  ]
+ },
+ "m11_l2": {
+  "questionText": "¿Qué componentes fueron afectados?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "El paso constante de bicicletas de carreras los fines de semana."
+   ],
+   [
+    "b",
+    "El sobrepastoreo de ganado y las quemas repetidas de rastrojo."
+   ],
+   [
+    "c",
+    "El aterrizaje de avionetas comerciales en los potreros."
+   ],
+   [
+    "d",
+    "La recolección de mangos maduros durante la época de cosecha."
+   ]
+  ]
+ },
+ "m11_l3": {
+  "questionText": "¿Por qué los efectos pueden desplazarse según el texto?",
+  "correcta": "c",
+  "opciones_originales": [
+   [
+    "a",
+    "Monedas antiguas de oro y vasijas de plata brillante."
+   ],
+   [
+    "b",
+    "Capas de hielo congelado que guardan el frío de la noche."
+   ],
+   [
+    "c",
+    "Nutrientes, gusanos benéficos, humedad y vida microscópica."
+   ],
+   [
+    "d",
+    "Gases tóxicos que quemaban las raíces de las plantas."
+   ]
+  ]
+ },
+ "m11_i2": {
+  "questionText": "¿Cómo puede el agua transportar contaminantes o sedimentos?",
+  "correcta": "c",
+  "opciones_originales": [
+   [
+    "a",
+    "El maíz y la yuca crecen el triple de rápido en suelos erosionados."
+   ],
+   [
+    "b",
+    "Las vacas prefieren comer piedras en lugar de pasto verde y fresco."
+   ],
+   [
+    "c",
+    "El suelo pierde fertilidad, no retiene humedad y rinde menos comida."
+   ],
+   [
+    "d",
+    "El suelo se vuelve tan suave que las personas se hunden hasta la rodilla."
+   ]
+  ]
+ },
+ "m11_i3": {
+  "questionText": "¿Por qué los efectos ambientales pueden extenderse más allá del sitio de extracción?",
+  "correcta": "d",
+  "opciones_originales": [
+   [
+    "a",
+    "No existe relación, la comida que comemos viene de fábricas lejanas."
+   ],
+   [
+    "b",
+    "Cuidar el suelo solo sirve para que los caminos se vean más bonitos."
+   ],
+   [
+    "c",
+    "El suelo erosionado produce alimentos con más vitaminas y minerales."
+   ],
+   [
+    "d",
+    "Un suelo sano produce alimentos nutritivos y asegura la comida del pueblo."
+   ]
+  ]
+ },
+ "m11_c1": {
+  "questionText": "¿Qué medidas de prevención y restauración propondrías?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "Poner más vacas en el mismo lote para que aprieten más la tierra."
+   ],
+   [
+    "b",
+    "Rotar potreros para descanso, sembrar árboles forrajeros y no quemar."
+   ],
+   [
+    "c",
+    "Quemar con fuego toda la finca antes de que empiece a llover."
+   ],
+   [
+    "d",
+    "Bañar los potreros con venenos químicos para que no nazcan hierbas."
+   ]
+  ]
+ },
+ "m11_c2": {
+  "questionText": "¿Qué debería revisarse antes y durante una actividad extractiva?",
+  "correcta": "a",
+  "opciones_originales": [
+   [
+    "a",
+    "Enseñar técnicas de abono orgánico y dar apoyo para sembrar cercas vivas."
+   ],
+   [
+    "b",
+    "Quitarle la finca a los campesinos que tengan un pedazo de tierra seca."
+   ],
+   [
+    "c",
+    "Decirles que abandonen el campo y se muden a buscar empleo a la capital."
+   ],
+   [
+    "d",
+    "Prohibir que la gente tenga animales domésticos o críe terneros."
+   ]
+  ]
+ },
+ "m11_c3": {
+  "questionText": "¿Por qué la restauración ambiental es importante?",
+  "correcta": "c",
+  "opciones_originales": [
+   [
+    "a",
+    "Solo para que las lombrices de tierra tengan un lugar donde dormir."
+   ],
+   [
+    "b",
+    "Porque la tierra limpia hace que los zapatos se ensucien menos al caminar."
+   ],
+   [
+    "c",
+    "Porque el suelo tarda siglos en formarse y si se pierde, no hay cosechas."
+   ],
+   [
+    "d",
+    "No tiene importancia protegerlo, porque la tierra se puede comprar en bolsas."
+   ]
+  ]
+ },
+ "m12_l2": {
+  "questionText": "¿Qué podía ocurrir con algunos residuos cuando llovía?",
+  "correcta": "c",
+  "opciones_originales": [
+   [
+    "a",
+    "En la cima de un cerro de piedra muy alejado del pueblo."
+   ],
+   [
+    "b",
+    "En un relleno sanitario moderno con sellado especial."
+   ],
+   [
+    "c",
+    "En un caño cercano a las viviendas del barrio."
+   ],
+   [
+    "d",
+    "En la sala de espera de la estación de policía local."
+   ]
+  ]
+ },
+ "m12_l3": {
+  "questionText": "¿Qué componentes del ambiente podían verse afectados?",
+  "correcta": "a",
+  "opciones_originales": [
+   [
+    "a",
+    "Mal olor, mosquitos, agua tapada y peligro de inundación."
+   ],
+   [
+    "b",
+    "El agua se volvió dulce y cristalina como agua de manantial."
+   ],
+   [
+    "c",
+    "Llegaron muchos turistas extranjeros a tomar fotos del lugar."
+   ],
+   [
+    "d",
+    "Aparecieron peces de colores nadando felices entre el lodo."
+   ]
+  ]
+ },
+ "m12_i2": {
+  "questionText": "¿Por qué contaminar un cuerpo de agua puede afectar a organismos que no viven permanentemente allí?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "Para que la alcaldía no tenga que hacer ningún trabajo en todo el año."
+   ],
+   [
+    "b",
+    "Porque todos botamos basura a diario y si el caño se tapa, nos inundamos todos."
+   ],
+   [
+    "c",
+    "Porque es un castigo obligatorio que impone la escuela en vacaciones."
+   ],
+   [
+    "d",
+    "Con que limpie una sola persona alcanza para desocupar todo el caño."
+   ]
+  ]
+ },
+ "m12_i3": {
+  "questionText": "¿Qué relación existe entre quema de residuos y contaminación del aire?",
+  "correcta": "a",
+  "opciones_originales": [
+   [
+    "a",
+    "Los plásticos se rompen en partes diminutas que los peces tragan al comer."
+   ],
+   [
+    "b",
+    "Las botellas plásticas sirven de casita abrigada para los alevinos del río."
+   ],
+   [
+    "c",
+    "El plástico se deshace en dos días y alimenta a las plantas de la orilla."
+   ],
+   [
+    "d",
+    "Los peces del caño aprenden a fabricar herramientas con tapas de gaseosa."
+   ]
+  ]
+ },
+ "m12_c3": {
+  "questionText": "¿Por qué solucionar la contaminación requiere acciones de toda la comunidad?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "Solo para que las calles del barrio se vean limpias cuando pasen carros."
+   ],
+   [
+    "b",
+    "Porque un caño tapado enferma a los niños y causa pérdidas a toda la comunidad."
+   ],
+   [
+    "c",
+    "Porque a los mosquitos les molesta que haya agua corriendo por las cunetas."
+   ],
+   [
+    "d",
+    "No tiene importancia mantenerlo limpio, el agua sucia es normal en el pueblo."
+   ]
+  ]
+ },
+ "m13_l3": {
+  "questionText": "¿Qué diferencia establece el texto entre el clima y eventos particulares?",
+  "correcta": "d",
+  "opciones_originales": [
+   [
+    "a",
+    "Abundancia de pasto verde y ríos llenos de peces todo el tiempo."
+   ],
+   [
+    "b",
+    "Baja en el precio de todos los alimentos en las tiendas del barrio."
+   ],
+   [
+    "c",
+    "Aparición de nuevos manantiales de agua dulce en los patios."
+   ],
+   [
+    "d",
+    "Pozos secos, pérdida de cosechas y muerte de ganado por sed."
+   ]
+  ]
+ },
+ "m13_i1": {
+  "questionText": "¿Por qué no todo evento meteorológico tiene una única causa humana?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "Los árboles caídos atraen rayos y centellas que encienden el suelo."
+   ],
+   [
+    "b",
+    "Los árboles guardan carbono; al quemarlos, el calor se queda en el aire."
+   ],
+   [
+    "c",
+    "Las hojas verdes reflejan la luz de la luna hacia el espacio exterior."
+   ],
+   [
+    "d",
+    "No tiene relación, el aire caliente viene únicamente del fondo del mar."
+   ]
+  ]
+ },
+ "m13_i2": {
+  "questionText": "¿Cómo pueden las emisiones humanas contribuir al calentamiento global?",
+  "correcta": "a",
+  "opciones_originales": [
+   [
+    "a",
+    "Los campesinos no saben cuándo sembrar porque las lluvias no llegan a tiempo."
+   ],
+   [
+    "b",
+    "Las plantas de yuca deciden caminar hacia zonas con más sombra y agua."
+   ],
+   [
+    "c",
+    "Los agricultores prefieren esperar a que el maíz caiga del cielo solo."
+   ],
+   [
+    "d",
+    "El cambio de clima hace que las matas de plátano den cosechas de manzana."
+   ]
+  ]
+ },
+ "m13_i3": {
+  "questionText": "¿Por qué la deforestación puede relacionarse con el cambio climático?",
+  "correcta": "c",
+  "opciones_originales": [
+   [
+    "a",
+    "Poner aires acondicionados en los potreros para enfriar a las vacas."
+   ],
+   [
+    "b",
+    "Construir techos de zinc gigantes sobre todo el monte del municipio."
+   ],
+   [
+    "c",
+    "Sembrar árboles y cuidar humedales ayuda a refrescar el aire y retener agua."
+   ],
+   [
+    "d",
+    "Dejar de tomar agua para acostumbrarse a vivir con la sequía permanente."
+   ]
+  ]
+ },
+ "m13_c2": {
+  "questionText": "¿Por qué es importante distinguir entre tiempo atmosférico y clima?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "Gastando toda el agua del pozo rápido antes de que se la tome el vecino."
+   ],
+   [
+    "b",
+    "Organizando comités de agua, sembrando árboles nativos y cuidando aljibes."
+   ],
+   [
+    "c",
+    "Mudándose todos los meses a un barrio diferente para no sentir el calor."
+   ],
+   [
+    "d",
+    "Prohibiendo que los niños tomen agua durante las clases de la escuela."
+   ]
+  ]
+ },
+ "m13_c3": {
+  "questionText": "¿Qué responsabilidades pueden asumir comunidad, instituciones y personas?",
+  "correcta": "a",
+  "opciones_originales": [
+   [
+    "a",
+    "Porque el agua dulce y la sombra vegetal son el sustento de la vida diaria."
+   ],
+   [
+    "b",
+    "Solo para que los abuelos no se quejen de que hace calor al mediodía."
+   ],
+   [
+    "c",
+    "Porque a los animales silvestres les molesta que las nubes tapen el sol."
+   ],
+   [
+    "d",
+    "No hace falta adaptarse, el clima siempre vuelve a ser el mismo de antes."
+   ]
+  ]
+ },
+ "m6_l1": {
+  "questionText": "¿Cómo permanecía el mono en la vivienda?",
+  "correcta": "a",
+  "opciones_originales": [
+   [
+    "a",
+    "Un mono aullador atado con una cadena a un árbol."
+   ],
+   [
+    "b",
+    "Un grupo de ardillas comiendo frutas en el suelo."
+   ],
+   [
+    "c",
+    "Un oso perezoso durmiendo en las ramas altas."
+   ],
+   [
+    "d",
+    "Dos iguanas hembras descansando sobre una cerca."
+   ]
+  ]
+ },
+ "m8_l2": {
+  "questionText": "¿Qué elementos forman parte del bosque según el texto?",
+  "correcta": "c",
+  "opciones_originales": [
+   [
+    "a",
+    "Un páramo frío de alta montaña con frailejones."
+   ],
+   [
+    "b",
+    "Un bosque nublado de cordillera con orquídeas."
+   ],
+   [
+    "c",
+    "El bosque seco tropical de la región caribeña."
+   ],
+   [
+    "d",
+    "Una plantación de pinos sembrada para hacer papel."
+   ]
+  ]
+ },
+ "m8_l3": {
+  "questionText": "¿Qué puede perderse cuando desaparece la vegetación?",
+  "correcta": "a",
+  "opciones_originales": [
+   [
+    "a",
+    "Sombra fresca, humedad en el suelo y semillas que alimentan fauna."
+   ],
+   [
+    "b",
+    "Metales preciosos y piedras de colores brillantes."
+   ],
+   [
+    "c",
+    "Calor sofocante y polvo seco que vuela por el aire."
+   ],
+   [
+    "d",
+    "Inundaciones constantes durante todo el verano."
+   ]
+  ]
+ },
+ "m8_i1": {
+  "questionText": "¿Cómo puede la pérdida de árboles afectar a animales?",
+  "correcta": "d",
+  "opciones_originales": [
+   [
+    "a",
+    "Porque las motosierras calientan el suelo con su motor de gasolina."
+   ],
+   [
+    "b",
+    "Porque los animales del bosque se llevan la humedad en sus patas."
+   ],
+   [
+    "c",
+    "El suelo no cambia, sigue teniendo la misma fertilidad con o sin monte."
+   ],
+   [
+    "d",
+    "Porque las raíces sostenían la tierra y las hojas guardaban la humedad."
+   ]
+  ]
+ },
+ "m8_i2": {
+  "questionText": "¿Qué relación existe entre vegetación y protección del suelo?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "Los animales aprenden a fabricar sombrillas con ramas secas."
+   ],
+   [
+    "b",
+    "Los pájaros y mamíferos se quedan sin nidos, comida ni sombra para vivir."
+   ],
+   [
+    "c",
+    "Las aves prefieren vivir en el suelo para caminar más cómodas."
+   ],
+   [
+    "d",
+    "Los animales se alegran porque ahora entra más luz solar al suelo."
+   ]
+  ]
+ },
+ "m8_c3": {
+  "questionText": "¿Por qué recuperar un bosque implica más que sembrar árboles?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "Porque un bosque seco no sirve para nada y solo produce ramas con espinas."
+   ],
+   [
+    "b",
+    "Porque retiene agua en sequías, frena huracanes y da hogar a fauna única."
+   ],
+   [
+    "c",
+    "Solo para que los poetas escriban canciones sobre árboles antiguos."
+   ],
+   [
+    "d",
+    "Porque la madera fina se vende muy cara a compradores extranjeros."
+   ]
+  ]
+ },
+ "m9_l1": {
+  "questionText": "¿Qué actividades aparecen en el paisaje?",
+  "correcta": "c",
+  "opciones_originales": [
+   [
+    "a",
+    "Una selva continua e impenetrable que cubre cientos de kilómetros."
+   ],
+   [
+    "b",
+    "Una gran ciudad llena de edificios altos y avenidas con semáforos."
+   ],
+   [
+    "c",
+    "Un paisaje con parches de bosque aislados entre potreros y cultivos."
+   ],
+   [
+    "d",
+    "Una playa desértica de arena blanca junto a un puerto marítimo."
+   ]
+  ]
+ },
+ "m14_l1": {
+  "questionText": "¿Qué planta observaron?",
+  "correcta": "a",
+  "opciones_originales": [
+   [
+    "a",
+    "Un manto verde y denso de plantas flotantes cubriendo toda la ciénaga."
+   ],
+   [
+    "b",
+    "Un bosque de pinos gigantes que creció en medio del agua salada."
+   ],
+   [
+    "c",
+    "Una manada de hipopótamos africanos caminando por la plaza central."
+   ],
+   [
+    "d",
+    "Una mancha de petróleo negro cubriendo las orillas del puerto."
+   ]
+  ]
+ },
+ "m14_l2": {
+  "questionText": "¿Dónde se encontraba la planta?",
+  "correcta": "d",
+  "opciones_originales": [
+   [
+    "a",
+    "Un alga marina venenosa traída en las hélices de un submarino."
+   ],
+   [
+    "b",
+    "Matorrales de espinos secos que flotaban como balsas de madera."
+   ],
+   [
+    "c",
+    "Hojas secas de eucalipto caídas desde las copas de los árboles."
+   ],
+   [
+    "d",
+    "La tarulla o jacinto de agua que tapaba por completo el espejo de agua."
+   ]
+  ]
+ },
+ "m14_l3": {
+  "questionText": "¿Qué decidieron investigar antes de intervenir?",
+  "correcta": "b",
+  "opciones_originales": [
+   [
+    "a",
+    "Los peces aprendieron a caminar sobre las hojas verdes de la planta."
+   ],
+   [
+    "b",
+    "No podían navegar en canoa y los peces empezaron a asfixiarse abajo."
+   ],
+   [
+    "c",
+    "Las canoas flotaban más rápido y navegaban con mayor facilidad."
+   ],
+   [
+    "d",
+    "El agua se volvió de sabor dulce como jugo de frutas maduras."
+   ]
+  ]
+ }
+}
