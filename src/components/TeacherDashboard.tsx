@@ -26,7 +26,6 @@ import {
   FileSpreadsheet,
   Upload,
   FileText,
-  Calendar,
   Clock,
   ChevronDown,
   ChevronUp,
@@ -56,7 +55,6 @@ export const TeacherDashboard: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [gradeFilter, setGradeFilter] = useState<string>('todos');
   const [expandedMissionId, setExpandedMissionId] = useState<number | null>(null);
-  const [showSessionHistory, setShowSessionHistory] = useState<boolean>(false);
   const [authError, setAuthError] = useState('');
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [studentToDelete, setStudentToDelete] = useState<{ id: string; name: string } | null>(null);
@@ -150,57 +148,6 @@ export const TeacherDashboard: React.FC = () => {
     );
   }
 
-    // Helper para formatear fechas de manera amigable
-  const formatFriendlyDate = (isoString?: string): string => {
-    if (!isoString) return 'Sin fecha registrada';
-    try {
-      const d = new Date(isoString);
-      if (isNaN(d.getTime())) return isoString;
-      return d.toLocaleDateString('es-CO', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      });
-    } catch {
-      return isoString;
-    }
-  };
-
-  // Helper para calcular la última actividad real del estudiante
-  const getStudentLatestActivity = (p: any) => {
-    const dates: number[] = [];
-    if (p.lastLoginAt) dates.push(new Date(p.lastLoginAt).getTime());
-    if (p.createdAt) dates.push(new Date(p.createdAt).getTime());
-    
-    Object.values(p.answers || {}).forEach((a: any) => {
-      if (a.answeredAt) dates.push(new Date(a.answeredAt).getTime());
-    });
-    Object.values(p.evidences || {}).forEach((e: any) => {
-      if (e.submittedAt) dates.push(new Date(e.submittedAt).getTime());
-    });
-    
-    if (dates.length === 0) {
-      return { date: new Date(), text: 'Sin actividad' };
-    }
-    
-    const maxTime = Math.max(...dates.filter(t => !isNaN(t)));
-    const latestDate = new Date(maxTime);
-    
-    const now = new Date();
-    const isToday = latestDate.toDateString() === now.toDateString();
-    const timeStr = latestDate.toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit', hour12: true });
-    
-    if (isToday) {
-      return { date: latestDate, text: `Hoy, ${timeStr}` };
-    }
-    
-    const dateStr = latestDate.toLocaleDateString('es-CO', { day: '2-digit', month: 'short' });
-    return { date: latestDate, text: `${dateStr}, ${timeStr}` };
-  };
-
   // Siempre mostramos los datos reales de Firebase (modo demo eliminado)
   const studentList = profiles.map(p => {
     const completedCount = p.completedMissionIds.length;
@@ -220,8 +167,6 @@ export const TeacherDashboard: React.FC = () => {
       ? Math.round((criticalAnswers.filter(a => a.isCorrect).length / criticalAnswers.length) * 100)
       : 0;
 
-    const activity = getStudentLatestActivity(p);
-
     return {
       id: p.id,
       isDemo: isDemoProfile(p.id),
@@ -236,11 +181,6 @@ export const TeacherDashboard: React.FC = () => {
       literalAccuracy: literalAcc,
       inferentialAccuracy: inferentialAcc,
       criticalAccuracy: criticalAcc,
-      lastActive: activity.text,
-      createdAtText: formatFriendlyDate(p.createdAt),
-      lastLoginAtText: p.lastLoginAt ? formatFriendlyDate(p.lastLoginAt) : 'Sin login registrado',
-      loginCount: p.loginSessions?.length || (p.lastLoginAt ? 1 : 0),
-      loginSessions: p.loginSessions || [],
       evidencesCount: Object.keys(p.evidences).length,
       sampleReflection: p.passportEntries[0]?.reflection || 'Sin reflexiones aún',
       rawProfile: p,
@@ -773,10 +713,6 @@ export const TeacherDashboard: React.FC = () => {
 
                     <div className="mt-1.5 flex items-center justify-between text-[10px] text-slate-500 font-medium">
                       <span>Misiones: <strong>{st.completedMissionCount}/15</strong></span>
-                      <span className="flex items-center gap-0.5 text-slate-600">
-                        <Clock className="w-3 h-3 text-emerald-600" />
-                        {st.lastActive}
-                      </span>
                     </div>
 
                     {/* Micro barra de avance */}
@@ -813,9 +749,6 @@ export const TeacherDashboard: React.FC = () => {
                     {selectedStudent.name}
                     {selectedStudent.isDemo && <DemoBadge className="ml-2 align-middle text-[10px]" />}
                   </h3>
-                  <p className="text-xs text-slate-500 mt-0.5 font-medium">
-                    Última actividad registrada: {selectedStudent.lastActive}
-                  </p>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -918,72 +851,16 @@ export const TeacherDashboard: React.FC = () => {
 
 
 
-              {/* Ficha de Conectividad, Registro e Inicios de Sesión */}
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-3">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/80 pb-2.5">
-                  <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5 uppercase tracking-wide">
-                    <Clock className="w-4 h-4 text-emerald-600" />
-                    Registro de Conectividad y Sesiones
-                  </span>
-                  <span className="text-[11px] font-mono text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md font-bold">
-                    {selectedStudent.loginCount} {selectedStudent.loginCount === 1 ? 'sesión iniciada' : 'sesiones iniciadas'}
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div className="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs">
-                    <Calendar className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="text-[10px] text-slate-500 font-bold uppercase block">Fecha de Registro:</span>
-                      <span className="font-semibold text-slate-800">{selectedStudent.createdAtText}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs">
-                    <Clock className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="text-[10px] text-slate-500 font-bold uppercase block">Última Actividad Registrada:</span>
-                      <span className="font-semibold text-emerald-800">{selectedStudent.lastActive}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Desplegable de Historial de Sesiones */}
-                {selectedStudent.loginSessions && selectedStudent.loginSessions.length > 0 && (
-                  <div className="pt-1">
-                    <button
-                      type="button"
-                      onClick={() => setShowSessionHistory(!showSessionHistory)}
-                      className="text-[11px] font-bold text-emerald-700 hover:text-emerald-900 flex items-center gap-1 transition-colors cursor-pointer"
-                    >
-                      {showSessionHistory ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                      <span>{showSessionHistory ? 'Ocultar historial de inicios de sesión' : 'Ver marcas de tiempo de inicios de sesión'}</span>
-                    </button>
-
-                    {showSessionHistory && (
-                      <div className="mt-2 p-3 bg-white border border-slate-200 rounded-xl space-y-1.5 max-h-36 overflow-y-auto text-xs animate-fadeIn font-mono">
-                        {selectedStudent.loginSessions.slice().reverse().map((sess: string, idx: number) => (
-                          <div key={idx} className="flex items-center justify-between py-0.5 border-b border-slate-100 last:border-0 text-[11px] text-slate-600">
-                            <span>Acceso #{selectedStudent.loginSessions.length - idx}</span>
-                            <span className="text-slate-800 font-semibold">{formatFriendlyDate(sess)}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* SEGUIMIENTO COMPLETO DE LAS 15 MISIONES CON FECHAS Y RESPUESTAS */}
+              {/* SEGUIMIENTO COMPLETO DE LAS 15 MISIONES CON RESPUESTAS */}
               <div className="space-y-3 pt-2">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-slate-200 pb-2">
                   <div>
                     <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-slate-900 flex items-center gap-2">
                       <BookOpen className="w-4 h-4 text-emerald-700" />
-                      Bitácora de las 15 Misiones • Fechas y Respuestas
+                      Bitácora de las 15 Misiones • Respuestas
                     </h4>
                     <p className="text-[11px] text-slate-500">
-                      Toca cualquier misión para auditar respuestas, fechas y argumentos escritos en vivo sin descargar archivos.
+                      Toca cualquier misión para revisar respuestas y argumentos escritos sin descargar archivos.
                     </p>
                   </div>
                   <span className="text-xs font-mono font-bold text-emerald-900 bg-emerald-100 px-3 py-1 rounded-xl border border-emerald-300 self-start sm:self-auto">
@@ -1005,9 +882,6 @@ export const TeacherDashboard: React.FC = () => {
                     const answeredQuestionsCount = [...literalAns, ...inferentialAns, ...criticalAns].filter(x => x.a?.selectedOptionId).length;
                     const hasActivity = answeredQuestionsCount > 0 || isCompleted || evidence;
 
-                    // Fecha más precisa de realización
-                    const completionDate = passport?.completedAt || (evidence?.submittedAt ? formatFriendlyDate(evidence.submittedAt) : null);
-                    
                     return (
                       <div 
                         key={m.id}
@@ -1049,7 +923,7 @@ export const TeacherDashboard: React.FC = () => {
                                 {isCompleted ? (
                                   <span className="text-emerald-700 font-semibold flex items-center gap-1">
                                     <Check className="w-3.5 h-3.5 text-emerald-600" />
-                                    <span>Realizada {completionDate ? `• ${completionDate}` : ''}</span>
+                                    <span>Realizada</span>
                                   </span>
                                 ) : hasActivity ? (
                                   <span className="text-amber-700 font-semibold flex items-center gap-1">
@@ -1077,19 +951,13 @@ export const TeacherDashboard: React.FC = () => {
                         {isExpanded && (
                           <div className="p-4 border-t border-slate-200 bg-slate-50/80 space-y-3.5 animate-fadeIn text-xs">
                             
-                            {/* Ficha rápida de Insignia y Fecha */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 bg-white p-3 rounded-xl border border-slate-200">
+                            {/* Ficha rápida de Insignia */}
+                            <div className="bg-white p-3 rounded-xl border border-slate-200">
                               <div>
                                 <span className="text-[10px] text-slate-500 font-bold uppercase block">Insignia Territorial:</span>
                                 <span className="font-bold text-amber-900 flex items-center gap-1.5 mt-0.5">
                                   <Award className="w-3.5 h-3.5 text-amber-600" />
                                   {m.badgeName}
-                                </span>
-                              </div>
-                              <div>
-                                <span className="text-[10px] text-slate-500 font-bold uppercase block">Fecha y Hora de la Misión:</span>
-                                <span className="font-semibold text-slate-800">
-                                  {completionDate || 'En proceso de resolución en el aula'}
                                 </span>
                               </div>
                             </div>
@@ -1116,11 +984,6 @@ export const TeacherDashboard: React.FC = () => {
                                           </span>
                                         )}
                                       </div>
-                                      {a?.answeredAt && (
-                                        <div className="text-[10px] text-slate-400 font-mono">
-                                          Respondida: {formatFriendlyDate(a.answeredAt)}
-                                        </div>
-                                      )}
                                     </div>
                                   );
                                 })}
@@ -1149,11 +1012,6 @@ export const TeacherDashboard: React.FC = () => {
                                           </span>
                                         )}
                                       </div>
-                                      {a?.answeredAt && (
-                                        <div className="text-[10px] text-slate-400 font-mono">
-                                          Respondida: {formatFriendlyDate(a.answeredAt)}
-                                        </div>
-                                      )}
                                     </div>
                                   );
                                 })}
@@ -1181,11 +1039,6 @@ export const TeacherDashboard: React.FC = () => {
                                           <p className="italic font-reading text-slate-800 leading-relaxed">"{a.writtenArgument}"</p>
                                         </div>
                                       )}
-                                      {a?.answeredAt && (
-                                        <div className="text-[10px] text-slate-400 font-mono">
-                                          Respondida: {formatFriendlyDate(a.answeredAt)}
-                                        </div>
-                                      )}
                                     </div>
                                   );
                                 })}
@@ -1199,9 +1052,6 @@ export const TeacherDashboard: React.FC = () => {
                                   <span className="font-bold text-emerald-950 uppercase text-[11px] flex items-center gap-1.5">
                                     <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
                                     Desafío Ambiental: {evidence.challengeTitle}
-                                  </span>
-                                  <span className="text-[10px] font-mono text-emerald-800 font-semibold">
-                                    Entregado: {formatFriendlyDate(evidence.submittedAt)}
                                   </span>
                                 </div>
                                 <div className="space-y-1 bg-white p-2.5 rounded-lg border border-emerald-200">
@@ -1224,7 +1074,6 @@ export const TeacherDashboard: React.FC = () => {
                               <div className="bg-white border border-slate-200 rounded-xl p-3 space-y-1">
                                 <span className="text-[10px] font-bold text-amber-800 uppercase block">Reflexión de Campo en el Pasaporte:</span>
                                 <p className="italic text-slate-800 font-reading text-xs">"{passport.reflection}"</p>
-                                <span className="text-[10px] text-slate-400 block font-mono">Fecha de sellado: {passport.completedAt}</span>
                               </div>
                             )}
 
